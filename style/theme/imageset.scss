@@ -1,3 +1,44 @@
+// Blank FontAwesome replacement
+%imageset-glyph {
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		font-size: 13px;
+		line-height: 13px;
+		vertical-align: baseline;
+		font-weight: normal;
+		font-style: normal;
+		text-transform: none;
+		pointer-events: none;
+	}
+}
+
+%imageset-fa {
+	@extend %imageset-glyph;
+	&:after {
+		font-family: FontAwesome;
+	}
+}
+
+%imageset-16 {
+	padding-left: 16px;
+	padding-top: 16px;
+	&:after {
+		top: 50%;
+		bottom: auto;
+		margin-top: -8px;
+		height: 16px;
+		font-size: 16px;
+		line-height: 16px;
+	}
+}
+
 /* Former imageset */
 span.imageset {
 	display: inline-block !important;
@@ -106,19 +147,28 @@ span.imageset {
 	padding-top: 9px;
 }
 .imageset.icon_topic_reported {
-	background-image: url("./images/icon_topic_reported.gif");
-	padding-left: 16px;
-	padding-top: 14px;
+	@extend %imageset-fa;
+	@extend %imageset-16;
+	&:after {
+		content: '\f071';
+		color: #D31141;
+	}
 }
 .imageset.icon_topic_deleted {
-	background-image: url("./images/icon_topic_deleted.png");
-	padding-left: 16px;
-	padding-top: 14px;
+	@extend %imageset-fa;
+	@extend %imageset-16;
+	&:after {
+		content: '\f057';
+		color: #D31141;
+	}
 }
 .imageset.icon_topic_unapproved {
-	background-image: url("./images/icon_topic_unapproved.gif");
-	padding-left: 16px;
-	padding-top: 14px;
+	@extend %imageset-fa;
+	@extend %imageset-16;
+	&:after {
+		content: '\f059';
+		color: #D31141;
+	}
 }
 .imageset.icon_topic_poll {
 	background-image: url("./images/icon_topic_poll.gif");

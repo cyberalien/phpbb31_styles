@@ -1010,11 +1010,6 @@ li.breadcrumbs span:first-child > a {
 	padding-right: 7px;
 	padding-left: 0;
 }
-.rtl .imageset.icon_topic_reported, .rtl .imageset.icon_topic_unapproved {
-	padding-right: 16px;
-	padding-left: 0;
-}
-
 /**
 * plupload.css
 */

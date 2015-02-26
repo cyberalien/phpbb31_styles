@@ -1043,12 +1043,20 @@ p.post-notice:before {
 	content: '';
 	display: block;
 	position: absolute;
-	top: 0;
-	bottom: 0;
+	top: 50%;
+	margin-top: -8px;
+	font-size: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	vertical-align: baseline;
 	left: 0;
 	width: 28px;
 	background: transparent none 50% 50% no-repeat;
 	pointer-events: none;
+	font-weight: normal;
+	font-style: normal;
+	text-transform: none;
 }
 
 form > p.post-notice strong {

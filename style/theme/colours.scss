@@ -227,16 +227,27 @@ p.post-notice {
 	background-image: none;
 }
 
+// Blank FontAwesome replacement
+%post-notice {
+	font-family: FontAwesome;
+}
+
 p.post-notice.deleted:before {
-	background-image: url("./images/icon_topic_deleted.png");
+	@extend %post-notice;
+	content: '\f057';
+	color: #D31141;
 }
 
 p.post-notice.unapproved:before {
-	background-image: url("./images/icon_topic_unapproved.gif");
+	@extend %post-notice;
+	content: '\f059';
+	color: #D31141;
 }
 
 p.post-notice.reported:before, p.post-notice.error:before {
-	background-image: url("./images/icon_topic_reported.gif");
+	@extend %post-notice;
+	content: '\f071';
+	color: #D31141;
 }
 
 // Topic status
