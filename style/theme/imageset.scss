@@ -183,9 +183,10 @@ span.imageset {
 	}
 }
 .imageset.icon_topic_newest {
-	background-image: url("./images/icon_topic_newest.gif");
-	padding-left: 11px;
-	padding-top: 9px;
+	@extend .imageset.icon_topic_latest;
+	&:after {
+		color: #D31141;
+	}
 }
 .imageset.icon_topic_reported {
 	@extend %imageset-fa;
