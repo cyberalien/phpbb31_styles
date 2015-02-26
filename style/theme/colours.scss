@@ -660,6 +660,66 @@ Colours and backgrounds for buttons.css
 
 /* Icon images
 ---------------------------------------- */
+%icon-image {
+	position: relative;
+	background-image: none;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		height: 14px;
+		margin-top: -7px;
+		text-align: center;
+		font-size: 12px;
+		line-height: 14px;
+		vertical-align: baseline;
+		font-weight: normal;
+		font-style: normal;
+		text-transform: none;
+		text-indent: 0;
+		pointer-events: none;
+	}
+}
+
+%icon-image-fa {
+	@extend %icon-image;
+	&:after {
+		font-family: FontAwesome;
+	}
+}
+
+%icon-image-gi {
+	@extend %icon-image;
+	&:after {
+		font-family: 'Glyphicons Regular', 'Glyphicons';
+	}
+}
+
+%icon-search-new {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E028';
+		color: #d31141;
+	}
+}
+
+%icon-search-old {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E028';
+		color: #105289;
+	}
+}
+
+%icon-search-misc {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E028';
+		color: #aaa;
+	}
+}
+
 .icon-acp					{ background-image: url("./images/icon_acp.gif"); }
 .icon-bookmark				{ background-image: url("./images/icon_bookmark.gif"); }
 .icon-bump					{ background-image: url("./images/icon_bump.gif"); }
@@ -679,12 +739,13 @@ Colours and backgrounds for buttons.css
 .icon-profile				{ background-image: url("./images/icon_profile.gif"); }
 .icon-register				{ background-image: url("./images/icon_register.gif"); }
 .icon-search, .responsive-search a	{ background-image: url("./images/icon_search.gif"); }
-.icon-search-active			{ background-image: url("./images/subforum_read.gif"); }
+.small-icon.icon-search					{ @extend %icon-search-old; }
+.small-icon.icon-search-active			{ @extend %icon-search-old; }
 .icon-search-advanced		{ background-image: url("./images/icon_search_adv.gif"); }
-.icon-search-new			{ background-image: url("./images/subforum_unread.gif"); }
-.icon-search-self			{ background-image: url("./images/icon_topic_latest.gif"); }
-.icon-search-unanswered		{ background-image: url("./images/icon_post_target.gif"); }
-.icon-search-unread			{ background-image: url("./images/subforum_unread.gif"); }
+.small-icon.icon-search-new				{ @extend %icon-search-new; }
+.small-icon.icon-search-self			{ @extend %icon-search-misc; }
+.small-icon.icon-search-unanswered		{ @extend %icon-search-new; }
+.small-icon.icon-search-unread			{ @extend %icon-search-new; }
 .icon-sendemail				{ background-image: url("./images/icon_sendemail.gif"); }
 .icon-subscribe				{ background-image: url("./images/icon_subscribe.gif"); }
 .icon-team					{ background-image: url("./images/icon_team.gif"); }
