@@ -210,6 +210,10 @@ a.feed-icon-forum {
 	position: relative;
 }
 
+.topiclist.forums a.feed-icon-forum {
+	margin-top: 12px;
+}
+
 a.feed-icon-forum:after {
 	content: '\f09e';
 	position: absolute;
