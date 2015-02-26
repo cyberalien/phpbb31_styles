@@ -156,6 +156,8 @@
 						<!-- IF topicrow.S_TOPIC_DELETED --><a href="{topicrow.U_MCP_QUEUE}">{DELETED_IMG}</a> <!-- ENDIF -->
 						<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF --><br />
 
+						<!-- IF topicrow.S_POST_STICKY --><i class="topic-status sticky fa fa-thumb-tack"></i><!-- ENDIF -->
+
 						<!-- IF not S_IS_BOT -->
 						<div class="responsive-show" style="display: none;">
 							{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} &laquo; <a href="{topicrow.U_LAST_POST}" title="{L_GOTO_LAST_POST}">{topicrow.LAST_POST_TIME}</a>
