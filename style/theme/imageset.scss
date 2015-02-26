@@ -1,6 +1,7 @@
 // Blank FontAwesome replacement
 %imageset-glyph {
 	position: relative;
+	text-indent: 999px;
 	&:after {
 		content: '';
 		position: absolute;
@@ -15,6 +16,7 @@
 		font-weight: normal;
 		font-style: normal;
 		text-transform: none;
+		text-indent: 0;
 		pointer-events: none;
 	}
 }
@@ -27,15 +29,29 @@
 }
 
 %imageset-16 {
-	padding-left: 16px;
-	padding-top: 16px;
+	width: 16px;
+	height: 16px;
 	&:after {
 		top: 50%;
 		bottom: auto;
 		margin-top: -8px;
 		height: 16px;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 16px;
+	}
+}
+
+%imageset-arrow {
+	// For latest topic arrows
+	width: 11px;
+	height: 10px;
+	&:after {
+		top: 50%;
+		bottom: auto;
+		margin-top: -5px;
+		height: 10px;
+		font-size: 10px;
+		line-height: 10px;
 	}
 }
 
@@ -137,9 +153,11 @@ span.imageset {
 	padding-top: 10px;
 }
 .imageset.icon_topic_latest {
-	background-image: url("./images/icon_topic_latest.gif");
-	padding-left: 11px;
-	padding-top: 9px;
+	@extend %imageset-fa;
+	@extend %imageset-arrow;
+	&:after {
+		content: '\f061';
+	}
 }
 .imageset.icon_topic_newest {
 	background-image: url("./images/icon_topic_newest.gif");

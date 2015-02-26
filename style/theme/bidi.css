@@ -994,7 +994,7 @@ li.breadcrumbs span:first-child > a {
 	padding-right: 27px;
 	padding-left: 0;
 }
-.rtl .imageset.subforum_read, .rtl .imageset.subforum_unread, .rtl .imageset.icon_post_target, .rtl .imageset.icon_post_target_unread, .rtl .imageset.icon_topic_latest, .rtl .imageset.icon_topic_newest {
+.rtl .imageset.subforum_read, .rtl .imageset.subforum_unread, .rtl .imageset.icon_post_target, .rtl .imageset.icon_post_target_unread, .rtl .imageset.icon_topic_newest {
 	padding-right: 11px;
 	padding-left: 0;
 }
