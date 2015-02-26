@@ -297,12 +297,11 @@ a:hover	{ color: #D31141; }
 }
 
 /* Back to top of page */
-a.top {
-	background-image: url("./images/icon_back_top.gif");
-}
-
-a.top2 {
-	background-image: url("./images/icon_back_top.gif");
+a.top, a.top2 {
+	color: #888;
+	&:hover {
+		color: #d31141;
+	}
 }
 
 /* Arrow links  */

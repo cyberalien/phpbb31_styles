@@ -129,26 +129,47 @@ a.lastsubject:hover {
 /* Back to top of page */
 .back2top {
 	clear: both;
-	height: 11px;
+	height: 14px;
 	text-align: right;
 }
 
 a.top {
-	background: none no-repeat top left;
 	text-decoration: none;
-	width: 11px;
-	height: 11px;
+	width: 14px;
+	height: 14px;
 	display: block;
 	float: right;
 	overflow: hidden;
-	letter-spacing: 1000px;
-	text-indent: 11px;
+	text-indent: 999px;
 }
 
 a.top2 {
-	background: none no-repeat 0 50%;
 	text-decoration: none;
 	padding-left: 15px;
+}
+
+a.top, a.top2 {
+	position: relative;
+}
+
+a.top:after, a.top2:after {
+	content: '\f139';
+	font-family: FontAwesome;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 14px;
+	width: 14px;
+	margin-top: -7px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 14px;
+	vertical-align: baseline;
+	font-weight: normal;
+	font-style: normal;
+	text-transform: none;
+	text-indent: 0;
+	pointer-events: none;
 }
 
 /* Arrow links  */
