@@ -28,6 +28,13 @@
 	}
 }
 
+%imageset-gi {
+	@extend %imageset-glyph;
+	&:after {
+		font-family: 'Glyphicons Regular', 'Glyphicons';
+	}
+}
+
 %imageset-16 {
 	width: 16px;
 	height: 16px;
@@ -148,9 +155,19 @@ span.imageset {
 	padding-top: 9px;
 }
 .imageset.icon_topic_attach {
-	background-image: url("./images/icon_topic_attach.gif");
-	padding-left: 7px;
-	padding-top: 10px;
+	@extend %imageset-gi;
+	width: 12px;
+	height: 12px;
+	&:after {
+		content: '\E063';
+		top: 50%;
+		bottom: auto;
+		margin-top: -6px;
+		height: 12px;
+		font-size: 10px;
+		line-height: 12px;
+		color: #808080;
+	}
 }
 .imageset.icon_topic_latest {
 	@extend %imageset-fa;

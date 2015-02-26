@@ -1006,10 +1006,6 @@ li.breadcrumbs span:first-child > a {
 	padding-right: 20px;
 	padding-left: 0;
 }
-.rtl .imageset.icon_topic_attach {
-	padding-right: 7px;
-	padding-left: 0;
-}
 /**
 * plupload.css
 */
