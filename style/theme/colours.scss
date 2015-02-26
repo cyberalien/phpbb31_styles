@@ -186,13 +186,12 @@ dl.details dd {
 	color: #FFFFFF;
 }
 
-.pagination li.next a, .pagination li.previous a, .pagination li.page-jump a {
-	background-image: url("./images/icons_pagination.png");
+.pagination li.page-jump a:after {
+	color: #5C758C;
 }
 
-/* Pagination in viewforum for multipage topics */
-.row .pagination {
-	background-image: url("./images/icon_pages.gif");
+.pagination li.page-jump a:hover:after {
+	color: #d31141;
 }
 
 /* Miscellaneous styles

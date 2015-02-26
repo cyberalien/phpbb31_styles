@@ -859,36 +859,55 @@ fieldset.fields1 dl.pmlist dd.recipients {
 }
 
 .pagination li.page-jump a, .pagination li.next a, .pagination li.previous a {
-	background-repeat: no-repeat;
+	position: relative;
 	font-size: 0;
 	height: 13px;
 	width: 11px;
 }
 
 .pagination li.page-jump a {
-	background-position: 0 2px;
-	width: 24px;
+	width: 14px;
+	background: transparent none !important;
+	border-color: transparent !important;
+	padding-left: 0;
+	padding-right: 0;
 }
 
-.pagination li.next a {
-	background-position: -50px 2px;
+.pagination li.page-jump a:after, .pagination li.next a:after, .pagination li.previous a:after {
+	position: absolute;
+	left: 3px;
+	right: 3px;
+	top: 3px;
+	height: 13px;
+	font-size: 9px;
+	line-height: 13px;
+	text-align: center;
+	font-weight: normal;
+	text-indent: 0;
+	font-family: FontAwesome;
+	content: '\f08e';
 }
 
-.pagination li.previous a {
-	background-position: -30px 2px;
+.pagination li.page-jump a:after {
+	font-size: 13px;
 }
 
-.pagination li.page-jump a:hover, .pagination .dropdown-visible a.dropdown-trigger, .nojs .pagination .dropdown-container:hover a.dropdown-trigger { background-position: 0 -18px; }
-.pagination li.next a:hover { background-position: -50px -18px; }
-.pagination li.previous a:hover { background-position: -30px -18px; }
+.pagination li.next a:after {
+	content: '\f054';
+	right: 1px;
+}
+
+.pagination li.previous a:after {
+	content: '\f053';
+	left: 1px;
+}
 
 /* Pagination in viewforum for multipage topics */
 .row .pagination {
 	display: block;
 	margin-top: 0;
-	padding: 1px 0 1px 15px;
+	padding: 1px 0;
 	font-size: 0.9em;
-	background: none 0 50% no-repeat;
 }
 
 .row .pagination > ul {
