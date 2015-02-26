@@ -158,14 +158,29 @@ span.imageset {
 	padding-top: 20px;
 }
 .imageset.icon_post_target {
-	background-image: url("./images/icon_post_target.gif");
-	padding-left: 11px;
-	padding-top: 9px;
+	@extend %imageset-fa;
+	margin-top: -4px;
+	top: 2px;
+	width: 16px;
+	height: 14px;
+	&:after {
+		top: 50%;
+		bottom: auto;
+		margin-top: -7px;
+		height: 14px;
+		font-size: 12px;
+		line-height: 14px;
+		content: '\f0e5';
+		text-align: left;
+		color: #105289;
+	}
 }
 .imageset.icon_post_target_unread {
-	background-image: url("./images/icon_post_target_unread.gif");
-	padding-left: 11px;
-	padding-top: 9px;
+	@extend .imageset.icon_post_target;
+	&:after {
+		content: '\f075';
+		color: #D31141;
+	}
 }
 .imageset.icon_topic_attach {
 	@extend %imageset-gi;
