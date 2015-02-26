@@ -48,6 +48,19 @@
 	}
 }
 
+%imageset-12 {
+	width: 12px;
+	height: 12px;
+	&:after {
+		top: 50%;
+		bottom: auto;
+		margin-top: -6px;
+		height: 12px;
+		font-size: 10px;
+		line-height: 12px;
+	}
+}
+
 %imageset-arrow {
 	// For latest topic arrows
 	width: 11px;
@@ -156,16 +169,9 @@ span.imageset {
 }
 .imageset.icon_topic_attach {
 	@extend %imageset-gi;
-	width: 12px;
-	height: 12px;
+	@extend %imageset-12;
 	&:after {
 		content: '\E063';
-		top: 50%;
-		bottom: auto;
-		margin-top: -6px;
-		height: 12px;
-		font-size: 10px;
-		line-height: 12px;
 		color: #808080;
 	}
 }
@@ -206,9 +212,12 @@ span.imageset {
 	}
 }
 .imageset.icon_topic_poll {
-	background-image: url("./images/icon_topic_poll.gif");
-	padding-left: 11px;
-	padding-top: 10px;
+	@extend %imageset-gi;
+	@extend %imageset-12;
+	&:after {
+		content: '\E042';
+		color: #098dcf;
+	}
 }
 .imageset.icon_user_warn {
 	background-image: url("./images/icon_user_warn.gif");
