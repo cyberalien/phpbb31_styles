@@ -205,6 +205,24 @@ a.arrow-right:hover {
 a.feed-icon-forum {
 	float: right;
 	margin: 3px;
+	width: 16px;
+	height: 16px;
+	position: relative;
+}
+
+a.feed-icon-forum:after {
+	content: '\f09e';
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 16px;
+	height: 16px;
+	font-family: FontAwesome;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 16px;
+	text-align: center;
 }
 
 a.anchor {
