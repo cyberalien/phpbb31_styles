@@ -677,6 +677,7 @@ Colours and backgrounds for buttons.css
 		text-transform: none;
 		text-indent: 0;
 		pointer-events: none;
+		color: #105289;
 	}
 	&.small-icon:after {
 		width: 18px;
@@ -710,7 +711,6 @@ Colours and backgrounds for buttons.css
 	@extend %icon-image-gi;
 	&:after {
 		content: '\E028';
-		color: #105289;
 	}
 }
 
@@ -726,11 +726,20 @@ Colours and backgrounds for buttons.css
 	@extend %icon-image-gi;
 	&:after {
 		content: '\E271';
-		color: #105289;
 	}
 }
-.icon-bookmark				{ background-image: url("./images/icon_bookmark.gif"); }
-.icon-bump					{ background-image: url("./images/icon_bump.gif"); }
+.icon-bookmark {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E073';
+	}
+}
+.icon-bump {
+	@extend %icon-image-fa;
+	&:after {
+		content: '\f079';
+	}
+}
 .icon-contact				{ background-image: url("./images/icon_pm.gif"); }
 .icon-delete-cookies		{ background-image: url("./images/icon_delete_cookies.gif"); }
 .icon-download				{ background-image: url("./images/icon_download.gif"); }
@@ -738,12 +747,16 @@ Colours and backgrounds for buttons.css
 .icon-home					{ background-image: url("./images/icon_home.gif"); }
 .icon-logout				{ background-image: url("./images/icon_logout.gif"); }
 .icon-mark					{ background-image: url("./images/icon_mark.gif"); }
-.icon-mcp					{ background-image: url("./images/icon_mcp.gif"); }
+.icon-mcp {
+	@extend %icon-image-fa;
+	&:after {
+		content: '\f0e3';
+	}
+}
 .icon-members {
 	@extend %icon-image-fa;
 	&:after {
 		content: '\f007';
-		color: #105289;
 	}
 	&:before {
 		@extend .icon-members:after;
@@ -760,7 +773,12 @@ ul.linklist.bulletin > li.small-icon.icon-members:before { @extend .icon-members
 .icon-pages					{ background-image: url("./images/icon_pages.gif"); }
 .icon-pm					{ background-image: url("./images/icon_pm.gif"); }
 .icon-print					{ background-image: url("./images/icon_print.gif"); }
-.icon-profile				{ background-image: url("./images/icon_profile.gif"); }
+.icon-profile {
+	@extend %icon-image-fa;
+	&:after {
+		content: '\f007';
+	}
+}
 .icon-register				{ background-image: url("./images/icon_register.gif"); }
 .icon-search, .responsive-search a	{ @extend %icon-search-old; }
 .icon-search-active			{ @extend %icon-search-old; }
@@ -775,7 +793,6 @@ ul.linklist.bulletin > li.small-icon.icon-members:before { @extend .icon-members
 	@extend %icon-image-fa;
 	&:after {
 		content: '\f007';
-		color: #105289;
 	}
 	&:before {
 		@extend .icon-team:after;
@@ -789,7 +806,12 @@ ul.linklist.bulletin > li.small-icon.icon-members:before { @extend .icon-members
 	}
 }
 ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:before; }
-.icon-ucp					{ background-image: url("./images/icon_ucp.gif"); }
+.icon-ucp {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E281';
+	}
+}
 .icon-unsubscribe			{ background-image: url("./images/icon_unsubscribe.gif"); }
 
 /* Profile & navigation icons */
