@@ -950,16 +950,38 @@ fieldset.fields1 dl.pmlist dd.recipients {
 .phpbb_alert .alert_close {
 	display: block;
 	float: right;
-	width: 16px;
-	height: 16px;
+	width: 24px;
+	height: 24px;
 	overflow: hidden;
 	text-decoration: none !important;
 	background: transparent none 0 0 no-repeat;
-	margin-top: -7px;
-	margin-right: -31px;
+	margin-top: -12px;
+	margin-right: -36px;
+	position: relative;
 }
-.phpbb_alert .alert_close:hover {
-	background-position: 0 -16px;
+
+.phpbb_alert .alert_close:before,
+.phpbb_alert .alert_close:after {
+	content: '\f057';
+	font-family: FontAwesome;
+	position: absolute;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: normal;
+	font-style: normal;
+	text-indent: 0;
+	text-align: center;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 24px;
+	height: 24px;
+}
+
+.phpbb_alert .alert_close:before {
+	content: '\f111';
+	font-size: 20px;
 }
 
 .phpbb_alert p {

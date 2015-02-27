@@ -1337,8 +1337,14 @@ input.disabled {
 	background-color: #FFFFFF;
 	border-color: #999999;
 }
-.phpbb_alert .alert_close {
-	background-image: url("./images/alert_close.png");
+.phpbb_alert .alert_close:before {
+	color: #105289;
+}
+.phpbb_alert .alert_close:hover:before {
+	color: #d31141;
+}
+.phpbb_alert .alert_close:after {
+	color: #fff;
 }
 #darken {
 	background-color: #000000;
