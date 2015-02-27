@@ -237,11 +237,15 @@ span.imageset {
 }
 
 .imageset.icon_contact {
-	background-image: url("./images/icon_contact.png");
-	padding-left: 16px;
-	padding-top: 12px;
+	@extend %imageset-gi;
+	@extend %imageset-12;
+	&:after {
+		content: '\E188';
+	}
+	&:hover:after {
+		content: '\E602';
+	}
 }
-
 
 /* English images for fallback */
 .imageset.icon_user_online {

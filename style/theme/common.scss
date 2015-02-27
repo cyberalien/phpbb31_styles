@@ -336,21 +336,28 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 	text-decoration: none;
 }
 
-ul.linklist li.responsive-menu a.responsive-menu-link:before {
-	content: '\f0c9';
-	font-family: FontAwesome;
-	position: absolute;
-	left: 0;
-	top: 50%;
-	margin-top: -6px;
-	width: 14px;
-	font-size: 12px;
-	line-height: 12px;
-	height: 12px;
-	text-align: center;
-	font-weight: normal;
-	font-style: normal;
-	text-indent: 0;
+ul.linklist li.responsive-menu a.responsive-menu-link {
+	&:before {
+		// content: '\f0c9';
+		// font-family: FontAwesome;
+		content: '\E159';
+		font-family: 'Glyphicons Regular', 'Glyphicons';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -6px;
+		width: 14px;
+		font-size: 12px;
+		line-height: 12px;
+		height: 12px;
+		text-align: center;
+		font-weight: normal;
+		font-style: normal;
+		text-indent: 0;
+	}
+	&:hover:before {
+		content: '\E602';
+	}
 }
 
 .hasjs ul.linklist.leftside, .hasjs ul.linklist.rightside {
