@@ -679,6 +679,9 @@ Colours and backgrounds for buttons.css
 		pointer-events: none;
 		color: #105289;
 	}
+	&:hover:after {
+		color: #d31141;
+	}
 	&.small-icon:after {
 		width: 18px;
 		text-align: center;
@@ -1388,11 +1391,11 @@ input.disabled {
 }
 
 ul.linklist li.responsive-menu a.responsive-menu-link:before {
-	border-color: #105289;
+	color: #105289;
 }
 
 ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist li.responsive-menu.visible a.responsive-menu-link:before {
-	border-color: #D31141;
+	color: #D31141;
 }
 
 .dropdown .dropdown-contents {

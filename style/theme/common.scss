@@ -337,14 +337,20 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 }
 
 ul.linklist li.responsive-menu a.responsive-menu-link:before {
-	content: '';
+	content: '\f0c9';
+	font-family: FontAwesome;
 	position: absolute;
 	left: 0;
-	top: 7px;
-	height: .125em;
+	top: 50%;
+	margin-top: -6px;
 	width: 14px;
-	border-bottom: 0.125em solid transparent;
-	border-top: 0.375em double transparent;
+	font-size: 12px;
+	line-height: 12px;
+	height: 12px;
+	text-align: center;
+	font-weight: normal;
+	font-style: normal;
+	text-indent: 0;
 }
 
 .hasjs ul.linklist.leftside, .hasjs ul.linklist.rightside {
@@ -1285,11 +1291,6 @@ ul.linklist:after,
 	line-height: inherit;
 	margin: 0;
 	width: auto;
-}
-
-#quick-links a.responsive-menu-link:before {
-	font-size: 16px;
-	line-height: 16.5px;
 }
 
 .compact #quick-links a.responsive-menu-link {
