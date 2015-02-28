@@ -99,6 +99,22 @@ ul.topiclist li.row dt a.subforum {
 li.row {
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
+	.forum-description {
+
+	}
+	.subforums-list {
+		ul {
+			list-style-type: none;
+			display: inline;
+			margin: 0;
+		}
+		li {
+			display: inline;
+			& > span {
+				display: inline;
+			}
+		}
+	}
 }
 
 li.row strong {

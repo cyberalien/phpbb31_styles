@@ -37,17 +37,20 @@
 
 						<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
 						<a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a>
-						<!-- IF forumrow.FORUM_DESC --><br />{forumrow.FORUM_DESC}<!-- ENDIF -->
+						<!-- IF forumrow.FORUM_DESC --><div class="forum-description">{forumrow.FORUM_DESC}</div><!-- ENDIF -->
 						<!-- IF forumrow.MODERATORS -->
-							<br /><strong>{forumrow.L_MODERATOR_STR}{L_COLON}</strong> {forumrow.MODERATORS}
+							<div class="forum-moderators"><strong>{forumrow.L_MODERATOR_STR}{L_COLON}</strong> {forumrow.MODERATORS}</div>
 						<!-- ENDIF -->
 						<!-- IF .forumrow.subforum and forumrow.S_LIST_SUBFORUMS -->
+							<div class="subforums-list">
 							<!-- EVENT forumlist_body_subforums_before -->
-							<br /><strong>{forumrow.L_SUBFORUM_STR}{L_COLON}</strong>
+							<strong>{forumrow.L_SUBFORUM_STR}{L_COLON}</strong>
+							<ul>
 							<!-- BEGIN subforum -->
-								<a href="{forumrow.subforum.U_SUBFORUM}" class="subforum<!-- IF forumrow.subforum.S_UNREAD --> unread<!-- ELSE --> read<!-- ENDIF -->" title="<!-- IF forumrow.subforum.UNREAD -->{L_UNREAD_POSTS}<!-- ELSE -->{L_NO_UNREAD_POSTS}<!-- ENDIF -->">{forumrow.subforum.SUBFORUM_NAME}</a><!-- IF not forumrow.subforum.S_LAST_ROW -->{L_COMMA_SEPARATOR}<!-- ENDIF -->
+								<li><a href="{forumrow.subforum.U_SUBFORUM}" class="subforum<!-- IF forumrow.subforum.S_UNREAD --> unread<!-- ELSE --> read<!-- ENDIF -->" title="<!-- IF forumrow.subforum.UNREAD -->{L_UNREAD_POSTS}<!-- ELSE -->{L_NO_UNREAD_POSTS}<!-- ENDIF -->">{forumrow.subforum.SUBFORUM_NAME}</a><!-- IF not forumrow.subforum.S_LAST_ROW --><span>{L_COMMA_SEPARATOR}</span><!-- ENDIF --></li>
 							<!-- END subforum -->
 							<!-- EVENT forumlist_body_subforums_after -->
+							</div>
 						<!-- ENDIF -->
 
 						<!-- IF not S_IS_BOT -->
