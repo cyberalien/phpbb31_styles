@@ -1065,11 +1065,12 @@ ul.cplist {
 /* Responsive tabs
 ----------------------------------------*/
 .responsive-tab .responsive-tab-link:before {
-	border-color: #536482;
+	color: #536482;
 }
 
-.responsive-tab .responsive-tab-link:hover:before {
-	border-color: #D31141;
+.responsive-tab .responsive-tab-link:hover:before,
+.dropdown-visible.responsive-tab .responsive-tab-link:before {
+	color: #D31141;
 }
 
 /* UCP navigation menu

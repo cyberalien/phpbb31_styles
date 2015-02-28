@@ -170,24 +170,37 @@ ul.cplist {
 	position: relative;
 }
 
-.responsive-tab > a.responsive-tab-link {
-	display: block;
-	font-size: 16px;
-	position: relative;
-	width: 16px;
-	line-height: 14px;
-	text-decoration: none;
-}
-
-.responsive-tab .responsive-tab-link:before {
-	content: '';
-	position: absolute;
-	left: 10px;
-	top: 7px;
-	height: .125em;
-	width: 14px;
-	border-bottom: 0.125em solid transparent;
-	border-top: 0.375em double transparent;
+a.responsive-tab-link {
+	.responsive-tab > & {
+		display: block;
+		font-size: 16px;
+		position: relative;
+		width: 16px;
+		line-height: 14px;
+		text-decoration: none;
+	}
+	.responsive-tab > &:before {
+		// content: '\f0c9';
+		// font-family: FontAwesome;
+		content: '\E159';
+		font-family: 'Glyphicons Regular', 'Glyphicons';
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		margin-top: -7px;
+		width: 14px;
+		font-size: 13px;
+		line-height: 15px;
+		height: 15px;
+		text-align: center;
+		font-weight: normal;
+		font-style: normal;
+		text-indent: 0;
+	}
+	.dropdown-visible.responsive-tab > &:before,
+	.responsive-tab > &:hover:before {
+		content: '\E602';
+	}
 }
 
 #tabs .dropdown, #minitabs .dropdown {
