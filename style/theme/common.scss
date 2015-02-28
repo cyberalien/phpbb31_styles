@@ -426,11 +426,13 @@ ul.linklist.bulletin > li.no-bulletin:before {
 }
 
 .header-avatar span:after {
-	content: '\25BC';
+	content: '\f078';
+	font-family: FontAwesome;
 	display: inline-block;
-	font-size: 9px;
+	font-size: 7px;
 	float: right;
 	padding-left: 2px;
+	font-weight: normal;
 	opacity: 0.7;
 }
 
