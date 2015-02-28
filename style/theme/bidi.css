@@ -28,7 +28,6 @@
 /* Site Description
 --------------------------------------------- */
 .rtl #site-description {
-	float: right;
 }
 
 .rtl #site-description h1 {
@@ -973,9 +972,8 @@ li.breadcrumbs span:first-child > a {
 }
 
 .rtl .search-header {
-	float: left;
-	margin-right: 0;
-	margin-left: 5px;
+	right: auto;
+	left: 5px;
 }
 
 .rtl input.search {

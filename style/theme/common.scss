@@ -44,6 +44,15 @@ table {
 	border-spacing: 0;
 }
 
+// Useful stuff
+%clearfix {
+	&:after, &:before {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
+}
+
 /* General Markup Styles
 ---------------------------------------- */
 html {
@@ -221,8 +230,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 /* Site description and logo */
 #site-description {
-	float: left;
-	width: 65%;
+	@extend %clearfix;
 }
 
 #site-description h1 {
@@ -236,6 +244,9 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	margin-bottom: 4px;
 	padding: 5px;
 	border-radius: 7px;
+	& > .inner {
+		position: relative;
+	}
 }
 
 .navbar {
