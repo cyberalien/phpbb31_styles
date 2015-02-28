@@ -49,7 +49,8 @@ hr {
 
 .headerbar {
 	background-color: #12A3EB;
-	background-image: url("./images/bg_header.gif");
+	background-image: -webkit-linear-gradient(top, #6aceff 0, #0076b1 1px, #0583c2 30px, #0c95d9 60px, #12a3eb 90px);
+	background-image: linear-gradient(to bottom, #6aceff 0, #0076b1 1px, #0583c2 30px, #0c95d9 60px, #12a3eb 90px);
 	color: #FFFFFF;
 }
 
@@ -65,7 +66,8 @@ hr {
 
 .forumbg {
 	background-color: #12A3EB;
-	background-image: url("./images/bg_header.gif");
+	background-image: -webkit-linear-gradient(top, #6aceff 0, #0076b1 1px, #0583c2 30px, #0c95d9 60px, #12a3eb 90px);
+	background-image: linear-gradient(to bottom, #6aceff 0, #0076b1 1px, #0583c2 30px, #0c95d9 60px, #12a3eb 90px);
 }
 
 .panel {
