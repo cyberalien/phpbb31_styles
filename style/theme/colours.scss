@@ -59,7 +59,8 @@ hr {
 
 .forabg {
 	background-color: #0076b1;
-	background-image: url("./images/bg_list.gif");
+	background-image: -webkit-linear-gradient(top, #6aceff 0, #12a3eb 1px, #088acb 30px, #037fbc 60px, #0076b1 90px);
+	background-image: linear-gradient(to bottom, #6aceff 0, #12a3eb 1px, #088acb 30px, #037fbc 60px, #0076b1 90px);
 }
 
 .forumbg {
