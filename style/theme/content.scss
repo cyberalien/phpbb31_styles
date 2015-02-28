@@ -115,6 +115,15 @@ li.row {
 			}
 		}
 	}
+	.forum-mcplink {
+		position: absolute;
+		right: 4px;
+		top: 4px;
+		.rtl & {
+			right: auto;
+			left: 4px;
+		}
+	}
 }
 
 li.row strong {
@@ -177,10 +186,14 @@ dl.icon dt .list-inner {
 
 dl.icon dt .list-inner .topic-status {
 	position: absolute;
-	right: 3px;
-	top: 0;
+	right: 4px;
+	top: 3px;
 	font-size: 14px;
 	pointer-events: none;
+	.rtl & {
+		right: auto;
+		left: 4px;
+	}
 }
 
 dl.icon dt .list-inner .topic-status + .topic-status {
