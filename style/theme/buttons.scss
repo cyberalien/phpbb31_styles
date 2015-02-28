@@ -376,8 +376,26 @@ ul.linklist.bulletin > li.small-icon:before {
 	content: '\f128';
 	font-size: 13px;
 }
-.button.responsive-menu-link:before			{ background-position: -191px 0; }
-.button.responsive-menu-link:hover:before	{ background-position: -191px -21px; }
+.button.responsive-menu-link:before {
+	@extend .icon-button:before;
+	@extend %icon-button;
+	content: '\f0c9';
+}
+
+.post-buttons > #expand > a {
+	@extend .button;
+	@extend .icon-button;
+	width: 12px;
+	overflow: hidden;
+	text-indent: 999px;
+	&:before {
+		@extend %icon-button;
+		content: '\f078';
+	}
+	&.expanded:before {
+		content: '\f077';
+	}
+}
 
 /* Responsive buttons in post body */
 .post-buttons .dropdown {
