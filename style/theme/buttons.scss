@@ -200,10 +200,28 @@ ul.linklist.bulletin > li.small-icon:before {
 }
 
 .contact-icon {
-	background-repeat: no-repeat;
+	position: relative;
 	display: block;
 	height: 16px;
 	width: 16px;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		font-family: FontAwesome;
+		font-size: 14px;
+		line-height: 16px;
+		vertical-align: baseline;
+		font-weight: normal;
+		font-style: normal;
+		text-transform: none;
+		text-indent: 0;
+		pointer-events: none;
+	}
 }
 .contact-icons a {
 	border-bottom: 1px dotted;
@@ -211,6 +229,10 @@ ul.linklist.bulletin > li.small-icon:before {
 	display: block;
 	float: left;
 	padding: 8px;
+}
+
+%contact-icon-gi {
+	font-family: 'Glyphicons Regular', 'Glyphicons';
 }
 
 .contact-icons .last-cell {
@@ -226,19 +248,56 @@ ul.linklist.bulletin > li.small-icon:before {
 }
 
 /* Profile icons */
-.pm-icon		{ background-position: 0 0; }
-.email-icon		{ background-position: -21px 0; }
-.jabber-icon	{ background-position: -80px 0; }
-.phpbb_icq-icon	{ background-position: -61px 0 ; }
-.phpbb_wlm-icon	{ background-position: -182px 0; }
-.phpbb_aol-icon	{ background-position: -244px 0; }
-.phpbb_website-icon		{ background-position: -40px 0; }
-.phpbb_youtube-icon		{ background-position: -98px 0; }
-.phpbb_facebook-icon	{ background-position: -119px 0; }
-.phpbb_googleplus-icon	{ background-position: -140px 0; }
-.phpbb_skype-icon		{ background-position: -161px 0; }
-.phpbb_twitter-icon		{ background-position: -203px 0; }
-.phpbb_yahoo-icon		{ background-position: -224px 0; }
+.pm-icon:after {
+	@extend %contact-icon-gi;
+	content: '\E245';
+}
+.email-icon:after {
+	@extend %contact-icon-gi;
+	content: '\2709';
+}
+.jabber-icon:after {
+	content: '\f0eb';
+	color: #c90000;
+	font-size: 16px;
+}
+.phpbb_icq-icon:after {
+	@extend %contact-icon-gi;
+	content: '\2698';
+	color: #60ff00;
+	text-shadow: 0 0 1px #000, 0 0 2px #000;
+}
+.phpbb_wlm-icon:after {
+	content: '\f007';
+	color: #75afd3;
+}
+.phpbb_aol-icon:after {
+	@extend %contact-icon-gi;
+	content: '\E563';
+	color: #ffd800;
+	text-shadow: 0 0 1px #000, 0 0 2px #000;
+}
+.phpbb_website-icon:after {
+	content: '\f08e';
+}
+.phpbb_youtube-icon:after {
+	content: '\f16a';
+}
+.phpbb_facebook-icon:after {
+	content: '\f230';
+}
+.phpbb_googleplus-icon:after {
+	content: '\f0d5';
+}
+.phpbb_skype-icon:after {
+	content: '\f17e';
+}
+.phpbb_twitter-icon:after {
+	content: '\f099';
+}
+.phpbb_yahoo-icon:after {
+	content: '\f19e';
+}
 
 /* Post control buttons
 --------------------------------------------- */

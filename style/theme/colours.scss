@@ -645,7 +645,6 @@ Colours and backgrounds for buttons.css
 }
 
 .contact-icons a		{ border-color: #DCDCDC; }
-.contact-icons a:hover	{ background-color: #F2F6F9; }
 
 /* Icon images
 ---------------------------------------- */
@@ -893,9 +892,6 @@ ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:befor
 		content: '\f05c';
 	}
 }
-
-/* Profile & navigation icons */
-.contact-icon													{ background-image: url("./images/icons_contact.png"); }
 
 /* Forum icons & Topic icons */
 .global_read													{ background-image: url("./images/announce_read.png"); }
