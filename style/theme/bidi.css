@@ -242,7 +242,6 @@
 
 /* Pagination in viewforum for multipage topics */
 .rtl .row .pagination {
-	background-position: 100% 50%;
 	float: left;
 	padding-left: 0;
 	padding-right: 15px;
@@ -260,11 +259,6 @@
 	margin-left: 5px;
 	margin-right: 0;
 }
-
-.pagination li.previous a { background-position: -50px 2px; }
-.pagination li.next a { background-position: -30px 2px; }
-.pagination li.previous a:hover { background-position: -50px -18px; }
-.pagination li.next a:hover { background-position: -30px -18px; }
 
 /* Miscellaneous styles
 ---------------------------------------- */
@@ -791,19 +785,6 @@ li.breadcrumbs span:first-child > a {
 /* PM Styles
 ----------------------------------------*/
 
-/* PM panel adjustments */
-.rtl .reply-all a.right {
-	background-position: 5% 60%;
-}
-
-.rtl .reply-all a.right:hover {
-	background-position: 3% 60%;
-}
-
-.rtl .reply-all {
-	padding-left: 5px;
-}
-
 /* Defined rules list for PM options */
 .rtl ol.def-rules {
 	padding-right: 0;
@@ -974,12 +955,6 @@ li.breadcrumbs span:first-child > a {
 .rtl .search-header {
 	right: auto;
 	left: 5px;
-}
-
-.rtl input.search {
-	background-position: right 1px;
-	padding-right: 17px;
-	padding-left: 0;
 }
 
 /**

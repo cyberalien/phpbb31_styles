@@ -236,19 +236,19 @@ p.post-notice {
 
 p.post-notice.deleted:before {
 	@extend %post-notice;
-	content: '\f057';
+	content: '\f057';	// fa-times-circle
 	color: #D31141;
 }
 
 p.post-notice.unapproved:before {
 	@extend %post-notice;
-	content: '\f059';
+	content: '\f059';	// fa-question-circle
 	color: #D31141;
 }
 
 p.post-notice.reported:before, p.post-notice.error:before {
 	@extend %post-notice;
-	content: '\f071';
+	content: '\f071';	// fa-warning
 	color: #D31141;
 }
 
@@ -692,25 +692,23 @@ Colours and backgrounds for buttons.css
 	}
 }
 
-%icon-search-new {
+%icon-search-old {
 	@extend %icon-image-gi;
 	&:after {
-		content: '\E028';
+		content: '\E028';	// glyphicons-search
+	}
+}
+
+%icon-search-new {
+	@extend %icon-search-old;
+	&:after {
 		color: #d31141;
 	}
 }
 
-%icon-search-old {
-	@extend %icon-image-gi;
-	&:after {
-		content: '\E028';
-	}
-}
-
 %icon-search-misc {
-	@extend %icon-image-gi;
+	@extend %icon-search-old;
 	&:after {
-		content: '\E028';
 		color: #aaa;
 	}
 }
@@ -718,49 +716,49 @@ Colours and backgrounds for buttons.css
 .icon-acp {
 	@extend %icon-image-gi;
 	&:after {
-		content: '\E271';
+		content: '\E271';	// glyphicons-shield
 	}
 }
 .icon-bookmark {
 	@extend %icon-image-gi;
 	&:after {
-		content: '\E073';
+		content: '\E073';	// glyphicons-bookmark
 	}
 }
 .icon-bump {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f079';
+		content: '\f079';	// fa-retweet
 	}
 }
 .icon-contact {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f0e0';
+		content: '\f0e0';	// fa-envelope
 	}
 }
 .icon-delete-cookies {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f014';
+		content: '\f014';	// fa-trash-o
 	}
 }
 .icon-download {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f019';
+		content: '\f019';	// fa-download
 	}
 }
 .icon-faq {
 	@extend %icon-image-gi;
 	&:after {
-		content: '\E195';
+		content: '\E195';	// glyphicons-circle-question-mark
 	}
 }
 .icon-home {
 	@extend %icon-image-gi;
 	&:after {
-		content: '\E021';
+		content: '\E021';	// glyphicons-home
 	}
 	&.breadcrumbs:after {
 		text-align: left;
@@ -769,25 +767,25 @@ Colours and backgrounds for buttons.css
 .icon-logout {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f08b';
+		content: '\f08b';	// fa-sign-out
 	}
 }
 .icon-mark {
 	@extend %icon-image-gi;
 	&:after {
-		content: '\E153';
+		content: '\E153';	// glyphicons-check
 	}
 }
 .icon-mcp {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f0e3';
+		content: '\f0e3';	// fa-gavel
 	}
 }
 .icon-members {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f007';
+		content: '\f007';	// fa-user
 	}
 	&:before {
 		@extend .icon-members:after;
@@ -803,45 +801,45 @@ ul.linklist.bulletin > li.small-icon.icon-members:before { @extend .icon-members
 .icon-notification {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f0a2';
+		content: '\f0a2';	// fa-bell-o
 	}
 	&.non-zero:after {
-		content: '\f0f3';
+		content: '\f0f3';	// fa-bell
 		color: #d31141;
 	}
 }
 .icon-pages {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f0c5';
+		content: '\f0c5';	// fa-copy
 	}
 }
 .icon-pm {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f003';
+		content: '\f003';	// fa-envelope-o
 	}
 	&.non-zero:after {
-		content: '\f0e0';
+		content: '\f0e0';	// fa-envelope
 		color: #d31141;
 	}
 }
 .icon-print {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f02f';
+		content: '\f02f';	// fa-print
 	}
 }
 .icon-profile {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f007';
+		content: '\f007';	// fa-user
 	}
 }
 .icon-register{
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f234';
+		content: '\f234';	// fa-user-plus
 	}
 }
 .icon-search, .responsive-search a	{ @extend %icon-search-old; }
@@ -854,19 +852,19 @@ ul.linklist.bulletin > li.small-icon.icon-members:before { @extend .icon-members
 .icon-sendemail {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f003';
+		content: '\f003';	// fa-envelope-o
 	}
 }
 .icon-subscribe {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f05d';
+		content: '\f05d';	// fa-check-circle-o
 	}
 }
 .icon-team {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f007';
+		content: '\f007';	// fa-user
 	}
 	&:before {
 		@extend .icon-team:after;
@@ -876,20 +874,20 @@ ul.linklist.bulletin > li.small-icon.icon-members:before { @extend .icon-members
 		white-space: nowrap;
 		padding-top: 1px;
 		opacity: .7;
-		content: '\f007\f007';
+		content: '\f007\f007';	// fa-user fa-user
 	}
 }
 ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:before; }
 .icon-ucp {
 	@extend %icon-image-gi;
 	&:after {
-		content: '\E281';
+		content: '\E281';	// glyphicons-settings
 	}
 }
 .icon-unsubscribe {
 	@extend %icon-image-fa;
 	&:after {
-		content: '\f05c';
+		content: '\f05c';	// times-circle-o
 	}
 }
 
@@ -1311,10 +1309,6 @@ a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, inpu
 input.button1:focus, input.button2:focus, input.button3:focus {
 	border-color: #11A3EA;
 	color: #0F4987;
-}
-
-input.search {
-	background-image: url("./images/icon_textbox_search.gif");
 }
 
 input.disabled {

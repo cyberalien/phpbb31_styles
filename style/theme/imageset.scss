@@ -92,66 +92,6 @@ span.imageset {
 	padding-left: 149px;
 	padding-top: 52px;
 }
-.imageset.subforum_read {
-	background-image: url("./images/subforum_read.gif");
-	padding-left: 11px;
-	padding-top: 9px;
-}
-.imageset.subforum_unread {
-	background-image: url("./images/subforum_unread.gif");
-	padding-left: 11px;
-	padding-top: 9px;
-}
-.imageset.phpbb_aol-icon, .imageset.icon_contact_aim {
-	background-image: url("./images/icon_contact_aim.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.icon_contact_email {
-	background-image: url("./images/icon_contact_email.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.icon_contact_icq, .imageset.phpbb_icq-icon {
-	background-image: url("./images/icon_contact_icq.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.icon_contact_jabber {
-	background-image: url("./images/icon_contact_jabber.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.phpbb_wlm-icon, .imageset.icon_contact_msnm {
-	background-image: url("./images/icon_contact_msnm.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.icon_contact_www, .imageset.phpbb_website-icon {
-	background-image: url("./images/icon_contact_www.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.icon_contact_yahoo, .imageset.phpbb_yahoo-icon {
-	background-image: url("./images/icon_contact_yahoo.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.icon_post_delete {
-	background-image: url("./images/icon_post_delete.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.icon_post_info {
-	background-image: url("./images/icon_post_info.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
-.imageset.icon_post_report {
-	background-image: url("./images/icon_post_report.gif");
-	padding-left: 20px;
-	padding-top: 20px;
-}
 .imageset.icon_post_target {
 	@extend %imageset-fa;
 	margin-top: -3px;
@@ -165,28 +105,28 @@ span.imageset {
 		height: 13px;
 		font-size: 11px;
 		line-height: 13px;
-		content: '\f18e';
+		content: '\f18e';	// fa-arrow-circle-o-right
 		text-align: left;
 	}
 	.rtl &:after {
-		content: '\f190';
+		content: '\f190';	// fa-arrow-circle-o-left
 	}
 }
 .imageset.icon_post_target_unread {
 	@extend .imageset.icon_post_target;
 	&:after {
 		color: #D31141;
-		content: '\f0a9';
+		content: '\f0a9';	// fa-arrow-circle-right
 	}
 	.rtl &:after {
-		content: '\f0a8';
+		content: '\f0a8';	// fa-arrow-circle-left
 	}
 }
 .imageset.icon_topic_attach {
 	@extend %imageset-gi;
 	@extend %imageset-12;
 	&:after {
-		content: '\E063';
+		content: '\E063';	// glyphicons-paperclip
 		color: #808080;
 	}
 }
@@ -194,7 +134,7 @@ span.imageset {
 	@extend %imageset-fa;
 	@extend %imageset-arrow;
 	&:after {
-		content: '\f061';
+		content: '\f061';	// fa-arrow-right
 	}
 }
 .imageset.icon_topic_newest {
@@ -207,7 +147,7 @@ span.imageset {
 	@extend %imageset-fa;
 	@extend %imageset-16;
 	&:after {
-		content: '\f071';
+		content: '\f071';	// fa-exclamation-triangle
 		color: #D31141;
 	}
 }
@@ -215,7 +155,7 @@ span.imageset {
 	@extend %imageset-fa;
 	@extend %imageset-16;
 	&:after {
-		content: '\f057';
+		content: '\f057';	// fa-times-circle
 		color: #D31141;
 	}
 }
@@ -223,7 +163,7 @@ span.imageset {
 	@extend %imageset-fa;
 	@extend %imageset-16;
 	&:after {
-		content: '\f059';
+		content: '\f059';	// fa-question-circle
 		color: #D31141;
 	}
 }
@@ -231,30 +171,18 @@ span.imageset {
 	@extend %imageset-gi;
 	@extend %imageset-12;
 	&:after {
-		content: '\E042';
+		content: '\E042';	// glyphicons-charts
 		color: #098dcf;
 	}
-}
-.imageset.icon_user_warn {
-	background-image: url("./images/icon_user_warn.gif");
-	padding-left: 20px;
-	padding-top: 20px;
 }
 
 .imageset.icon_contact {
 	@extend %imageset-gi;
 	@extend %imageset-12;
 	&:after {
-		content: '\E188';
+		content: '\E188';	// glyphicons-more
 	}
 	&:hover:after {
-		content: '\E602';
+		content: '\E602';	// glyphicons-chevron-down
 	}
-}
-
-/* English images for fallback */
-.imageset.icon_user_online {
-	background-image: url("./en/icon_user_online.gif");
-	padding-left: 58px;
-	padding-top: 58px;
 }

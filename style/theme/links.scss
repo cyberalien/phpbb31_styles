@@ -152,7 +152,7 @@ a.top, a.top2 {
 }
 
 a.top:after, a.top2:after {
-	content: '\f139';
+	content: '\f139';	// fa- @fa-var-chevron-circle-up
 	font-family: FontAwesome;
 	position: absolute;
 	top: 50%;
@@ -194,7 +194,7 @@ a.top:after, a.top2:after {
 a.arrow-up {
 	@extend %arrow;
 	&:after {
-		content: '\f077';
+		content: '\f077';	// fa-chevron-up
 		left: 0;
 	}
 	.rtl &:after {
@@ -205,7 +205,7 @@ a.arrow-up {
 a.arrow-down {
 	@extend %arrow;
 	&:after {
-		content: '\f078';
+		content: '\f078';	// fa-chevron-down
 		right: 0;
 		padding-top: 1px;
 	}
@@ -217,7 +217,7 @@ a.arrow-down {
 a.arrow-left, .rtl a.arrow-right {
 	@extend %arrow;
 	&:after {
-		content: '\f053';
+		content: '\f053';	// fa-chevron-left
 		left: 0;
 		right: auto;
 		padding-top: 1px;
@@ -226,7 +226,7 @@ a.arrow-left, .rtl a.arrow-right {
 a.arrow-right, .rtl a.arrow-left {
 	@extend %arrow;
 	&:after {
-		content: '\f054';
+		content: '\f054';	// fa-chevron-right
 		right: 0;
 		left: auto;
 		padding-top: 1px;
@@ -239,16 +239,11 @@ a.arrow-up {
 	border-bottom-width: 0;
 }
 
-a.arrow-up:hover {
-	background-position: left top;
-}
-
 a.arrow-down {
 	padding-right: 10px;
 }
 
 a.arrow-down:hover {
-	background-position: right bottom;
 	text-decoration: none;
 }
 
@@ -258,7 +253,6 @@ a.arrow-left {
 
 a.arrow-left:hover {
 	text-decoration: none;
-	background-position: 0 60%;
 }
 
 a.arrow-right {
@@ -267,7 +261,6 @@ a.arrow-right {
 
 a.arrow-right:hover {
 	text-decoration: none;
-	background-position: 100% 60%;
 }
 
 /* invisible skip link, used for accessibility  */
@@ -291,7 +284,7 @@ a.feed-icon-forum {
 }
 
 a.feed-icon-forum:after {
-	content: '\f09e';
+	content: '\f09e';	// fa-rss
 	position: absolute;
 	left: 0;
 	right: 0;

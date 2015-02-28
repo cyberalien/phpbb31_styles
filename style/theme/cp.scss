@@ -180,9 +180,9 @@ a.responsive-tab-link {
 		text-decoration: none;
 	}
 	.responsive-tab > &:before {
-		// content: '\f0c9';
+		// content: '\f0c9';	// fa-bars
 		// font-family: FontAwesome;
-		content: '\E159';
+		content: '\E159';	// glyphicons-show-lines
 		font-family: 'Glyphicons Regular', 'Glyphicons';
 		position: absolute;
 		left: 10px;
@@ -199,7 +199,8 @@ a.responsive-tab-link {
 	}
 	.dropdown-visible.responsive-tab > &:before,
 	.responsive-tab > &:hover:before {
-		content: '\E602';
+		// font-family: 'Glyphicons Regular', 'Glyphicons';
+		content: '\E602';	// glyphicons-chevron-down
 	}
 }
 

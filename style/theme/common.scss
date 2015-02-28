@@ -356,9 +356,9 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 
 ul.linklist li.responsive-menu a.responsive-menu-link {
 	&:before {
-		// content: '\f0c9';
+		// content: '\f0c9';	// fa-bars
 		// font-family: FontAwesome;
-		content: '\E159';
+		content: '\E159';	// glyphicons-show-lines
 		font-family: 'Glyphicons Regular', 'Glyphicons';
 		position: absolute;
 		left: 0;
@@ -374,7 +374,8 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 		text-indent: 0;
 	}
 	&:hover:before {
-		content: '\E602';
+		// font-family: 'Glyphicons Regular', 'Glyphicons';
+		content: '\E602';	// glyphicons-chevron-down
 	}
 }
 
@@ -444,7 +445,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 }
 
 .header-avatar span:after {
-	content: '\f078';
+	content: '\f078';	// fa-chevron-down
 	font-family: FontAwesome;
 	display: inline-block;
 	font-size: 7px;
@@ -918,21 +919,25 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	font-weight: normal;
 	text-indent: 0;
 	font-family: FontAwesome;
-	content: '\f08e';
+	content: '\f08e';	// fa-external-link
 }
 
 .pagination li.page-jump a:after {
 	font-size: 13px;
 }
 
+.rtl .pagination li.previous a:after,
 .pagination li.next a:after {
-	content: '\f054';
+	content: '\f054';	// fa-chevron-right
 	right: 1px;
+	left: 3px;
 }
 
+.rtl .pagination li.next a:after,
 .pagination li.previous a:after {
-	content: '\f053';
+	content: '\f053';	// fa-chevron-left
 	left: 1px;
+	right: 3px;
 }
 
 /* Pagination in viewforum for multipage topics */
@@ -989,7 +994,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 
 .phpbb_alert .alert_close:before,
 .phpbb_alert .alert_close:after {
-	content: '\f057';
+	content: '\f057';	// fa-times-circle
 	font-family: FontAwesome;
 	position: absolute;
 	font-size: 18px;
@@ -1007,7 +1012,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 }
 
 .phpbb_alert .alert_close:before {
-	content: '\f111';
+	content: '\f111';	// fa-circle
 	font-size: 20px;
 }
 

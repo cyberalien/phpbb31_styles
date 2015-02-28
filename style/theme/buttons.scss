@@ -27,7 +27,7 @@
 
 .icon-button:before {
 	background: transparent !important;
-	content: '\f013';
+	content: '\f013';	// fa-cog
 	display: inline-block;
 	float: right;
 	height: 12px;
@@ -74,7 +74,7 @@
 	@extend %icon-button;
 	@extend %icon-button-visible;
 	border-left: 1px solid;
-	content: '\f0d7';
+	content: '\f0d7';	// fa-caret-down
 	position: absolute;
 	float: none;
 	margin: 0;
@@ -101,34 +101,34 @@
 /* Big button images */
 .reply-icon:before, .pmreply-icon:before {
 	@extend %icon-button;
-	content: '\f112';
+	content: '\f112';	// fa-mail-reply
 	margin-left: 4px;
 }
 
 .post-icon:before, .newpm-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-gi;
-	content: '\E151';
+	content: '\E151';	// glyphicons-edit
 	margin-left: 5px;
 	font-size: 12px;
 }
 
 .reply-all:before {
 	@extend %icon-button;
-	content: '\f122';
+	content: '\f122';	// fa-mail-reply-all
 	margin-left: 4px;
 }
 
 .locked-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-gi;
-	content: '\E204';
+	content: '\E204';	// glyphicons-lock
 	margin-left: 5px;
 }
 
 .forwardpm-icon:before {
 	@extend %icon-button;
-	content: '\f064';
+	content: '\f064';	// fa-share
 	margin-left: 4px;
 }
 
@@ -141,7 +141,7 @@
 .tools-icon:before, .modtools-icon:before, .search-icon:before, .search-adv-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-visible;
-	content: '\f0ad';
+	content: '\f0ad';	// fa-wrench
 	font-size: 14px;
 	height: 16px;
 	margin-top: 1px;
@@ -151,7 +151,7 @@
 
 .search-icon:before {
 	@extend %icon-button-gi;
-	content: '\E028';
+	content: '\E028';	// glyphicons-search
 	font-size: 13px;
 	margin-top: 0;
 	width: 15px;
@@ -160,15 +160,13 @@
 
 .search-adv-icon:before {
 	@extend %icon-button-gi;
-	content: '\E137';
+	content: '\E137';	// glyphicons-cogwheel
 	font-size: 13px;
 }
 
 .modtools-icon:before {
-	content: '\f0e3';
+	content: '\f0e3';	// fa-gavel
 }
-.dropdown-visible .modtools-icon:before,
-.nojs .dropdown-container:hover .modtools-icon:before		{ background-position: -225px -20px; }
 
 /* Icon images
 ---------------------------------------- */
@@ -250,53 +248,53 @@ ul.linklist.bulletin > li.small-icon:before {
 /* Profile icons */
 .pm-icon:after {
 	@extend %contact-icon-gi;
-	content: '\E245';
+	content: '\E245';	// glyphicons-conversation
 }
 .email-icon:after {
 	@extend %contact-icon-gi;
-	content: '\2709';
+	content: '\2709';	// glyphicons-envelope
 }
 .jabber-icon:after {
-	content: '\f0eb';
+	content: '\f0eb';	// fa-lightbulb-o
 	color: #c90000;
 	font-size: 16px;
 }
 .phpbb_icq-icon:after {
 	@extend %contact-icon-gi;
-	content: '\2698';
+	content: '\2698';	// glyphicons-flower
 	color: #60ff00;
 	text-shadow: 0 0 1px #000, 0 0 2px #000;
 }
 .phpbb_wlm-icon:after {
-	content: '\f007';
+	content: '\f007';	// fa-user
 	color: #75afd3;
 }
 .phpbb_aol-icon:after {
 	@extend %contact-icon-gi;
-	content: '\E563';
+	content: '\E563';	// glyphicons-person-walking
 	color: #ffd800;
 	text-shadow: 0 0 1px #000, 0 0 2px #000;
 }
 .phpbb_website-icon:after {
-	content: '\f08e';
+	content: '\f08e';	// fa-external-link
 }
 .phpbb_youtube-icon:after {
-	content: '\f16a';
+	content: '\f16a';	// fa-youtube-play
 }
 .phpbb_facebook-icon:after {
-	content: '\f230';
+	content: '\f230';	// fa-facebook-official
 }
 .phpbb_googleplus-icon:after {
-	content: '\f0d5';
+	content: '\f0d5';	// fa-google-plus
 }
 .phpbb_skype-icon:after {
-	content: '\f17e';
+	content: '\f17e';	// fa-skype
 }
 .phpbb_twitter-icon:after {
-	content: '\f099';
+	content: '\f099';	// fa-twitter
 }
 .phpbb_yahoo-icon:after {
-	content: '\f19e';
+	content: '\f19e';	// fa-yahoo
 }
 
 /* Post control buttons
@@ -342,12 +340,12 @@ ul.linklist.bulletin > li.small-icon:before {
 
 .quote-icon:before {
 	@extend %icon-button;
-	content: '\f10d';
+	content: '\f10d';	// fa-quote-left
 }
 .edit-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-gi;
-	content: '\E151';
+	content: '\E151';	// glyphicons-edit
 	margin-top: 2px;
 	margin-right: -1px;
 	font-size: 11px;
@@ -355,31 +353,31 @@ ul.linklist.bulletin > li.small-icon:before {
 .warn-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-gi;
-	content: '\E525';
+	content: '\E525';	// glyphicons-user-alert
 	color: #D31141;
 	margin-top: 2px;
 	padding-right: 1px;
 }
 .delete-icon:before {
 	@extend %icon-button;
-	content: '\f00d';
+	content: '\f00d';	// fa-close
 	font-size: 11px;
 }
 .report-icon:before {
 	@extend %icon-button;
-	content: '\f06a';
+	content: '\f06a';	// fa-exclamation-circle
 	margin-top: 3px;
 	font-size: 12px;
 }
 .info-icon:before {
 	@extend %icon-button;
-	content: '\f128';
+	content: '\f128';	// fa-question
 	font-size: 13px;
 }
 .button.responsive-menu-link:before {
 	@extend .icon-button:before;
 	@extend %icon-button;
-	content: '\f0c9';
+	content: '\f0c9';	// fa-reorder
 }
 
 .post-buttons > #expand > a {
@@ -390,10 +388,10 @@ ul.linklist.bulletin > li.small-icon:before {
 	text-indent: 999px;
 	&:before {
 		@extend %icon-button;
-		content: '\f078';
+		content: '\f078';	// fa-chevron-down
 	}
 	&.expanded:before {
-		content: '\f077';
+		content: '\f077';	// fa-chevron-up
 	}
 }
 
