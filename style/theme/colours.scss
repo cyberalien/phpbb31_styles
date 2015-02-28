@@ -331,7 +331,9 @@ Colours and backgrounds for content.css
 
 ul.forums {
 	background-color: #eef5f9;
-	background-image: url("./images/gradient.gif");
+	background-image: -webkit-linear-gradient(to bottom, #d2e0eb 0, #eef5f9 200px);
+	background-image: linear-gradient(to bottom, #d2e0eb 0, #eef5f9 200px);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#d2e0eb', EndColorStr='#eef5f9')";
 }
 
 ul.topiclist li {
@@ -1281,7 +1283,7 @@ a.button1, input.button1, input.button3, a.button2, input.button2 {
 	background-color: #FAFAFA;
 	background-image: -webkit-linear-gradient(top, #ffffff 0%, #d2d2d2 1px, #efefef 100%);
 	background-image: linear-gradient(to bottom, #ffffff 0%, #d2d2d2 1px, #efefef 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffd2d2d2, endColorstr=#ffefefef);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d2d2d2, endColorstr=#efefef);
 }
 
 a.button1, input.button1 {
