@@ -70,18 +70,20 @@
 }
 
 .dropdown-select:after {
-	background-position: -103px 10px;
+	@extend .icon-button:before;
+	@extend %icon-button;
+	@extend %icon-button-visible;
 	border-left: 1px solid;
-	content: '';
+	content: '\f0d7';
 	position: absolute;
+	float: none;
+	margin: 0;
 	top: 0;
 	right: 0;
+	line-height: 22px;
 	height: 22px;
 	width: 16px;
-}
-
-.dropdown-visible .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:after {
-	background-position: -103px -10px;
+	vertical-align: baseline;
 }
 
 .buttons, .buttons .button {
