@@ -1276,7 +1276,9 @@ fieldset.quick-login input.inputbox {
 a.button1, input.button1, input.button3, a.button2, input.button2 {
 	color: #000;
 	background-color: #FAFAFA;
-	background-image: url("./images/bg_button.gif");
+	background-image: -webkit-linear-gradient(top, #ffffff 0%, #d2d2d2 1px, #efefef 100%);
+	background-image: linear-gradient(to bottom, #ffffff 0%, #d2d2d2 1px, #efefef 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffd2d2d2, endColorstr=#ffefefef);
 }
 
 a.button1, input.button1 {
@@ -1285,6 +1287,7 @@ a.button1, input.button1 {
 
 input.button3 {
 	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 /* Alternative button */
