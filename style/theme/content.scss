@@ -471,12 +471,25 @@ ul.searchresults {
 ----------------------------------------*/
 /* Quote block */
 blockquote {
-	background: transparent none 6px 8px no-repeat;
 	border: 1px solid transparent;
 	font-size: 0.95em;
 	margin: 0.5em 1px 0 25px;
 	overflow: hidden;
 	padding: 5px;
+	position: relative;
+}
+
+blockquote:before {
+	content: '\201C';
+	position: absolute;
+	font-family: 'Trebuchet MS';
+	top: 5px;
+	left: 4px;
+	height: 16px;
+	font-size: 30px;
+	line-height: 30px;
+	color: #888;
+	pointer-events: none;
 }
 
 blockquote blockquote {

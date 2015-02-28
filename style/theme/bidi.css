@@ -499,7 +499,11 @@ li.breadcrumbs span:first-child > a {
 /* Quote block */
 .rtl blockquote {
 	margin: 0.5em 25px 0 1px;
-	background-position: 99% 8px;
+}
+
+.rtl blockquote:after {
+	left: auto;
+	right: 4px;
 }
 
 .rtl blockquote blockquote {
@@ -1026,10 +1030,8 @@ li.breadcrumbs span:first-child > a {
 /**
 * colours.css
 */
-.icon-home {
-	&.breadcrumbs:after {
-		text-align: right;
-	}
+.icon-home.breadcrumbs:after {
+	text-align: right;
 }
 
 /**
