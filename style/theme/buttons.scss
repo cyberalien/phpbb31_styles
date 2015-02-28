@@ -294,7 +294,8 @@ ul.linklist.bulletin > li.small-icon:before {
 .warn-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-gi;
-	content: '\E525';	
+	content: '\E525';
+	color: #D31141;
 	margin-top: 2px;
 	padding-right: 1px;
 }
@@ -305,7 +306,7 @@ ul.linklist.bulletin > li.small-icon:before {
 }
 .report-icon:before {
 	@extend %icon-button;
-	content: '\f06a';	
+	content: '\f06a';
 	margin-top: 3px;
 	font-size: 12px;
 }
