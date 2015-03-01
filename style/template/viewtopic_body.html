@@ -1,8 +1,15 @@
-<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT -->
-	<!-- DEFINE $NAVLINKS -->
-		<li><a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a></li>
-	<!-- ENDDEFINE -->
-	<!-- DEFINE $NAVLINKS_SHOW_DEFAULT = 1 -->
+<!-- IF not S_IS_BOT and (U_VIEW_UNREAD_POST or U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or U_EMAIL_TOPIC or U_PRINT_TOPIC or S_DISPLAY_TOPIC_TOOLS) -->
+<!-- DEFINE $NAVLINKS -->
+	<!-- IF U_VIEW_UNREAD_POST -->
+		<li class="small-icon icon-mark"><a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a></li>
+	<!-- ENDIF -->
+	<!-- IF U_WATCH_TOPIC -->
+		<li class="small-icon icon-<!-- IF S_WATCHING_TOPIC -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->">
+			<a href="{U_WATCH_TOPIC}" class="watch-topic-link" title="{S_WATCH_TOPIC_TITLE}" data-ajax="toggle_link" data-toggle-class="small-icon icon-<!-- IF not S_WATCHING_TOPIC -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->" data-toggle-text="{S_WATCH_TOPIC_TOGGLE}" data-toggle-url="{U_WATCH_TOPIC_TOGGLE}" data-update-all=".watch-topic-link">{S_WATCH_TOPIC_TITLE}</a>
+		</li>
+	<!-- ENDIF -->
+<!-- ENDDEFINE -->
+<!-- DEFINE $NAVLINKS_SHOW_DEFAULT = 1 -->
 <!-- ENDIF -->
 <!-- INCLUDE overall_header.html -->
 

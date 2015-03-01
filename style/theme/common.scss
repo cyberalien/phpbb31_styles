@@ -274,22 +274,25 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			padding: 0;
 		}
 		li {
-			display: block;
-			float: left;
+			display: inline-block;
 			margin: 0;
 			padding: 0;
-			& > a,
-			& > span {
+			a {
 				display: inline-block;
-				margin: 0;
+				color: inherit;
 				padding: 1px 8px;
 				text-align: center;
 				line-height: 25px;
 				font-size: 11px;
 			}
-			& > a:hover {
-				text-decoration: none;
+			&:hover {
+				a {
+					text-decoration: none;
+				}
 				border-radius: 3px;
+			}
+			&.small-icon a {
+				padding-left: 18px;
 			}
 		}
 		+ .nav-breadcrumbs {

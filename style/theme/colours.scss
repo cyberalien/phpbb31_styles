@@ -63,11 +63,10 @@ hr {
 
 	&.secondary {
 		background-color: transparent;
-		li > a,
-		li > span {
-		}
-		li > a:hover {
-			color: #fff;
+		li:hover {
+			&, &:after, &:before {
+				color: #fff;
+			}
 			background-color: #d31141;
 			background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
 			background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
@@ -941,6 +940,12 @@ ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:befor
 	@extend %icon-image-fa;
 	&:after {
 		content: '\f05c';	// times-circle-o
+	}
+}
+.icon-new-posts {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E245';	// glyphicons-conversation
 	}
 }
 
