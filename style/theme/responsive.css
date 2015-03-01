@@ -39,6 +39,10 @@ body {
 	border-radius: 7px;
 }
 
+.navbar.tabbed .nav-tabs, .navbar.tabbed .nav-tabs .tab {
+	border-radius: 0 !important;
+}
+
 /* Logo block
 ----------------------------------------*/
 #site-description {

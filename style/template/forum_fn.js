@@ -323,6 +323,67 @@ function parseDocument($container) {
 		$body = $('body');
 
 	/**
+	* Adjust navigation tabs
+	*/
+	$container.find('.nav-tabs').each(function() {
+		var tabs = $(this).children().children();
+
+		// Fix tabs structure
+		tabs.not('.tab').each(function() {
+			var tab = $(this),
+				className = tab.attr('class').split(' '),
+				i;
+			tab.attr('class', 'tab');
+			for (i=0; i<className.length; i++) {
+				if (className[i].substr(0, 5) == 'icon-') {
+					tab.addClass(className[i].substr(5));
+				}
+			}
+		}).children(':first-child').addClass('nav-link');
+
+		// Tooltips for tabs
+		tabs.each(function() {
+			var $this = $(this),
+				title = '';
+			if (!$this.attr('title')) {
+				title = $this.children('.nav-link').text().trim();
+				if (!title.length) return;
+
+				$this.children('.nav-link + strong').each(function() {
+					title += ' (' + $(this).text().trim() + ')';
+				});
+				$this.attr('title', title);
+			}
+		});
+	});
+
+	/**
+	* Switch selected tab
+	*/
+	$container.find('.nav-tabs[data-current-page]').each(function() {
+		var tabs = $(this),
+			current = tabs.attr('data-current-page');
+
+		$('.tab[data-select-match]', this).each(function() {
+			var matches = $(this).attr('data-select-match').split(','),
+				i, match, item;
+			
+			for (i=0; i<matches.length; i++) {
+				match = matches[i].trim();
+				if (current.indexOf(match) != -1) {
+					// Found a match!
+					item = $(this);
+					if (!item.hasClass('selected')) {
+						tabs.find('.tab.selected').removeClass('selected');
+						item.addClass('selected');
+					}
+					return false;
+				}
+			}
+		});
+	});
+
+	/**
 	* Reset avatar dimensions when changing URL or EMAIL
 	*/
 	$container.find('input[data-reset-on-edit]').on('keyup', function() {

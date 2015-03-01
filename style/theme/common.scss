@@ -252,6 +252,288 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 .navbar {
 	padding: 3px 10px;
 	border-radius: 7px;
+	&.tabbed {
+		padding: 0;
+		border-radius: 0;
+	}
+
+	.nav-tabs {
+		border-radius: 5px;
+		& .leftside, .rtl & .rightside {
+			& .tab:first-child,
+			& .tab.first-visible {
+				border-radius: 4px; // 1px smaller than overall border to avoid rough edges
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+		& .rightside, .rtl & .leftside {
+			& .tab:last-child,
+			& .tab.last-visible {
+				border-radius: 4px; // 1px smaller than overall border to avoid rough edges
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+
+		@extend %clearfix;
+		$tab-height: 30px;
+		$tab-padding: 12px;
+		$tab-padding-glyph: 8px;
+
+		& > ul {
+			list-style-type: none;
+			margin: 0;
+			height: $tab-height;
+
+			&.leftside, .rtl &.rightside {
+				float: left;
+			}
+			&.rightside, .rtl &.leftside {
+				float: right;
+			}
+
+			& > li {
+				float: left;
+			}
+			.rtl & > li {
+				float: right;
+			}
+			#quick-links {
+				margin: 0;
+			}
+		}
+
+		.nav-link {
+			text-decoration: none;
+			color: inherit;
+			display: inline-block;
+			height: $tab-height;
+			line-height: $tab-height;
+			padding: 0 $tab-padding;
+			vertical-align: baseline;
+			font-size: 12px;
+			outline-style: none;
+			.username-coloured {
+				color: inherit !important;
+				font-weight: inherit;
+				font-style: inherit;
+			}
+		}
+
+		.dropdown {
+			top: $tab-height;
+			.dropdown-up & {
+				top: auto;
+				bottom: $tab-height;
+			}
+		}
+
+		.tab {
+			position: relative;
+			// Alert
+			& > strong {
+				display: none;
+				font-weight: bold;
+				font-size: 9px;
+				padding: 0 2px;
+				border-radius: 3px;
+				position: absolute;
+				right: 5px;
+				top: -10px;
+				line-height: 14px;
+				min-width: 10px;
+				_width: 10px;
+				text-align: center;
+				text-shadow: none;
+				white-space: nowrap;
+				word-wrap: normal;
+				height: 14px;
+				pointer-events: none;
+				.rtl & {
+					right: auto;
+					left: 5px;
+				}
+				.arrow {
+					border: 3px solid transparent;
+					border-bottom: 1px none black;
+					position: absolute;
+					bottom: -3px;
+					right: 4px;
+					line-height: 0;
+					text-shadow: none;
+					_display: none;
+					width: 0;
+					height: 0;
+				}
+			}
+			&.non-zero > strong {
+				display: block;
+			}
+		}
+
+		// Glyphs
+		%glyph {
+			position: relative;
+			padding-left: ($tab-padding + 18px);
+			&:after {
+				position: absolute;
+				left: $tab-padding;
+				top: 50%;
+				margin-top: -7px;
+				width: 14px;
+				font-size: 12px;
+				line-height: 14px;
+				height: 14px;
+				text-align: left;
+				font-weight: normal;
+				font-style: normal;
+				text-indent: 0;
+			}
+			.rtl & {
+				padding-left: $tab-padding;
+				padding-right: ($tab-padding + 18px);
+			}
+			.rtl &:after {
+				left: auto;
+				right: $tab-padding;
+			}
+		}
+		%glyph-only {
+			@extend %glyph;
+			text-indent: 999px;
+			width: 14px;
+			padding: 0 $tab-padding-glyph;
+			overflow: hidden;
+			&:after {
+				text-align: center;
+				font-size: 14px;
+				left: $tab-padding-glyph;
+			}
+			.rtl &:after {
+				left: auto;
+				right: $tab-padding-glyph;
+			}
+			& + strong {
+				right: -2px;
+				.rtl & {
+					right: auto;
+					left: -2px;
+				}
+			}
+		}
+		%glyph-fa {
+			font-family: FontAwesome;
+		}
+		%glyph-gi {
+			font-family: 'Glyphicons Regular', 'Glyphicons';
+		}
+
+		.responsive-menu .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f0c9';	// fa-bars
+				// @extend %glyph-gi;
+				// content: '\E159';	// glyphicons-show-lines
+			}
+		}
+
+		.members .nav-link {
+			@extend %glyph;
+			padding-left: ($tab-padding + 20px);
+			.rtl & {
+				padding-left: $tab-padding;
+				padding-right: ($tab-padding + 20px);
+			}
+			&:after {
+				@extend %glyph-gi;
+				content: '\E044';	// glyphicons-group
+			}
+		}
+
+		.forums .nav-link {
+			@extend %glyph;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f075';	// fa-comment
+			}
+		}
+
+		.account .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f007';	// fa-user
+			}
+		}
+
+		.pm .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-gi;
+				content: '\E130';	// glyphicons-message-new
+				margin-top: -8px;
+			}
+		}
+
+		.notifications .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f0f3';	// fa-bell
+				font-size: 13px;
+			}
+		}
+
+		.mcp .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f0e3';	// fa-gavel
+			}
+		}
+
+		.acp .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-gi;
+				content: '\E271';	// glyphicons-shield
+			}
+		}
+
+		.faq .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-gi;
+				content: '\E195';	// glyphicons-circle-question-mark
+			}
+		}
+
+		.logout .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f08b';	// fa-sign-out
+			}
+		}
+
+		.login .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f090';	// fa-sign-in
+			}
+		}
+
+		.register .nav-link {
+			@extend %glyph-only;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f234';	// fa-user-plus
+			}
+		}
+	}
 }
 
 .forabg {

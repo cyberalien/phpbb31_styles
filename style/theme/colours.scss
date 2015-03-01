@@ -56,6 +56,42 @@ hr {
 
 .navbar {
 	background-color: #cadceb;
+	&.tabbed {
+		background-color: transparent;
+	}
+	.nav-tabs {
+		background-color: #0076b1;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
+
+		.tab {
+			color: #fff;
+			&.selected {
+				color: #105289;
+				background-color: #eef5f9;
+				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FFFFFF, endColorstr=#00FFFFFF);
+			}
+			&:hover,
+			&.dropdown-visible {
+				color: #d31141;
+				background-color: #eef5f9;
+				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FFFFFF, endColorstr=#00FFFFFF);
+			}
+			& > strong {
+				color: #fff;
+				background-color: #d31141;
+				box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+				.arrow {
+					border-top-color: #d31141;
+				}
+			}
+		}
+	}
 }
 
 .forabg {
