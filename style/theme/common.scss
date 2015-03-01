@@ -422,6 +422,30 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				}
 			}
 		}
+		@media (max-width: 550px) {
+			%glyph-only-media {
+				text-indent: 999px;
+				width: 14px;
+				padding: 0 $tab-padding-glyph;
+				overflow: hidden;
+				&:after {
+					text-align: center;
+					font-size: 14px;
+					left: $tab-padding-glyph;
+				}
+				.rtl &:after {
+					left: auto;
+					right: $tab-padding-glyph;
+				}
+				& + strong {
+					right: -2px;
+					.rtl & {
+						right: auto;
+						left: -2px;
+					}
+				}
+			}
+		}
 		%glyph-fa {
 			font-family: FontAwesome;
 		}
@@ -450,6 +474,10 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				@extend %glyph-gi;
 				content: '\E044';	// glyphicons-group
 			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
+				padding: 0 $tab-padding-glyph !important;
+			}
 		}
 
 		.forums .nav-link {
@@ -457,6 +485,9 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			&:after {
 				@extend %glyph-fa;
 				content: '\f075';	// fa-comment
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
 			}
 		}
 
@@ -507,6 +538,9 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			&:after {
 				@extend %glyph-gi;
 				content: '\E195';	// glyphicons-circle-question-mark
+			}
+			@media (max-width: 550px) {
+				display: none;
 			}
 		}
 
