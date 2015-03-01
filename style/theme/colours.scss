@@ -168,6 +168,23 @@ ul.navlinks {
 	border-top-color: #FFFFFF;
 }
 
+/* Forums list layout
+----------------------*/
+.forum-statistics {
+	color: #666;
+}
+
+a.forumtitle + .forum-description.toggle {
+	color: #fff;
+	background-color: #195472;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
+	a {
+		color: #fff !important;
+	}
+}
+
 /* Table styles
 ----------------------------------------*/
 table.table1 thead th {
