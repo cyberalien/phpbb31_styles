@@ -1250,8 +1250,12 @@ dl.details dd {
 	text-overflow: ellipsis;
 }
 
-.clearfix, fieldset dl, ul.topiclist dl, dl.polls {
+.clearfix, fieldset dl, dl.polls {
 	overflow: hidden;
+}
+
+ul.topiclist dl {
+	@extend %clearfix;
 }
 
 fieldset.fields1 ul.recipients {

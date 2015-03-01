@@ -1048,6 +1048,103 @@ function parseDocument($container) {
 			$w.on('load', function() { check(true); });
 		});
 	}
+
+	/**
+	* Elegant forums list
+	*/
+	$container.find('.forabg[data-standard-layout]').each(function() {
+		var $this = $(this),
+			colon, comma, html;
+
+		if ($this.attr('data-standard-layout') == '1' || $this.hasClass('elegant')) {
+			return;
+		}
+
+		$this.addClass('elegant');
+		colon = $this.attr('data-colon');
+		comma = $this.attr('data-comma');
+
+		$this.find('ul.topiclist dt').each(function() {
+			var $this = $(this),
+				item = false;
+
+			if ($this.parents('li.header').length) {
+				return;
+			}
+
+			// Find item to append to
+			$this.find('.forum-description:last').each(function() {
+				$(this).after('<div class="forum-statistics" />');
+				item = $(this).next();
+			})
+
+			if (item === false) {
+				$this.find('.list-inner > .responsive-show:last').each(function() {
+					$(this).before('<div class="forum-statistics" />');
+					item = $(this).prev();
+				});
+			}
+
+			if (item === false) {
+				$this.find('.list-inner > a:last').each(function() {
+					$(this).after('<div class="forum-statistics" />');
+					item = $(this).next();
+				});
+			}
+
+			if (item === false) {
+				$this.find('.list-inner').each(function() {
+					$(this).append('<div class="forum-statistics" />');
+					item = $(this).children('.forum-statistics:last');
+				});
+			}
+
+			if (item === false) {
+				return;
+			}
+
+			// Append columns content
+			html = '';
+			$this.siblings('dd.posts, dd.topics, dd.views').each(function(i) {
+				var dfn = $(this).find('dfn'),
+					text = $(this).text(),
+					dfnText;
+
+				if (i > 0) {
+					html += '<span class="comma">' + comma + '</span>';
+				}
+
+				if (dfn.length == 1) {
+					dfnText = dfn.html().trim();
+					html += '<span class="dfn">' + dfnText + '</span>' + colon;
+					text = text.replace(dfnText, '');
+				}
+				html += '<span class="value">' + text.trim() + '</span>';
+			});
+			item.html(html);
+
+			$this.find('.list-inner > .responsive-show').remove();
+			$this.parent().addClass('elegant-row');
+		})
+	});
+
+	/**
+	* Forum descriptions
+	*/
+	$container.find('a.forumtitle + .forum-description').each(function() {
+		var $this = $(this),
+			title = $this.prev();
+
+		title.attr('title', '').hover(function() {
+			$this.stop(true, true).fadeIn(200);
+		}, function() {
+			$this.delay(500).fadeOut(200);
+		});
+
+		$this.click(function() {
+			$this.stop(true, true).fadeOut(100);
+		});
+	});
 }
 
 /**

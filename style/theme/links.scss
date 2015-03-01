@@ -59,25 +59,19 @@ li.breadcrumbs span:first-child > a {
 
 /* Links for forum/topic lists */
 a.forumtitle {
-	font-family: "Trebuchet MS", Helvetica, Arial, Sans-serif;
-	font-size: 1.2em;
-	font-weight: bold;
+	font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	line-height: 1.2em;
+	font-weight: 500;
+	padding-bottom: 2px;
 	text-decoration: none;
-}
-
-a.forumtitle:hover {
-	text-decoration: underline;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 a.topictitle {
-	font-family: "Trebuchet MS", Helvetica, Arial, Sans-serif;
-	font-size: 1.2em;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-a.topictitle:hover {
-	text-decoration: underline;
+	@extend a.forumtitle;
 }
 
 a.lastsubject {

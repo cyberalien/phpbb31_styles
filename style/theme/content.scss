@@ -40,6 +40,7 @@ ul.topiclist.missing-column dt {
 	margin-right: -345px;
 }
 
+dl.elegant-row dt,
 ul.topiclist.two-long-columns dt {
 	margin-right: -250px;
 }
@@ -52,12 +53,14 @@ ul.topiclist dt .list-inner {
 	margin-right: 440px;
 	padding-left: 5px;
 	padding-right: 5px;
+	position: relative;
 }
 
 ul.topiclist.missing-column dt .list-inner {
 	margin-right: 345px;
 }
 
+dl.elegant-row dt .list-inner,
 ul.topiclist.two-long-columns dt .list-inner {
 	margin-right: 250px;
 }
@@ -145,10 +148,15 @@ li.header dt {
 	font-weight: bold;
 	width: 100%;
 	margin-right: -440px;
-}
-
-li.header dt .list-inner {
-	margin-right: 440px;
+	.list-inner {
+		margin-right: 440px;
+	}
+	.elegant &, 
+	.elegant & .list-inner {
+		margin: 0;
+		width: auto;
+		float: none;
+	}
 }
 
 li.header dd {
@@ -156,6 +164,9 @@ li.header dd {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	.elegant & {
+		display: none;
+	}
 }
 
 li.header dl.icon dt, li.header dl.icon dd {
@@ -166,6 +177,8 @@ li.header dl.icon dt .list-inner {
 	/* Tweak for headers alignment when folder icon used */
 	padding-left: 0;
 	padding-right: 50px;
+	padding-top: 0;
+	padding-bottom: 3px;
 }
 
 /* Forum list column styles */
@@ -182,6 +195,8 @@ dl.icon dt {
 dl.icon dt .list-inner {
 	padding-left: 55px;					/* Space for folder icon */
 	position: relative;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 dl.icon dt .list-inner .topic-status {
@@ -225,6 +240,9 @@ dd.posts, dd.topics, dd.views, dd.extra, dd.mark {
 
 dd.posts, dd.topics, dd.views {
 	width: 95px;
+	.elegant-row & {
+		display: none;
+	}
 }
 
 /* List in forum description */
@@ -266,6 +284,49 @@ dd.option {
 	line-height: 200%;
 	text-align: center;
 	font-size: 1.1em;
+}
+
+/* Forums list layout
+----------------------*/
+.forum-description {
+	font-size: 12px;
+	padding-top: 2px;
+}
+
+.forum-statistics {
+	color: #666;
+	font-size: 11px;
+	padding-top: 2px;
+	.value {
+		color: #111;
+	}
+}
+
+.subforums-list {
+	padding-top: 2px;
+}
+
+a.forumtitle + .forum-description {
+	display: none;
+	position: absolute;
+	font-size: 11px;
+	left: 55px;
+	top: 25px;
+	z-index: 2;
+	border-radius: 4px;
+	padding: 4px 9px;
+	color: #fff;
+	cursor: pointer;
+	background-color: #195472;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
+	a {
+		color: #fff !important;
+		background: none !important;
+		text-decoration: underline !important;
+		border-width: 0 !important;
+	}
 }
 
 /* Post body styles

@@ -3,16 +3,14 @@
 	<!-- INCLUDE memberlist_search.html -->
 	<form method="post" id="results" action="{S_MODE_ACTION}" onsubmit="insert_marked_users('#results', this.user); return false;" data-form-name="{S_FORM_NAME}" data-field-name="{S_FIELD_NAME}">
 
-<!-- ELSE -->
-	<!-- DEFINE $NAVLINKS -->
+<!-- ELSE --><!-- DEFINE $NAVLINKS -->
 		<!-- IF U_FIND_MEMBER and not S_SEARCH_USER -->
 			<li class="small-icon icon-search"><a href="{U_FIND_MEMBER}" data-alt-text="{LA_HIDE_MEMBER_SEARCH}">{L_FIND_USERNAME}</a></li>
 		<!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP -->
 			<li class="small-icon icon-search"><a href="{U_HIDE_FIND_MEMBER}" data-alt-text="{LA_FIND_USERNAME}">{L_HIDE_MEMBER_SEARCH}</a>
 		<!-- ENDIF -->
 		<!-- IF U_TEAM --><li class="small-icon icon-team"><a href="{U_TEAM}" role="menuitem">{L_THE_TEAM}</a></li><!-- ENDIF -->
-	<!-- ENDDEFINE -->
-	<!-- INCLUDE overall_header.html -->
+	<!-- ENDDEFINE --><!-- INCLUDE overall_header.html -->
 	<div class="panel" id="memberlist_search"<!-- IF not S_SEARCH_USER --> style="display: none;"<!-- ENDIF -->>
 	<!-- INCLUDE memberlist_search.html -->
 	</div>
