@@ -1,6 +1,11 @@
 /**
 * phpBB3 forum functions
 */
+var styleConfig = {
+	staticNavigation: true,
+	staticNavigationMinWidth: 500,
+	staticNavigationMinHeight: 400
+};
 
 /**
 * Find a member
@@ -975,6 +980,70 @@ function parseDocument($container) {
 		check();
 		$(window).resize(check);
 	});
+
+	/**
+	* Static navigation
+	*/
+	if (styleConfig.staticNavigation) {
+		$('#page-header .navbar.tabbed > .inner').each(function(i) {
+			var nav = this,
+				navigation = $(nav),
+				isStatic = false,
+				parent = navigation.parent(),
+				dummy,
+				inner,
+				$w = $(window),
+				minTopPosition = 0,
+				minWidth = styleConfig.staticNavigationMinWidth,
+				minHeight = styleConfig.staticNavigationMinHeight,
+				windowWidth, navHeight;
+
+			navigation.before('<div class="static-nav-dummy inner" style="display:none;" />');
+			dummy = navigation.prev();
+
+			navigation.wrapInner('<div class="static-inner" />');
+			inner = navigation.children();
+
+			function enableStatic() {
+				dummy.css('height', Math.floor(navigation.height()) + 'px').show();
+				navigation.addClass('static');
+				isStatic = true;
+			}
+
+			function disableStatic() {
+				dummy.hide();
+				navigation.removeClass('static');
+				isStatic = false;
+			}
+
+			function check(checkHash)
+			{
+				var windowTop = 0,
+					windowWidth = Math.floor($w.width()),
+					top;
+
+				// Check window dimensions and position
+				if (windowWidth < minWidth || $w.height() < minHeight) return false;
+				if (!isStatic)
+				{
+					navHeight = navigation.height();
+					top = nav.getBoundingClientRect().top;
+					if (top > 0) {
+						return;
+					}
+					minTopPosition = $w.scrollTop() + top;
+					enableStatic();
+					return;
+				}
+				if ($w.scrollTop() < minTopPosition) {
+					disableStatic();
+				}
+			}
+
+			$w.on('scroll resize', function() { check(false); });
+			$w.on('load', function() { check(true); });
+		});
+	}
 }
 
 /**

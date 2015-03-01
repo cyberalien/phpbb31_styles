@@ -23,8 +23,13 @@ body {
 	padding: 0 5px;
 }
 
-.page-width {
+.page-width, .navbar .inner.static > .static-inner {
 	min-width: 290px;
+	margin: 0;
+}
+
+.navbar .inner.static > .static-inner {
+	padding: 0;
 }
 
 /* Common block wrappers

@@ -183,26 +183,30 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 /* Main blocks
 ---------------------------------------- */
-#wrap {
-	border: 1px solid transparent;
-	border-radius: 8px;
+@mixin wrapper-padding {
 	padding: 15px;
 }
 
-.page-width {
+#wrap {
+	border: 1px solid transparent;
+	border-radius: 8px;
+	@include wrapper-padding;
+}
+
+@mixin page-width {
 	margin: 0 auto;
 	max-width: 1152px;
 	min-width: 625px;
+	@media only screen and (max-width: 1220px), only screen and (max-device-width: 1220px) {
+		margin: 0 12px;
+	}
+}
+.page-width {
+	@include page-width;
 }
 
 .page-width .page-width {
 	margin: 0;
-}
-
-@media only screen and (max-width: 1220px), only screen and (max-device-width: 1220px) {
-	.page-width {
-		margin: 0 12px;
-	}
 }
 
 #page-body {
@@ -565,6 +569,65 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			&:after {
 				@extend %glyph-fa;
 				content: '\f234';	// fa-user-plus
+			}
+		}
+	}
+
+	// Static navigation
+	.inner.static {
+		position: fixed;
+		top: 0;
+		z-index: 50;
+		left: 0;
+		right: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		width: auto;
+		max-width: none;
+		opacity: .9;
+		transition: opacity .2s;
+		& > .static-inner {
+			@include wrapper-padding;
+			@include page-width;
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+		}
+		&:hover {
+			opacity: 1;
+		}
+		.nav-tabs {
+			border-radius: 0;
+			& .leftside, .rtl & .rightside {
+				& .tab:first-child,
+				& .tab.first-visible {
+					border-radius: 0;
+				}
+			}
+			& .rightside, .rtl & .leftside {
+				& .tab:last-child,
+				& .tab.last-visible {
+					border-radius: 0;
+				}
+			}
+			.nav-link + strong {
+				position: relative;
+				display: inline-block;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				vertical-align: top;
+				margin-top: 8px;
+				margin-left: -7px;
+				margin-right: 5px;
+				padding-bottom: 1px;
+				pointer-events: none;
+				.arrow {
+					display: none;
+				}
+			}
+			.pm > .nav-link + strong {
+				margin-left: -5px;
 			}
 		}
 	}
