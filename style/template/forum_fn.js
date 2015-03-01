@@ -1022,8 +1022,12 @@ function parseDocument($container) {
 					windowWidth = Math.floor($w.width()),
 					top;
 
-				// Check window dimensions and position
-				if (windowWidth < minWidth || $w.height() < minHeight) return false;
+				if (windowWidth < minWidth || $w.height() < minHeight) {
+					if (isStatic) {
+						disableStatic();
+					}
+					return;
+				}
 				if (!isStatic)
 				{
 					navHeight = navigation.height();

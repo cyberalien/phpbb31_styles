@@ -256,9 +256,17 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 .navbar {
 	padding: 3px 10px;
 	border-radius: 7px;
+	+ .navbar {
+		margin-top: 5px;
+	}
 	&.tabbed {
 		padding: 0;
 		border-radius: 0;
+	}
+	&.secondary {
+		padding: 3px 5px;
+		border-radius: 0;
+		margin-top: 0;
 	}
 
 	.nav-tabs {
@@ -702,6 +710,9 @@ ul.linklist > li.rightside, p.rightside, a.rightside {
 
 ul.navlinks {
 	border-top: 1px solid transparent;
+	&#nav-breadcrumbs {
+		border-top-width: 0;
+	}
 }
 
 ul.leftside {
@@ -1015,16 +1026,40 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	float: left;
 	font-weight: bold;
 	word-wrap: normal;
+	position: relative;
+	padding-left: 13px;
+	.rtl & {
+		padding-left: 0;
+		padding-right: 13px;
+	}
 }
 
 .breadcrumbs .crumb:before {
-	content: '\2039';
-	font-weight: bold;
-	padding: 0 0.5em;
+	content: '\f054';	// fa-chevron-right
+	font-family: FontAwesome;
+	font-weight: normal;
+	position: absolute;
+	left: 2px;
+	width: 10px;
+	top: 50%;
+	margin-top: -5px;
+	font-size: 7px;
+	height: 11px;
+	line-height: 11px;
+	text-align: center;
+	.rtl & {
+		left: auto;
+		right: 2px;
+		content: '\f053';	// fa-chevron-left
+	}
 }
 
-.breadcrumbs .crumb:first-child:before {
-	content: none;
+.breadcrumbs .crumb:first-child {
+	padding-left: 0;
+	padding-right: 0;
+	&:before {
+		display: none;
+	}
 }
 
 .breadcrumbs .crumb a {

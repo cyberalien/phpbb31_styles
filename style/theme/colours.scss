@@ -56,9 +56,15 @@ hr {
 
 .navbar {
 	background-color: #cadceb;
+
 	&.tabbed {
 		background-color: transparent;
 	}
+
+	&.secondary {
+		background-color: transparent;
+	}
+
 	.nav-tabs {
 		background-color: #0076b1;
 		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
