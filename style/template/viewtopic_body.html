@@ -1,3 +1,9 @@
+<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT -->
+	<!-- DEFINE $NAVLINKS -->
+		<li><a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a></li>
+	<!-- ENDDEFINE -->
+	<!-- DEFINE $NAVLINKS_SHOW_DEFAULT = 1 -->
+<!-- ENDIF -->
 <!-- INCLUDE overall_header.html -->
 
 <h2 class="topic-title"><!-- EVENT viewtopic_topic_title_prepend --><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a><!-- EVENT viewtopic_topic_title_append --></h2>

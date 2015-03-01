@@ -63,6 +63,17 @@ hr {
 
 	&.secondary {
 		background-color: transparent;
+		li > a,
+		li > span {
+		}
+		li > a:hover {
+			color: #fff;
+			background-color: #d31141;
+			background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+			background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+		}
 	}
 
 	.nav-tabs {

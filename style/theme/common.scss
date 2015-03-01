@@ -264,9 +264,37 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		border-radius: 0;
 	}
 	&.secondary {
-		padding: 3px 5px;
+		@extend %clearfix;
+		margin: 0;
+		padding: 1px 0;
 		border-radius: 0;
-		margin-top: 0;
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			display: block;
+			float: left;
+			margin: 0;
+			padding: 0;
+			& > a,
+			& > span {
+				display: inline-block;
+				margin: 0;
+				padding: 1px 8px;
+				text-align: center;
+				line-height: 25px;
+				font-size: 11px;
+			}
+			& > a:hover {
+				text-decoration: none;
+				border-radius: 3px;
+			}
+		}
+		+ .nav-breadcrumbs {
+			margin-top: 0;
+		}
 	}
 
 	.nav-tabs {

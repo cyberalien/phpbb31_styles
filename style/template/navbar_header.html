@@ -2,6 +2,7 @@
 	<div class="inner page-width">
 		<div class="nav-tabs" data-current-page="<!-- IF $NAV_SECTION -->{$NAV_SECTION}<!-- ELSE -->{SCRIPT_NAME}<!-- ENDIF -->">
 			<ul class="leftside">
+				<!-- EVENT navtabs_left_before -->
 				<!-- IF U_SITE_HOME -->
 					<li class="tab home">
 						<a class="nav-link" href="{U_SITE_HOME}" data-navbar-reference="home">{L_SITE_HOME}</a>
@@ -52,6 +53,7 @@
 						</div>
 					</li>
 				<!-- ENDIF -->
+				<!-- EVENT navtabs_left_after -->
 			</ul>
 			<ul class="rightside">
 				<!-- EVENT overall_header_navigation_prepend -->
@@ -120,6 +122,24 @@
 </div>
 
 <div class="navbar secondary">
+	<ul role="menubar">
+		<!-- EVENT secondary_navlinks_before -->
+		<!-- IF $NAVLINKS -->
+			{$NAVLINKS}
+		<!-- ENDIF -->
+		<!-- IF not $NAVLINKS or $NAVLINKS_SHOW_DEFAULT -->
+			<!-- IF S_DISPLAY_SEARCH -->
+				<li><a href="{U_SEARCH}">{L_SEARCH}</a></li>
+				<!-- IF S_USER_LOGGED_IN -->
+					<li><a href="{U_SEARCH_NEW}" role="menuitem">{L_SEARCH_NEW}</a></li>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+		<!-- EVENT secondary_navlinks_after -->
+	</ul>
+</div>
+
+<div class="navbar nav-breadcrumbs">
 	<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
 		<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
 		<!-- EVENT overall_header_breadcrumbs_before -->
