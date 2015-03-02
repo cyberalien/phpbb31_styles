@@ -4,12 +4,12 @@ Colours and backgrounds for common.css
 -------------------------------------------------------------- */
 
 html, body {
-	color: #536482;
-	background-color: #F5F7FA;
+	color: $color-text;
+	background-color: $page-background;
 }
 
 h1 {
-	color: #FFFFFF;
+	color: $heading-text;
 }
 
 h2 {
@@ -43,19 +43,18 @@ hr {
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 #wrap {
-	background-color: #FFF;
+	background-color: $content-background;
 	border-color: #E6E9ED;
 }
 
 .headerbar {
-	background-color: #12A3EB;
-	background-image: -webkit-linear-gradient(top, #6aceff 0, #0076b1 1px, #0583c2 30px, #0c95d9 60px, #12a3eb 90px);
-	background-image: linear-gradient(to bottom, #6aceff 0, #0076b1 1px, #0583c2 30px, #0c95d9 60px, #12a3eb 90px);
-	color: #FFFFFF;
+	background-color: $heading-bg;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 100%);
+	color: $heading-text;
 }
 
 .navbar {
-	background-color: #cadceb;
+	background-color: $pagination-bg;
 
 	&.tabbed {
 		background-color: transparent;
@@ -65,9 +64,9 @@ hr {
 		background-color: transparent;
 		li:hover {
 			&, &:after, &:before {
-				color: #fff;
+				color: $secondary-nav-hover-link;
 			}
-			background-color: #d31141;
+			background-color: $secondary-nav-hover-bg;
 			background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
 			background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
@@ -76,27 +75,27 @@ hr {
 	}
 
 	.nav-tabs {
-		background-color: #0076b1;
-		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
+		background-color: $primary-nav-bg;
+		background-image: -webkit-linear-gradient(top, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
+		background-image: linear-gradient(to bottom, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-gradient-end)}');
 
 		.tab {
-			color: #fff;
+			color: $primary-nav-color;
 			&.selected {
-				color: #105289;
-				background-color: #eef5f9;
-				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
-				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FFFFFF, endColorstr=#00FFFFFF);
+				color: $primary-nav-selected-color;
+				background-color: $primary-nav-selected-bg;
+				background-image: -webkit-linear-gradient(top, $primary-nav-selected-gradient-start 0, $primary-nav-selected-gradient-end 100%);
+				background-image: linear-gradient(to bottom, $primary-nav-selected-gradient-start 0, $primary-nav-selected-gradient-end 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-selected-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-selected-gradient-end)}');
 			}
 			&:hover,
 			&.dropdown-visible {
-				color: #d31141;
-				background-color: #eef5f9;
-				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
-				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FFFFFF, endColorstr=#00FFFFFF);
+				color: $primary-nav-hover-color;
+				background-color: $primary-nav-hover-bg;
+				background-image: -webkit-linear-gradient(top, $primary-nav-hover-gradient-start 0, $primary-nav-hover-gradient-end 100%);
+				background-image: linear-gradient(to bottom, $primary-nav-hover-gradient-start 0, $primary-nav-hover-gradient-end 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-hover-gradient-end)}');
 			}
 			& > strong {
 				color: #fff;
@@ -338,41 +337,21 @@ p.post-notice.reported:before, p.post-notice.error:before {
 Colours and backgrounds for links.css
 -------------------------------------------------------------- */
 
-a { color: #105289; }
-a:hover	{ color: #D31141; }
+a { color: $color-link; }
+a:hover	{ color: $color-link-hover; }
 
 /* Links on gradient backgrounds */
 .forumbg .header a, .forabg .header a, th a {
-	color: #FFFFFF;
+	color: $heading-link;
 }
 
 .forumbg .header a:hover, .forabg .header a:hover, th a:hover {
-	color: #A8D8FF;
+	color: $heading-link-hover;
 }
 
 /* Notification mark read link */
 .dropdown-extended a.mark_read {
-	background-color: #FFFFFF;
-}
-
-/* Post body links */
-.postlink {
-	color: #368AD2;
-	border-bottom-color: #368AD2;
-}
-
-.postlink:visited {
-	color: #5D8FBD;
-	border-bottom-color: #5D8FBD;
-}
-
-.postlink:hover {
-	background-color: #D0E4F6;
-	color: #0D4473;
-}
-
-.signature a, .signature a:hover {
-	background-color: transparent;
+	background-color: $dropdown-bg;
 }
 
 /* Back to top of page */

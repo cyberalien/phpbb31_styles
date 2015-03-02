@@ -1,0 +1,55 @@
+// Configuration file
+
+// Page
+$page-background:						#F5F7FA;
+$content-background:					#FFF;
+
+// Primary color
+$primary-color:							#12a3eb;
+$secondary-color:						#d31141;
+$overlay-color:							#fff;
+
+
+// Global color values
+$color-text:							#536482;
+$color-link:							#105289;
+$color-link-hover:						#D31141;
+
+
+
+
+
+
+// Heading
+$heading-bg:							$primary-color;
+$heading-text:							$overlay-color;
+$heading-link:							$overlay-color;
+$heading-link-hover:					mix($heading-link, $heading-bg, 80%);
+
+// Pagination
+$pagination-bg:							desaturate(mix($primary-color, $content-background, 15%), 50%);
+
+// Primary navigation
+$primary-nav-bg:						darken($primary-color, 10%);
+$primary-nav-gradient-start:			rgba(255, 255, 255, .25);
+$primary-nav-gradient-end:				rgba(255, 255, 255, 0);
+$primary-nav-color:						$overlay-color;
+
+$primary-nav-selected-bg:				$content-background;
+$primary-nav-selected-gradient-start:	rgba(255, 255, 255, .5);
+$primary-nav-selected-gradient-end:		rgba(255, 255, 255, 0);
+$primary-nav-selected-color:			darken($primary-color, 10%);
+
+$primary-nav-hover-bg:					$content-background;
+$primary-nav-hover-gradient-start:		rgba(255, 255, 255, .5);
+$primary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
+$primary-nav-hover-color:				darken($secondary-color, 5%);
+
+// Secondary navigation
+$secondary-nav-hover-bg:				$secondary-color;
+$secondary-nav-hover-link:				$overlay-color;
+
+// Dropdown
+$dropdown-bg:							#fff;
+
+// Stats block
