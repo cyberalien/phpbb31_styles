@@ -261,7 +261,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	padding: 3px 10px;
 	border-radius: 7px;
 	#page-body & {
-		margin-bottom: 5px;
+		margin-bottom: 10px;
 	}
 	+ .navbar {
 		margin-top: 5px;
@@ -687,6 +687,9 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	padding: 5px;
 	clear: both;
 	border-radius: 7px;
+	& + .forabg {
+		margin-top: 10px;
+	}
 }
 
 .forumbg {
@@ -1310,7 +1313,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 }
 
 .forabg + .action-bar {
-	margin-top: 2em;
+	margin-top: 10px;
 }
 
 /* Pagination
