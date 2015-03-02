@@ -134,25 +134,31 @@ li.row strong {
 }
 
 li.header dt, li.header dd {
-	line-height: 1em;
+	line-height: 12px;
 	border-left-width: 0;
 	margin: 2px 0 4px 0;
 	padding-top: 2px;
 	padding-bottom: 2px;
-	font-size: 1em;
+	font-size: 12px;
 	font-family: Arial, Helvetica, sans-serif;
-	text-transform: uppercase;
+	.forabg & {
+		line-height: 18px;
+	}
 }
 
 li.header dt {
-	font-weight: bold;
+	.forabg & {
+		font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+		font-weight: 500;
+		font-size: 14px;
+	}
 	width: 100%;
 	margin-right: -440px;
 	.list-inner {
 		margin-right: 440px;
 	}
-	.elegant &, 
-	.elegant & .list-inner {
+	.forabg &, 
+	.forabg & .list-inner {
 		margin: 0;
 		width: auto;
 		float: none;
@@ -164,7 +170,7 @@ li.header dd {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	.elegant & {
+	.forabg & {
 		display: none;
 	}
 }
@@ -175,8 +181,10 @@ li.header dl.icon dt, li.header dl.icon dd {
 
 li.header dl.icon dt .list-inner {
 	/* Tweak for headers alignment when folder icon used */
-	padding-left: 0;
-	padding-right: 50px;
+	.forabg & {
+		padding-left: 0;
+		padding-right: 50px;
+	}
 	padding-top: 0;
 	padding-bottom: 3px;
 }
@@ -195,8 +203,11 @@ dl.icon dt {
 dl.icon dt .list-inner {
 	padding-left: 55px;					/* Space for folder icon */
 	position: relative;
-	padding-top: 6px;
+	padding-top: 4px;
 	padding-bottom: 4px;
+	.forums & {
+		padding-top: 6px;
+	}
 }
 
 dl.icon dt .list-inner .topic-status {

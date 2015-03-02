@@ -1163,6 +1163,12 @@ table.table1 .info div	{ width: 100%; white-space: normal; overflow: hidden; }
 table.table1 .autocol	{ line-height: 2em; white-space: nowrap; }
 table.table1 thead .autocol { padding-left: 1em; }
 
+table.table1 th.info {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 table.table1 span.rank-img {
 	float: right;
 	width: auto;

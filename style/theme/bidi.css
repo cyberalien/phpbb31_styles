@@ -338,6 +338,9 @@ li.breadcrumbs span:first-child > a {
 	margin-right: 0;
 	margin-left: -440px;
 }
+.rtl .forabg li.header dt {
+	margin: 0;
+}
 
 .rtl ul.topiclist.missing-column dt {
 	margin-right: 0;
@@ -411,7 +414,7 @@ li.breadcrumbs span:first-child > a {
 	background-position: 99.5% 50%;
 }
 
-.rtl li.header dl.icon dt .list-inner {
+.rtl .forabg li.header dl.icon dt .list-inner {
 	/* Tweak for headers alignment when folder icon used */
 	padding-right: 0;
 	padding-left: 50px;

@@ -59,6 +59,7 @@ li.breadcrumbs span:first-child > a {
 
 /* Links for forum/topic lists */
 a.forumtitle {
+	display: inline-block;
 	font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
 	font-size: 16px;
 	line-height: 1.2em;
@@ -72,6 +73,7 @@ a.forumtitle {
 
 a.topictitle {
 	@extend a.forumtitle;
+	font-size: 15px;
 }
 
 a.lastsubject {
