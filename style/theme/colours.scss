@@ -419,11 +419,19 @@ ul.topiclist dd {
 }
 
 ul.topiclist li.row dt a.subforum.read {
-	background-image: url("./images/subforum_read.gif");
+	background-image: url("./images/subforum_read.png");
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)	{
+		background-image: url("./images/subforum_read_hd.png");
+		background-size: 11px 9px;
+	}
 }
 
 ul.topiclist li.row dt a.subforum.unread {
-	background-image: url("./images/subforum_unread.gif");
+	background-image: url("./images/subforum_unread.png");
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)	{
+		background-image: url("./images/subforum_unread_hd.png");
+		background-size: 11px 9px;
+	}
 }
 
 li.row {
