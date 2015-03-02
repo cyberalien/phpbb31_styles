@@ -315,6 +315,10 @@ a.forumtitle + .forum-description.toggle {
 	border-radius: 4px;
 	padding: 4px 9px;
 	cursor: pointer;
+	.rtl & {
+		left: auto;
+		right: 55px;
+	}
 	a {
 		background: none !important;
 		text-decoration: underline !important;
