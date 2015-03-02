@@ -325,6 +325,7 @@ a.forumtitle + .forum-description.toggle {
 	z-index: 2;
 	border-radius: 4px;
 	padding: 4px 9px;
+	max-width: 500px;
 	cursor: pointer;
 	.rtl & {
 		left: auto;
