@@ -184,7 +184,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 /* Main blocks
 ---------------------------------------- */
 @mixin wrapper-padding {
-	padding: 15px;
+	padding: 10px;
 }
 
 #wrap {
@@ -217,6 +217,9 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 #page-footer {
 	clear: both;
+	#wrap + & {
+		margin-top: 5px;
+	}
 }
 
 #page-footer h3 {

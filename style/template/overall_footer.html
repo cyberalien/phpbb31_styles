@@ -3,8 +3,15 @@
 
 <!-- EVENT overall_footer_page_body_after -->
 
-<div id="page-footer">
+<!-- IF $WRAP_FOOTER == 0 -->
 	<!-- INCLUDE navbar_footer.html -->
+</div>
+<!-- ENDIF -->
+
+<div id="page-footer" class="page-width">
+	<!-- IF $WRAP_FOOTER == 1 -->
+		<!-- INCLUDE navbar_footer.html -->
+	<!-- ENDIF -->
 
 	<div class="copyright">
 		<!-- EVENT overall_footer_copyright_prepend -->
@@ -31,7 +38,9 @@
 	</div>
 </div>
 
+<!-- IF $WRAP_FOOTER == 1 -->
 </div>
+<!-- ENDIF -->
 
 <div>
 	<a id="bottom" class="anchor" accesskey="z"></a>
