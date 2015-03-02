@@ -893,6 +893,14 @@ dd.profile-contact {
 	background-repeat: no-repeat;
 }
 
+.no-avatar .avatar-container {
+	display: block;
+	width: 92px;
+	height: 92px;
+	background: transparent none 50% 50% no-repeat;
+	background-size: 92px 92px;
+}
+
 /* Poster profile used by search*/
 .search .postprofile {
 	width: 30%;

@@ -682,6 +682,13 @@ dd.profile-warnings {
 	color: #BC2A4D;
 }
 
+.no-avatar .avatar-container {
+	background-image: url("./images/no_avatar.png");
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx) {
+		background-image: url("./images/no_avatar_hd.png");
+	}
+}
+
 /*
 --------------------------------------------------------------
 Colours and backgrounds for buttons.css
