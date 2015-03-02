@@ -1131,23 +1131,42 @@ function parseDocument($container) {
 	/**
 	* Forum descriptions
 	*/
-	$container.find('.forabg[data-hide-description]').each(function() {
+	var animatedDescription = false;
+	$container.find('.forabg[data-hide-description]').each(function(i) {
 		if ($(this).attr('data-hide-description') != '1') {
 			return;
 		}
 
-		$('a.forumtitle + .forum-description', this).each(function() {
+		$('a.forumtitle + .forum-description', this).each(function(j) {
 			var $this = $(this),
 				title = $this.prev();
 
 			title.attr('title', '').hover(function() {
+				if (animatedDescription !== false) {
+					animatedDescription.item.stop(true, true).hide();
+				}
+				animatedDescription = {
+					item: $this,
+					i: i,
+					j: j,
+					fading: false
+				};
 				$this.stop(true, true).fadeIn(200);
 			}, function() {
+				animatedDescription.fading = true;
+				setTimeout(700, function() {
+					if (animatedDescription !== false && animatedDescription.i == i && animatedDescription.j == j && animatedDescription.fading) {
+						animatedDescription = false;
+					}
+				});
 				$this.delay(500).fadeOut(200);
 			});
 
 			$this.addClass('toggle').click(function() {
 				$this.stop(true, true).fadeOut(100);
+				if (animatedDescription !== false && animatedDescription.i == i && animatedDescription.j == j) {
+					animatedDescription = false;
+				}
 			});
 		});
 	});
