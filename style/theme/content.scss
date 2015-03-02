@@ -316,25 +316,47 @@ dd.option {
 	padding-top: 2px;
 }
 
-a.forumtitle + .forum-description.toggle {
+.forum-description.toggle {
 	display: none;
 	position: absolute;
 	font-size: 11px;
-	left: 55px;
-	top: 25px;
-	z-index: 2;
 	border-radius: 4px;
 	padding: 4px 9px;
 	max-width: 500px;
 	cursor: pointer;
-	.rtl & {
-		left: auto;
-		right: 55px;
+	a.forumtitle + & {
+		left: 55px;
+		top: 25px;
+		z-index: 2;
+		.rtl & {
+			left: auto;
+			right: 55px;
+		}
 	}
 	a {
 		background: none !important;
 		text-decoration: underline !important;
 		border-width: 0 !important;
+	}
+	span.arrow {
+		position: absolute;
+		line-height: 0;
+		width: 0;
+		height: 0;
+		border: 6px solid transparent;
+		border-left: 1px none transparent;
+		top: 6px;
+		left: -6px;
+		bottom: auto;
+	}
+	.rtl & span.arrow {
+		border-left: 6px solid transparent;
+		border-right: 1px none transparent;
+		left: auto;
+		right: -6px;
+	}
+	&.no-arrow span.arrow {
+		display: none;
 	}
 }
 

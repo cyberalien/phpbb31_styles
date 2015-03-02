@@ -174,7 +174,7 @@ ul.navlinks {
 	color: #666;
 }
 
-a.forumtitle + .forum-description.toggle {
+.forum-description.toggle {
 	color: #fff;
 	background-color: #195472;
 	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
@@ -182,6 +182,13 @@ a.forumtitle + .forum-description.toggle {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
 	a {
 		color: #fff !important;
+	}
+	span.arrow {
+		border-right-color: mix(#195472, #fff, 85%);
+	}
+	.rtl & span.arrow {
+		border-right-color: transparent;
+		border-left-color: mix(#195472, #fff, 85%);
 	}
 }
 

@@ -1133,15 +1133,25 @@ function parseDocument($container) {
 	*/
 	var animatedDescription = false;
 	$container.find('.forabg[data-hide-description]').each(function(i) {
-		if ($(this).attr('data-hide-description') != '1') {
+		if (typeof this.getBoundingClientRect == 'undefined' || $(this).attr('data-hide-description') != '1') {
 			return;
 		}
 
+		var $b = $('body'),
+			$w = $(window),
+			rtl = $('#phpbb').hasClass('rtl');
+
 		$('a.forumtitle + .forum-description', this).each(function(j) {
 			var $this = $(this),
-				title = $this.prev();
+				title = $this.prev(),
+				id = 'forumdesc-' + i + '-' + j,
+				item, top, left, width, rect;
+
+			$b.append($this);
+			$this.attr('id', id).append('<span class="arrow" />');
 
 			title.attr('title', '').hover(function() {
+				// Hide previous animation
 				if (animatedDescription !== false) {
 					animatedDescription.item.stop(true, true).hide();
 				}
@@ -1151,8 +1161,55 @@ function parseDocument($container) {
 					j: j,
 					fading: false
 				};
+
+				// Calculate position
+				rect = this.getBoundingClientRect();
+				// $this.attr('data-rect', 'top: ' + rect.top + ', left: ' + rect.left + ', width: ' + rect.width + ', window: ' + $w.width());
+				top = Math.floor($w.scrollTop() + rect.top);
+				if ((rect.left + rect.width + 300) > $w.width()) {
+					$this.addClass('no-arrow');
+					top += Math.floor(rect.height);
+
+					if (!rtl) {
+						left = Math.floor($w.scrollLeft() + rect.left);
+						$this.css({
+							position: 'absolute',
+							top: top + 'px',
+							left: left + 'px'
+						});
+					}
+					else {
+						left = Math.floor($w.scrollLeft() + rect.left + rect.width);
+						$this.css({
+							position: 'absolute',
+							top: top + 'px',
+							right: left + 'px'
+						});
+					}
+				}
+				else if (!rtl) {
+					$this.removeClass('no-arrow');
+					left = Math.floor($w.scrollLeft() + rect.left + rect.width + 10);
+					$this.css({
+						position: 'absolute',
+						top: top + 'px',
+						left: left + 'px'
+					});
+				}
+				else {
+					$this.removeClass('no-arrow');
+					left = Math.floor($w.scrollLeft() + rect.left - 10);
+					$this.css({
+						position: 'absolute',
+						top: top + 'px',
+						right: left + 'px'
+					});
+				}
+
+				// Show
 				$this.stop(true, true).fadeIn(200);
 			}, function() {
+				// Hide
 				animatedDescription.fading = true;
 				setTimeout(700, function() {
 					if (animatedDescription !== false && animatedDescription.i == i && animatedDescription.j == j && animatedDescription.fading) {
@@ -1163,6 +1220,7 @@ function parseDocument($container) {
 			});
 
 			$this.addClass('toggle').click(function() {
+				// Hide
 				$this.stop(true, true).fadeOut(100);
 				if (animatedDescription !== false && animatedDescription.i == i && animatedDescription.j == j) {
 					animatedDescription = false;
