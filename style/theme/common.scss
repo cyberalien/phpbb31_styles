@@ -194,6 +194,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 @mixin page-width {
+	box-sizing: border-box;
 	margin: 0 auto;
 	max-width: 1152px;
 	min-width: 625px;
@@ -256,6 +257,9 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 .navbar {
 	padding: 3px 10px;
 	border-radius: 7px;
+	#page-body & {
+		margin-bottom: 5px;
+	}
 	+ .navbar {
 		margin-top: 5px;
 	}
@@ -625,8 +629,10 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		max-width: none;
 		opacity: .9;
 		transition: opacity .2s;
-		& > .static-inner {
+		#wrap & > .static-inner {
 			@include wrapper-padding;
+		}
+		& > .static-inner {
 			@include page-width;
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
@@ -695,12 +701,15 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .post {
-	padding: 5px 10px;
+	@include section;
 	margin-bottom: 4px;
+	position: relative;
+}
+
+.post > .inner {
 	background-repeat: no-repeat;
 	background-position: 100% 0;
-	border-radius: 7px;
-	position: relative;
+	padding: 5px 10px;
 }
 
 .rowbg {

@@ -140,6 +140,7 @@
 	</ul>
 </div>
 
+<!-- DEFINE $BREADCRUMBS -->
 <div class="navbar nav-breadcrumbs">
 	<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
 		<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
@@ -162,3 +163,8 @@
 		<!-- ENDIF -->
 	</ul>
 </div>
+<!-- ENDDEFINE -->
+<!-- IF $WRAP_HEADER != 0 -->
+	{$BREADCRUMBS}
+	<!-- DEFINE $BREADCRUMBS = '' -->
+<!-- ENDIF -->

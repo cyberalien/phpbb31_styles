@@ -1,4 +1,5 @@
 // Configuration file
+$separate-forums:						0;
 
 // Page
 $page-background:						#F5F7FA;
@@ -9,6 +10,10 @@ $primary-color:							#12a3eb;
 $secondary-color:						#d31141;
 $overlay-color:							#fff;
 
+// Blocks
+$block-background:						#ecf3f7;
+$block-border:							$block-background;
+$border-radius:							6px;
 
 // Global color values
 $color-text:							#536482;
@@ -53,3 +58,12 @@ $secondary-nav-hover-link:				$overlay-color;
 $dropdown-bg:							#fff;
 
 // Stats block
+
+
+
+// Mixins
+@mixin section {
+	background: $block-background;
+	border: 0 solid $block-border;
+	border-radius: $border-radius;
+}

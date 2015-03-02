@@ -59,9 +59,11 @@
 
 <!-- EVENT overall_header_body_before -->
 
+<!-- IF $WRAP_HEADER == 1 -->
 <div id="wrap" class="page-width">
+<!-- ENDIF -->
 	<a id="top" class="anchor" accesskey="t"></a>
-	<div id="page-header">
+	<div id="page-header" class="page-width">
 		<div class="headerbar">
 			<div class="inner">
 
@@ -88,13 +90,24 @@
 			</div>
 		</div>
 
+<!-- IF $WRAP_HEADER == 2 -->
+</div>
+<div id="wrap" class="page-width">
+<div>
+<!-- ENDIF -->
+
 		<!-- INCLUDE navbar_header.html -->
 	</div>
+
+<!-- IF $WRAP_HEADER == 0 -->
+<div id="wrap" class="page-width">
+<!-- ENDIF -->
 
 	<!-- EVENT overall_header_page_body_before -->
 
 	<a id="start_here" class="anchor"></a>
 	<div id="page-body">
+		{$BREADCRUMBS}
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div id="information" class="rules">
 			<div class="inner">

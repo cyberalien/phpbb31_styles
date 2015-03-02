@@ -28,17 +28,26 @@ body {
 	margin: 0;
 }
 
-.navbar .inner.static > .static-inner {
+.navbar .inner.static > .static-inner,
+#wrap .navbar .inner.static > .static-inner {
 	padding: 0;
 }
 
 /* Common block wrappers
 ----------------------------------------*/
-.headerbar, .navbar, .forabg, .forumbg, .post, .panel {
+.forabg, .forumbg, .post, .panel {
 	border-radius: 0;
 	margin-left: -5px;
 	margin-right: -5px;
 }
+.headerbar, .navbar {
+	border-radius: 0;
+}
+#wrap .headerbar, #wrap .navbar {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
 
 #cp-main .forabg, #cp-main .forumdb, #cp-main .post, #cp-main .panel {
 	border-radius: 7px;

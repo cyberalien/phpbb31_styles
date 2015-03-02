@@ -985,7 +985,7 @@ function parseDocument($container) {
 	* Static navigation
 	*/
 	if (styleConfig.staticNavigation) {
-		$('#page-header .navbar.tabbed > .inner').each(function(i) {
+		$('.navbar.tabbed > .inner').each(function(i) {
 			var nav = this,
 				navigation = $(nav),
 				isStatic = false,
