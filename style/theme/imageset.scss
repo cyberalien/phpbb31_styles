@@ -92,34 +92,52 @@ span.imageset {
 	padding-left: 149px;
 	padding-top: 52px;
 }
+// .imageset.icon_post_target {
+// 	@extend %imageset-fa;
+// 	margin-top: -3px;
+// 	top: 2px;
+// 	width: 12px;
+// 	height: 13px;
+// 	&:after {
+// 		top: 50%;
+// 		bottom: auto;
+// 		margin-top: -6px;
+// 		height: 13px;
+// 		font-size: 11px;
+// 		line-height: 13px;
+// 		content: '\f18e';	// fa-arrow-circle-o-right
+// 		text-align: left;
+// 	}
+// 	.rtl &:after {
+// 		content: '\f190';	// fa-arrow-circle-o-left
+// 	}
+// }
+// .imageset.icon_post_target_unread {
+// 	@extend .imageset.icon_post_target;
+// 	&:after {
+// 		color: #D31141;
+// 		content: '\f0a9';	// fa-arrow-circle-right
+// 	}
+// 	.rtl &:after {
+// 		content: '\f0a8';	// fa-arrow-circle-left
+// 	}
+// }
 .imageset.icon_post_target {
-	@extend %imageset-fa;
-	margin-top: -3px;
-	top: 2px;
-	width: 12px;
-	height: 13px;
-	&:after {
-		top: 50%;
-		bottom: auto;
-		margin-top: -6px;
-		height: 13px;
-		font-size: 11px;
-		line-height: 13px;
-		content: '\f18e';	// fa-arrow-circle-o-right
-		text-align: left;
-	}
-	.rtl &:after {
-		content: '\f190';	// fa-arrow-circle-o-left
+	background-image: url("./images/icon_post_target.png");
+	padding-left: 11px;
+	padding-top: 9px;
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)	{
+		background-image: url("./images/icon_post_target_hd.png");
+		background-size: 11px 9px;
 	}
 }
 .imageset.icon_post_target_unread {
-	@extend .imageset.icon_post_target;
-	&:after {
-		color: #D31141;
-		content: '\f0a9';	// fa-arrow-circle-right
-	}
-	.rtl &:after {
-		content: '\f0a8';	// fa-arrow-circle-left
+	background-image: url("./images/icon_post_target_unread.png");
+	padding-left: 11px;
+	padding-top: 9px;
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)	{
+		background-image: url("./images/icon_post_target_unread_hd.png");
+		background-size: 11px 9px;
 	}
 }
 .imageset.icon_topic_attach {
@@ -184,5 +202,8 @@ span.imageset {
 	}
 	&:hover:after {
 		content: '\E602';	// glyphicons-chevron-down
+	}
+	.dropdown-up &:hover:after {
+		content: '\E601';	// glyphicons-chevron-up
 	}
 }
