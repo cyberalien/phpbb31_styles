@@ -1004,16 +1004,28 @@ function parseDocument($container) {
 			navigation.wrapInner('<div class="static-inner" />');
 			inner = navigation.children();
 
-			function enableStatic() {
+			function enableStatic()
+			{
 				dummy.css('height', Math.floor(navigation.height()) + 'px').show();
 				navigation.addClass('static');
 				isStatic = true;
 			}
 
-			function disableStatic() {
+			function disableStatic()
+			{
 				dummy.hide();
 				navigation.removeClass('static');
 				isStatic = false;
+			}
+
+			function testHash()
+			{
+				var hash = (window.location.hash) ? window.location.hash : '';
+				if (!hash)
+				{
+					return;
+				}
+				window.scrollTo($w.scrollLeft(), $w.scrollTop() - navigation.height());
 			}
 
 			function check(checkHash)
@@ -1037,15 +1049,21 @@ function parseDocument($container) {
 					}
 					minTopPosition = $w.scrollTop() + top;
 					enableStatic();
+					if (checkHash) {
+						testHash();
+					}
 					return;
 				}
 				if ($w.scrollTop() < minTopPosition) {
 					disableStatic();
+				} else if (checkHash) {
+					testHash();
 				}
 			}
 
 			$w.on('scroll resize', function() { check(false); });
 			$w.on('load', function() { check(true); });
+			$w.on('hashchange', function() { check(true); });
 		});
 	}
 
