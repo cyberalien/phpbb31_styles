@@ -377,6 +377,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 			& > li {
 				float: left;
+				height: $tab-height;
 			}
 			.rtl & > li {
 				float: right;
