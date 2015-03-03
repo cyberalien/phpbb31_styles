@@ -116,6 +116,15 @@ a.lastsubject:hover {
 	clear: both;
 	height: 14px;
 	text-align: right;
+	.post > & {
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
+		.rtl & {
+			right: auto;
+			left: 5px;
+		}
+	}
 }
 
 a.top {

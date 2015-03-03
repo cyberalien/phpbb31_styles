@@ -697,11 +697,11 @@ function parseDocument($container) {
 		var $this = $(this),
 			children = $this.children();
 
-		if (children.length == 1 && children.hasClass('postbody-inner')) {
+		if (children.length == 1 && children.is('div')) {
 			return;
 		}
 
-		$this.wrapInner('<div class="postbody-inner" />');
+		// $this.wrapInner('<div class="postbody-inner" />');
 	});
 
 	/**

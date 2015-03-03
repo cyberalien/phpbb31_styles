@@ -19,6 +19,9 @@ $overlay-color:							#fff;
 
 // Blocks
 $block-background:						#ecf3f7;
+$block-background2:						#e1ebf2;
+$block-background3:						darken($block-background, 10%);
+
 $block-background-reported:				#F7ECEF;
 $block-border:							$block-background;
 $border-radius:							6px;
@@ -28,8 +31,19 @@ $block-inner-border:					$block-bottom-border;
 
 // Global color values
 $text-color:							#536482;
+$bold-text-color:						#000;
 $link-color:							#105289;
 $link-hover-color:						#D31141;
+
+// Tabs
+$tab-color:								desaturate($link-color, 20%);
+$tab-background:						$block-background2;
+
+$tab-hover-color:						$tab-color;
+$tab-hover-background:					$block-background3;
+
+$tab-selected-color:					#333;
+$tab-selected-background:				$block-background3;
 
 // Header
 $header-bg:								$content-background;
@@ -60,7 +74,12 @@ $secondary-nav-hover-link:				$overlay-color;
 // Dropdown
 $dropdown-bg:							#fff;
 
-// Stats block
+// Content outside of blocks
+$page-title-color:						$primary-color;
+$stats-title-color:						desaturate($primary-color, 25%);
+$content-top-border:					lighten($content-background, 10%);
+$content-bottom-border:					darken($content-background, 10%);
+$content-inner-border:					$content-bottom-border;
 
 // Heading section
 $heading-bg:							darken($primary-color, 10%);
@@ -133,6 +152,12 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 
 @mixin section-heading-separate {
 	border-radius: max(0, $border-radius - 1px);
+}
+
+@mixin section-heading-cp {
+	box-shadow: none;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 @mixin table-heading {
