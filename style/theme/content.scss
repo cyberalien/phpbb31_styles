@@ -931,7 +931,6 @@ dd.profile-contact {
 	top: 0;
 	left: 0;
 	pointer-events: none;
-	z-index: 3;
 }
 
 .online-ribbon span {
@@ -954,6 +953,11 @@ dd.profile-contact {
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
+}
+
+.online-ribbon span + span {
+	opacity: .3;
+	z-index: 3;
 }
 
 .no-avatar .avatar-container {

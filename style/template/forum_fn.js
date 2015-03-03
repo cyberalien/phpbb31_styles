@@ -1315,7 +1315,7 @@ function parseDocument($container) {
 		$container.find('.online').each(function() {
 			var $this = $(this);
 
-			$this.css('position', 'relative').append('<span class="online-ribbon"><span>' + text + '</span></span>');
+			$this.css('position', 'relative').append('<span class="online-ribbon"><span>' + text + '</span><span>' + text + '</span></span>');
 		});
 	});
 }
