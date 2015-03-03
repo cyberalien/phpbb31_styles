@@ -125,29 +125,29 @@
 	<ul role="menubar">
 		<!-- DEFINE $SECONDARY_LINKS -->
 		<!-- EVENT secondary_navlinks_before -->
-		<!-- IF $NAVLINKS -->
-			{$NAVLINKS}
-		<!-- ENDIF -->
+		{% if definition.NAVLINKS|trim %}
+			{{ definition.NAVLINKS }}
+		{% endif %}
 		<!-- IF not $NAVLINKS or $NAVLINKS_SHOW_DEFAULT -->
 			<!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT --><li class="small-icon icon-<!-- IF S_WATCHING_FORUM -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->" data-last-responsive="true"><a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" data-ajax="toggle_link" data-toggle-class="small-icon icon-<!-- IF not S_WATCHING_FORUM -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->" data-toggle-text="{S_WATCH_FORUM_TOGGLE}" data-toggle-url="{U_WATCH_FORUM_TOGGLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-			<!-- IF S_DISPLAY_SEARCH -->
-				<li class="small-icon icon-search"><a href="{U_SEARCH}">{L_SEARCH}</a></li>
-				<!-- IF S_USER_LOGGED_IN -->
-					<li class="small-icon icon-new-posts"><a href="{U_SEARCH_NEW}" role="menuitem">{L_SEARCH_NEW}</a></li>
-				<!-- ENDIF -->
-			<!-- ENDIF -->
 		<!-- ENDIF -->
 		<!-- EVENT secondary_navlinks_after -->
 		<!-- ENDDEFINE -->
 		{% if definition.SECONDARY_LINKS|trim %}
 			{{ definition.SECONDARY_LINKS }}
 		{% else %}
+			<!-- IF S_DISPLAY_SEARCH -->
+				<li class="small-icon icon-search"><a href="{U_SEARCH}">{L_SEARCH}</a></li>
+				<!-- IF S_USER_LOGGED_IN -->
+					<li class="small-icon icon-new-posts"><a href="{U_SEARCH_NEW}" role="menuitem">{L_SEARCH_NEW}</a></li>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
 			<!-- IF not S_REGISTERED_USER -->
 				<li class="small-icon icon-login"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></li>
 				<!-- IF S_REGISTER_ENABLED -->
 					<li class="small-icon icon-register"><a href="{U_REGISTER}">{L_REGISTER}</a></li>
 				<!-- ENDIF -->
-			<!-- ELSE -->
+			<!-- ELSEIF not S_DISPLAY_SEARCH -->
 				<li><a href="{U_PROFILE}" class="small-icon icon-profile">{CURRENT_USERNAME_SIMPLE}</a></li>
 			<!-- ENDIF -->
 		{% endif %}
