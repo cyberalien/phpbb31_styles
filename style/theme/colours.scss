@@ -71,6 +71,7 @@ hr {
 		background-image: -webkit-linear-gradient(top, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
 		background-image: linear-gradient(to bottom, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-gradient-end)}');
+		box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
 		.tab {
 			color: $primary-nav-color;
