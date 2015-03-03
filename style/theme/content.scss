@@ -7,17 +7,13 @@ ul.topiclist {
 	margin: 0;
 }
 
-ul.forums, ul.topics {
-	margin: -5px -5px 0;
-}
-
 ul.topiclist li {
 	display: block;
 	list-style-type: none;
 	margin: 0;
 	.forabg &.header,
 	.forumbg &.header {
-		@include section-heading;
+		@include section-heading-forum;
 	}
 }
 

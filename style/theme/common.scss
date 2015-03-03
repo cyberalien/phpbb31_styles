@@ -714,7 +714,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .forabg {
-	@include section;
+	@include section-forum;
 	margin-bottom: 4px;
 	clear: both;
 	& + .forabg {
@@ -723,7 +723,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .forumbg {
-	@include section;
+	@include section-forum;
 	margin-bottom: 4px;
 	clear: both;
 
