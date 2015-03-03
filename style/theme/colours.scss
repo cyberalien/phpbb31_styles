@@ -801,6 +801,9 @@ Colours and backgrounds for buttons.css
 	&.breadcrumbs:after {
 		text-align: left;
 	}
+	&.breadcrumbs:after {
+		color: $link-color;
+	}
 }
 .icon-logout {
 	@extend %icon-image-fa;
