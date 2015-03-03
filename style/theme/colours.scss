@@ -625,8 +625,9 @@ fieldset.polls dd div {
 	color: #000000;
 }
 
-.online > .inner {
-	background-image: url("./en/icon_user_online.gif");
+.online-ribbon span {
+	background-color: $primary-color;
+	color: $overlay-color;
 }
 
 dd.profile-warnings {
