@@ -264,7 +264,7 @@ dl.details dd {
 }
 
 .reported {
-	background-color: #F7ECEF;
+	background-color: $block-background-reported;
 }
 
 li.reported:hover {
@@ -628,6 +628,9 @@ fieldset.polls dd div {
 .online-ribbon span {
 	background-color: $content-background;
 	color: mix($block-background, $link-color, 50%);
+	.reported & {
+		color: mix($block-background-reported, $link-hover-color, 50%);
+	}
 }
 
 dd.profile-warnings {
