@@ -729,6 +729,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 	&.forumbg-table {
 		@include section-empty;
+		padding: 0 1px;
 	}
 }
 
