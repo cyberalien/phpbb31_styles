@@ -1028,6 +1028,9 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	.notifications & {
+		min-width: 300px;
+	}
 }
 
 .dropdown-up .dropdown-contents {
