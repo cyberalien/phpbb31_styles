@@ -119,9 +119,9 @@
 			<div class="inner">
 
 	<!-- IF searchresults.S_IGNORE_POST -->
-		<div class="postbody">
+		<div class="postbody"><div class="postbody-inner">
 			{searchresults.L_IGNORE_POST}
-		</div>
+		</div></div>
 	<!-- ELSE -->
 		<dl class="postprofile">
 			<!-- EVENT search_results_postprofile_before -->
@@ -134,10 +134,10 @@
 			<!-- EVENT search_results_postprofile_after -->
 		</dl>
 
-		<div class="postbody">
+		<div class="postbody"><div class="postbody-inner">
 			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
 			<div class="content">{searchresults.MESSAGE}</div>
-		</div>
+		</div></div>
 	<!-- ENDIF -->
 
 	<!-- IF not searchresults.S_IGNORE_POST -->

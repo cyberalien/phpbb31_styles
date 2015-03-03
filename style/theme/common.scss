@@ -289,6 +289,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 .navbar {
 	@include section;
 	padding: 3px 10px;
+	clear: both;
 
 	&.tabbed, &.secondary {
 		@include section-empty;

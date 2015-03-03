@@ -691,6 +691,20 @@ function parseDocument($container) {
 	});
 
 	/**
+	* Fix container for messages
+	*/
+	$container.find('.postbody').each(function() {
+		var $this = $(this),
+			children = $this.children();
+
+		if (children.length == 1 && children.hasClass('postbody-inner')) {
+			return;
+		}
+
+		$this.wrapInner('<div class="postbody-inner" />');
+	});
+
+	/**
 	* Do not run functions below for old browsers
 	*/
 	if (oldBrowser) {
