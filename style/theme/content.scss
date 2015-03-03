@@ -375,10 +375,16 @@ dd.option {
 	margin-left: -#{$post-margin};
 	width: 100%;
 	position: relative;
+	.search & {
+		margin-left: (-100px - $post-margin);
+	}
 }
 
 .postbody > div {
 	margin-left: $post-margin;
+	.search & {
+		margin-left: ($post-margin + 100px);
+	}
 }
 
 .postbody .ignore {
@@ -424,10 +430,6 @@ dd.option {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-}
-
-.search .postbody {
-	width: 68%
 }
 
 /* Topic review panel
@@ -860,6 +862,9 @@ fieldset.polls dd div {
 	float: left;
 	position: relative;
 	z-index: 2;
+	.search & {
+		width: ($profile-width + 100px);
+	}
 }
 
 .postprofile dd, .postprofile dt {
@@ -966,11 +971,6 @@ dd.profile-contact {
 	height: 92px;
 	background: transparent none 50% 50% no-repeat;
 	background-size: 92px 92px;
-}
-
-/* Poster profile used by search*/
-.search .postprofile {
-	width: 30%;
 }
 
 /* Profile used on view-profile */
