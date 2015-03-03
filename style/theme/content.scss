@@ -8,7 +8,7 @@ ul.topiclist {
 }
 
 ul.forums, ul.topics {
-	margin: 0 -5px;
+	margin: -5px -5px 0;
 }
 
 ul.topiclist li {
@@ -211,6 +211,12 @@ dl.icon dt {
 dl.icon dt .list-inner {
 	padding-left: 55px;					/* Space for folder icon */
 	position: relative;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	li.header & {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 }
 
 dl.icon dt .list-inner .topic-status {
