@@ -123,6 +123,7 @@
 
 <div class="navbar secondary">
 	<ul role="menubar">
+		<!-- DEFINE $SECONDARY_LINKS -->
 		<!-- EVENT secondary_navlinks_before -->
 		<!-- IF $NAVLINKS -->
 			{$NAVLINKS}
@@ -137,6 +138,20 @@
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 		<!-- EVENT secondary_navlinks_after -->
+		<!-- ENDDEFINE -->
+		{% if definition.SECONDARY_LINKS|trim %}
+			{{ definition.SECONDARY_LINKS }}
+		{% else %}
+			<!-- IF not S_REGISTERED_USER -->
+				<li class="small-icon icon-login"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></li>
+				<!-- IF S_REGISTER_ENABLED -->
+					<li class="small-icon icon-register"><a href="{U_REGISTER}">{L_REGISTER}</a></li>
+				<!-- ENDIF -->
+			<!-- ELSE -->
+				<li><a href="{U_PROFILE}" class="small-icon icon-profile">{CURRENT_USERNAME_SIMPLE}</a></li>
+			<!-- ENDIF -->
+		{% endif %}
+
 	</ul>
 </div>
 

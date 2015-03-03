@@ -812,6 +812,12 @@ Colours and backgrounds for buttons.css
 		content: '\f08b';	// fa-sign-out
 	}
 }
+.icon-login {
+	@extend %icon-image-fa;
+	&:after {
+		content: '\f090';	// fa-sign-in
+	}
+}
 .icon-mark {
 	@extend %icon-image-gi;
 	&:after {
