@@ -215,6 +215,12 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 #page-body {
 	margin: 4px 0;
+	#wrap > &:first-of-type {
+		margin-top: 0;
+	}
+	#wrap > &:last-of-type {
+		margin-bottom: 0;
+	}
 	clear: both;
 }
 
