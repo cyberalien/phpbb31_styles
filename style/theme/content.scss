@@ -926,8 +926,6 @@ dd.profile-contact {
 	height: 70px;
 	position: absolute;
 	overflow: hidden;
-	opacity: .7;
-	transition: opacity 0.2s ease;
 	top: 0;
 	right: 0;
 	// left: 0;
@@ -935,10 +933,12 @@ dd.profile-contact {
 }
 
 .online-ribbon span {
+	display: block;
+	font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	width: 100px;
-	font-size: 12px;
+	font-size: 11px;
 	line-height: 18px;
 	height: 18px;
 	text-align: center;

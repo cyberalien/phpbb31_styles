@@ -626,8 +626,8 @@ fieldset.polls dd div {
 }
 
 .online-ribbon span {
-	background-color: $primary-color;
-	color: $overlay-color;
+	background-color: $content-background;
+	color: mix($block-background, $link-color, 50%);
 }
 
 dd.profile-warnings {
