@@ -15,7 +15,8 @@ ul.topiclist li {
 	display: block;
 	list-style-type: none;
 	margin: 0;
-	&.header {
+	.forabg &.header,
+	.forumbg &.header {
 		@include section-heading;
 	}
 }

@@ -1271,6 +1271,22 @@ function parseDocument($container) {
 			hdImage.src = img.getAttribute('data-src-hd');
 		});
 	}
+
+	/**
+	* Split buttons
+	*/
+	$container.find('div.buttons a.button.icon-button').each(function() {
+		var $this = $(this),
+			words;
+
+		if ($this.children().length) return;
+
+		words = $this.text().trim().split(' ');
+		if (words.length > 1) {
+			$this.text(words.shift() + ' ').append('<strong />');
+			$this.find('strong').text(words.join(' '));
+		}
+	});
 }
 
 /**

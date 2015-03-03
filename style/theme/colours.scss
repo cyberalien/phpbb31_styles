@@ -654,7 +654,10 @@ Colours and backgrounds for buttons.css
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFFFF', EndColorStr='#E9E9E9')";
 	box-shadow: 0 0 0 1px #FFFFFF inset;
 	-webkit-box-shadow: 0 0 0 1px #FFFFFF inset;
-	color: #D31141;
+	color: $secondary-color;
+
+	& > strong {
+	}
 }
 
 .dropdown-select {
