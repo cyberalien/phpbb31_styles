@@ -6,6 +6,9 @@ Colours and backgrounds for common.css
 html, body {
 	color: $text-color;
 	background-color: $page-background;
+	&.simple {
+		background-color: $content-background;
+	}
 }
 
 h1, p.sitename {
@@ -18,6 +21,9 @@ h2 {
 
 h3 {
 	color: $stats-title-color;
+	.post & {
+		color: $block-title-color;
+	}
 	a {
 		color: inherit;
 		&:hover {

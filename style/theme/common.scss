@@ -742,6 +742,10 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	@include section-heading;
 	padding-left: 10px;
 	padding-right: 10px;
+	.panel-container & {
+		font-size: 16px;
+		line-height: 22px;
+	}
 }
 
 .post {

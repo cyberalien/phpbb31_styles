@@ -17,6 +17,12 @@ $primary-color:							#12a3eb;
 $secondary-color:						#d31141;
 $overlay-color:							#fff;
 
+// Global color values
+$text-color:							#536482;
+$bold-text-color:						#000;
+$link-color:							#105289;
+$link-hover-color:						#D31141;
+
 // Blocks
 $block-background:						#ecf3f7;
 $block-background2:						#e1ebf2;
@@ -29,11 +35,7 @@ $block-top-border:						lighten($block-background, 10%);
 $block-bottom-border:					darken($block-background, 10%);
 $block-inner-border:					$block-bottom-border;
 
-// Global color values
-$text-color:							#536482;
-$bold-text-color:						#000;
-$link-color:							#105289;
-$link-hover-color:						#D31141;
+$block-title-color:						desaturate($link-color, 20%);
 
 // Tabs
 $tab-color:								desaturate($link-color, 20%);
@@ -155,6 +157,8 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 }
 
 @mixin section-heading-cp {
+	background-color: transparent;
+	color: $stats-title-color;
 	box-shadow: none;
 	background-image: none;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
