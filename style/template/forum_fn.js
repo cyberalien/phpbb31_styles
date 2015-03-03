@@ -1133,7 +1133,7 @@ function parseDocument($container) {
 	*/
 	var animatedDescription = false;
 	$container.find('.forabg[data-hide-description]').each(function(i) {
-		if (typeof this.getBoundingClientRect == 'undefined' || $(this).attr('data-hide-description') != '1') {
+		if ($(this).attr('data-hide-description') != '1') {
 			return;
 		}
 
@@ -1145,7 +1145,7 @@ function parseDocument($container) {
 			var $this = $(this),
 				title = $this.prev(),
 				id = 'forumdesc-' + i + '-' + j,
-				item, top, left, width, rect;
+				item, top, left, width, rect, rectWidth;
 
 			$b.append($this);
 			$this.attr('id', id).append('<span class="arrow" />');
@@ -1164,11 +1164,12 @@ function parseDocument($container) {
 
 				// Calculate position
 				rect = this.getBoundingClientRect();
-				// $this.attr('data-rect', 'top: ' + rect.top + ', left: ' + rect.left + ', width: ' + rect.width + ', window: ' + $w.width());
+				rectWidth = rect.width ? rect.width : $(this).width();
+				// $this.attr('data-rect', 'top: ' + rect.top + ', left: ' + rect.left + ', width: ' + rectWidth + ', window: ' + $w.width());
 				top = Math.floor($w.scrollTop() + rect.top);
-				if ((rect.left + rect.width + 300) > $w.width()) {
+				if ((rect.left + rectWidth + 300) > $w.width()) {
 					$this.addClass('no-arrow');
-					top += Math.floor(rect.height);
+					top += Math.floor(rect.height ? rect.height : $(this).height());
 
 					if (!rtl) {
 						left = Math.floor($w.scrollLeft() + rect.left);
@@ -1179,7 +1180,7 @@ function parseDocument($container) {
 						});
 					}
 					else {
-						left = Math.floor($w.scrollLeft() + rect.left + rect.width);
+						left = Math.floor($w.scrollLeft() + rect.left + rectWidth);
 						$this.css({
 							position: 'absolute',
 							top: top + 'px',
@@ -1189,7 +1190,7 @@ function parseDocument($container) {
 				}
 				else if (!rtl) {
 					$this.removeClass('no-arrow');
-					left = Math.floor($w.scrollLeft() + rect.left + rect.width + 10);
+					left = Math.floor($w.scrollLeft() + rect.left + rectWidth + 10);
 					$this.css({
 						position: 'absolute',
 						top: top + 'px',
