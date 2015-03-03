@@ -34,7 +34,8 @@ li.breadcrumbs span:first-child > a {
 
 /* Notification mark read link */
 .dropdown-extended a.mark_read {
-	display: none;
+	display: block;
+	opacity: .6;
 	position: absolute;
 	z-index: 2;
 	right: 0;
@@ -44,10 +45,15 @@ li.breadcrumbs span:first-child > a {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	transition: opacity .2s;
 }
 
 .dropdown-extended li:hover a.mark_read {
-	display: block;
+	opacity: .85;
+}
+
+.dropdown-extended li a.mark_read:hover {
+	opacity: 1;
 }
 
 .dropdown-extended a.mark_read:after {
