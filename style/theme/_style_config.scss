@@ -20,25 +20,20 @@ $overlay-color:							#fff;
 $block-background:						#ecf3f7;
 $block-border:							$block-background;
 $border-radius:							6px;
+$block-top-border:						lighten($block-background, 10%);
+$block-bottom-border:					darken($block-background, 10%);
+$block-inner-border:					$block-bottom-border;
 
 // Global color values
 $text-color:							#536482;
 $link-color:							#105289;
 $link-hover-color:						#D31141;
 
-
-
-
-
-
-// Heading
-$heading-bg:							$content-background;
-$heading-text:							$text-color;
-$heading-link:							$overlay-color;
-$heading-link-hover:					mix($heading-link, $heading-bg, 80%);
-
-// Pagination
-$pagination-bg:							desaturate(mix($primary-color, $content-background, 15%), 50%);
+// Header
+$header-bg:								$content-background;
+$header-text:							$text-color;
+$header-link:							$overlay-color;
+$header-link-hover:						mix($header-link, $header-bg, 80%);
 
 // Primary navigation
 $primary-nav-bg:						darken($primary-color, 10%);
@@ -65,6 +60,13 @@ $dropdown-bg:							#fff;
 
 // Stats block
 
+// Heading section
+$heading-bg:							darken($primary-color, 10%);
+$heading-border:						$heading-bg;
+$heading-color:							$overlay-color;
+$heading-link:							$overlay-color;
+$heading-link-hover:					mix($heading-link, $heading-bg, 80%);
+
 
 
 // Mixins
@@ -72,4 +74,74 @@ $dropdown-bg:							#fff;
 	background: $block-background;
 	border: 0 solid $block-border;
 	border-radius: $border-radius;
+	padding: 5px 10px;
+}
+
+// Undo mixin above
+@mixin section-empty {
+	background: transparent;
+	border-width: 0;
+	border-radius: 0;
+	padding: 0;
+}
+
+// Heading block
+@mixin section-heading {
+	margin: -5px -10px 5px;
+	border-radius: max(0, $border-radius - 1px);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background: $heading-bg;
+	border: 0 solid $heading-border;
+	padding: 5px;
+	text-transform: none;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: normal;
+	color: $heading-color;
+
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
+	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+
+	@if $border-radius > 1px {
+		@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+			border-radius: 0;
+		}
+	}
+
+	a {
+		color: $heading-link;
+		&:hover {
+			color: $heading-link-hover;
+		}
+	}
+}
+
+@mixin section-heading-separate {
+	border-radius: max(0, $border-radius - 1px);
+}
+
+@mixin table-heading {
+	background: $heading-bg;
+	border: 0 solid $heading-border;
+	text-transform: none;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: normal;
+	color: $heading-color;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
+	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+
+	@if $border-radius > 1px {
+		&:first-child {
+			border-top-left-radius: max(0, $border-radius - 1px);
+		}
+		&:last-child {
+			border-top-right-radius: max(0, $border-radius - 1px);
+		}
+	}
 }

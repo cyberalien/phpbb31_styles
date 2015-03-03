@@ -281,8 +281,13 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .navbar {
+	@include section;
 	padding: 3px 10px;
-	border-radius: 7px;
+
+	&.tabbed, &.secondary {
+		@include section-empty;
+	}
+
 	#page-body & {
 		margin-bottom: 10px;
 	}
@@ -291,13 +296,11 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 	&.tabbed {
 		padding: 0;
-		border-radius: 0;
 	}
 	&.secondary {
 		@extend %clearfix;
 		margin: 0;
 		padding: 1px 0;
-		border-radius: 0;
 		ul {
 			list-style-type: none;
 			margin: 0;
@@ -705,32 +708,39 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .forabg {
-	background: transparent none repeat-x 0 0;
+	@include section;
 	margin-bottom: 4px;
-	padding: 5px;
 	clear: both;
-	border-radius: 7px;
 	& + .forabg {
 		margin-top: 10px;
 	}
 }
 
 .forumbg {
-	background: transparent none repeat-x 0 0;
+	@include section;
 	margin-bottom: 4px;
-	padding: 5px;
 	clear: both;
-	border-radius: 7px;
+
+	&.forumbg-table {
+		@include section-empty;
+	}
 }
 
 .panel {
+	@include section;
 	margin-bottom: 4px;
 	padding: 5px 10px;
-	border-radius: 7px;
+}
+
+.panel > .inner > h3:first-child {
+	@include section-heading;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .post {
 	@include section;
+	padding: 0;
 	margin-bottom: 4px;
 	position: relative;
 }
@@ -1163,11 +1173,12 @@ table.table1 {
 }
 
 table.table1 thead th {
+	@include table-heading;
+	text-transform: none;
+	line-height: 18px;
 	font-weight: normal;
-	text-transform: uppercase;
-	line-height: 1.3em;
-	font-size: 1em;
-	padding: 0 0 4px 3px;
+	font-size: 12px;
+	padding: 4px;
 }
 
 table.table1 thead th span {
@@ -1175,7 +1186,7 @@ table.table1 thead th span {
 }
 
 table.table1 tbody tr {
-	border: 1px solid transparent;
+	border-top: 1px solid transparent;
 }
 
 table.table1 td {

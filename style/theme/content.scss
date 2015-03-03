@@ -7,14 +7,17 @@ ul.topiclist {
 	margin: 0;
 }
 
-ul.forums {
-	background: transparent none repeat-x 0 0;
+ul.forums, ul.topics {
+	margin: 0 -5px;
 }
 
 ul.topiclist li {
 	display: block;
 	list-style-type: none;
 	margin: 0;
+	&.header {
+		@include section-heading;
+	}
 }
 
 ul.topiclist dl {
@@ -102,6 +105,15 @@ ul.topiclist li.row dt a.subforum {
 li.row {
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
+	&:first-child {
+		border-top-width: 0;
+		padding-top: 0;
+	}
+	&:last-child {
+		border-bottom-width: 0;
+		padding-bottom: 0;
+	}
+
 	.forum-description {
 
 	}
@@ -136,14 +148,11 @@ li.row strong {
 li.header dt, li.header dd {
 	line-height: 12px;
 	border-left-width: 0;
-	margin: 2px 0 4px 0;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	padding-top: 0;
+	padding-bottom: 0;
 	font-size: 12px;
 	font-family: Arial, Helvetica, sans-serif;
-	.forabg & {
-		line-height: 18px;
-	}
+	line-height: 18px;
 }
 
 li.header dt {
@@ -156,6 +165,7 @@ li.header dt {
 	margin-right: -440px;
 	.list-inner {
 		margin-right: 440px;
+		text-indent: 5px;
 	}
 	.forabg &, 
 	.forabg & .list-inner {
@@ -185,8 +195,6 @@ li.header dl.icon dt .list-inner {
 		padding-left: 0;
 		padding-right: 50px;
 	}
-	padding-top: 0;
-	padding-bottom: 3px;
 }
 
 /* Forum list column styles */
@@ -203,11 +211,6 @@ dl.icon dt {
 dl.icon dt .list-inner {
 	padding-left: 55px;					/* Space for folder icon */
 	position: relative;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	.forums & {
-		padding-top: 6px;
-	}
 }
 
 dl.icon dt .list-inner .topic-status {

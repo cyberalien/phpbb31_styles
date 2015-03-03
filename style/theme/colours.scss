@@ -9,7 +9,7 @@ html, body {
 }
 
 h1, p.sitename {
-	color: $heading-text;
+	color: $header-text;
 }
 
 h2 {
@@ -49,18 +49,11 @@ hr {
 }
 
 .headerbar {
-	color: $heading-text;
+	color: $header-text;
 }
 
 .navbar {
-	background-color: $pagination-bg;
-
-	&.tabbed {
-		background-color: transparent;
-	}
-
 	&.secondary {
-		background-color: transparent;
 		li:hover {
 			&, &:after, &:before {
 				color: $secondary-nav-hover-link;
@@ -106,18 +99,6 @@ hr {
 			}
 		}
 	}
-}
-
-.forabg {
-	background-color: #0076b1;
-	background-image: -webkit-linear-gradient(top, #6aceff 0, #12a3eb 1px, #088acb 30px, #037fbc 60px, #0076b1 90px);
-	background-image: linear-gradient(to bottom, #6aceff 0, #12a3eb 1px, #088acb 30px, #037fbc 60px, #0076b1 90px);
-}
-
-.forumbg {
-	background-color: #12A3EB;
-	background-image: -webkit-linear-gradient(top, #6aceff 0, #0076b1 1px, #0583c2 30px, #0c95d9 60px, #12a3eb 90px);
-	background-image: linear-gradient(to bottom, #6aceff 0, #0076b1 1px, #0583c2 30px, #0c95d9 60px, #12a3eb 90px);
 }
 
 .panel {
@@ -384,10 +365,6 @@ Colours and backgrounds for content.css
 -------------------------------------------------------------- */
 
 ul.forums {
-	background-color: #eef5f9;
-	background-image: -webkit-linear-gradient(to bottom, #d2e0eb 0, #eef5f9 200px);
-	background-image: linear-gradient(to bottom, #d2e0eb 0, #eef5f9 200px);
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#d2e0eb', EndColorStr='#eef5f9')";
 }
 
 ul.topiclist li {
@@ -420,8 +397,8 @@ ul.topiclist li.row dt a.subforum.unread {
 }
 
 li.row {
-	border-top-color:  #FFFFFF;
-	border-bottom-color: #00608F;
+	border-top-color: $block-top-border;
+	border-bottom-color: $block-bottom-border;
 }
 
 li.row strong {
@@ -429,20 +406,9 @@ li.row strong {
 }
 
 li.row:hover {
-	background-color: #F6F4D0;
 }
 
 li.row:hover dd {
-	border-left-color: #CCCCCC;
-}
-
-.rtl li.row:hover dd {
-	border-right-color: #CCCCCC;
-	border-left-color: transparent;
-}
-
-li.header dt, li.header dd {
-	color: #FFFFFF;
 }
 
 /* Post body styles

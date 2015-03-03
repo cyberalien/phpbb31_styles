@@ -40,6 +40,10 @@ body {
 	margin-left: -5px;
 	margin-right: -5px;
 }
+.forumbg.forumbg-table {
+	margin-left: -4px;
+	margin-right: -4px;
+}
 .headerbar, .navbar {
 	border-radius: 0;
 }
@@ -236,6 +240,7 @@ table.responsive.show-header thead, table.responsive.show-header th:first-child 
 	display: block;
 	width: auto !important;
 	text-align: left !important;
+	border-radius: 0;
 }
 
 table.responsive.show-header th:first-child span.rank-img {
