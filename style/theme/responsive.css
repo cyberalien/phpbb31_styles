@@ -48,7 +48,6 @@ body {
 	margin-right: -5px;
 }
 
-
 #cp-main .forabg, #cp-main .forumdb, #cp-main .post, #cp-main .panel {
 	border-radius: 7px;
 }
@@ -72,7 +71,8 @@ body {
 	padding: 10px;
 }
 
-#site-description h1, #site-description p {
+#site-description h1, #site-description p, #site-description p.sitename {
+	display: block;
 	text-align: inherit;
 	float: none;
 	margin: 5px;
@@ -87,9 +87,6 @@ body {
 
 /* Navigation
 ----------------------------------------*/
-.headerbar + .navbar {
-	margin-top: -5px;
-}
 
 /* Search
 ----------------------------------------*/

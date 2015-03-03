@@ -4,11 +4,11 @@ Colours and backgrounds for common.css
 -------------------------------------------------------------- */
 
 html, body {
-	color: $color-text;
+	color: $text-color;
 	background-color: $page-background;
 }
 
-h1 {
+h1, p.sitename {
 	color: $heading-text;
 }
 
@@ -48,8 +48,6 @@ hr {
 }
 
 .headerbar {
-	background-color: $heading-bg;
-	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 100%);
 	color: $heading-text;
 }
 
@@ -337,8 +335,8 @@ p.post-notice.reported:before, p.post-notice.error:before {
 Colours and backgrounds for links.css
 -------------------------------------------------------------- */
 
-a { color: $color-link; }
-a:hover	{ color: $color-link-hover; }
+a { color: $link-color; }
+a:hover	{ color: $link-hover-color; }
 
 /* Links on gradient backgrounds */
 .forumbg .header a, .forabg .header a, th a {

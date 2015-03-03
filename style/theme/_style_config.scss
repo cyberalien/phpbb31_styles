@@ -1,5 +1,11 @@
 // Configuration file
-$separate-forums:						0;
+$separate-forums:						0;	// 0 if forums are in same container, 1 if forums are in separate blocks
+
+$show-logo:								1;	// 0 or 1
+$show-forum-title:						0;	// 0 or 1
+$center-logo:							1;	// 0 or 1
+$logo-width:							140px;
+$logo-block-padding:					10px 0;
 
 // Page
 $page-background:						#F5F7FA;
@@ -16,9 +22,9 @@ $block-border:							$block-background;
 $border-radius:							6px;
 
 // Global color values
-$color-text:							#536482;
-$color-link:							#105289;
-$color-link-hover:						#D31141;
+$text-color:							#536482;
+$link-color:							#105289;
+$link-hover-color:						#D31141;
 
 
 
@@ -26,8 +32,8 @@ $color-link-hover:						#D31141;
 
 
 // Heading
-$heading-bg:							$primary-color;
-$heading-text:							$overlay-color;
+$heading-bg:							$content-background;
+$heading-text:							$text-color;
 $heading-link:							$overlay-color;
 $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 

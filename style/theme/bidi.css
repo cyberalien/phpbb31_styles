@@ -25,15 +25,6 @@
 	padding: 10px 10px 0 13px;
 }
 
-/* Site Description
---------------------------------------------- */
-.rtl #site-description {
-}
-
-.rtl #site-description h1 {
-	margin-left: 0;
-}
-
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 .rtl .post {

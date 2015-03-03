@@ -1228,6 +1228,48 @@ function parseDocument($container) {
 			});
 		});
 	});
+
+	/**
+	* HD images
+	*/
+	if (window.matchMedia && window.matchMedia('all, (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)').matches) {
+		$container.find('img[data-src-hd]').each(function() {
+			var img = this,
+				$this = $(this),
+				hdImage = new Image(),
+				hdLoaded = false,
+				normalLoaded = false;
+
+			function replaceImage() 
+			{
+				$this.css('width', img.width + 'px');
+				img.setAttribute('src', img.getAttribute('data-src-hd'));
+			}
+
+			if (img.complete) {
+				normalLoaded = true;
+			}
+			else {
+				img.onload = function() {
+					if (normalLoaded) {
+						return;
+					}
+					normalLoaded = true;
+					if (hdLoaded) {
+						replaceImage();
+					}
+				};
+			}
+
+			hdImage.onload = function() {
+				hdLoaded = true;
+				if (normalLoaded) {
+					replaceImage();
+				}
+			};
+			hdImage.src = img.getAttribute('data-src-hd');
+		});
+	}
 }
 
 /**

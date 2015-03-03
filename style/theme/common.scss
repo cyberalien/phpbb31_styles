@@ -57,8 +57,7 @@ table {
 ---------------------------------------- */
 html {
 	font-size: 100%;
-	/* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-IE browsers */
-	height: 101%;
+	height: 100%;
 }
 
 body {
@@ -68,17 +67,21 @@ body {
 	font-size: 10px;
 	line-height: normal;
 	margin: 0;
-	padding: 12px 0;
+	padding: 0 0 12px;
 	word-wrap: break-word;
+	min-height: 100%;
+	box-sizing: border-box;
 }
 
-h1 {
+h1, p.sitename {
 	/* Forum name */
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	margin-right: 200px;
 	margin-top: 15px;
+	margin-bottom: 0;
 	font-weight: bold;
 	font-size: 2em;
+	line-height: inherit;
 }
 
 h2 {
@@ -227,31 +230,51 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .logo {
-	float: left;
-	width: auto;
-	padding: 10px 13px 0 10px;
-}
-
-.logo:hover {
-	text-decoration: none;
+	@if $show-logo == 1 {
+		display: block;
+		width: $logo-width;
+		@if $center-logo == 1 {
+			margin: 0 auto;
+		}
+		@else {
+			float: left;
+		}
+		img {
+			display: block;
+			max-width: 100%;
+		}
+		padding: $logo-block-padding;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	@else {
+		display: none;
+	}
 }
 
 /* Site description and logo */
 #site-description {
 	@extend %clearfix;
-}
+	h1, p.sitename {
+		margin-left: 0;
+		margin-right: 0;
+	}
 
-#site-description h1 {
-	margin-right: 0;
+	@if $center-logo == 1 {
+		text-align: center;
+	}
+
+	@if $show-forum-title == 0 {
+		h1, p {
+			display: none;
+		}
+	}
 }
 
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 .headerbar {
-	background: transparent none repeat-x 0 0;
-	margin-bottom: 4px;
-	padding: 5px;
-	border-radius: 7px;
 	& > .inner {
 		position: relative;
 	}
