@@ -370,10 +370,15 @@ dd.option {
 ----------------------------------------*/
 .postbody {
 	padding: 0;
+	float: right;
 	line-height: 1.48em;
-	width: 76%;
-	float: left;
+	margin-left: -#{$post-margin};
+	width: 100%;
 	position: relative;
+}
+
+.postbody > div {
+	margin-left: $post-margin;
 }
 
 .postbody .ignore {
@@ -850,15 +855,16 @@ fieldset.polls dd div {
 	margin: 5px 0 10px 0;
 	min-height: 80px;
 	border: 1px solid transparent;
-	border-width: 0 0 0 1px;
-	width: 22%;
-	float: right;
-	display: inline;
+	border-width: 0 1px 0 0;
+	width: $profile-width;
+	float: left;
+	position: relative;
+	z-index: 2;
 }
 
 .postprofile dd, .postprofile dt {
 	line-height: 1.2em;
-	margin-left: 8px;
+	margin-right: 8px;
 }
 
 .postprofile dd {
@@ -923,8 +929,7 @@ dd.profile-contact {
 	position: absolute;
 	overflow: hidden;
 	top: 0;
-	right: 0;
-	// left: 0;
+	left: 0;
 	pointer-events: none;
 }
 
@@ -941,14 +946,14 @@ dd.profile-contact {
 	position: absolute;
 	top: 17px;
 	white-space: nowrap;
-	right: -25px;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-	// left: -25px;
-	// -webkit-transform: rotate(-45deg);
-	// -ms-transform: rotate(-45deg);
-	// transform: rotate(-45deg);
+	// right: -25px;
+	// -webkit-transform: rotate(45deg);
+	// -ms-transform: rotate(45deg);
+	// transform: rotate(45deg);
+	left: -25px;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
 .no-avatar .avatar-container {

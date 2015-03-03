@@ -375,15 +375,6 @@ ul.topiclist li {
 	}
 }
 
-ul.topiclist dd {
-	border-left-color: #FFFFFF;
-}
-
-.rtl ul.topiclist dd {
-	border-right-color: #fff;
-	border-left-color: transparent;
-}
-
 ul.topiclist li.row dt a.subforum.read {
 	background-image: url("./images/subforum_read.png");
 	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)	{
