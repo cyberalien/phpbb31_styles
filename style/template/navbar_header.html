@@ -123,18 +123,24 @@
 
 <div class="navbar secondary">
 	<ul role="menubar">
-		<!-- DEFINE $SECONDARY_LINKS -->
+		{% set secondary_links %}
 		<!-- EVENT secondary_navlinks_before -->
 		{% if definition.NAVLINKS|trim %}
 			{{ definition.NAVLINKS }}
 		{% endif %}
-		<!-- IF not $NAVLINKS or $NAVLINKS_SHOW_DEFAULT -->
+		{% if !definition.NAVLINKS|trim || definition.NAVLINKS_SHOW_DEFAULT == 1 %}
 			<!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT --><li class="small-icon icon-<!-- IF S_WATCHING_FORUM -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->" data-last-responsive="true"><a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" data-ajax="toggle_link" data-toggle-class="small-icon icon-<!-- IF not S_WATCHING_FORUM -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->" data-toggle-text="{S_WATCH_FORUM_TOGGLE}" data-toggle-url="{U_WATCH_FORUM_TOGGLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
-		<!-- ENDIF -->
+		{% endif %}
 		<!-- EVENT secondary_navlinks_after -->
-		<!-- ENDDEFINE -->
-		{% if definition.SECONDARY_LINKS|trim %}
-			{{ definition.SECONDARY_LINKS }}
+		{% endset %}
+		{% if secondary_links|trim %}
+			{{ secondary_links }}
+			<!-- IF $NAVLINKS_SHOW_DEFAULT && S_DISPLAY_SEARCH -->
+				<li class="small-icon icon-search"><a href="{U_SEARCH}">{L_SEARCH}</a></li>
+				<!-- IF S_USER_LOGGED_IN -->
+					<li class="small-icon icon-new-posts"><a href="{U_SEARCH_NEW}" role="menuitem">{L_SEARCH_NEW}</a></li>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
 		{% else %}
 			<!-- IF S_DISPLAY_SEARCH -->
 				<li class="small-icon icon-search"><a href="{U_SEARCH}">{L_SEARCH}</a></li>
