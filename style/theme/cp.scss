@@ -48,9 +48,11 @@ ul.cplist {
 }
 
 .panel-container table.table1 thead th {
-	font-weight: bold;
-	border-bottom: 1px solid transparent;
+	@include table-heading-transparent;
 	padding: 5px;
+	font-weight: bold;
+	font-size: inherit;
+	line-height: inherit;
 }
 
 .panel-container table.table1 tbody th {

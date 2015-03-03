@@ -152,3 +152,10 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 		}
 	}
 }
+
+@mixin table-heading-transparent {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	box-shadow: none;
+	color: inherit;
+}
