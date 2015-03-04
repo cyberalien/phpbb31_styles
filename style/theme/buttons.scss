@@ -155,7 +155,6 @@
 	@extend %icon-button-gi;
 	content: '\E028';	// glyphicons-search
 	font-size: 13px;
-	margin-top: 0;
 	width: 15px;
 	padding-right: 1px;
 }
@@ -164,6 +163,7 @@
 	@extend %icon-button-gi;
 	content: '\E137';	// glyphicons-cogwheel
 	font-size: 13px;
+	margin-top: 2px;
 }
 
 .modtools-icon:before {
