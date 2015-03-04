@@ -23,11 +23,12 @@ $overlay-color:							#fff;		// Text on top of sections that use colorful backgr
 $text-color:							#536482;	// Text color
 $bold-text-color:						#000;		// Text color with higher contrast to background. #000 or #fff
 $link-color:							#105289;	// Links
-$link-hover-color:						#D31141;	// Links, hover state
+$link-hover-color:						$secondary-color;	// Links, hover state
+$muted-color:							#666;		// Gray color
 
 // Blocks
 $block-background:						#ecf3f7;	// Background of blocks
-$block-background2:						#e1ebf2;	// Blocks with .bg2 background color
+$block-background2:						saturate(darken($block-background, 5%), 5%);	// Blocks with .bg2 background color
 $block-background3:						darken($block-background, 10%);	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
 
 $block-background-reported:				#F7ECEF;	// Background for reported posts
@@ -78,8 +79,14 @@ $primary-nav-alert-color:				$overlay-color;
 $secondary-nav-hover-bg:				$secondary-color;
 $secondary-nav-hover-link:				$overlay-color;
 
+$secondary-nav-hover-gradient-start:			rgba(255, 255, 255, .25);
+$secondary-nav-hover-gradient-end:				rgba(255, 255, 255, 0);
+
 // Dropdown
-$dropdown-bg:							#fff;
+$dropdown-bg:							$content-background;
+
+$forum-description-color:				$overlay-color;
+$forum-description-bg:					desaturate(darken($primary-color, 30%), 25%);
 
 // Content outside of blocks
 $page-title-color:						$primary-color;

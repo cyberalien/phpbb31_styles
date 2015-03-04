@@ -70,9 +70,9 @@ hr {
 				color: $secondary-nav-hover-link;
 			}
 			background-color: $secondary-nav-hover-bg;
-			background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-			background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
+			background-image: -webkit-linear-gradient(top, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
+			background-image: linear-gradient(to bottom, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($secondary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($secondary-nav-hover-gradient-end)}');
 			box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 		}
 	}
@@ -154,41 +154,41 @@ ul.navlinks {
 /* Forums list layout
 ----------------------*/
 .forum-statistics {
-	color: #666;
+	color: $muted-color;
 }
 
 .forum-description.toggle {
-	color: #fff;
-	background-color: fade-out(#195472, .2);
+	color: $forum-description-color;
+	background-color: fade-out($forum-description-bg, .2);
 	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
 	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
 	a {
-		color: #fff !important;
+		color: inherit !important;
 	}
 	span.arrow {
-		border-right-color: fade-out(mix(#195472, #fff, 85%), .2);
+		border-right-color: fade-out(mix($forum-description-bg, $block-background, 85%), .2);
 	}
 	.rtl & span.arrow {
 		border-right-color: transparent;
-		border-left-color: fade-out(mix(#195472, #fff, 85%), .2);
+		border-left-color: fade-out(mix($forum-description-bg, $block-background, 85%), .2);
 	}
 }
 
 .forum-statistics {
 	.value {
-		color: #111;
+		color: $bold-text-color;
 	}
 }
 
 /* Table styles
 ----------------------------------------*/
 table.table1 thead th {
-	color: #FFFFFF;
+	color: $heading-color;
 }
 
 table.table1 tbody tr {
-	border-color: #BFC1CF;
+	border-color: $block-inner-border;
 }
 
 table.table1 tbody tr:hover, table.table1 tbody tr.hover {
@@ -211,13 +211,13 @@ table.table1 tbody th {
 }
 
 table.info tbody th {
-	color: #000000;
+	color: $bold-text-color;
 }
 
 /* Misc layout styles
 ---------------------------------------- */
 dl.details dt {
-	color: #000000;
+	color: $bold-text-color;
 }
 
 dl.details dd {
@@ -225,7 +225,7 @@ dl.details dd {
 }
 
 .sep {
-	color: #1198D9;
+	color: $primary-color;
 }
 
 /* Pagination
@@ -239,7 +239,7 @@ dl.details dd {
 
 .pagination li.ellipsis span {
 	background-color: transparent;
-	color:	#000000;
+	color:	$bold-text-color;
 }
 
 .pagination li.active span {
@@ -406,7 +406,7 @@ li.row {
 }
 
 li.row strong {
-	color: #000000;
+	color: $bold-text-color;
 }
 
 li.row:hover {
@@ -557,7 +557,7 @@ fieldset.polls dl {
 }
 
 fieldset.polls dl.voted {
-	color: #000000;
+	color: $bold-text-color;
 }
 
 fieldset.polls dd div {
@@ -630,7 +630,7 @@ fieldset.polls dd div {
 }
 
 .postprofile strong {
-	color: #000000;
+	color: $bold-text-color;
 }
 
 .online-ribbon span {
@@ -892,7 +892,7 @@ ul.cplist {
 }
 
 .panel-container .panel li.header dd, .panel-container .panel li.header dt {
-	color: #000000;
+	color: $bold-text-color;
 }
 
 .panel-container table.table1 thead th {
@@ -1036,7 +1036,7 @@ dl.mini dt {
 ----------------------------------------*/
 /* PM Message history */
 .current {
-	color: #000000 !important;
+	color: $bold-text-color !important;
 }
 
 /* PM marking colours */
