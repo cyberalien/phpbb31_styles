@@ -371,18 +371,36 @@ dd.option {
 	padding: 0;
 	float: right;
 	line-height: 1.48em;
-	margin-left: -#{$post-margin};
-	width: 100%;
-	position: relative;
-	.search & {
-		margin-left: (-100px - $post-margin);
+	.postprofile + & {
+		margin-left: -#{$post-margin};
+		.rtl & {
+			margin-left: 0;
+			margin-right: -#{$post-margin};;
+		}
+		width: 100%;
+		position: relative;
+		.search & {
+			margin-left: (-100px - $post-margin);
+			.rtl & {
+				margin-left: 0;
+				margin-right: (-100px - $post-margin);
+			}
+		}
 	}
 }
 
-.postbody > div {
+.postprofile + .postbody > div {
 	margin-left: $post-margin;
+	.rtl & {
+		margin-left: 0;
+		margin-right: $post-margin;
+	}
 	.search & {
 		margin-left: ($post-margin + 100px);
+		.rtl & {
+			margin-left: 0;
+			margin-right: ($post-margin + 100px);
+		}
 	}
 }
 

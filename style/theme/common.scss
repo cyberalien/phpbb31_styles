@@ -188,15 +188,17 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 #wrap {
-	border: 1px solid transparent;
-	border-radius: 8px;
-	@include wrapper-padding;
+	@if $use-wrapper {
+		border: 1px solid transparent;
+		border-radius: 8px;
+		@include wrapper-padding;
+	}
 }
 
 @mixin page-width {
 	box-sizing: border-box;
 	margin: 0 auto;
-	max-width: 1152px;
+	max-width: $max-width;
 	min-width: 625px;
 	@media only screen and (max-width: 1220px), only screen and (max-device-width: 1220px) {
 		margin: 0 12px;

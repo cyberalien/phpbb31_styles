@@ -5,8 +5,13 @@ Colours and backgrounds for common.css
 
 html, body {
 	color: $text-color;
-	background-color: $page-background;
-	&.simple {
+	@if $use-wrapper {
+		background-color: $page-background;
+		&.simple {
+			background-color: $content-background;
+		}
+	}
+	@else {
 		background-color: $content-background;
 	}
 }
@@ -48,15 +53,17 @@ hr {
 }
 
 .search-header {
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+	box-shadow: $search-box-shadow;
 	border-color: $search-box-border-header;
 }
 
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 #wrap {
-	background-color: $content-background;
-	border-color: $content-border-color;
+	@if $use-wrapper {
+		background-color: $content-background;
+		border-color: $content-border-color;
+	}
 }
 
 .headerbar {
@@ -73,7 +80,7 @@ hr {
 			background-image: -webkit-linear-gradient(top, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
 			background-image: linear-gradient(to bottom, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($secondary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($secondary-nav-hover-gradient-end)}');
-			box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+			box-shadow: $secondary-nav-hover-shadow;
 		}
 	}
 
@@ -82,7 +89,7 @@ hr {
 		background-image: -webkit-linear-gradient(top, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
 		background-image: linear-gradient(to bottom, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-gradient-end)}');
-		box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+		box-shadow: $primary-nav-shadow;
 
 		.tab {
 			color: $primary-nav-color;
@@ -104,7 +111,7 @@ hr {
 			& > strong {
 				color: $primary-nav-alert-color;
 				background-color: $primary-nav-alert-bg;
-				box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+				box-shadow: $primary-nav-alert-shadow;
 				.arrow {
 					border-top-color: $primary-nav-alert-bg;
 				}
@@ -160,9 +167,9 @@ ul.navlinks {
 .forum-description.toggle {
 	color: $forum-description-color;
 	background-color: fade-out($forum-description-bg, .2);
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, .25) 1px, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
+	background-image: -webkit-linear-gradient(top, $forum-description-gradient-start 0, $forum-description-gradient-end 100%);
+	background-image: linear-gradient(to bottom, $forum-description-gradient-start 0, $forum-description-gradient-end 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($forum-description-gradient-start)}', endColorstr='#{ie-hex-str($forum-description-gradient-end)}');
 	a {
 		color: inherit !important;
 	}
@@ -232,45 +239,45 @@ dl.details dd {
 ---------------------------------------- */
 
 .pagination li a {
-	color: #5C758C;
-	background-color: #ECEDEE;
-	border-color: #B4BAC0;
+	color: $link-color;
+	background-color: $block-background;
+	border-color: $block-inner-border;
 }
 
 .pagination li.ellipsis span {
 	background-color: transparent;
-	color:	$bold-text-color;
+	color: $bold-text-color;
 }
 
 .pagination li.active span {
-	color: #FFFFFF;
-	background-color: #4692BF;
-	border-color: #4692BF;
+	color: $overlay-color;
+	background-color: darken($primary-color, 10%);
+	border-color: darken($primary-color, 10%);
 }
 
 .pagination li a:hover, .pagination .dropdown-visible a.dropdown-trigger, .nojs .pagination .dropdown-container:hover a.dropdown-trigger {
-	border-color: #368AD2;
-	background-color: #368AD2;
-	color: #FFFFFF;
+	border-color: $link-hover-color;
+	background-color: $link-hover-color;
+	color: $overlay-color;
 }
 
 .pagination li.page-jump a:after {
-	color: #5C758C;
+	color: $link-color;
 }
 
 .pagination li.page-jump a:hover:after {
-	color: #d31141;
+	color: $link-hover-color;
 }
 
 /* Miscellaneous styles
 ---------------------------------------- */
 
 .copyright {
-	color: #555555;
+	color: $muted-color;
 }
 
 .error {
-	color: #BC2A4D;
+	color: $secondary-color;
 }
 
 .reported {
@@ -278,19 +285,20 @@ dl.details dd {
 }
 
 li.reported:hover {
-	background-color: #ECD5D8;
+	background-color: $block-background-reported;
 }
 .sticky, .announce {
 	/* you can add a background for stickies and announcements*/
 }
 
 div.rules {
-	background-color: #ECD5D8;
-	color: #BC2A4D;
+	background-color: mix($content-background, $rules-color, 85%);
+	color: $rules-color;
 }
 
 p.post-notice {
-	background-color: #ECD5D8;
+	background-color: mix($block-background, $rules-color, 85%);
+	color: $rules-color;
 	background-image: none;
 }
 

@@ -8,8 +8,18 @@ $logo-block-padding:					10px 0;
 $profile-width:							150px;
 $post-margin:							($profile-width + 10px);
 
-// Colors
-// Page
+$use-wrapper:							true;	// true or false
+$max-width:								1152px;	// Maximum width. Set to "none" to make layout fluid
+
+//
+// Color palette
+//
+
+// Absolute black and white colors. Reverse them for dark styles
+$black-color:							#000;		// Main color to mix with. Black for light styles, white for dark styles
+$white-color:							#fff;		// Opposite of $black-color
+
+// Page colors
 $page-background:						#F5F7FA;	// HTML element
 $content-background:					#FFF;		// Page inside content wrapper
 $content-border-color:					#E6E9ED;	// Border color for content wrapper
@@ -17,21 +27,29 @@ $content-border-color:					#E6E9ED;	// Border color for content wrapper
 // Primary colors
 $primary-color:							#12a3eb;	// Main color, used for links and stuff
 $secondary-color:						#d31141;	// Secondary color, usually in red - yellow range
-$overlay-color:							#fff;		// Text on top of sections that use colorful background
+$overlay-color:							$white-color;	// Text on top of sections that use colorful background.
+$block-background:						#ecf3f7;	// Background of blocks
+$block-background-reported:				#F7ECEF;	// Background for reported posts
 
 // Global color values
 $text-color:							#536482;	// Text color
-$bold-text-color:						#000;		// Text color with higher contrast to background. #000 or #fff
+$bold-text-color:						$black-color;		// Text color with higher contrast to background. #000 or #fff
 $link-color:							#105289;	// Links
 $link-hover-color:						$secondary-color;	// Links, hover state
-$muted-color:							#666;		// Gray color
+$muted-color:							mix($black-color, $content-background, 60%);	// Gray color
+$rules-color:							#BC2A4D;	// Forum rules
+
+//
+// Calculated colors
+//
+
+// Misc. DO NOT EDIT!
+$light:									if(lightness($black-color) < 50%, true, false);
 
 // Blocks
-$block-background:						#ecf3f7;	// Background of blocks
-$block-background2:						saturate(darken($block-background, 5%), 5%);	// Blocks with .bg2 background color
-$block-background3:						darken($block-background, 10%);	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
+$block-background2:						saturate(if($light, darken($block-background, 5%), lighten($block-background, 5%)), 5%);	// Blocks with .bg2 background color
+$block-background3:						if($light, darken($block-background, 10%), lighten($block-background, 10%));	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
 
-$block-background-reported:				#F7ECEF;	// Background for reported posts
 $block-border:							$block-background;	// Border color for blocks
 $border-radius:							6px;		// Main border radius
 $block-top-border:						lighten($block-background, 10%);	// Top border of forums in forums list
@@ -47,7 +65,7 @@ $tab-background:						$block-background2;
 $tab-hover-color:						$tab-color;
 $tab-hover-background:					$block-background3;
 
-$tab-selected-color:					#333;
+$tab-selected-color:					mix($text-color, $block-background3, 90%);
 $tab-selected-background:				$block-background3;
 
 // Header
@@ -61,6 +79,7 @@ $primary-nav-bg:						darken($primary-color, 10%);
 $primary-nav-gradient-start:			rgba(255, 255, 255, .25);
 $primary-nav-gradient-end:				rgba(255, 255, 255, 0);
 $primary-nav-color:						$overlay-color;
+$primary-nav-shadow:					0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
 $primary-nav-selected-bg:				$content-background;
 $primary-nav-selected-gradient-start:	rgba(255, 255, 255, .5);
@@ -74,19 +93,22 @@ $primary-nav-hover-color:				darken($secondary-color, 5%);
 
 $primary-nav-alert-bg:					$secondary-color;
 $primary-nav-alert-color:				$overlay-color;
+$primary-nav-alert-shadow:				1px 1px 3px rgba(0, 0, 0, .2);
 
 // Secondary navigation
 $secondary-nav-hover-bg:				$secondary-color;
 $secondary-nav-hover-link:				$overlay-color;
-
-$secondary-nav-hover-gradient-start:			rgba(255, 255, 255, .25);
-$secondary-nav-hover-gradient-end:				rgba(255, 255, 255, 0);
+$secondary-nav-hover-gradient-start:	rgba(255, 255, 255, .25);
+$secondary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
+$secondary-nav-hover-shadow:			0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
 // Dropdown
 $dropdown-bg:							$content-background;
 
 $forum-description-color:				$overlay-color;
-$forum-description-bg:					desaturate(darken($primary-color, 30%), 25%);
+$forum-description-bg:					desaturate(if($light, darken($primary-color, 30%), lighten($primary-color, 30%)), 25%);
+$forum-description-gradient-start:		rgba(255, 255, 255, .25);
+$forum-description-gradient-end:		rgba(255, 255, 255, 0);
 
 // Content outside of blocks
 $page-title-color:						$primary-color;
@@ -105,6 +127,7 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 // Forms
 $search-box-border:						#C7C3BF;	// Border for search box block
 $search-box-border-header:				#ccc;		// Same as above, for search box in header
+$search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search box in header
 
 
 // Mixins
