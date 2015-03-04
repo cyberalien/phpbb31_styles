@@ -310,24 +310,24 @@ p.post-notice {
 p.post-notice.deleted:before {
 	@extend %post-notice;
 	content: '\f057';	// fa-times-circle
-	color: #D31141;
+	color: $secondary-color;
 }
 
 p.post-notice.unapproved:before {
 	@extend %post-notice;
 	content: '\f059';	// fa-question-circle
-	color: #D31141;
+	color: $secondary-color;
 }
 
 p.post-notice.reported:before, p.post-notice.error:before {
 	@extend %post-notice;
 	content: '\f071';	// fa-warning
-	color: #D31141;
+	color: $secondary-color;
 }
 
 // Topic status
 .topic-status.sticky {
-	color: #999;
+	color: $muted-color;
 }
 
 /*
@@ -354,27 +354,25 @@ a:hover	{ color: $link-hover-color; }
 
 /* Back to top of page */
 a.top, a.top2 {
-	color: #888;
+	color: $muted-color;
 	&:hover {
-		color: #d31141;
+		color: $link-hover-color;
 	}
 }
 
 /* Arrow links  */
 a.arrow-left:hover {
-	color: #368AD2;
 }
 
 a.arrow-right:hover {
-	color: #368AD2;
 }
 
 a.feed-icon-forum:after {
-	color: #aaa;
+	color: mix($muted-color, $block-background, 50%);
 }
 
 a.feed-icon-forum:hover:after {
-	color: #D31141;
+	color: $link-hover-color;
 }
 
 /*
@@ -386,7 +384,7 @@ ul.forums {
 }
 
 ul.topiclist li {
-	color: #4C5D77;
+	color: $text-color;
 	.forabg &, .forumbg & {
 		background: transparent;
 	}
@@ -426,13 +424,13 @@ li.row:hover dd {
 /* Post body styles
 ----------------------------------------*/
 .postbody {
-	color: #333333;
+	color: $post-text-color;
 }
 
 /* Content container styles
 ----------------------------------------*/
 .content {
-	color: #333333;
+	color: $post-text-color;
 }
 
 .content h2, .panel h2 {
@@ -441,7 +439,7 @@ li.row:hover dd {
 }
 
 dl.faq dt {
-	color: #333333;
+	color: $post-text-color;
 }
 
 .posthilit {
@@ -904,13 +902,13 @@ ul.cplist {
 }
 
 .panel-container table.table1 thead th {
-	color: #333333;
-	border-bottom-color: #333333;
+	color: $post-text-color;
+	border-bottom-color: $block-inner-border;
 }
 
 #cp-main .pm-message {
-	border-color: #DBDEE2;
-	background-color: #FFFFFF;
+	border-color: $block-border;
+	background-color: $block-background;
 }
 
 /* CP tabbed menu
@@ -974,7 +972,7 @@ ul.cplist {
 	background: -o-linear-gradient(left, #B4C4D1 50%, $block-background3 100%);
 	background: -ms-linear-gradient(left, #B4C4D1 50%, $block-background3 100%);
 	background: linear-gradient(to right, #B4C4D1 50%, $block-background3 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#B4C4D1', endColorstr='$block-background3', GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#B4C4D1', endColorstr='#{ie-hex-str($block-background3)}', GradientType=1 );
 }
 
 .rtl #navigation a {
@@ -985,7 +983,7 @@ ul.cplist {
 	background: -o-linear-gradient(left, $block-background3 0%, #B4C4D1 50%);
 	background: -ms-linear-gradient(left, $block-background3 0%, #B4C4D1 50%);
 	background: linear-gradient(to right, $block-background3 0%, #B4C4D1 50%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$block-background3', endColorstr='#B4C4D1', GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($block-background3)}', endColorstr='#B4C4D1', GradientType=1 );
 }
 
 #navigation a:hover {
@@ -1014,7 +1012,7 @@ ul.cplist {
 /* Preferences pane layout
 ----------------------------------------*/
 .panel-container h2 {
-	color: #333333;
+	color: $post-text-color;
 }
 
 .panel-container .panel {
@@ -1103,7 +1101,7 @@ option.disabled-option {
 /* Definition list layout for forms
 ---------------------------------------- */
 dd label {
-	color: #333;
+	color: $post-text-color;
 }
 
 fieldset.fields1 {
@@ -1128,32 +1126,35 @@ fieldset.quick-login input.inputbox {
 ----------------------------------------*/
 
 #message-box textarea {
-	color: #333333;
+	color: $input-text;
 }
 
 /* Input field styles
 ---------------------------------------- */
-.inputbox {
-	background-color: #FFFFFF;
-	border-color: #B4BAC0;
-	color: #333333;
+.inputbox, select {
+	background-color: $input-bg;
+	border-color: $input-border;
+	color: $input-text;
 }
 
 .inputbox:-moz-placeholder {
-	color: #333333;
+	color: mix($input-border, $input-bg, 70%);
 }
 
 .inputbox::-webkit-input-placeholder {
-	color: #333333;
+	color: mix($input-border, $input-bg, 70%);
 }
 
-.inputbox:hover {
-	border-color: #11A3EA;
+.inputbox:hover, select:hover {
+	background-color: $input-hover-bg;
+	border-color: $input-hover-border;
+	color: $input-hover-text;
 }
 
-.inputbox:focus {
-	border-color: #11A3EA;
-	color: #0F4987;
+.inputbox:focus, select:focus {
+	background-color: $input-focus-bg;
+	border-color: $input-focus-border;
+	color: $input-focus-text;
 }
 
 .inputbox:focus:-moz-placeholder {
@@ -1214,39 +1215,39 @@ input.disabled {
 /* jQuery popups
 ---------------------------------------- */
 .phpbb_alert {
-	background-color: #FFFFFF;
-	border-color: #999999;
+	background-color: $content-background;
+	border-color: $block-inner-border;
 }
 .phpbb_alert .alert_close:before {
-	color: #105289;
+	color: $link-color;
 }
 .phpbb_alert .alert_close:hover:before {
-	color: #d31141;
+	color: $link-hover-color;
 }
 .phpbb_alert .alert_close:after {
-	color: #fff;
+	color: $content-background;
 }
 #darken {
-	background-color: #000000;
+	background-color: $black-color;
 }
 
 #loading_indicator {
-	background-color: #000000;
+	background-color: $black-color;
 	background-image: url("./images/loading.gif");
 }
 
 .dropdown-extended ul li {
-	border-top-color: #B9B9B9;
+	border-top-color: $block-inner-border;
 }
 
 .dropdown-extended ul li:hover {
-	background-color: #CFE1F6;
-	color: #000000;
+	background-color: $block-background2;
+	color: $bold-text-color;
 }
 
 .dropdown-extended .header, .dropdown-extended .footer {
-	border-color: #B9B9B9;
-	color: #000000;
+	border-color: $block-inner-border;
+	color: $bold-text-color;
 }
 
 .dropdown-extended .footer {
@@ -1255,25 +1256,17 @@ input.disabled {
 }
 
 .dropdown-extended .header {
-	background: #F1F8FF;
-	background: -moz-linear-gradient(top, #F1F8FF 0%, $block-background3 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F1F8FF), color-stop(100%, $block-background3));
-	background: -webkit-linear-gradient(top, #F1F8FF 0%, $block-background3 100%);
-	background: -o-linear-gradient(top, #F1F8FF 0%, $block-background3 100%);
-	background: -ms-linear-gradient(top, #F1F8FF 0%, $block-background3 100%);
-	background: linear-gradient(to bottom, #F1F8FF 0%, $block-background3 100%);
-}
-
-.dropdown .pointer {
-	border-color: #B9B9B9 transparent;
-}
-
-.dropdown .pointer-inner {
-	border-color: #FFF transparent;
-}
-
-.dropdown-extended .pointer-inner {
-	border-color: #F1F8FF transparent;
+	background: $dropdown-heading-top;
+	background-image: -webkit-linear-gradient(top, $dropdown-heading-top 0, $dropdown-heading-bottom 100%);
+	background-image: linear-gradient(to bottom, $dropdown-heading-top 0, $dropdown-heading-bottom 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($dropdown-heading-top)}', endColorstr='#{ie-hex-str($dropdown-heading-top)}');
+	color: $dropdown-heading-color;
+	a {
+		color: $dropdown-heading-link-color;
+		&:hover {
+			color: $dropdown-heading-link-hover-color;
+		}
+	}
 }
 
 ul.linklist li.responsive-menu a.responsive-menu-link:before {
@@ -1286,7 +1279,7 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 
 .dropdown .dropdown-contents {
 	background: #fff;
-	border-color: #0076b1;
+	border-color: $dropdown-border;
 	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
 }
 

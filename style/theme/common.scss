@@ -988,50 +988,8 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	bottom: 24px;
 }
 
-.dropdown .pointer, .dropdown .pointer-inner {
-	position: absolute;
-	width: 0;
-	height: 0;
-	border-top-width: 0;
-	border-bottom: 10px solid transparent;
-	border-left: 10px dashed transparent;
-	border-right: 10px dashed transparent;
-	-webkit-transform: rotate(360deg); /* better anti-aliasing in webkit */
-	display: block;
-}
-
-.dropdown-up .pointer, .dropdown-up .pointer-inner {
-	border-bottom-width: 0;
-	border-top: 10px solid transparent;
-}
-
 .dropdown .pointer {
 	display: none;
-	right: auto;
-	left: 10px;
-	top: 0;
-	z-index: 31;
-}
-
-.dropdown-up .pointer {
-	bottom: 0;
-	top: auto;
-}
-
-.dropdown-left .dropdown .pointer, .nojs .rightside .dropdown .pointer {
-	left: auto;
-	right: 10px;
-}
-
-.dropdown .pointer-inner {
-	top: auto;
-	bottom: -11px;
-	left: -10px;
-}
-
-.dropdown-up .pointer-inner {
-	bottom: auto;
-	top: -11px;
 }
 
 .dropdown .dropdown-contents {
@@ -1763,16 +1721,16 @@ ul.linklist:after,
 }
 
 .dropdown-extended .header {
+	.dropdown-down & {
+		margin-top: -3px;
+	}
 	padding: 0 10px;
 	font-family: Arial, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 11px;
 	font-weight: bold;
 	text-align: left;
-	text-shadow: 1px 1px 1px white;
 	text-transform: uppercase;
 	line-height: 30px;
-	border-bottom: 1px solid;
-	border-radius: 5px 5px 0 0;
 }
 
 .dropdown-extended .header .header_settings {

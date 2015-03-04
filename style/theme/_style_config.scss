@@ -34,6 +34,7 @@ $block-background-reported:				#F7ECEF;	// Background for reported posts
 // Global color values
 $text-color:							#536482;	// Text color
 $bold-text-color:						$black-color;		// Text color with higher contrast to background. #000 or #fff
+$post-text-color:						#333;		// Text inside posts
 $link-color:							#105289;	// Links
 $link-hover-color:						$secondary-color;	// Links, hover state
 $muted-color:							mix($black-color, $content-background, 60%);	// Gray color
@@ -104,6 +105,13 @@ $secondary-nav-hover-shadow:			0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0
 
 // Dropdown
 $dropdown-bg:							$content-background;
+$dropdown-border:						$primary-color;
+
+$dropdown-heading-top:					$dropdown-border;
+$dropdown-heading-bottom:				darken($dropdown-heading-top, 10%);
+$dropdown-heading-color:				$overlay-color;
+$dropdown-heading-link-color:			$overlay-color;
+$dropdown-heading-link-hover-color:		$overlay-color;
 
 $forum-description-color:				$overlay-color;
 $forum-description-bg:					desaturate(if($light, darken($primary-color, 30%), lighten($primary-color, 30%)), 25%);
@@ -112,7 +120,7 @@ $forum-description-gradient-end:		rgba(255, 255, 255, 0);
 
 // Content outside of blocks
 $page-title-color:						$primary-color;
-$stats-title-color:						desaturate($primary-color, 25%);
+$stats-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);
 $content-top-border:					lighten($content-background, 10%);
 $content-bottom-border:					darken($content-background, 10%);
 $content-inner-border:					$content-bottom-border;
@@ -124,10 +132,22 @@ $heading-color:							$overlay-color;
 $heading-link:							$overlay-color;
 $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 
-// Forms
+// Inputs
+$input-text:							#333;	// Input text color
+$input-bg:								#FFFFFF;	// Input background
+$input-border:							#B4BAC0;	// Input border color
+$input-hover-text:						$input-text;
+$input-hover-bg:						$input-bg;
+$input-hover-border:					#11A3EA;
+$input-focus-text:						#0F4987;
+$input-focus-bg:						$input-bg;
+$input-focus-border:					#11A3EA;
+
 $search-box-border:						#C7C3BF;	// Border for search box block
 $search-box-border-header:				#ccc;		// Same as above, for search box in header
 $search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search box in header
+
+// Buttons
 
 
 // Mixins
