@@ -314,7 +314,6 @@ dd.option {
 	font-size: 11px;
 	padding-top: 2px;
 	.value {
-		color: #111;
 	}
 }
 
@@ -622,7 +621,6 @@ blockquote:before {
 	height: 16px;
 	font-size: 30px;
 	line-height: 30px;
-	color: #888;
 	pointer-events: none;
 }
 
@@ -1036,11 +1034,9 @@ table.fixed-width-table {
 	width: 8px;
 	height: 8px;
 	-webkit-appearance: none;
-	background: rgba(0, 0, 0, .1);
 	border-radius: 3px;
 }
 
 .postbody .content::-webkit-scrollbar-thumb, #topicreview::-webkit-scrollbar-thumb, #post_details::-webkit-scrollbar-thumb, .codebox code::-webkit-scrollbar-thumb, .attachbox dd::-webkit-scrollbar-thumb, .attach-image::-webkit-scrollbar-thumb, .dropdown-extended ul::-webkit-scrollbar-thumb {
-	background: rgba(0, 0, 0, .3);
 	border-radius: 3px;
 }

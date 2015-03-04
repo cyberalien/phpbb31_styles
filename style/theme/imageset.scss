@@ -110,37 +110,22 @@ span.imageset {
 // .imageset.icon_post_target_unread {
 // 	@extend .imageset.icon_post_target;
 // 	&:after {
-// 		color: #D31141;
 // 		content: '\f0a9';	// fa-arrow-circle-right
 // 	}
 // 	.rtl &:after {
 // 		content: '\f0a8';	// fa-arrow-circle-left
 // 	}
 // }
-.imageset.icon_post_target {
-	background-image: url("./images/icon_post_target.png");
+.imageset.icon_post_target, .imageset.icon_post_target_unread {
+	background-size: 11px 9px;
 	padding-left: 11px;
 	padding-top: 9px;
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)	{
-		background-image: url("./images/icon_post_target_hd.png");
-		background-size: 11px 9px;
-	}
-}
-.imageset.icon_post_target_unread {
-	background-image: url("./images/icon_post_target_unread.png");
-	padding-left: 11px;
-	padding-top: 9px;
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)	{
-		background-image: url("./images/icon_post_target_unread_hd.png");
-		background-size: 11px 9px;
-	}
 }
 .imageset.icon_topic_attach {
 	@extend %imageset-gi;
 	@extend %imageset-12;
 	&:after {
 		content: '\E063';	// glyphicons-paperclip
-		color: #808080;
 	}
 }
 .imageset.icon_topic_latest {
@@ -152,32 +137,30 @@ span.imageset {
 }
 .imageset.icon_topic_newest {
 	@extend .imageset.icon_topic_latest;
-	&:after {
-		color: #D31141;
-	}
+	@extend %imageset-secondary-color;
 }
 .imageset.icon_topic_reported {
 	@extend %imageset-fa;
 	@extend %imageset-16;
+	@extend %imageset-secondary-color;
 	&:after {
 		content: '\f071';	// fa-exclamation-triangle
-		color: #D31141;
 	}
 }
 .imageset.icon_topic_deleted {
 	@extend %imageset-fa;
 	@extend %imageset-16;
+	@extend %imageset-secondary-color;
 	&:after {
 		content: '\f057';	// fa-times-circle
-		color: #D31141;
 	}
 }
 .imageset.icon_topic_unapproved {
 	@extend %imageset-fa;
 	@extend %imageset-16;
+	@extend %imageset-secondary-color;
 	&:after {
 		content: '\f059';	// fa-question-circle
-		color: #D31141;
 	}
 }
 .imageset.icon_topic_poll {
@@ -185,7 +168,6 @@ span.imageset {
 	@extend %imageset-12;
 	&:after {
 		content: '\E042';	// glyphicons-charts
-		color: #098dcf;
 	}
 }
 

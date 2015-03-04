@@ -48,26 +48,12 @@
 	text-transform: none;
 }
 
-%icon-button {
-	color: #909090;
-	&:hover {
-		color: #006ac6;
-	}
-}
-
 %icon-button-fa {
 	font-family: FontAwesome;
 }
 
 %icon-button-gi {
 	font-family: 'Glyphicons Regular', 'Glyphicons';
-}
-
-%icon-button-visible {
-	.dropdown-visible &,
-	.nojs .dropdown-container:hover & {
-		color: #006ac6;
-	}
 }
 
 .dropdown-select.icon-button:before {
@@ -261,24 +247,18 @@ ul.linklist.bulletin > li.small-icon:before {
 }
 .jabber-icon:after {
 	content: '\f0eb';	// fa-lightbulb-o
-	color: #c90000;
 	font-size: 16px;
 }
 .phpbb_icq-icon:after {
 	@extend %contact-icon-gi;
 	content: '\2698';	// glyphicons-flower
-	color: #60ff00;
-	text-shadow: 0 0 1px #000, 0 0 2px #000;
 }
 .phpbb_wlm-icon:after {
 	content: '\f007';	// fa-user
-	color: #75afd3;
 }
 .phpbb_aol-icon:after {
 	@extend %contact-icon-gi;
 	content: '\E563';	// glyphicons-person-walking
-	color: #ffd800;
-	text-shadow: 0 0 1px #000, 0 0 2px #000;
 }
 .phpbb_website-icon:after {
 	content: '\f08e';	// fa-external-link
@@ -359,7 +339,6 @@ ul.linklist.bulletin > li.small-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-gi;
 	content: '\E525';	// glyphicons-user-alert
-	color: #D31141;
 	margin-top: 2px;
 	padding-right: 1px;
 }
