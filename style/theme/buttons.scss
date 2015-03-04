@@ -48,12 +48,23 @@
 	text-transform: none;
 }
 
+%icon-button {
+	&:hover {
+	}
+}
+
 %icon-button-fa {
 	font-family: FontAwesome;
 }
 
 %icon-button-gi {
 	font-family: 'Glyphicons Regular', 'Glyphicons';
+}
+
+%icon-button-visible {
+	.dropdown-visible &,
+	.nojs .dropdown-container:hover & {
+	}
 }
 
 .dropdown-select.icon-button:before {
@@ -307,9 +318,9 @@ ul.linklist.bulletin > li.small-icon:before {
 	padding: 0 5px;
 }
 
-.hastouch .post-buttons .icon-button {
-	padding: 2px 8px;
-}
+// .hastouch .post-buttons .icon-button {
+// 	padding: 2px 8px;
+// }
 
 .post-buttons .icon-button span {
 	display: block;
@@ -331,27 +342,25 @@ ul.linklist.bulletin > li.small-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-gi;
 	content: '\E151';	// glyphicons-edit
-	margin-top: 2px;
-	margin-right: -1px;
+	margin-right: -2px;
 	font-size: 11px;
 }
 .warn-icon:before {
 	@extend %icon-button;
 	@extend %icon-button-gi;
 	content: '\E525';	// glyphicons-user-alert
-	margin-top: 2px;
 	padding-right: 1px;
 }
 .delete-icon:before {
 	@extend %icon-button;
 	content: '\f00d';	// fa-close
-	font-size: 11px;
+	font-size: 12px;
 }
 .report-icon:before {
 	@extend %icon-button;
 	content: '\f06a';	// fa-exclamation-circle
-	margin-top: 3px;
 	font-size: 12px;
+	margin-top: 4px;
 }
 .info-icon:before {
 	@extend %icon-button;

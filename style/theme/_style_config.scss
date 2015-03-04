@@ -12,6 +12,7 @@ $post-margin:							($profile-width + 10px);
 // Page
 $page-background:						#F5F7FA;	// HTML element
 $content-background:					#FFF;		// Page inside content wrapper
+$content-border-color:					#E6E9ED;	// Border color for content wrapper
 
 // Primary colors
 $primary-color:							#12a3eb;	// Main color, used for links and stuff
@@ -70,6 +71,9 @@ $primary-nav-hover-gradient-start:		rgba(255, 255, 255, .5);
 $primary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
 $primary-nav-hover-color:				darken($secondary-color, 5%);
 
+$primary-nav-alert-bg:					$secondary-color;
+$primary-nav-alert-color:				$overlay-color;
+
 // Secondary navigation
 $secondary-nav-hover-bg:				$secondary-color;
 $secondary-nav-hover-link:				$overlay-color;
@@ -91,6 +95,9 @@ $heading-color:							$overlay-color;
 $heading-link:							$overlay-color;
 $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 
+// Forms
+$search-box-border:						#C7C3BF;	// Border for search box block
+$search-box-border-header:				#ccc;		// Same as above, for search box in header
 
 
 // Mixins

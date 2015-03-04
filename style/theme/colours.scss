@@ -44,19 +44,19 @@ hr {
 .search-box .inputbox:hover,
 .search-box .inputbox:focus,
 .search-box .button:hover {
-	border-color: #C7C3BF;
+	border-color: $search-box-border;
 }
 
 .search-header {
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
-	border-color: #ccc;
+	border-color: $search-box-border-header;
 }
 
 /* Round cornered boxes and backgrounds
 ---------------------------------------- */
 #wrap {
 	background-color: $content-background;
-	border-color: #E6E9ED;
+	border-color: $content-border-color;
 }
 
 .headerbar {
@@ -102,11 +102,11 @@ hr {
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-hover-gradient-end)}');
 			}
 			& > strong {
-				color: #fff;
-				background-color: #d31141;
+				color: $primary-nav-alert-color;
+				background-color: $primary-nav-alert-bg;
 				box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
 				.arrow {
-					border-top-color: #d31141;
+					border-top-color: $primary-nav-alert-bg;
 				}
 			}
 		}
@@ -114,8 +114,8 @@ hr {
 }
 
 .panel {
-	background-color: #ECF1F3;
-	color: #28313F;
+	background-color: $block-background;
+	color: $text-color;
 }
 
 .post:target .content {
@@ -144,19 +144,11 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 
 .bg3	{ background-color: $block-background3; }
 
-.ucprowbg {
-	background-color: #DCDEE2;
-}
-
-.fieldsbg {
-	background-color: #E7E8EA;
-}
-
 /* Horizontal lists
 ----------------------------------------*/
 
 ul.navlinks {
-	border-top-color: #FFFFFF;
+	border-top-color: $block-inner-border;
 }
 
 /* Forums list layout
