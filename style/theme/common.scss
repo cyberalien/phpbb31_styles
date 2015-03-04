@@ -952,7 +952,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	position: absolute;
 	left: 0;
 	top: 1.2em;
-	z-index: 2;
+	z-index: 30;
 	padding: 0;
 	margin-right: -500px;
 }
@@ -1008,7 +1008,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	right: auto;
 	left: 10px;
 	top: 0;
-	z-index: 3;
+	z-index: 31;
 }
 
 .dropdown-up .pointer {
@@ -1033,7 +1033,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 }
 
 .dropdown .dropdown-contents {
-	z-index: 2;
+	z-index: 30;
 	overflow: hidden;
 	overflow-y: auto;
 	border: 0px solid transparent;

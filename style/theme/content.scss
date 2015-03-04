@@ -332,7 +332,7 @@ dd.option {
 	a.forumtitle + & {
 		left: 55px;
 		top: 25px;
-		z-index: 2;
+		z-index: 30;
 		.rtl & {
 			left: auto;
 			right: 55px;
@@ -960,7 +960,7 @@ dd.profile-contact {
 
 .online-ribbon span + span {
 	opacity: .3;
-	z-index: 3;
+	z-index: 29;
 }
 
 .no-avatar .avatar-container {

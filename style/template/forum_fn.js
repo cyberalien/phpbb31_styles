@@ -705,6 +705,14 @@ function parseDocument($container) {
 	});
 
 	/**
+	* Adjust post z-index for post profiles for all posts
+	*/
+	$('.postprofile').each(function(i) {
+		var z = Math.max(28 - i, 2);
+		$(this).css('z-index', z);
+	});
+
+	/**
 	* Do not run functions below for old browsers
 	*/
 	if (oldBrowser) {
