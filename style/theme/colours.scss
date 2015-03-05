@@ -1069,12 +1069,12 @@ dl.mini dt {
 
 /* Avatar gallery */
 #gallery label {
-	background: #FFFFFF;
-	border-color: #CCC;
+	background: $block-background2;
+	border-color: $block-inner-border;
 }
 
 #gallery label:hover {
-	background-color: #EEE;
+	background-color: $block-background3;
 }
 
 /*
@@ -1091,11 +1091,11 @@ select {
 }
 
 label {
-	color: #425067;
+	color: $text-color;
 }
 
 option.disabled-option {
-	color: graytext;
+	color: $muted-color;
 }
 
 /* Definition list layout for forms
@@ -1411,7 +1411,7 @@ Colours and backgrounds for imageset.css
 
 .imageset.icon_topic_attach {
 	&:after {
-		color: #808080;
+		color: $muted-color;
 	}
 }
 
@@ -1423,6 +1423,6 @@ Colours and backgrounds for imageset.css
 
 .imageset.icon_topic_poll {
 	&:after {
-		color: #098dcf;
+		color: desaturate(mix($primary-color, $block-background, 80%), 30%);
 	}
 }
