@@ -49,7 +49,7 @@ $light:									if(lightness($black-color) < 50%, true, false);
 
 // Blocks
 $block-background2:						#f6f6f6;	// Blocks with .bg2 background color
-$block-background3:						desaturate(mix($block-background, $primary-color, 90%), 50%);	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
+$block-background3:						#f8f8f8;	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
 
 $block-border:							#f9f9f9;	// Border color for blocks
 $border-radius:							5px;		// Main border radius
@@ -104,7 +104,7 @@ $secondary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
 $secondary-nav-hover-shadow:			0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
 // Dropdown
-$dropdown-bg:							$content-background;
+$dropdown-bg:							$block-background;
 $dropdown-border:						$primary-color;
 $dropdown-shadow:						1px 3px 5px rgba(0, 0, 0, 0.5);
 $dropdown-shadow-up:					1px 0 5px rgba(0, 0, 0, 0.5);
