@@ -718,7 +718,9 @@ Colours and backgrounds for buttons.css
 }
 
 .dropdown-select:after	{ border-color: #DADADA; }
-.dropdown-select:hover:after, .dropdown-visible .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:after	{ border-color: #C7C3BF; }
+.dropdown-select:hover	{ border-color: #C7C3BF; }
+
+.dropdown-select:hover:after, .dropdown-visible .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:after	{ border-color: #DADADA; }
 
 .dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover, .nojs .dropdown-container:hover .dropdown-select {
 	border-color: #A6B2BA;
