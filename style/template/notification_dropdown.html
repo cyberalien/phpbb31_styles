@@ -18,7 +18,7 @@
 				</li>
 			<!-- ENDIF -->
 			<!-- BEGIN notifications -->
-				<li class="<!-- IF notifications.UNREAD --> bg2<!-- ENDIF --><!-- IF notifications.STYLING --> {notifications.STYLING}<!-- ENDIF --><!-- IF not notifications.URL --> no-url<!-- ENDIF -->">
+				<li class="dropdown-notification <!-- IF notifications.UNREAD --> bg3<!-- ENDIF --><!-- IF notifications.STYLING --> {notifications.STYLING}<!-- ENDIF --><!-- IF not notifications.URL --> no-url<!-- ENDIF -->">
 					<!-- IF notifications.URL -->
 						<a class="notification-block" href="<!-- IF notifications.UNREAD -->{notifications.U_MARK_READ}" data-real-url="{notifications.URL}<!-- ELSE -->{notifications.URL}<!-- ENDIF -->">
 					<!-- ENDIF -->

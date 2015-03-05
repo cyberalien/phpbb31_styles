@@ -106,6 +106,9 @@ $secondary-nav-hover-shadow:			0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0
 // Dropdown
 $dropdown-bg:							$content-background;
 $dropdown-border:						$primary-color;
+$dropdown-shadow:						1px 3px 5px rgba(0, 0, 0, 0.5);
+$dropdown-shadow-up:					1px 0 5px rgba(0, 0, 0, 0.5);
+$dropdown-inner-border:					if($light, darken($dropdown-bg, 10%), lighten($dropdown-bg, 10%));
 
 $dropdown-heading-top:					$dropdown-border;
 $dropdown-heading-bottom:				darken($dropdown-heading-top, 10%);
@@ -117,6 +120,16 @@ $forum-description-color:				$overlay-color;
 $forum-description-bg:					desaturate(if($light, darken($primary-color, 30%), lighten($primary-color, 30%)), 25%);
 $forum-description-gradient-start:		rgba(255, 255, 255, .25);
 $forum-description-gradient-end:		rgba(255, 255, 255, 0);
+
+// Notifications
+$notification-unread-bg:				mix($content-background, $rules-color, 85%);
+$notification-unread-color:				$rules-color;
+$notification-unread-strong-color:		desaturate(if(lightness($notification-unread-color) < 50%, darken($notification-unread-color, 30%), lighten($notification-unread-color, 30%)), 100%);
+
+$dropdown-notification-bg:				$block-background;
+$dropdown-notification-hover-bg:		$block-background2;
+$dropdown-notification-color:			$link-color;
+$dropdown-notification-strong-color:	desaturate(if(lightness($dropdown-notification-color) < 50%, darken($dropdown-notification-color, 30%), lighten($dropdown-notification-color, 30%)), 100%);
 
 // Content outside of blocks
 $page-title-color:						$primary-color;
