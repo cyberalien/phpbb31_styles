@@ -981,6 +981,11 @@ dd.profile-contact {
 	z-index: 29;
 }
 
+.panel.online > .inner {
+	position: relative;
+	z-index: 2;
+}
+
 .no-avatar .avatar-container {
 	display: block;
 	width: 92px;
