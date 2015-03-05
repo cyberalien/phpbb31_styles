@@ -946,59 +946,31 @@ ul.cplist {
 	color: $tab-color;
 }
 
-.responsive-tab .responsive-tab-link:hover:before,
-.dropdown-visible.responsive-tab .responsive-tab-link:before {
-	color: #D31141;
-}
-
 /* UCP navigation menu
 ----------------------------------------*/
 
 /* Link styles for the sub-section links */
 #navigation a {
-	color: #333;
-	background: #B4C4D1;
-	background: -moz-linear-gradient(left, #B4C4D1 50%, $block-background3 100%);
-	background: -webkit-gradient(left top, right top, color-stop(50%, #B4C4D1), color-stop(100%, $block-background3));
-	background: -webkit-linear-gradient(left, #B4C4D1 50%, $block-background3 100%);
-	background: -o-linear-gradient(left, #B4C4D1 50%, $block-background3 100%);
-	background: -ms-linear-gradient(left, #B4C4D1 50%, $block-background3 100%);
-	background: linear-gradient(to right, #B4C4D1 50%, $block-background3 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#B4C4D1', endColorstr='#{ie-hex-str($block-background3)}', GradientType=1 );
-}
-
-.rtl #navigation a {
-	background: #B4C4D1;
-	background: -moz-linear-gradient(left, $block-background3 0%, #B4C4D1 50%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, $block-background3), color-stop(50%, #B4C4D1));
-	background: -webkit-linear-gradient(left, $block-background3 0%, #B4C4D1 50%);
-	background: -o-linear-gradient(left, $block-background3 0%, #B4C4D1 50%);
-	background: -ms-linear-gradient(left, $block-background3 0%, #B4C4D1 50%);
-	background: linear-gradient(to right, $block-background3 0%, #B4C4D1 50%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($block-background3)}', endColorstr='#B4C4D1', GradientType=1 );
+	color: $text-color;
+	background: $block-background2;
 }
 
 #navigation a:hover {
-	background: #AABAC6;
-	color: #BC2A4D;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background: $block-background2;
+	color: $link-hover-color;
 }
 
 #navigation #active-subsection a {
-	background: #F9F9F9;
-	color: #D31141;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background: $content-background;
+	color: $link-hover-color;
 }
 
 #navigation #active-subsection a:hover {
-	color: #D31141;
+	color: $link-hover-color;
 }
 
-@media only screen and (max-width: 900px), only screen and (max-device-width: 900px)
-{
-	#navigation a, .rtl #navigation a {
-		background: #B2C2CF;
-	}
+#navigation > hr {
+	border-top-color: $block-background2;
 }
 
 /* Preferences pane layout
@@ -1008,7 +980,7 @@ ul.cplist {
 }
 
 .panel-container .panel {
-	background: $block-background;
+	background: $content-background;
 	box-shadow: none;
 	border-width: 0;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
@@ -1023,11 +995,10 @@ ul.cplist {
 
 /* Friends list */
 .cp-mini {
-	background-color: #eef5f9;
+	background-color: $block-background2;
 }
 
 dl.mini dt {
-	color: #425067;
 }
 
 /* PM Styles
