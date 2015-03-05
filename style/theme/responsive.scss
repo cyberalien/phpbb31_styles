@@ -449,6 +449,13 @@ fieldset.polls dd.resultbar, fieldset.polls dd.poll_option_percent {
 	position: inherit;
 }
 
+.postprofile + .postbody {
+	&, > div {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 .postprofile, .postbody, .search .postbody {
 	display: block;
 	width: auto;
