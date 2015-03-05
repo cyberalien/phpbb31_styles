@@ -20,25 +20,25 @@ $black-color:							#000;		// Main color to mix with. Black for light styles, wh
 $white-color:							#fff;		// Opposite of $black-color
 
 // Page colors
-$page-background:						#F5F7FA;	// HTML element
-$content-background:					#FFF;		// Page inside content wrapper
-$content-border-color:					#E6E9ED;	// Border color for content wrapper
+$page-background:						#f0f0f0;	// HTML element
+$content-background:					#e4e4e4;	// Page inside content wrapper
+$content-border-color:					#e4e4e4;	// Border color for content wrapper
 
 // Primary colors
-$primary-color:							#12a3eb;	// Main color, used for links and stuff
-$secondary-color:						#d31141;	// Secondary color, usually in red - yellow range
+$primary-color:							#3462a0;	// Main color, used for links and stuff
+$secondary-color:						#b93329;	// Secondary color, usually in red - yellow range
 $overlay-color:							$white-color;	// Text on top of sections that use colorful background.
-$block-background:						#ecf3f7;	// Background of blocks
-$block-background-reported:				#F7ECEF;	// Background for reported posts
+$block-background:						#f4f4f4;	// Background of blocks
+$block-background-reported:				#f5e9e9;	// Background for reported posts
 
 // Global color values
-$text-color:							#536482;	// Text color
-$bold-text-color:						$black-color;		// Text color with higher contrast to background. #000 or #fff
-$post-text-color:						#333;		// Text inside posts
-$link-color:							#105289;	// Links
+$text-color:							#141414;	// Text color
+$bold-text-color:						$black-color;	// Text color with higher contrast to background. #000 or #fff
+$post-text-color:						$text-color;	// Text inside posts
+$link-color:							$primary-color;	// Links
 $link-hover-color:						$secondary-color;	// Links, hover state
 $muted-color:							mix($black-color, $content-background, 60%);	// Gray color
-$rules-color:							#BC2A4D;	// Forum rules
+$rules-color:							$secondary-color;	// Forum rules
 
 //
 // Calculated colors
@@ -48,16 +48,16 @@ $rules-color:							#BC2A4D;	// Forum rules
 $light:									if(lightness($black-color) < 50%, true, false);
 
 // Blocks
-$block-background2:						saturate(if($light, darken($block-background, 5%), lighten($block-background, 5%)), 5%);	// Blocks with .bg2 background color
-$block-background3:						if($light, darken($block-background, 10%), lighten($block-background, 10%));	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
+$block-background2:						#f6f6f6;	// Blocks with .bg2 background color
+$block-background3:						desaturate(mix($block-background, $primary-color, 90%), 50%);	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
 
-$block-border:							$block-background;	// Border color for blocks
-$border-radius:							6px;		// Main border radius
+$block-border:							#f9f9f9;	// Border color for blocks
+$border-radius:							5px;		// Main border radius
 $block-top-border:						lighten($block-background, 10%);	// Top border of forums in forums list
-$block-bottom-border:					darken($block-background, 10%);		// Bottom border of forums in forums list
+$block-bottom-border:					darken($block-background, 5%);		// Bottom border of forums in forums list
 $block-inner-border:					$block-bottom-border;	// Border inside blocks where there is only 1 border instead of top/bottom borders
 
-$block-title-color:						desaturate($link-color, 20%);	// Title inside blocks, such as post title
+$block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title
 
 // Tabs
 $tab-color:								desaturate($link-color, 20%);
@@ -67,7 +67,7 @@ $tab-hover-color:						$tab-color;
 $tab-hover-background:					$block-background3;
 
 $tab-selected-color:					mix($text-color, $block-background3, 90%);
-$tab-selected-background:				$block-background3;
+$tab-selected-background:				#e6e6e6;
 
 // Header
 $header-bg:								$content-background;
@@ -76,7 +76,7 @@ $header-link:							$overlay-color;
 $header-link-hover:						mix($header-link, $header-bg, 80%);
 
 // Primary navigation
-$primary-nav-bg:						darken($primary-color, 10%);
+$primary-nav-bg:						$primary-color;
 $primary-nav-gradient-start:			rgba(255, 255, 255, .25);
 $primary-nav-gradient-end:				rgba(255, 255, 255, 0);
 $primary-nav-color:						$overlay-color;
@@ -85,12 +85,12 @@ $primary-nav-shadow:					0 5px 5px -5px rgba(0, 0, 0, 0.2);
 $primary-nav-selected-bg:				$content-background;
 $primary-nav-selected-gradient-start:	rgba(255, 255, 255, .5);
 $primary-nav-selected-gradient-end:		rgba(255, 255, 255, 0);
-$primary-nav-selected-color:			darken($primary-color, 10%);
+$primary-nav-selected-color:			$primary-color;
 
 $primary-nav-hover-bg:					$content-background;
 $primary-nav-hover-gradient-start:		rgba(255, 255, 255, .5);
 $primary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
-$primary-nav-hover-color:				darken($secondary-color, 5%);
+$primary-nav-hover-color:				$secondary-color;
 
 $primary-nav-alert-bg:					$secondary-color;
 $primary-nav-alert-color:				$overlay-color;
@@ -111,7 +111,7 @@ $dropdown-shadow-up:					1px 0 5px rgba(0, 0, 0, 0.5);
 $dropdown-inner-border:					if($light, darken($dropdown-bg, 10%), lighten($dropdown-bg, 10%));
 
 $dropdown-heading-top:					$dropdown-border;
-$dropdown-heading-bottom:				darken($dropdown-heading-top, 10%);
+$dropdown-heading-bottom:				$dropdown-heading-top;
 $dropdown-heading-color:				$overlay-color;
 $dropdown-heading-link-color:			$overlay-color;
 $dropdown-heading-link-hover-color:		$overlay-color;
@@ -122,7 +122,7 @@ $forum-description-gradient-start:		rgba(255, 255, 255, .25);
 $forum-description-gradient-end:		rgba(255, 255, 255, 0);
 
 // Notifications
-$notification-unread-bg:				mix($content-background, $rules-color, 85%);
+$notification-unread-bg:				mix($content-background, $rules-color, 90%);
 $notification-unread-color:				$rules-color;
 $notification-unread-strong-color:		desaturate(if(lightness($notification-unread-color) < 50%, darken($notification-unread-color, 30%), lighten($notification-unread-color, 30%)), 100%);
 
@@ -139,7 +139,7 @@ $content-bottom-border:					darken($content-background, 10%);
 $content-inner-border:					$content-bottom-border;
 
 // Heading section
-$heading-bg:							darken($primary-color, 10%);
+$heading-bg:							$primary-color;
 $heading-border:						$heading-bg;
 $heading-color:							$overlay-color;
 $heading-link:							$overlay-color;
@@ -166,14 +166,18 @@ $search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search
 // Mixins
 @mixin section {
 	background: $block-background;
-	border: 0 solid $block-border;
+	border: 1px solid $block-border;
 	border-radius: $border-radius;
-	padding: 5px 10px;
+	padding: 4px 9px;
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%), -webkit-linear-gradient(top, rgba(204, 204, 204, .2) 0%, rgba(204, 204, 204, .25) 10px, rgba(204, 204, 204, 0) 50px);
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to bottom, rgba(204, 204, 204, .2) 0%, rgba(204, 204, 204, .25) 10px, rgba(204, 204, 204, 0) 50px);
+	box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.15), 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33CCCCCC, endColorstr=#00CCCCCC);
 }
 
 @mixin section-forum {
 	@include section;
-	padding: 5px;
+	padding: 4px;
 }
 
 // Undo section mixin
@@ -181,6 +185,8 @@ $search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search
 	background: transparent;
 	border-width: 0;
 	border-radius: 0;
+	box-shadow: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	padding: 0;
 }
 
