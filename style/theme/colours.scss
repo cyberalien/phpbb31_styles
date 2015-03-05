@@ -650,9 +650,10 @@ fieldset.polls dd div {
 
 .online-ribbon span {
 	background-color: $content-background;
-	color: mix($block-background, $link-color, 50%);
+	color: mix($block-background, $link-color, 40%);
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, .9), 0 0 2px rgba(0, 0, 0, .1);
 	& + span {
-		box-shadow: 0 0 1px rgba(0, 0, 0, .2);
+		// box-shadow: 0 0 1px rgba(0, 0, 0, .2);
 	}
 	.reported & {
 		color: mix($block-background-reported, $link-hover-color, 50%);
