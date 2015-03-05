@@ -105,6 +105,7 @@
 	@extend %icon-button;
 	content: '\f112';	// fa-mail-reply
 	margin-left: 4px;
+	margin-top: 4px;
 }
 
 .post-icon:before, .newpm-icon:before {
@@ -132,6 +133,7 @@
 	@extend %icon-button;
 	content: '\f064';	// fa-share
 	margin-left: 4px;
+	margin-top: 4px;
 }
 
 .modtools-icon {
@@ -163,7 +165,6 @@
 	@extend %icon-button-gi;
 	content: '\E137';	// glyphicons-cogwheel
 	font-size: 13px;
-	margin-top: 2px;
 }
 
 .modtools-icon:before {
@@ -360,7 +361,7 @@ ul.linklist.bulletin > li.small-icon:before {
 	@extend %icon-button;
 	content: '\f06a';	// fa-exclamation-circle
 	font-size: 12px;
-	margin-top: 4px;
+	margin-top: 3px;
 }
 .info-icon:before {
 	@extend %icon-button;

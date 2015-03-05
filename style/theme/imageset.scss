@@ -253,6 +253,8 @@ span.imageset {
 	@extend %icon-image-gi;
 	&:after {
 		content: '\E073';	// glyphicons-bookmark
+		margin-left: -1px;
+		margin-right: -1px;
 	}
 }
 .icon-bump {
@@ -310,6 +312,7 @@ span.imageset {
 	@extend %icon-image-gi;
 	&:after {
 		content: '\E153';	// glyphicons-check
+		margin-top: -8px;
 	}
 }
 .icon-mcp {

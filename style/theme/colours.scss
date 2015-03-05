@@ -627,12 +627,8 @@ fieldset.polls dd div {
 /* Poster profile block
 ----------------------------------------*/
 .postprofile {
-	color: #666666;
-	border-color: #FFFFFF;
-}
-
-.pm .postprofile {
-	border-color: #DDDDDD;
+	color: $text-color;
+	border-color: $block-inner-border;
 }
 
 .postprofile strong {
@@ -885,16 +881,12 @@ Colours and backgrounds for cp.css
 ----------------------------------------*/
 
 .panel-container h3, .panel-container hr, #cp-menu hr {
-	border-color: #A4B3BF;
 }
 
 .panel-container .panel li.row {
-	border-bottom-color: #B5C1CB;
-	border-top-color: #F9F9F9;
 }
 
 ul.cplist {
-	border-top-color: #B5C1CB;
 }
 
 .panel-container .panel li.header dd, .panel-container .panel li.header dt {
@@ -1016,7 +1008,7 @@ ul.cplist {
 }
 
 .panel-container .panel {
-	background: $content-background;
+	background: $block-background;
 	box-shadow: none;
 	border-width: 0;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
@@ -1026,7 +1018,7 @@ ul.cplist {
 }
 
 #cp-main .pm {
-	background-color: $content-background;
+	background-color: $block-background;
 }
 
 /* Friends list */

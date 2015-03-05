@@ -374,10 +374,36 @@ ol.def-rules li {
 		margin: 0;
 	}
 
+	#cp-menu:after {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
+
 	#navigation {
 		padding: 0;
-		margin: 0 auto;
 		max-width: 320px;
+		#cp-menu & {
+			margin: 0 10px;
+			float: left;
+			@media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
+				float: none;
+				margin: 0 auto;
+			}
+		}
+		&, #cp-menu &:only-child {
+			float: none;
+			margin: 0 auto;
+		}
+		#cp-menu & + .cp-mini {
+			float: left;
+			margin: 0 10px;
+			max-width: 220px;
+			@media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
+				float: none;
+				margin: 10px auto 0;
+			}
+		}
 	}
 
 	#navigation a {
