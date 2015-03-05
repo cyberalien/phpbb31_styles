@@ -690,9 +690,8 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 					border-radius: 0;
 				}
 			}
-			.nav-link + strong {
+			.tab > strong {
 				position: relative;
-				display: inline-block;
 				top: 0;
 				left: 0;
 				right: 0;
@@ -706,6 +705,9 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				.arrow {
 					display: none;
 				}
+			}
+			.tab.non-zero > strong {
+				display: inline-block;
 			}
 			.pm > .nav-link + strong {
 				margin-left: -5px;
