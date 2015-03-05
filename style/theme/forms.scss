@@ -46,6 +46,8 @@ textarea {
 	padding: 2px;
 	font-size: 1em;
 	line-height: 1.4em;
+	border-radius: 0;
+	-webkit-appearance: none;
 }
 
 label {
@@ -260,6 +262,8 @@ fieldset.submit-buttons input {
 .inputbox {
 	border: 1px solid transparent;
 	padding: 2px;
+	border-radius: 0;
+	-webkit-appearance: none;
 }
 
 .inputbox:hover, .inputbox:focus {
@@ -285,7 +289,7 @@ input[type="number"] {
 }
 
 input[type="search"] {
-	-webkit-appearance: textfield;
+	-webkit-appearance: none;
 	-webkit-box-sizing: content-box;
 }
 
@@ -309,6 +313,7 @@ a.button1, input.button1, input.button3, a.button2, input.button2 {
 	padding-bottom: 1px;
 	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
 	background: transparent none repeat-x top left;
+	border-radius: 0;
 }
 
 a.button1, input.button1 {
