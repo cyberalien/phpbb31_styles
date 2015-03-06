@@ -651,7 +651,6 @@ fieldset.polls dd div {
 .online-ribbon span {
 	background-color: $content-background;
 	color: mix($block-background, $link-color, 40%);
-	box-shadow: 0 0 0 1px rgba(255, 255, 255, .9), 0 0 2px rgba(0, 0, 0, .1);
 	& + span {
 		// box-shadow: 0 0 1px rgba(0, 0, 0, .2);
 	}
@@ -684,26 +683,79 @@ dd.profile-warnings {
 Colours and backgrounds for buttons.css
 -------------------------------------------------------------- */
 .button {
-	border-color: $primary-color;
-	background-color: $primary-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(255, 255, 255, 0.1) inset;
-	color: $overlay-color;
+	&, .buttons > &.locked-icon {
+		border-color: $button-border;
+		background-color: #eee;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#00FFFFFF);
+		color: $primary-color;
+		box-shadow: none;
+	}
+
 
 	&:after, &:before {
-		color: mix($overlay-color, $primary-color, 85%) !important;
+	}
+	.buttons > &.locked-icon {
+		color: $button-icon;
+		box-shadow: 0 0 0 1px $button-border inset;
+		&:after, &:before {
+			color: $button-icon !important;
+		}
+		&:hover {
+			box-shadow: none;
+		}
 	}
 
 	& > strong {
 	}
+
+	.buttons > &, &.report-icon, &.delete-icon {
+		border-color: $primary-color;
+		background-color: $primary-color;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
+		box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(255, 255, 255, 0.1) inset;
+		color: $overlay-color;
+
+		&:after, &:before {
+			color: mix($overlay-color, $primary-color, 85%) !important;
+		}
+
+		& > strong {
+		}
+	}
+	&.report-icon, &.delete-icon {
+		border-color: $secondary-color;
+		background-color: $secondary-color;
+		box-shadow: none;
+
+		&:after, &:before {
+			color: mix($overlay-color, $secondary-color, 85%) !important;
+		}
+	}
 }
 
 .dropdown-select {
-	color: $tab-color;
+	.buttons > & {
+		color: $muted-color;
+	}
 }
 
+.dropdown-select:after { 
+	border-color: $button-border; 
+}
+.dropdown-select:hover	{ 
+	border-color: $button-border; 
+}
+
+.dropdown-select:hover:after, .dropdown-visible .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:after	{ 
+	border-color: transparent; 
+}
+
+.dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover, .nojs .dropdown-container:hover .dropdown-select,
+.buttons > .button:hover,
 .button:hover, .dropdown-visible .dropdown-select, .nojs .dropdown-container:hover .dropdown-select {
 	border-color: $secondary-color !important;
 	background-color: $secondary-color;
@@ -717,30 +769,20 @@ Colours and backgrounds for buttons.css
 	}
 }
 
-.dropdown-select:after	{ border-color: #DADADA; }
-.dropdown-select:hover	{ border-color: #C7C3BF; }
-
-.dropdown-select:hover:after, .dropdown-visible .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:after	{ border-color: #DADADA; }
-
-.dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover, .nojs .dropdown-container:hover .dropdown-select {
-	border-color: #A6B2BA;
-	color: #105289;
-}
-
-.contact-icons a		{ border-color: #DCDCDC; }
+.contact-icons a		{ border-color: $block-inner-border; }
 
 // Small icons
 %icon-button {
-	color: #909090;
+	color: $button-icon;
 	&:hover {
-		color: #006ac6;
+		color: $button-icon-hover;
 	}
 }
 
 %icon-button-visible {
 	.dropdown-visible &,
 	.nojs .dropdown-container:hover & {
-		color: #006ac6;
+		color: $button-icon-hover;
 	}
 }
 

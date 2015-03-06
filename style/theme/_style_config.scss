@@ -156,11 +156,15 @@ $input-focus-text:						#0F4987;
 $input-focus-bg:						$input-bg;
 $input-focus-border:					#11A3EA;
 
-$search-box-border:						#C7C3BF;	// Border for search box block
+$search-box-border:						#c6c6c6;	// Border for search box block
 $search-box-border-header:				#ccc;		// Same as above, for search box in header
 $search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search box in header
 
 // Buttons
+$button-bg:								#e8e8e8;
+$button-border:							#c6c6c6;
+$button-icon:							#909090;
+$button-icon-hover:						#006ac6;
 
 
 // Mixins

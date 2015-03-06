@@ -21,6 +21,11 @@
 	outline-style: none !important;
 	vertical-align: bottom;
 
+	.buttons > & {
+		border-width: 0;
+		padding: 3px 9px;
+	}
+
 	& > strong {
 		font-weight: 600;
 	}
@@ -46,6 +51,15 @@
 	text-indent: 0;
 	font-style: normal;
 	text-transform: none;
+	.buttons > & {
+		position: relative;
+		top: -1px;
+		right: -1px;
+		.rtl & {
+			right: auto;
+			right: -1px;
+		}
+	}
 }
 
 %icon-button {
@@ -127,6 +141,9 @@
 	@extend %icon-button-gi;
 	content: '\E204';	// glyphicons-lock
 	margin-left: 5px;
+	.buttons > & {
+		top: 0;
+	}
 }
 
 .forwardpm-icon:before {
@@ -317,6 +334,10 @@ ul.linklist.bulletin > li.small-icon:before {
 
 .post-buttons .icon-button {
 	padding: 0 5px;
+	&.delete-icon, &.report-icon {
+		border-width: 0;
+		padding: 1px 6px;
+	}
 }
 
 // .hastouch .post-buttons .icon-button {
