@@ -173,6 +173,13 @@ ul.navlinks {
 	color: $muted-color;
 }
 
+.forum-lastpost {
+	color: $muted-color;
+	span:before {
+		opacity: .5;
+	}
+}
+
 .forum-description.toggle {
 	color: $forum-description-color;
 	background-color: fade-out($forum-description-bg, .2);

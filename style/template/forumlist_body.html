@@ -61,6 +61,13 @@
 								{L_TOPICS}{L_COLON} <strong>{forumrow.TOPICS}</strong>
 							<!-- ENDIF -->
 						</div>
+							<!-- IF not forumrow.S_IS_LINK and forumrow.LAST_POST_TIME -->
+							<div class="forum-lastpost" style="display: none;">
+								<strong>{L_LAST_POST}{L_COLON}</strong> 
+								<span><a href="{forumrow.U_LAST_POST}" title="{forumrow.LAST_POST_SUBJECT}" class="lastsubject">{forumrow.LAST_POST_SUBJECT_TRUNCATED}</a></span>
+								<span>{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}, {forumrow.LAST_POST_TIME}</span>
+							</div>
+							<!-- ENDIF -->
 						<!-- ENDIF -->
 
 						<!-- IF forumrow.U_UNAPPROVED_TOPICS -->

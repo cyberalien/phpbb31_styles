@@ -1163,7 +1163,7 @@ function parseDocument($container) {
 			});
 			item.html(html);
 
-			$this.find('.list-inner > .responsive-show').remove();
+			$this.find('.list-inner > .responsive-show:not(.forum-lastpost)').remove();
 			$this.parent().addClass('elegant-row');
 		})
 	});
