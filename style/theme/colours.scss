@@ -584,58 +584,36 @@ fieldset.polls dd div {
 	color: #FFFFFF;
 }
 
-.rtl .pollbar1, .rtl .pollbar2, .rtl .pollbar3, .rtl .pollbar4, .rtl .pollbar5 {
-	border-right-color: transparent;
+%pollbar {
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
+	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 }
 
 .pollbar1 {
-	background-color: #AA2346;
-	border-bottom-color: #74162C;
-	border-right-color: #74162C;
-}
-
-.rtl .pollbar1 {
-	border-left-color: #74162C;
+	@extend %pollbar;
+	background-color: desaturate($secondary-color, 30%);
 }
 
 .pollbar2 {
-	background-color: #BE1E4A;
-	border-bottom-color: #8C1C38;
-	border-right-color: #8C1C38;
-}
-
-.rtl .pollbar2 {
-	border-left-color: #8C1C38;
+	@extend %pollbar;
+	background-color: desaturate($secondary-color, 25%);
 }
 
 .pollbar3 {
-	background-color: #D11A4E;
-	border-bottom-color: #AA2346;
-	border-right-color: #AA2346;
-}
-
-.rtl .pollbar3 {
-	border-left-color: #AA2346;
+	@extend %pollbar;
+	background-color: desaturate($secondary-color, 20%);
 }
 
 .pollbar4 {
-	background-color: #E41653;
-	border-bottom-color: #BE1E4A;
-	border-right-color: #BE1E4A;
-}
-
-.rtl .pollbar4 {
-	border-left-color: #BE1E4A;
+	@extend %pollbar;
+	background-color: desaturate($secondary-color, 10%);
 }
 
 .pollbar5 {
-	background-color: #F81157;
-	border-bottom-color: #D11A4E;
-	border-right-color: #D11A4E;
-}
-
-.rtl .pollbar5 {
-	border-left-color: #D11A4E;
+	@extend %pollbar;
+	background-color: $secondary-color;
 }
 
 /* Poster profile block
