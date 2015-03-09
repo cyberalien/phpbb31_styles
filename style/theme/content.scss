@@ -808,10 +808,17 @@ fieldset.polls {
 }
 
 fieldset.polls dl {
-	margin-top: 5px;
-	border-top: 1px solid transparent;
-	padding: 5px 0 0 0;
-	line-height: 120%;
+	margin: 0;
+	border: 1px solid transparent;
+	border-width: 1px 0;
+	padding: 5px 0;
+	line-height: 1.4em;
+	&:first-child {
+		border-top-width: 0;
+	}
+	&:last-child {
+		border-bottom-width: 0;
+	}
 }
 
 fieldset.polls dl.voted {

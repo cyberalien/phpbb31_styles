@@ -447,8 +447,8 @@ li.row:hover dd {
 }
 
 .content h2, .panel h2 {
-	color: #115098;
-	border-bottom-color:  #CCCCCC;
+	color: $panel-title-color;
+	border-bottom-color:  $panel-title-border;
 }
 
 dl.faq dt {
@@ -571,8 +571,9 @@ dl.thumbnail dt a:hover img {
 ----------------------------------------*/
 
 fieldset.polls dl {
-	border-top-color: #DCDEE2;
-	color: #666666;
+	border-top-color: $block-top-border;
+	border-bottom-color: $block-bottom-border;
+	color: $text-color;
 }
 
 fieldset.polls dl.voted {

@@ -131,6 +131,10 @@ $dropdown-notification-hover-bg:		$block-background2;
 $dropdown-notification-color:			$link-color;
 $dropdown-notification-strong-color:	desaturate(if(lightness($dropdown-notification-color) < 50%, darken($dropdown-notification-color, 30%), lighten($dropdown-notification-color, 30%)), 100%);
 
+// Panels
+$panel-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);
+$panel-title-border:					$block-inner-border;
+
 // Content outside of blocks
 $page-title-color:						$primary-color;
 $stats-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);
