@@ -485,28 +485,32 @@ dl.faq dt {
 ----------------------------------------*/
 /* Quote block */
 blockquote {
-	background-color: #EBEADD;
-	border-color:#DBDBCE;
+	background-color: $bbcode-background;
+	border-color: $bbcode-outer-border;
 }
 
-blockquote blockquote {
+blockquote blockquote
+blockquote .codebox,
+blockquote .attachbox {
 	/* Nested quotes */
-	background-color:#EFEED9;
+	background-color: $bbcode-background2;
 }
 
-blockquote blockquote blockquote {
+blockquote blockquote blockquote,
+blockquote blockquote .codebox,
+blockquote blockquote .attachbox {
 	/* Nested quotes */
-	background-color: #EBEADD;
+	background-color: mix($bbcode-background, $bbcode-background2);
 }
 
 blockquote:before {
-	color: #888;
+	color: $muted-color;
 }
 
 /* Code block */
 .codebox {
-	background-color: #FFFFFF;
-	border-color: #C9D2D8;
+	background-color: $bbcode-background;
+	border-color: $bbcode-outer-border;
 }
 
 .codebox p {
@@ -514,15 +518,15 @@ blockquote:before {
 }
 
 .codebox code {
-	color: #2E8B57;
+	color: $bbcode-code-color;
 }
 
-.syntaxbg		{ color: #FFFFFF; }
-.syntaxcomment	{ color: #FF8000; }
-.syntaxdefault	{ color: #0000BB; }
-.syntaxhtml		{ color: #000000; }
-.syntaxkeyword	{ color: #007700; }
-.syntaxstring	{ color: #DD0000; }
+.syntaxbg		{ color: transparent; }
+.syntaxcomment	{ color: saturate(code-color(30deg), 100%); }
+.syntaxdefault	{ color: code-color(240deg); }
+.syntaxhtml		{ color: $text-color; }
+.syntaxkeyword	{ color: code-color(120deg); }
+.syntaxstring	{ color: saturate(code-color(0deg), 100%); }
 
 /* Attachments
 ----------------------------------------*/
@@ -558,14 +562,6 @@ dl.thumbnail dd {
 	color: $bbcode-heading-text;
 }
 
-dl.thumbnail dt a:hover {
-	background-color: #EEEEEE;
-}
-
-dl.thumbnail dt a:hover img {
-	border-color: #368AD2;
-}
-
 /* Post poll styles
 ----------------------------------------*/
 
@@ -580,7 +576,7 @@ fieldset.polls dl.voted {
 }
 
 fieldset.polls dd div {
-	color: #FFFFFF;
+	color: $overlay-color;
 }
 
 %pollbar {

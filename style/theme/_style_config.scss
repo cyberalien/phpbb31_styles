@@ -172,10 +172,17 @@ $button-icon-hover:						#006ac6;
 
 // BBCode
 $bbcode-border-radius:					3px;
-$bbcode-background:						$block-background3;
+$bbcode-background:						#f0f0f0;
+$bbcode-background2:					#e8e8e8;
 $bbcode-outer-border:					if($light, darken($bbcode-background, 7%), lighten($bbcode-background, 7%));
 $bbcode-inner-border:					if($light, darken($bbcode-background, 5%), lighten($bbcode-background, 5%));
 $bbcode-heading-text:					#666;
+
+// Code colors
+@function code-color($hue) {
+	@return hsl($hue, saturation($primary-color), lightness($primary-color));
+}
+$bbcode-code-color:						code-color(128deg);
 
 // Mixins
 @mixin section {
