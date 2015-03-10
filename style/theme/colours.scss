@@ -1036,7 +1036,7 @@ ul.cplist {
 }
 
 .panel-container .panel {
-	background: $content-background;
+	background: mix($content-background, $block-background3, 60%);
 	box-shadow: none;
 	border-width: 0;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
