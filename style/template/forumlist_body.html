@@ -14,7 +14,7 @@
 			<ul class="topiclist">
 				<li class="header">
 					<dl class="icon">
-						<dt><div class="list-inner"><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></div></dt>
+						<dt><div class="list-inner"><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}" data-id="{forumrow.FORUM_ID}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></div></dt>
 						<dd class="topics">{L_TOPICS}</dd>
 						<dd class="posts">{L_POSTS}</dd>
 						<dd class="lastpost"><span>{L_LAST_POST}</span></dd>
@@ -36,7 +36,7 @@
 						<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><!-- <a class="feed-icon-forum" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"></a> --><!-- ENDIF -->
 
 						<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
-						<a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a>
+						<a href="{forumrow.U_VIEWFORUM}" class="forumtitle" data-id="{forumrow.FORUM_ID}">{forumrow.FORUM_NAME}</a>
 						<!-- IF forumrow.FORUM_DESC --><div class="forum-description">{forumrow.FORUM_DESC}</div><!-- ENDIF -->
 						<!-- IF forumrow.MODERATORS -->
 							<div class="forum-moderators"><strong>{forumrow.L_MODERATOR_STR}{L_COLON}</strong> {forumrow.MODERATORS}</div>

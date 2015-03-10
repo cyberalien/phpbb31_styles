@@ -5,7 +5,8 @@ var styleConfig = {
 	staticNavigation: true,
 	staticNavigationMinWidth: 500,
 	staticNavigationMinHeight: 400,
-	extendPosterProfile: true
+	extendPosterProfile: true,
+	collapseForums: true
 };
 
 /**
@@ -1375,6 +1376,64 @@ function parseDocument($container) {
 			adjustPosterProfile($(this));
 		});
 	}
+
+	/**
+	* Collapse forums
+	*/
+	if (styleConfig.collapseForums) {
+		$container.find('.forabg.elegant li.header').each(function() {
+			var $this = $(this),
+				forum = $this.parent().next('ul.forums'),
+				id = 0,
+				toggled = false,
+				toggle;
+
+			if (forum.length != 1) {
+				return;
+			}
+
+			// Find category id
+			$('a[data-id]', $this).each(function() {
+				id = parseInt(this.getAttribute('data-id'));
+			});
+			if (!id) {
+				forum.find('.forumtitle[data-id]:first').each(function() {
+					id = parseInt(this.getAttribute('data-id'));
+					if (!isNaN(id)) {
+						id = 'f' + id;
+					}
+				});
+			}
+			if (!id) {
+				return;
+			}
+
+			// Add toggle code
+			$this.append('<a class="forum-toggle" href="#"></a>');
+			toggle = $this.find('.forum-toggle');
+			toggle.click(function(event) {
+				event.preventDefault();
+				if (toggled) {
+					forum.stop(true, true).slideDown(200);
+					toggled = false;
+					toggle.removeClass('toggled');
+					phpbb.deleteCookie('toggled-' + id, styleConfig.cookieConfig);
+					return;
+				}
+				forum.stop(true, true).slideUp(200);
+				toggled = true;
+				toggle.addClass('toggled');
+				phpbb.setCookie('toggled-' + id, '1', styleConfig.cookieConfig);
+			});
+
+			// Check default state
+			if (phpbb.getCookie('toggled-' + id, styleConfig.cookieConfig) == '1') {
+				forum.stop(true, true).slideUp(0);
+				toggled = true;
+				toggle.addClass('toggled');
+			}
+		});
+	}
 }
 
 /**
@@ -1397,6 +1456,14 @@ jQuery(function($) {
 	var transforms = ['transform', 'webkitTransform', 'msTransform'],
 		i, test;
 
+	// Cookie configuration
+	styleConfig.cookieConfig = {
+		prefix: '',
+		path: '/',
+		expires: new Date()
+	};
+	styleConfig.cookieConfig.expires.setFullYear(styleConfig.cookieConfig.expires.getFullYear() + 1);
+
 	// Swap .nojs and .hasjs
 	$('#phpbb.nojs').toggleClass('nojs hasjs');
 	$('#phpbb').toggleClass('hastouch', phpbb.isTouch);
@@ -1415,6 +1482,56 @@ jQuery(function($) {
 			break;
 		}
 	}
+
+	// Cookies
+	phpbb.setCookie = function(name, value, config) {
+		config = $.extend({
+			prefix: '',
+			path: '/'
+		}, typeof config === 'object' ? config : {});
+
+		document.cookie = config.prefix + name + '=' + encodeURIComponent(value)
+			+ (config.expires === undefined ? '' : ';expires=' + config.expires.toUTCString())
+			+ (config.path  ? ';path=' + config.path : '')
+			+ (config.domain ? ';domain=' + config.domain : '');
+
+		return value;
+	};
+
+	phpbb.getCookie = function(name, config) {
+		var expr, cookie;
+
+		config = $.extend({
+			prefix: '',
+			path: '/'
+		}, typeof config === 'object' ? config : {});
+
+		expr = new RegExp('(^| )' + config.prefix + name + '=([^;]+)(;|$)');
+		cookie = expr.exec(document.cookie);
+
+		if (cookie)
+		{
+			return decodeURIComponent(cookie[2]);
+		}
+		else
+		{
+			return null;
+		}
+	};
+
+	phpbb.deleteCookie = function(name, config) {
+		config = $.extend({
+			prefix: '',
+			path: '/'
+		}, typeof config === 'object' ? config : {});
+
+		document.cookie = config.prefix + name + '='
+			+ (config.path  ? '; path=' + config.path : '')
+			+ (config.domain ? '; domain=' + config.domain : '')
+			+ '; expires=Thu, 01-Jan-70 00:00:01 GMT';
+
+		return null;
+	};
 
 	parseDocument($('body'));
 

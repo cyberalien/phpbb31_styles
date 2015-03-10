@@ -14,6 +14,37 @@ ul.topiclist li {
 	.forabg &.header,
 	.forumbg &.header {
 		@include section-heading-forum;
+		position: relative;
+		.forum-toggle {
+			position: absolute;
+			right: 5px;
+			top: 50%;
+			margin-top: -8px;
+			height: 16px;
+			width: 16px;
+			text-decoration: none !important;
+			outline-style: none !important;
+			color: inherit;
+			transition: opacity 0.3s ease;
+			opacity: .5;
+			&:after {
+				content: '\E192';	// glyphicons-circle-minus
+				font-family: 'Glyphicons Regular', 'Glyphicons';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 16px;
+				height: 16px;
+				font-size: 12px;
+				line-height: 16px;
+			}
+			&.toggled:after {
+				content: '\E191';	// glyphicons-circle-plus
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
 	}
 }
 
