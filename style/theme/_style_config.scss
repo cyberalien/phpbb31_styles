@@ -61,13 +61,13 @@ $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, su
 
 // Tabs
 $tab-color:								desaturate($link-color, 20%);
-$tab-background:						$block-background2;
+$tab-background:						$block-background;
 
-$tab-hover-color:						$tab-color;
+$tab-hover-color:						$link-hover-color;
 $tab-hover-background:					$block-background3;
 
 $tab-selected-color:					mix($text-color, $block-background3, 90%);
-$tab-selected-background:				#e6e6e6;
+$tab-selected-background:				$block-background3;
 
 // Header
 $header-bg:								$content-background;
@@ -260,6 +260,12 @@ $bbcode-code-color:						code-color(128deg);
 	box-shadow: none;
 	background-image: none;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	a {
+		color: $link-color;
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
 }
 
 @mixin table-heading {

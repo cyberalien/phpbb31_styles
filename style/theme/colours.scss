@@ -156,7 +156,13 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 .bg3 { 
 	background-color: $block-background3;
 	&.panel {
-		border-color: lighten($block-background3, 2%);
+		background: transparent none;
+		background-image: -webkit-linear-gradient(top, $block-background3 0%, rgba($block-background3, 0) 50px);
+		background-image: linear-gradient(to bottom, $block-background3 0%, rgba($block-background3, 0) 50px);
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	}
+	#postform &.panel {
+		background-color: $block-background;
 	}
 }
 
@@ -989,21 +995,34 @@ ul.cplist {
 /* Link styles for the sub-section links */
 #navigation a {
 	color: $text-color;
-	background: $block-background2;
+	background: $block-background;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FFFFFF, endColorstr=#00FFFFFF);
+	box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .1);
 }
 
 #navigation a:hover {
 	background: $block-background2;
 	color: $link-hover-color;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .25) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .25) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#40FFFFFF);
 }
 
 #navigation #active-subsection a {
-	background: $content-background;
-	color: $link-hover-color;
+	background: $primary-color;
+	color: $overlay-color;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
 }
 
 #navigation #active-subsection a:hover {
-	color: $link-hover-color;
+	background-color: $secondary-color;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#18FFFFFF);
 }
 
 #navigation > hr {

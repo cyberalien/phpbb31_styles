@@ -679,14 +679,6 @@ li.breadcrumbs span:first-child > a {
 
 /* Main CP box
 ----------------------------------------*/
-.rtl #cp-menu {
-	float: right;
-}
-
-.rtl #cp-main {
-	float: right;
-}
-
 .rtl #cp-main .panel ol {
 	margin-right: 2em;
 	margin-left: 0;

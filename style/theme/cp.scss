@@ -9,11 +9,21 @@
 	width: 19%;
 	margin-top: 1em;
 	margin-bottom: 5px;
+	margin-left: -5px;
+	margin-right: 5px;
+	.rtl & {
+		float: right;
+		margin-left: 5px;
+		margin-right: -5px;
+	}
 }
 
 #cp-main {
 	float: left;
 	width: 81%;
+	.rtl & {
+		float: right;
+	}
 }
 
 #cp-main .content {
@@ -146,8 +156,7 @@ ul.cplist {
 
 #tabs .activetab > a {
 	margin-top: 0;
-	margin-bottom: -3px;
-	padding-bottom: 10px;
+	padding-bottom: 7px;
 }
 
 /* Mini tabbed menu used in MCP
@@ -240,7 +249,12 @@ a.responsive-tab-link {
 /* Container for sub-navigation list */
 #navigation {
 	width: 100%;
-	padding-top: 36px;
+	hr {
+		display: none;
+		+ ul {
+			margin-top: 10px;
+		}
+	}
 }
 
 #navigation ul {
@@ -259,7 +273,8 @@ a.responsive-tab-link {
 #navigation a {
 	display: block;
 	padding: 5px;
-	margin: 1px 0;
+	margin: 2px 0;
+	border-radius: max(0px, $border-radius - 2px);
 	text-decoration: none;
 }
 

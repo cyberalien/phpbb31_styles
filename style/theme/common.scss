@@ -740,6 +740,18 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	@include section;
 	margin-bottom: 10px;
 	padding: 4px 9px;
+
+	// UCP/MCP panel
+	&.bg3 {
+		border-radius: 0;
+		border-width: 0;
+		box-shadow: none;
+	}
+
+	// Posting form
+	#postform &.panel {
+		border-radius: $border-radius;
+	}
 }
 
 .panel > .inner > h3:first-child {
