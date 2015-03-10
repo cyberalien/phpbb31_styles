@@ -150,15 +150,16 @@ $heading-link:							$overlay-color;
 $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 
 // Inputs
-$input-text:							#333;	// Input text color
-$input-bg:								#FFFFFF;	// Input background
-$input-border:							#B4BAC0;	// Input border color
+$input-text:							$text-color;	// Input text color
+$input-bg:								$white-color;	// Input background
+$input-border:							#c6c6c6;	// Input border color
 $input-hover-text:						$input-text;
 $input-hover-bg:						$input-bg;
-$input-hover-border:					#11A3EA;
+$input-hover-border:					$secondary-color;
 $input-focus-text:						#0F4987;
 $input-focus-bg:						$input-bg;
-$input-focus-border:					#11A3EA;
+$input-focus-border:					$primary-color;
+$input-border-radius:					2px;
 
 $search-box-border:						#c6c6c6;	// Border for search box block
 $search-box-border-header:				#ccc;		// Same as above, for search box in header
@@ -166,9 +167,12 @@ $search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search
 
 // Buttons
 $button-bg:								#e8e8e8;
+$button-border-radius:					3px;
 $button-border:							#c6c6c6;
+$button-main-border:					#a8a8a8;
 $button-icon:							#909090;
 $button-icon-hover:						#006ac6;
+$button-text:							$text-color;
 
 // BBCode
 $bbcode-border-radius:					3px;

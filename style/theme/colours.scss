@@ -161,7 +161,7 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 		background-image: linear-gradient(to bottom, $block-background3 0%, rgba($block-background3, 0) 50px);
 		filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 	}
-	#postform &.panel {
+	.section-posting &.panel {
 		background-color: $block-background;
 	}
 }
@@ -1104,9 +1104,9 @@ Colours and backgrounds for forms.css
 /* General form styles
 ----------------------------------------*/
 select {
-	border-color: #666666;
-	background-color: #FAFAFA;
-	color: #000;
+	border-color: $input-border;
+	background-color: $input-bg;
+	color: $input-text;
 }
 
 label {
@@ -1129,7 +1129,7 @@ fieldset.fields1 {
 
 /* Hover effects */
 fieldset dl:hover dt label {
-	color: #000000;
+	color: $bold-text-color;
 }
 
 fieldset.fields2 dl:hover dt label {
@@ -1138,7 +1138,6 @@ fieldset.fields2 dl:hover dt label {
 
 /* Quick-login on index page */
 fieldset.quick-login input.inputbox {
-	background-color: #F2F3F3;
 }
 
 /* Posting page styles
@@ -1189,15 +1188,17 @@ fieldset.quick-login input.inputbox {
 ---------------------------------------- */
 
 a.button1, input.button1, input.button3, a.button2, input.button2 {
-	color: #000;
-	background-color: #FAFAFA;
-	background-image: -webkit-linear-gradient(top, #ffffff 0%, #d2d2d2 1px, #efefef 100%);
-	background-image: linear-gradient(to bottom, #ffffff 0%, #d2d2d2 1px, #efefef 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d2d2d2, endColorstr=#efefef);
+	color: $button-text;
+	border-color: $button-border;
+	background-color: $button-bg;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
 }
 
 a.button1, input.button1 {
-	border-color: #666666;
+	border-color: $button-main-border;
+	background-color: mix($button-bg, $white-color, 40%);
 }
 
 input.button3 {
@@ -1207,28 +1208,30 @@ input.button3 {
 
 /* Alternative button */
 a.button2, input.button2, input.button3 {
-	border-color: #666666;
 }
 
 /* <a> button in the style of the form buttons */
 a.button1, a.button2 {
-	color: #000000;
+	color: $button-text;
 }
 
 /* Hover states */
 a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
-	border-color: #BC2A4D;
-	color: #BC2A4D;
+	border-color: mix($block-background, $secondary-color, 20%);
+	color: $secondary-color;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#18FFFFFF);
 }
 
 /* Focus states */
 input.button1:focus, input.button2:focus, input.button3:focus {
-	border-color: #11A3EA;
-	color: #0F4987;
+	border-color: mix($block-background, $primary-color, 20%);
+	color: $primary-color;
 }
 
 input.disabled {
-	color: #666666;
+	color: $muted-color;
 }
 
 /* jQuery popups

@@ -23,6 +23,7 @@ select {
 	cursor: pointer;
 	vertical-align: middle;
 	border: 1px solid transparent;
+	border-radius: $input-border-radius;
 	padding: 1px;
 	font-size: 1em;
 }
@@ -46,7 +47,7 @@ textarea {
 	padding: 2px;
 	font-size: 1em;
 	line-height: 1.4em;
-	border-radius: 0;
+	border-radius: $input-border-radius;
 	-webkit-appearance: none;
 }
 
@@ -262,7 +263,7 @@ fieldset.submit-buttons input {
 .inputbox {
 	border: 1px solid transparent;
 	padding: 2px;
-	border-radius: 0;
+	border-radius: $input-border-radius;
 	-webkit-appearance: none;
 }
 
@@ -313,7 +314,7 @@ a.button1, input.button1, input.button3, a.button2, input.button2 {
 	padding-bottom: 1px;
 	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
 	background: transparent none repeat-x top left;
-	border-radius: 0;
+	border-radius: $button-border-radius;
 }
 
 a.button1, input.button1 {
