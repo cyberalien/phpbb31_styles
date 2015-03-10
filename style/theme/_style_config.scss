@@ -170,6 +170,12 @@ $button-border:							#c6c6c6;
 $button-icon:							#909090;
 $button-icon-hover:						#006ac6;
 
+// BBCode
+$bbcode-border-radius:					3px;
+$bbcode-background:						$block-background3;
+$bbcode-outer-border:					if($light, darken($bbcode-background, 7%), lighten($bbcode-background, 7%));
+$bbcode-inner-border:					if($light, darken($bbcode-background, 5%), lighten($bbcode-background, 5%));
+$bbcode-heading-text:					#666;
 
 // Mixins
 @mixin section {

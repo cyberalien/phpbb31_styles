@@ -464,6 +464,7 @@ dl.faq dt {
 
 .posthilit {
 	background-color: $block-background-reported;
+	color: if($light, darken($secondary-color, 10%), lighten($secondary-color, 10%));
 }
 
 .announce, .unreadpost {
@@ -526,39 +527,35 @@ blockquote:before {
 /* Attachments
 ----------------------------------------*/
 .attachbox {
-	background-color: #FFFFFF;
-	border-color:  #C9D2D8;
-}
-
-.pm-message .attachbox {
-	background-color: #F2F3F3;
+	background-color: $bbcode-background;
+	border-color:  $bbcode-outer-border;
 }
 
 .attachbox dd {
-	border-top-color: #C9D2D8;
+	border-top-color: $bbcode-inner-border;
 }
 
 .attachbox p {
-	color: #666666;
+	color: $bbcode-heading-text;
 }
 
 .attachbox p.stats {
-	color: #666666;
+	color: $bbcode-heading-text;
 }
 
 /* Inline image thumbnails */
 
 dl.file dd {
-	color: #666666;
+	color: $bbcode-heading-text;
 }
 
 dl.thumbnail img {
-	border-color: #666666;
-	background-color: #FFFFFF;
+	border-color: $bbcode-inner-border;
+	background-color: $block-background;
 }
 
 dl.thumbnail dd {
-	color: #666666;
+	color: $bbcode-heading-text;
 }
 
 dl.thumbnail dt a:hover {
