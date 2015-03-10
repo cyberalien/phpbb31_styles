@@ -397,11 +397,34 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			vertical-align: baseline;
 			font-size: 12px;
 			outline-style: none;
+			&.dropdown-toggle {
+				position: relative;
+				&:before {
+					content: '\f078';	// fa-chevron-down
+					font-family: FontAwesome;
+					position: absolute;
+					right: 0;
+					top: 50%;
+					font-size: 8px;
+					line-height: 12px;
+					width: 8px;
+					height: 12px;
+					margin-top: -6px;
+				}
+				&:hover:before {
+					display: none;
+				}
+			}
 			.username-coloured {
 				color: inherit !important;
 				font-weight: inherit;
 				font-style: inherit;
 			}
+		}
+
+		.responsive-menu .nav-link:before,
+		.dropdown-visible .nav-link:before {
+			display: none;
 		}
 
 		.dropdown {
