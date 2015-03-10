@@ -463,8 +463,7 @@ dl.faq dt {
 }
 
 .posthilit {
-	background-color: #F3BFCC;
-	color: #BC2A4D;
+	background-color: $block-background-reported;
 }
 
 .announce, .unreadpost {
@@ -473,12 +472,12 @@ dl.faq dt {
 
 /* Post signature */
 .signature {
-	border-top-color: #CCCCCC;
+	border-top-color: $block-inner-border;
 }
 
 /* Post noticies */
 .notice {
-	border-top-color:  #CCCCCC;
+	border-top-color:  $block-inner-border;
 }
 
 /* BB Code styles
@@ -510,7 +509,7 @@ blockquote:before {
 }
 
 .codebox p {
-	border-bottom-color:  #CCCCCC;
+	border-bottom-color:  $block-inner-border;
 }
 
 .codebox code {
@@ -545,10 +544,6 @@ blockquote:before {
 
 .attachbox p.stats {
 	color: #666666;
-}
-
-.attach-image img {
-	border-color: #999999;
 }
 
 /* Inline image thumbnails */
