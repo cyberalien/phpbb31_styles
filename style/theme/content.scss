@@ -434,6 +434,11 @@ dd.option {
 
 .postprofile + .postbody > div {
 	margin-left: $post-margin;
+	&:only-child:after {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
 	.rtl & {
 		margin-left: 0;
 		margin-right: $post-margin;
@@ -915,13 +920,15 @@ fieldset.polls dd div {
 ----------------------------------------*/
 .postprofile {
 	/* Also see tweaks.css */
-	margin: 5px 0 10px 0;
+	margin: 0;
+	padding: 5px 0;
 	min-height: 80px;
 	border: 1px solid transparent;
 	border-width: 0 1px 0 0;
 	width: $profile-width;
 	float: left;
 	position: relative;
+	box-sizing: border-box;
 	z-index: 2;
 	.search & {
 		width: ($profile-width + 100px);

@@ -4,7 +4,8 @@
 var styleConfig = {
 	staticNavigation: true,
 	staticNavigationMinWidth: 500,
-	staticNavigationMinHeight: 400
+	staticNavigationMinHeight: 400,
+	extendPosterProfile: true
 };
 
 /**
@@ -315,6 +316,31 @@ function insert_single_user(formId, user) {
 
 	insertUser(formId, user);
 	window.close();
+}
+
+/**
+* Resize poster profile block
+*/
+function adjustPosterProfile(postbody) {
+	var profile = postbody.parent().prev(),
+		post = profile.parent(),
+		resized = profile.hasClass('resized');
+
+	function unresize() {
+		profile.removeClass('resized').css('min-height', '');
+	}
+
+	if (post.width() < (profile.width() + postbody.width())) {
+		if (resized) {
+			unresize();
+		}
+		return false;
+	}
+
+	if (resized) {
+		profile.css('min-height', '');
+	}
+	profile.css('min-height', Math.floor(postbody.height()) + 'px').addClass('resized');
 }
 
 /**
@@ -1340,6 +1366,15 @@ function parseDocument($container) {
 			$this.css('position', 'relative').append('<span class="online-ribbon"><span>' + text + '</span><span>' + text + '</span></span>');
 		});
 	});
+
+	/**
+	* Extend poster profile
+	*/
+	if (styleConfig._loaded) {
+		$container.find('.postprofile + .postbody > div:only-child').each(function() {
+			adjustPosterProfile($(this));
+		});
+	}
 }
 
 /**
@@ -1347,6 +1382,17 @@ function parseDocument($container) {
 */
 jQuery(function($) {
 	'use strict';
+
+	function processResizeEvent()
+	{
+		styleConfig._resizeThrottled = false;
+
+		if (styleConfig.extendPosterProfile) {
+			$('.postprofile + .postbody > div:only-child').each(function() {
+				adjustPosterProfile($(this));
+			});
+		}
+	}
 
 	var transforms = ['transform', 'webkitTransform', 'msTransform'],
 		i, test;
@@ -1371,4 +1417,23 @@ jQuery(function($) {
 	}
 
 	parseDocument($('body'));
+
+	// Events
+	styleConfig._loaded = true;
+	styleConfig._resizeThrottled = false;
+
+	$(window).load(function() {
+		if (styleConfig.extendPosterProfile) {
+			$('.postprofile + .postbody > div:only-child').each(function() {
+				adjustPosterProfile($(this));
+			});
+		}
+	});
+
+	$(window).resize(function() {
+		if (!styleConfig._resizeThrottled) {
+			styleConfig._resizeThrottled = true;
+			setTimeout(processResizeEvent, 500);
+		}
+	});
 });
