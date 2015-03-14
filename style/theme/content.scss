@@ -280,6 +280,10 @@ dl.icon dt, dl.icon dd {
 	min-height: 42px;
 }
 
+dl.icon.with-description dt, dl.icon.with-description dd {
+	min-height: 50px;
+}
+
 dl a.icon-link {						/* topic row icon links */
 	display: block;
 	width: 36px;
@@ -295,8 +299,18 @@ dl a.icon-link {						/* topic row icon links */
 dd.posts, dd.topics, dd.views, dd.extra, dd.mark {
 	width: 80px;
 	text-align: center;
-	line-height: 2.2em;
-	font-size: 1.2em;
+}
+
+dd.posts, dd.topics, dd.views, dd.extra, dd.mark, dd.lastpost.empty {
+	line-height: 34px;
+	font-size: 12px;
+	.with-description & {
+		line-height: 42px;
+	}
+}
+
+dd.lastpost.empty br {
+	display: none;
 }
 
 dd.posts, dd.topics, dd.views {

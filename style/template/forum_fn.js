@@ -1349,21 +1349,29 @@ function parseDocument($container) {
 	});
 
 	/**
+	* Empty last post column
+	*/
+	$container.find('dd.lastpost > span:only-child > br:only-child').parents('dd.lastpost').addClass('empty');
+
+	/**
 	* Forum descriptions
 	*/
 	var animatedDescription = false;
-	$container.find('.forabg[data-hide-description]').each(function(i) {
-		if ($(this).attr('data-hide-description') != '1') {
-			return;
-		}
-
+	$container.find('.forabg').each(function(i) {
 		var $b = $('body'),
 			$w = $(window),
-			rtl = $('#phpbb').hasClass('rtl');
+			rtl = $('#phpbb').hasClass('rtl'),
+			hide = $(this).attr('data-hide-description') == '1';
 
 		$('a.forumtitle + .forum-description', this).each(function(j) {
-			var $this = $(this),
-				title = $this.prev(),
+			var $this = $(this);
+
+			if (!hide) {
+				$this.parents('dl.icon').addClass('with-description');
+				return;
+			}
+
+			var title = $this.prev(),
 				id = 'forumdesc-' + i + '-' + j,
 				item, top, left, width, rect, rectWidth;
 
