@@ -800,7 +800,8 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 }
 
-.panel > .inner > h3:first-child {
+.panel > .inner > h3:first-child,
+.panel > h3:first-child {
 	@include section-heading;
 	padding-left: 10px;
 	padding-right: 10px;
