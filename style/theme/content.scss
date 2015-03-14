@@ -101,7 +101,7 @@ ul.topiclist.two-columns dt .list-inner {
 }
 
 ul.topiclist dd {
-	border-left: 1px solid transparent;
+	border-left: 1px solid $block-inner-border;
 	padding: 4px 0;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;

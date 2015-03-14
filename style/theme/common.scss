@@ -301,6 +301,13 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	padding: 0 9px;
 	clear: both;
 
+	&.nav-breadcrumbs {
+		padding: 0 7px;
+		.linklist {
+			padding: 0;
+		}
+	}
+
 	&.tabbed, &.secondary {
 		@include section-empty;
 	}
@@ -1142,11 +1149,17 @@ ul.linklist.bulletin > li.no-bulletin:before {
 
 /* Responsive breadcrumbs
 ----------------------------------------*/
+.nav-breadcrumbs .breadcrumbs {
+	padding-top: 0;
+}
+
 .breadcrumbs .crumb {
 	float: left;
 	font-weight: bold;
 	word-wrap: normal;
 	position: relative;
+	font-size: 11px;
+	line-height: 23px;
 	padding-left: 13px;
 	.rtl & {
 		padding-left: 0;
@@ -1161,11 +1174,10 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	position: absolute;
 	left: 2px;
 	width: 10px;
-	top: 50%;
-	margin-top: -5px;
-	font-size: 7px;
-	height: 11px;
-	line-height: 11px;
+	top: 1px;
+	font-size: 6px;
+	height: 22px;
+	line-height: 22px;
 	text-align: center;
 	.rtl & {
 		left: auto;

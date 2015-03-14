@@ -56,8 +56,8 @@ $block-background3:						#303030;	// Blocks with .bg3 background color - mostly 
 
 $block-border:							#202020;	// Border color for blocks
 $border-radius:							5px;		// Main border radius
-$block-top-border:						lighten($block-background, 10%);	// Top border of forums in forums list
-$block-bottom-border:					darken($block-background, 5%);		// Bottom border of forums in forums list
+$block-top-border:						lighten($block-background, 5%);	// Top border of forums in forums list
+$block-bottom-border:					darken($block-background, 10%);		// Bottom border of forums in forums list
 $block-inner-border:					$block-bottom-border;	// Border inside blocks where there is only 1 border instead of top/bottom borders
 
 $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title
@@ -100,11 +100,7 @@ $primary-nav-alert-color:				$overlay-color;
 $primary-nav-alert-shadow:				1px 1px 3px rgba(0, 0, 0, .2);
 
 // Secondary navigation
-$secondary-nav-hover-bg:				$secondary-color;
-$secondary-nav-hover-link:				$overlay-color;
-$secondary-nav-hover-gradient-start:	rgba(255, 255, 255, .25);
-$secondary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
-$secondary-nav-hover-shadow:			0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+$secondary-nav-hover-link:				$link-hover-color;
 
 // Dropdown
 $dropdown-bg:							$block-background;
@@ -146,7 +142,7 @@ $content-bottom-border:					darken($content-background, 10%);
 $content-inner-border:					$content-bottom-border;
 
 // Heading section
-$heading-bg:							$primary-color;
+$heading-bg:							desaturate(darken($primary-color, 35%), 25%);
 $heading-border:						$heading-bg;
 $heading-color:							$overlay-color;
 $heading-link:							$overlay-color;
@@ -197,10 +193,9 @@ $bbcode-code-color:						code-color(128deg);
 	border: 1px solid $block-border;
 	border-radius: $border-radius;
 	padding: 4px 9px;
-	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%), -webkit-linear-gradient(top, rgba(204, 204, 204, .2) 0%, rgba(204, 204, 204, .25) 10px, rgba(204, 204, 204, 0) 50px);
-	background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to bottom, rgba(204, 204, 204, .2) 0%, rgba(204, 204, 204, .25) 10px, rgba(204, 204, 204, 0) 50px);
-	box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.15), 0 10px 10px -10px rgba(0, 0, 0, 0.2);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33CCCCCC, endColorstr=#00CCCCCC);
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30000000, endColorstr=#00000000);
 }
 
 @mixin section-forum {
@@ -224,19 +219,20 @@ $bbcode-code-color:						code-color(128deg);
 	border-radius: max(0, $border-radius - 1px);
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
-	background: $heading-bg;
 	border: 0 solid $heading-border;
 	padding: 5px;
 	text-transform: none;
 	font-size: 14px;
 	line-height: 18px;
 	font-weight: normal;
+	text-align: center;
 	color: $heading-color;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
-	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+	background: $heading-bg url('./images/category.png') 0 0 repeat-x;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 
 	@if $border-radius > 1px {
 		@media (max-width: 700px) {

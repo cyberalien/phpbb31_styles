@@ -87,9 +87,9 @@ hr {
 }
 
 .navbar {
-	box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 2px rgba(0, 0, 0, 0.1);
-	background-image: none;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30000000, endColorstr=#00000000);
 	&.secondary {
 		color: $link-color;
 		> ul > li:hover,
@@ -97,11 +97,6 @@ hr {
 			&, &:after, &:before {
 				color: $secondary-nav-hover-link;
 			}
-			background-color: $secondary-nav-hover-bg;
-			background-image: -webkit-linear-gradient(top, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
-			background-image: linear-gradient(to bottom, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($secondary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($secondary-nav-hover-gradient-end)}');
-			box-shadow: $secondary-nav-hover-shadow;
 		}
 		.dropdown {
 			color: $text-color;
