@@ -825,13 +825,12 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 .panel > .inner > h3:first-child,
 .panel > h3:first-child {
-	@include section-heading;
-	padding-left: 10px;
-	padding-right: 10px;
-	.panel-container & {
-		font-size: 16px;
-		line-height: 22px;
-	}
+	margin: 5px 0 10px;
+	padding: 0;
+
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: normal;
 }
 
 .post {
@@ -1716,7 +1715,11 @@ form > p.post-notice strong {
 
 .stat-block {
 	clear: both;
+	margin-top: 10px;
 	@extend .panel;
+	> p:last-child {
+		margin-bottom: 5px;
+	}
 }
 
 #top {

@@ -129,7 +129,7 @@ $panel-title-border:					$block-inner-border;
 
 // Content outside of blocks
 $page-title-color:						$primary-color;
-$stats-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);
+$stats-title-color:						desaturate(darken($primary-color, 10%), 25%);
 $content-top-border:					lighten($content-background, 10%);
 $content-bottom-border:					darken($content-background, 10%);
 $content-inner-border:					$content-bottom-border;
@@ -183,9 +183,9 @@ $bbcode-code-color:						code-color(128deg);
 // Mixins
 @mixin section {
 	background: $block-background;
-	border: 1px solid $block-border;
+	border: 0 solid $block-border;
 	border-radius: $border-radius;
-	padding: 4px 9px;
+	padding: 5px 10px;
 	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, 0) 100%);
 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, 0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30000000, endColorstr=#00000000);
