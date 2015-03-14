@@ -1,6 +1,6 @@
 // Configuration file
 $show-logo:								true;	// true or false
-$center-logo:							true;	// true or false
+$center-logo:							false;	// true or false
 $logo-block-padding:					10px 0;
 $responsive-hide-logo:					false;	// Hide logo on mobile devices. true or false
 
@@ -12,30 +12,30 @@ $post-margin:							($profile-width + 10px);
 $use-wrapper:							true;	// true or false
 $max-width:								1152px;	// Maximum width. Set to "none" to make layout fluid
 
-$split-forums:							false;	// Changes layout of forums list. Values are true or false
+$split-forums:							true;	// Changes layout of forums list. Values are true or false
 
 //
 // Color palette
 //
 
 // Absolute black and white colors. Reverse them for dark styles
-$black-color:							#000;		// Main color to mix with. Black for light styles, white for dark styles
-$white-color:							#fff;		// Opposite of $black-color
+$black-color:							#fff;		// Main color to mix with. Black for light styles, white for dark styles
+$white-color:							#000;		// Opposite of $black-color
 
 // Page colors
-$page-background:						#f0f0f0;	// HTML element
-$content-background:					#e4e4e4;	// Page inside content wrapper
-$content-border-color:					#e4e4e4;	// Border color for content wrapper
+$page-background:						#181818;	// HTML element
+$content-background:					#181818;	// Page inside content wrapper
+$content-border-color:					#181818;	// Border color for content wrapper
 
 // Primary colors
-$primary-color:							#3462a0;	// Main color, used for links and stuff
-$secondary-color:						#b93329;	// Secondary color, usually in red - yellow range
-$overlay-color:							$white-color;	// Text on top of sections that use colorful background.
-$block-background:						#f4f4f4;	// Background of blocks
-$block-background-reported:				#f5e9e9;	// Background for reported posts
+$primary-color:							#4398ef;	// Main color, used for links and stuff
+$secondary-color:						#f04343;	// Secondary color, usually in red - yellow range
+$overlay-color:							#fff;	// Text on top of sections that use colorful background.
+$block-background:						#383838;	// Background of blocks
+$block-background-reported:				#403030;	// Background for reported posts
 
 // Global color values
-$text-color:							#141414;	// Text color
+$text-color:							#bbb;	// Text color
 $bold-text-color:						$black-color;	// Text color with higher contrast to background. #000 or #fff
 $post-text-color:						$text-color;	// Text inside posts
 $link-color:							$primary-color;	// Links
@@ -51,10 +51,10 @@ $rules-color:							$secondary-color;	// Forum rules
 $light:									if(lightness($black-color) < 50%, true, false);
 
 // Blocks
-$block-background2:						#f6f6f6;	// Blocks with .bg2 background color
-$block-background3:						#f8f8f8;	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
+$block-background2:						#343434;	// Blocks with .bg2 background color
+$block-background3:						#303030;	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
 
-$block-border:							#f9f9f9;	// Border color for blocks
+$block-border:							#202020;	// Border color for blocks
 $border-radius:							5px;		// Main border radius
 $block-top-border:						lighten($block-background, 10%);	// Top border of forums in forums list
 $block-bottom-border:					darken($block-background, 5%);		// Bottom border of forums in forums list
