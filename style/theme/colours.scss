@@ -646,6 +646,13 @@ fieldset.polls dd div {
 	.reported & {
 		color: mix($block-background-reported, $link-hover-color, 50%);
 	}
+
+	@media (max-width: 700px) {
+		background-color: $secondary-color;
+		&, .reported & {
+			color: $overlay-color;
+		}
+	}
 }
 
 dd.profile-warnings {
