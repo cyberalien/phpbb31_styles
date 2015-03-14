@@ -79,21 +79,14 @@ $header-link:							$overlay-color;
 $header-link-hover:						mix($header-link, $header-bg, 80%);
 
 // Primary navigation
-$primary-nav-bg:						$primary-color;
-$primary-nav-gradient-start:			rgba(255, 255, 255, .25);
-$primary-nav-gradient-end:				rgba(255, 255, 255, 0);
+$primary-nav-bg:						desaturate(darken($primary-color, 35%), 25%);
 $primary-nav-color:						$overlay-color;
-$primary-nav-shadow:					0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
-$primary-nav-selected-bg:				$content-background;
-$primary-nav-selected-gradient-start:	rgba(255, 255, 255, .5);
-$primary-nav-selected-gradient-end:		rgba(255, 255, 255, 0);
+$primary-nav-selected-bg:				mix($primary-nav-bg, $content-background, 20%);
 $primary-nav-selected-color:			$primary-color;
 
-$primary-nav-hover-bg:					$content-background;
-$primary-nav-hover-gradient-start:		rgba(255, 255, 255, .5);
-$primary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
-$primary-nav-hover-color:				$secondary-color;
+$primary-nav-hover-bg:					desaturate(darken($primary-color, 25%), 20%);
+$primary-nav-hover-color:				$overlay-color;
 
 $primary-nav-alert-bg:					$secondary-color;
 $primary-nav-alert-color:				$overlay-color;
@@ -225,7 +218,6 @@ $bbcode-code-color:						code-color(128deg);
 	font-size: 14px;
 	line-height: 18px;
 	font-weight: normal;
-	text-align: center;
 	color: $heading-color;
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 

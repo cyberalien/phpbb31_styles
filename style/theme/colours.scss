@@ -104,28 +104,27 @@ hr {
 	}
 
 	.nav-tabs {
-		background-color: $primary-nav-bg;
-		background-image: -webkit-linear-gradient(top, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
-		background-image: linear-gradient(to bottom, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-gradient-end)}');
-		box-shadow: $primary-nav-shadow;
+		background: $primary-nav-bg url('./images/category.png') 0 0 repeat-x;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 
 		.tab {
 			color: $primary-nav-color;
 			&.selected {
 				color: $primary-nav-selected-color;
-				background-color: $primary-nav-selected-bg;
-				background-image: -webkit-linear-gradient(top, $primary-nav-selected-gradient-start 0, $primary-nav-selected-gradient-end 100%);
-				background-image: linear-gradient(to bottom, $primary-nav-selected-gradient-start 0, $primary-nav-selected-gradient-end 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-selected-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-selected-gradient-end)}');
+				background: $primary-nav-selected-bg url('./images/category.png') 0 0 repeat-x;
+				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .07) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .07) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#10FFFFFF, endColorstr=#00FFFFFF);
 			}
 			&:hover,
 			&.dropdown-visible {
 				color: $primary-nav-hover-color;
-				background-color: $primary-nav-hover-bg;
-				background-image: -webkit-linear-gradient(top, $primary-nav-hover-gradient-start 0, $primary-nav-hover-gradient-end 100%);
-				background-image: linear-gradient(to bottom, $primary-nav-hover-gradient-start 0, $primary-nav-hover-gradient-end 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-hover-gradient-end)}');
+				background: $primary-nav-hover-bg url('./images/category.png') 0 0 repeat-x;
+				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 			}
 			& > strong {
 				color: $primary-nav-alert-color;
