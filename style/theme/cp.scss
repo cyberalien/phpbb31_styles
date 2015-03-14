@@ -375,7 +375,7 @@ ol.def-rules li {
 
 /* Responsive *CP navigation
 ----------------------------------------*/
-@media only screen and (max-width: 900px), only screen and (max-device-width: 900px)
+@media (max-width: 900px)
 {
 	.nojs #tabs a span, .nojs #minitabs a span {
 		max-width: 40px;
@@ -402,7 +402,7 @@ ol.def-rules li {
 		#cp-menu & {
 			margin: 0 10px;
 			float: left;
-			@media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
+			@media (max-width: 450px) {
 				float: none;
 				margin: 0 auto;
 			}
@@ -415,7 +415,7 @@ ol.def-rules li {
 			float: left;
 			margin: 0 10px;
 			max-width: 220px;
-			@media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
+			@media (max-width: 450px) {
 				float: none;
 				margin: 10px auto 0;
 			}

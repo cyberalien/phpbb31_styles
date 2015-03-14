@@ -236,7 +236,7 @@ $bbcode-code-color:						code-color(128deg);
 	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
 	@if $border-radius > 1px {
-		@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+		@media (max-width: 700px) {
 			border-radius: 0;
 		}
 	}

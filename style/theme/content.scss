@@ -350,7 +350,7 @@ dd.option {
 
 .forum-lastpost {
 	display: none;
-	@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+	@media (max-width: 550px) {
 		display: table-row !important;
 		padding-top: 2px;
 		table-layout: fixed;
