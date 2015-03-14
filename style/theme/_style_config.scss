@@ -11,6 +11,8 @@ $post-margin:							($profile-width + 10px);
 $use-wrapper:							true;	// true or false
 $max-width:								1152px;	// Maximum width. Set to "none" to make layout fluid
 
+$split-forums:							false;	// Changes layout of forums list. Values are true or false
+
 //
 // Color palette
 //
@@ -251,7 +253,13 @@ $bbcode-code-color:						code-color(128deg);
 
 @mixin section-heading-forum {
 	@include section-heading;
-	margin: -5px -5px 0;
+	@if $split-forums == false {
+		margin: -5px -5px 0;
+	}
+	@else {
+		@include section-heading-separate;
+		margin: 0;
+	}
 }
 
 @mixin section-heading-separate {

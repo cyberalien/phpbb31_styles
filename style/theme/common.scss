@@ -752,22 +752,32 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .forabg {
-	@include section-forum;
-	margin-bottom: 4px;
-	clear: both;
-	& + .forabg {
-		margin-top: 10px;
+	@if $split-forums == false {
+		@include section-forum;
+		margin-bottom: 4px;
+		clear: both;
+		& + .forabg {
+			margin-top: 10px;
+		}
+	}
+	@else {
+		padding: 0;
 	}
 }
 
 .forumbg {
-	@include section-forum;
-	margin-bottom: 4px;
-	clear: both;
+	@if $split-forums == false {
+		@include section-forum;
+		margin-bottom: 4px;
+		clear: both;
 
-	&.forumbg-table {
-		@include section-empty;
-		padding: 0 1px;
+		&.forumbg-table {
+			@include section-empty;
+			padding: 0 1px;
+		}
+	}
+	@else {
+		padding: 0;
 	}
 }
 

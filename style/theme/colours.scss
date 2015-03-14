@@ -76,7 +76,8 @@ hr {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	&.secondary {
 		color: $link-color;
-		> ul > li:hover {
+		> ul > li:hover,
+		> ul > li.dropdown-visible {
 			&, &:after, &:before {
 				color: $secondary-nav-hover-link;
 			}
@@ -417,8 +418,10 @@ ul.forums {
 
 ul.topiclist li {
 	color: $text-color;
-	.forabg &, .forumbg & {
-		background: transparent;
+	@if $split-forums == false {
+		.forabg &, .forumbg & {
+			background: transparent;
+		}
 	}
 }
 

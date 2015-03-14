@@ -142,6 +142,19 @@ li.row {
 		padding-bottom: 0;
 	}
 
+	@if $split-forums == true {
+		ul.topiclist & {
+			.forabg &, .forumbg & {
+				@include section-forum;
+				margin: 5px 0;
+				padding: 0;
+				&.reported {
+					background-color: $block-background-reported;
+				}
+			}
+		}
+	}
+
 	.forum-description {
 
 	}
