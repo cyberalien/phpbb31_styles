@@ -435,3 +435,15 @@ ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:befor
 		content: '\E245';	// glyphicons-conversation
 	}
 }
+.icon-forums {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E245';	// glyphicons-conversation
+	}
+}
+.icon-chat {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E246';	// glyphicons-chat
+	}
+}

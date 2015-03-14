@@ -307,16 +307,17 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		@extend %clearfix;
 		margin: 0;
 		padding: 1px 0;
-		ul {
+		> ul {
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
 		}
-		li {
+		> ul > li {
+			position: relative;
 			display: inline-block;
 			margin: 0;
 			padding: 0;
-			a {
+			> a {
 				display: inline-block;
 				color: inherit;
 				padding: 1px 8px;
@@ -325,13 +326,20 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				font-size: 11px;
 			}
 			&:hover {
-				a {
+				> a {
 					text-decoration: none;
 				}
 				border-radius: 3px;
 			}
-			&.small-icon a {
+			&.small-icon > a {
 				padding-left: 18px;
+			}
+			.dropdown {
+				top: 27px;
+			}
+			&.dropdown-up .dropdown {
+				top: auto;
+				bottom: 27px;
 			}
 		}
 		+ .nav-breadcrumbs {

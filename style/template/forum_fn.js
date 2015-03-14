@@ -345,6 +345,157 @@ function adjustPosterProfile(postbody) {
 }
 
 /**
+* Responsive navigation
+*/
+function checkNavigation(force)
+{
+	function init(nav)
+	{
+		nav.responsive = false;
+		nav.lastWidth = 0;
+		nav.itemCount = 0;
+
+		// Copy children items
+		nav.contents = nav.menu.find('.dropdown-contents:first');
+		nav.canToggle = $();
+		nav.noToggle = $();
+		nav.contents.children('.separator:last-child').hide();
+		nav.items = nav.lists.children().not(nav.menu).each(function(i) {
+			var $this = $(this),
+				cloneClass;
+
+			if ($this.is('.not-responsive, .responsive-menu, .dropdown-container, .selected') || $this.attr('data-skip-responsive') == 'true') {
+				$this.attr('data-responsive-index', -1);
+				nav.noToggle = nav.noToggle.add($this);
+				return;
+			}
+
+			cloneClass = (
+					$this.attr('data-responsive-class') === undefined ? 
+						($this.hasClass('small-icon') ? $this.attr('class') : '') : 
+						$this.attr('data-responsive-class')
+				) + ' responsive-index-' + i;
+
+			nav.contents.append(
+				$this.clone(true).attr('class', cloneClass).addClass('responsive-clone').removeClass('tab')
+			);
+
+			$this.addClass('responsive-cloned-item').attr('data-clone-index', i);
+			nav.canToggle = nav.canToggle.add($this);
+			nav.itemCount ++;
+		});
+		nav.contents.find('a.nav-link').removeClass('nav-link');
+		nav.responsiveClones = nav.contents.children('.responsive-clone').hide();
+
+		nav.initialized = true;
+	}
+
+	function check(nav, force)
+	{
+		var containerWidth, total, width, menuWidth, hiding;
+
+		// Setup navigation
+		if (!nav.initialized) {
+			init(nav);
+			force = true;
+		}
+
+		if (!nav.itemCount) {
+			// Nothing to hide
+			return;
+		}
+
+		// Check width
+		containerWidth = nav.container.width();
+		if (!force && containerWidth == nav.lastWidth) {
+			return;
+		}
+		nav.lastWidth = containerWidth;
+
+		// Show all items
+		if (nav.responsive) {
+			nav.canToggle.show();
+			nav.responsiveClones.hide();
+			if (!nav.alwaysShowMenu) {
+				nav.menu.show();
+			}
+		}
+		nav.responsive = false;
+		menuWidth = nav.menu.width();
+		width = menuWidth;
+
+		// Count width of all items that cannot be hidden
+		nav.noToggle.each(function() {
+			width += $(this).width();
+		});
+
+		// Test all other items
+		hiding = (width >= containerWidth);
+		nav.canToggle.each(function() {
+			var $this = $(this);
+
+			if (!hiding) {
+				width += $(this).width();
+				if (width >= containerWidth) {
+					hiding = true;
+				}
+			}
+
+			if (hiding) {
+				$this.hide();
+				nav.responsiveClones.filter('.responsive-index-' + $this.attr('data-clone-index')).show();
+			}
+		});
+
+		nav.responsive = hiding;
+		if (!hiding && !nav.alwaysShowMenu) {
+			nav.menu.hide();
+		}
+	}
+
+	for (var i=0; i<styleConfig._responsiveNavigation.length; i++) {
+		check(styleConfig._responsiveNavigation[i], force);
+	}
+}
+
+function initResponsiveNavigation()
+{
+	styleConfig._responsiveNavigation = [];
+
+	$('.nav-tabs, .navbar.secondary').each(function() {
+		var $this = $(this),
+			lists = $this.children('ul'),
+			menu = lists.children('.responsive-menu:first'),
+			alwaysShowMenu = (menu.length > 0);
+
+		// Create empty hidden menu
+		if (!menu.length) {
+			if ($this.is('.nav-tabs')) {
+				// Something went wrong - main menu must have responsive menu
+				return;
+			}
+			// Secondary menu
+			lists.eq(0).prepend('<li class="responsive-menu dropdown-container" style="display: none;"><a href="#" class="dropdown-trigger dropdown-toggle">...</a>' +
+					'<div class="dropdown hidden">' + 
+						'<div class="pointer"><div class="pointer-inner"></div></div>' + 
+						'<ul class="dropdown-contents" /></ul>' +
+					'</div>' +
+				'</li>');
+			menu = lists.children('.responsive-menu:first');
+			phpbb.registerDropdown(menu.find('.dropdown-toggle'), menu.find('.dropdown'));
+		}
+
+		styleConfig._responsiveNavigation.push({
+			container: $this,
+			lists: lists,
+			menu: menu,
+			initialized: false,
+			alwaysShowMenu: alwaysShowMenu
+		});
+	});
+}
+
+/**
 * Parse document block
 */
 function parseDocument($container) {
@@ -1034,7 +1185,7 @@ function parseDocument($container) {
 	* Static navigation
 	*/
 	if (styleConfig.staticNavigation) {
-		$('.navbar.tabbed > .inner').each(function(i) {
+		$container.find('.navbar.tabbed > .inner').each(function(i) {
 			var nav = this,
 				navigation = $(nav),
 				isStatic = false,
@@ -1058,6 +1209,7 @@ function parseDocument($container) {
 				dummy.css('height', Math.floor(navigation.height()) + 'px').show();
 				navigation.addClass('static');
 				isStatic = true;
+				checkNavigation(true);
 			}
 
 			function disableStatic()
@@ -1065,6 +1217,7 @@ function parseDocument($container) {
 				dummy.hide();
 				navigation.removeClass('static');
 				isStatic = false;
+				checkNavigation(true);
 			}
 
 			function testHash()
@@ -1446,6 +1599,8 @@ jQuery(function($) {
 	{
 		styleConfig._resizeThrottled = false;
 
+		checkNavigation(false);
+
 		if (styleConfig.extendPosterProfile) {
 			$('.postprofile + .postbody > div:only-child').each(function() {
 				adjustPosterProfile($(this));
@@ -1533,13 +1688,21 @@ jQuery(function($) {
 		return null;
 	};
 
+	// Responsive navigation
+	initResponsiveNavigation();
+
+	// Parse body
 	parseDocument($('body'));
+
+	// Check responsive navigation
+	checkNavigation(true);
 
 	// Events
 	styleConfig._loaded = true;
 	styleConfig._resizeThrottled = false;
 
 	$(window).load(function() {
+		checkNavigation(true);
 		if (styleConfig.extendPosterProfile) {
 			$('.postprofile + .postbody > div:only-child').each(function() {
 				adjustPosterProfile($(this));

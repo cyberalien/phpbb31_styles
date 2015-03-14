@@ -76,7 +76,7 @@ hr {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	&.secondary {
 		color: $link-color;
-		li:hover {
+		> ul > li:hover {
 			&, &:after, &:before {
 				color: $secondary-nav-hover-link;
 			}
@@ -85,6 +85,9 @@ hr {
 			background-image: linear-gradient(to bottom, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($secondary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($secondary-nav-hover-gradient-end)}');
 			box-shadow: $secondary-nav-hover-shadow;
+		}
+		.dropdown {
+			color: $text-color;
 		}
 	}
 
@@ -119,6 +122,9 @@ hr {
 				.arrow {
 					border-top-color: $primary-nav-alert-bg;
 				}
+			}
+			.dropdown {
+				color: $text-color;
 			}
 		}
 	}
