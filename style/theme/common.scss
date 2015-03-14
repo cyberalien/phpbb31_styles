@@ -77,11 +77,17 @@ h1, p.sitename {
 	/* Forum name */
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	margin-right: 200px;
-	margin-top: 15px;
+	margin-top: 10px;
 	margin-bottom: 0;
-	font-weight: bold;
-	font-size: 2em;
+	padding: 6px;
+	font-weight: normal;
+	font-size: 24px;
 	line-height: inherit;
+	+ p {
+		font-size: 16px;
+		opacity: .8;
+		margin-bottom: 10px;
+	}
 }
 
 h2 {
@@ -1709,6 +1715,7 @@ form > p.post-notice strong {
 
 .stat-block {
 	clear: both;
+	@extend .panel;
 }
 
 #top {

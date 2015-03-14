@@ -1,10 +1,10 @@
 // Configuration file
 $show-logo:								true;	// true or false
 $center-logo:							false;	// true or false
-$logo-block-padding:					10px 0;
+$logo-block-padding:					0 20px 0 0;
 $responsive-hide-logo:					false;	// Hide logo on mobile devices. true or false
 
-$show-forum-title:						false;	// true or false
+$show-forum-title:						true;	// true or false
 
 $profile-width:							150px;
 $post-margin:							($profile-width + 10px);
@@ -74,7 +74,7 @@ $tab-selected-background:				$block-background3;
 
 // Header
 $header-bg:								$content-background;
-$header-text:							$text-color;
+$header-text:							#fff;
 $header-link:							$overlay-color;
 $header-link-hover:						mix($header-link, $header-bg, 80%);
 

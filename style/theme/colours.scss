@@ -114,9 +114,9 @@ hr {
 			&.selected {
 				color: $primary-nav-selected-color;
 				background: $primary-nav-selected-bg url('./images/category.png') 0 0 repeat-x;
-				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .07) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
-				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .07) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#10FFFFFF, endColorstr=#00FFFFFF);
+				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .05) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .05) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0AFFFFFF, endColorstr=#00FFFFFF);
 			}
 			&:hover,
 			&.dropdown-visible {
