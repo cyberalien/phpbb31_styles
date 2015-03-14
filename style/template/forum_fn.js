@@ -1461,7 +1461,7 @@ function parseDocument($container) {
 	/**
 	* HD images
 	*/
-	if (window.matchMedia && window.matchMedia('all, (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)').matches) {
+	if (window.matchMedia && window.matchMedia('(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 1.5dppx)').matches) {
 		$container.find('img[data-src-hd]').each(function() {
 			var img = this,
 				$this = $(this),
@@ -1471,7 +1471,7 @@ function parseDocument($container) {
 
 			function replaceImage() 
 			{
-				$this.css('width', img.width + 'px');
+				$this.css('width', (img.naturalWidth ? img.naturalWidth : img.width) + 'px');
 				img.setAttribute('src', img.getAttribute('data-src-hd'));
 			}
 

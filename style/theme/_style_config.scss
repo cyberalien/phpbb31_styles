@@ -1,11 +1,12 @@
 // Configuration file
-$show-logo:								1;	// 0 or 1
-$show-forum-title:						0;	// 0 or 1
-$center-logo:							1;	// 0 or 1
-$logo-width:							140px;
+$show-logo:								true;	// true or false
+$center-logo:							true;	// true or false
 $logo-block-padding:					10px 0;
+$responsive-hide-logo:					false;	// Hide logo on mobile devices. true or false
 
-$profile-width:							150px;
+$show-forum-title:						false;	// true or false
+
+$profile-width:							750px;
 $post-margin:							($profile-width + 10px);
 
 $use-wrapper:							true;	// true or false

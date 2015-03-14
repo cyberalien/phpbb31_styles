@@ -235,10 +235,11 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .logo {
-	@if $show-logo == 1 {
+	@if $show-logo == true {
 		display: block;
-		width: $logo-width;
-		@if $center-logo == 1 {
+		box-sizing: border-box;
+		max-width: 100%;
+		@if $center-logo == true {
 			margin: 0 auto;
 		}
 		@else {
@@ -266,11 +267,11 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		margin-right: 0;
 	}
 
-	@if $center-logo == 1 {
+	@if $center-logo == true {
 		text-align: center;
 	}
 
-	@if $show-forum-title == 0 {
+	@if $show-forum-title == false {
 		h1, p {
 			display: none;
 		}
