@@ -876,14 +876,14 @@ Colours and backgrounds for buttons.css
 .forum_unread_locked											{ background-image: url("./images/forum_unread_locked.png"); }
 .forum_unread_subforum											{ background-image: url("./images/forum_unread_subforum.png"); }
 
-.sticky_read													{ @extend .topic_read; }
-.sticky_read_mine												{ @extend .topic_read_mine; }
-.sticky_read_locked												{ @extend .topic_read_locked; }
-.sticky_read_locked_mine										{ @extend .topic_read_locked_mine; }
-.sticky_unread													{ @extend .topic_unread; }
-.sticky_unread_mine												{ @extend .topic_unread_mine; }
-.sticky_unread_locked											{ @extend .topic_unread_locked; }
-.sticky_unread_locked_mine										{ @extend .topic_unread_locked_mine; }
+.sticky_read													{ @extend .announce_read; }
+.sticky_read_mine												{ @extend .announce_read_mine; }
+.sticky_read_locked												{ @extend .announce_read_locked; }
+.sticky_read_locked_mine										{ @extend .announce_read_locked_mine; }
+.sticky_unread													{ @extend .announce_unread; }
+.sticky_unread_mine												{ @extend .announce_unread_mine; }
+.sticky_unread_locked											{ @extend .announce_unread_locked; }
+.sticky_unread_locked_mine										{ @extend .announce_unread_locked_mine; }
 
 .topic_moved													{ background-image: url("./images/topic_moved.png"); }
 .topic_read														{ background-image: url("./images/topic_read.png"); }

@@ -120,6 +120,11 @@ span.imageset {
 	background-size: 11px 9px;
 	padding-left: 11px;
 	padding-top: 9px;
+	margin-right: 2px;
+	.rtl & {
+		margin-right: 0;
+		margin-left: 2px;
+	}
 }
 .imageset.icon_topic_attach {
 	@extend %imageset-gi;

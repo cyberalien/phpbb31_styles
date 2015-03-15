@@ -125,7 +125,7 @@ $dropdown-notification-strong-color:	desaturate(if(lightness($dropdown-notificat
 
 // Panels
 $panel-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);
-$panel-title-border:					$block-inner-border;
+$panel-title-border:					transparent;
 
 // Content outside of blocks
 $page-title-color:						$primary-color;
