@@ -335,12 +335,12 @@ li.reported:hover {
 }
 
 div.rules {
-	background-color: mix($content-background, $rules-color, 85%);
+	background-color: mix($content-background, $rules-color, 90%);
 	color: $rules-color;
 }
 
 p.post-notice {
-	background-color: mix($block-background, $rules-color, 85%);
+	background-color: mix($block-background, $rules-color, 90%);
 	color: $rules-color;
 	background-image: none;
 }

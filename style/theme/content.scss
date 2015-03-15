@@ -108,6 +108,10 @@ ul.topiclist dd {
 	box-sizing: border-box;
 }
 
+ul.topiclist .reported dd {
+	border-color: darken($block-background-reported, 7%);
+}
+
 ul.topiclist dfn {
 	/* Labels for post/view counts */
 	position: absolute;

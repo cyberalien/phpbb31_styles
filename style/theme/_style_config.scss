@@ -41,7 +41,7 @@ $post-text-color:						$text-color;	// Text inside posts
 $link-color:							$primary-color;	// Links
 $link-hover-color:						$secondary-color;	// Links, hover state
 $muted-color:							mix($black-color, $content-background, 60%);	// Gray color
-$rules-color:							$secondary-color;	// Forum rules
+$rules-color:							lighten($secondary-color, 10%);	// Forum rules
 
 //
 // Calculated colors
@@ -213,7 +213,7 @@ $bbcode-code-color:						code-color(128deg);
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 	border: 0 solid $heading-border;
-	padding: 5px;
+	padding: 6px;
 	text-transform: none;
 	font-size: 14px;
 	line-height: 18px;
