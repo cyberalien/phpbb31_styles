@@ -514,7 +514,7 @@ blockquote {
 	border-color: $bbcode-outer-border;
 }
 
-blockquote blockquote
+blockquote blockquote,
 blockquote .codebox,
 blockquote .attachbox {
 	/* Nested quotes */
