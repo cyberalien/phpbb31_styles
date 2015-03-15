@@ -695,7 +695,7 @@ Colours and backgrounds for buttons.css
 		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 0) 100%);
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 0) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1AFFFFFF, endColorstr=#00FFFFFF);
-		color: mix(#fff, $button-bg, 50%);
+		color: mix(#fff, $button-bg, 80%);
 		box-shadow: none;
 	}
 
@@ -706,7 +706,6 @@ Colours and backgrounds for buttons.css
 		border-color: #484848;
 		background-color: #484848;
 		color: #bbb;
-		box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(255, 255, 255, 0.1) inset;
 		&:after, &:before {
 			color: $button-icon !important;
 		}
@@ -735,12 +734,12 @@ Colours and backgrounds for buttons.css
 		}
 	}
 	&.report-icon, &.delete-icon {
-		border-color: $secondary-color;
-		background-color: $secondary-color;
+		border-color: desaturate(darken($secondary-color, 25%), 15%);
+		background-color: desaturate(darken($secondary-color, 25%), 15%);
 		box-shadow: none;
 
 		&:after, &:before {
-			color: mix($overlay-color, $secondary-color, 85%) !important;
+			color: $overlay-color !important;
 		}
 	}
 }
@@ -813,7 +812,7 @@ Colours and backgrounds for buttons.css
 }
 
 .warn-icon:before {
-	color: #D31141;
+	// color: #D31141;
 }
 
 /* Icon images

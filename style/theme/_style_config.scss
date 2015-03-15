@@ -97,7 +97,7 @@ $secondary-nav-hover-link:				$link-hover-color;
 
 // Dropdown
 $dropdown-bg:							$block-background;
-$dropdown-border:						$primary-color;
+$dropdown-border:						desaturate(darken($primary-color, 25%), 20%);
 $dropdown-shadow:						1px 3px 5px rgba(0, 0, 0, 0.5);
 $dropdown-shadow-up:					1px 0 5px rgba(0, 0, 0, 0.5);
 $dropdown-inner-border:					if($light, darken($dropdown-bg, 10%), lighten($dropdown-bg, 10%));
@@ -161,8 +161,8 @@ $search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search
 $button-bg:								desaturate(darken($primary-color, 35%), 25%);
 $button-border-radius:					3px;
 $button-border:							$button-bg;
-$button-icon:							#909090;
-$button-icon-hover:						#006ac6;
+$button-icon:							#d0d0d0;
+$button-icon-hover:						#fff;
 $button-text:							$text-color;
 
 // BBCode
