@@ -167,9 +167,9 @@ $button-text:							$text-color;
 
 // BBCode
 $bbcode-border-radius:					3px;
-$bbcode-background:						#f0f0f0;
-$bbcode-background2:					#e8e8e8;
-$bbcode-outer-border:					if($light, darken($bbcode-background, 7%), lighten($bbcode-background, 7%));
+$bbcode-background:						#181818;
+$bbcode-background2:					#282828;
+$bbcode-outer-border:					if($light, darken($bbcode-background, 7%), lighten($bbcode-background, 4%));
 $bbcode-inner-border:					if($light, darken($bbcode-background, 5%), lighten($bbcode-background, 5%));
 $bbcode-heading-text:					#666;
 
