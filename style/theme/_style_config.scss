@@ -144,24 +144,23 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 // Inputs
 $input-text:							$text-color;	// Input text color
 $input-bg:								$white-color;	// Input background
-$input-border:							#c6c6c6;	// Input border color
+$input-border:							#444;	// Input border color
 $input-hover-text:						$input-text;
 $input-hover-bg:						$input-bg;
 $input-hover-border:					$secondary-color;
-$input-focus-text:						#0F4987;
+$input-focus-text:						$bold-text-color;
 $input-focus-bg:						$input-bg;
 $input-focus-border:					$primary-color;
 $input-border-radius:					2px;
 
-$search-box-border:						#c6c6c6;	// Border for search box block
-$search-box-border-header:				#ccc;		// Same as above, for search box in header
+$search-box-border:						desaturate(darken($primary-color, 35%), 25%);	// Border for search box block
+$search-box-border-header:				desaturate(darken($primary-color, 35%), 25%);		// Same as above, for search box in header
 $search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search box in header
 
 // Buttons
-$button-bg:								#e8e8e8;
+$button-bg:								desaturate(darken($primary-color, 35%), 25%);
 $button-border-radius:					3px;
-$button-border:							#c6c6c6;
-$button-main-border:					#a8a8a8;
+$button-border:							$button-bg;
 $button-icon:							#909090;
 $button-icon-hover:						#006ac6;
 $button-text:							$text-color;

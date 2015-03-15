@@ -605,35 +605,35 @@ fieldset.polls dd div {
 }
 
 %pollbar {
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
-	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1AFFFFFF, endColorstr=#00FFFFFF);
+	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
 }
 
 .pollbar1 {
 	@extend %pollbar;
-	background-color: desaturate($secondary-color, 30%);
+	background-color: desaturate(darken($secondary-color, 25%), 30%);
 }
 
 .pollbar2 {
 	@extend %pollbar;
-	background-color: desaturate($secondary-color, 25%);
+	background-color: desaturate(darken($secondary-color, 25%), 25%);
 }
 
 .pollbar3 {
 	@extend %pollbar;
-	background-color: desaturate($secondary-color, 20%);
+	background-color: desaturate(darken($secondary-color, 25%), 20%);
 }
 
 .pollbar4 {
 	@extend %pollbar;
-	background-color: desaturate($secondary-color, 10%);
+	background-color: desaturate(darken($secondary-color, 25%), 10%);
 }
 
 .pollbar5 {
 	@extend %pollbar;
-	background-color: $secondary-color;
+	background-color: darken($secondary-color, 25%);
 }
 
 /* Poster profile block
@@ -691,11 +691,11 @@ Colours and backgrounds for buttons.css
 .button {
 	&, .buttons > &.locked-icon {
 		border-color: $button-border;
-		background-color: #eee;
-		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#00FFFFFF);
-		color: $primary-color;
+		background-color: $button-bg;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 0) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1AFFFFFF, endColorstr=#00FFFFFF);
+		color: mix(#fff, $button-bg, 50%);
 		box-shadow: none;
 	}
 
@@ -703,8 +703,10 @@ Colours and backgrounds for buttons.css
 	&:after, &:before {
 	}
 	.buttons > &.locked-icon {
-		color: $button-icon;
-		box-shadow: 0 0 0 1px $button-border inset;
+		border-color: #484848;
+		background-color: #484848;
+		color: #bbb;
+		box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(255, 255, 255, 0.1) inset;
 		&:after, &:before {
 			color: $button-icon !important;
 		}
@@ -717,8 +719,8 @@ Colours and backgrounds for buttons.css
 	}
 
 	.buttons > &, &.report-icon, &.delete-icon {
-		border-color: $primary-color;
-		background-color: $primary-color;
+		border-color: desaturate(darken($primary-color, 35%), 25%);
+		background-color: desaturate(darken($primary-color, 35%), 25%);
 		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
@@ -763,11 +765,11 @@ Colours and backgrounds for buttons.css
 .dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover, .nojs .dropdown-container:hover .dropdown-select,
 .buttons > .button:hover,
 .button:hover, .dropdown-visible .dropdown-select, .nojs .dropdown-container:hover .dropdown-select {
-	border-color: $secondary-color !important;
-	background-color: $secondary-color;
-	background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#26FFFFFF);
+	border-color: desaturate(darken($secondary-color, 25%), 15%) !important;
+	background-color: desaturate(darken($secondary-color, 25%), 15%);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#26FFFFFF, endColorstr=#00FFFFFF);
 	color: $overlay-color;
 
 	&:after, &:before {
@@ -1223,8 +1225,9 @@ a.button1, input.button1, input.button3, a.button2, input.button2 {
 }
 
 a.button1, input.button1 {
-	border-color: $button-main-border;
-	background-color: mix($button-bg, $white-color, 40%);
+	background-color: lighten($button-bg, 5%);
+	border-color: lighten($button-border, 5%);
+	color: $overlay-color;
 }
 
 input.button3 {
@@ -1243,17 +1246,18 @@ a.button1, a.button2 {
 
 /* Hover states */
 a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
-	border-color: mix($block-background, $secondary-color, 20%);
-	color: $secondary-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#18FFFFFF);
+	background-color: desaturate(darken($secondary-color, 25%), 15%);
+	border-color: desaturate(darken($secondary-color, 25%), 15%);
+	color: $overlay-color;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 }
 
 /* Focus states */
 input.button1:focus, input.button2:focus, input.button3:focus {
-	border-color: mix($block-background, $primary-color, 20%);
-	color: $primary-color;
+	border-color: mix($block-background, desaturate($primary-color, 25%), 20%);
+	color: $overlay-color;
 }
 
 input.disabled {
