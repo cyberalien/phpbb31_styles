@@ -217,7 +217,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	max-width: $max-width;
 	min-width: 625px;
 	@if $max-width != none {
-		@media (max-width: ($max-width + 24px)) {
+		@media (max-width: ($max-width + 40px)) {
 			margin: 0 20px;
 		}
 	}
