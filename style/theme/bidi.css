@@ -921,7 +921,6 @@ li.breadcrumbs span:first-child > a {
 .rtl .search-box .inputbox {
 	border-left-width: 0;
 	border-right-width: 1px;
-	border-radius: 0 4px 4px 0;
 	float: right;
 	padding: 3px;
 }
@@ -933,7 +932,6 @@ li.breadcrumbs span:first-child > a {
 .rtl .search-box a.button {
 	border-left-width: 1px;
 	border-right-width: 0;
-	border-radius: 4px 0 0 4px;
 	padding-left: 5px;
 	padding-right: 3px;
 }
