@@ -347,6 +347,26 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				top: auto;
 				bottom: 27px;
 			}
+			&.search-box {
+				display: block;
+				margin: 0 3px;
+				float: right;
+				.rtl & {
+					float: left;
+				}
+				&, &:hover {
+					border-radius: 0;
+					border-width: 0;
+					box-shadow: none;
+					background: none;
+					filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+				}
+				opacity: .7;
+				transition: opacity .2s;
+				&:hover {
+					opacity: 1;
+				}
+			}
 		}
 		+ .nav-breadcrumbs {
 			margin-top: 0;
