@@ -62,6 +62,9 @@ hr {
 .search-header {
 	box-shadow: $search-box-shadow;
 	border-color: $search-box-border-header;
+	.navbar.with-search & {
+		box-shadow: none;
+	}
 }
 
 /* Round cornered boxes and backgrounds
