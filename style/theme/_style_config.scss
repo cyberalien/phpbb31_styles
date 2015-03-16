@@ -9,8 +9,8 @@ $show-forum-title:						false;	// true or false
 $profile-width:							150px;
 $post-margin:							($profile-width + 10px);
 
-$use-wrapper:							true;	// true or false
-$max-width:								1152px;	// Maximum width. Set to "none" to make layout fluid
+$use-wrapper:							false;	// true or false
+$max-width:								none;	// Maximum width. Set to "none" to make layout fluid
 
 $split-forums:							false;	// Changes layout of forums list. Values are true or false
 
@@ -19,29 +19,32 @@ $split-forums:							false;	// Changes layout of forums list. Values are true or
 //
 
 // Absolute black and white colors. Reverse them for dark styles
-$black-color:							#000;		// Main color to mix with. Black for light styles, white for dark styles
-$white-color:							#fff;		// Opposite of $black-color
+$black-color:							#fff;		// Main color to mix with. Black for light styles, white for dark styles
+$white-color:							#000;		// Opposite of $black-color
 
 // Page colors
-$page-background:						#f0f0f0;	// HTML element
-$content-background:					#e4e4e4;	// Page inside content wrapper
-$content-border-color:					#e4e4e4;	// Border color for content wrapper
+$page-background:						#1c232e;	// HTML element
+$content-background:					#1c232e;	// Page inside content wrapper
+$content-border-color:					#1c232e;	// Border color for content wrapper
 
 // Primary colors
-$primary-color:							#3462a0;	// Main color, used for links and stuff
-$secondary-color:						#b93329;	// Secondary color, usually in red - yellow range
+$primary-color:							#174c97;	// Main color, used for links and stuff
+$primary-darker-color:					#2c415f;
+$primary-lighter-color:					#6593d6;
+$primary-lightest-color:				#f1f6fc;
+$secondary-color:						#c35824;	// Secondary color, usually in red - yellow range
 $overlay-color:							$white-color;	// Text on top of sections that use colorful background.
-$block-background:						#f4f4f4;	// Background of blocks
-$block-background-reported:				#f5e9e9;	// Background for reported posts
+$block-background:						#252b33;	// Background of blocks
+$block-background-reported:				#362a25;	// Background for reported posts
 
 // Global color values
-$text-color:							#141414;	// Text color
+$text-color:							#aaa;	// Text color
 $bold-text-color:						$black-color;	// Text color with higher contrast to background. #000 or #fff
 $post-text-color:						$text-color;	// Text inside posts
-$link-color:							$primary-color;	// Links
+$link-color:							#6593d6;	// Links
 $link-hover-color:						$secondary-color;	// Links, hover state
 $muted-color:							mix($black-color, $content-background, 60%);	// Gray color
-$rules-color:							$secondary-color;	// Forum rules
+$rules-color:							lighten(saturate($secondary-color, 20%), 10%);	// Forum rules
 
 //
 // Calculated colors
@@ -51,13 +54,13 @@ $rules-color:							$secondary-color;	// Forum rules
 $light:									if(lightness($black-color) < 50%, true, false);
 
 // Blocks
-$block-background2:						#f6f6f6;	// Blocks with .bg2 background color
-$block-background3:						#f8f8f8;	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
+$block-background2:						#272f3e;	// Blocks with .bg2 background color
+$block-background3:						#2a3449;	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
 
-$block-border:							#f9f9f9;	// Border color for blocks
-$border-radius:							5px;		// Main border radius
-$block-top-border:						lighten($block-background, 10%);	// Top border of forums in forums list
-$block-bottom-border:					darken($block-background, 5%);		// Bottom border of forums in forums list
+$block-border:							#2d3745;	// Border color for blocks
+$border-radius:							0px;		// Main border radius
+$block-top-border:						lighten($block-background, 4%);	// Top border of forums in forums list
+$block-bottom-border:					darken($block-background, 6%);		// Bottom border of forums in forums list
 $block-inner-border:					$block-bottom-border;	// Border inside blocks where there is only 1 border instead of top/bottom borders
 
 $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title
@@ -79,36 +82,26 @@ $header-link:							$overlay-color;
 $header-link-hover:						mix($header-link, $header-bg, 80%);
 
 // Primary navigation
-$primary-nav-bg:						$primary-color;
-$primary-nav-gradient-start:			rgba(255, 255, 255, .25);
-$primary-nav-gradient-end:				rgba(255, 255, 255, 0);
-$primary-nav-color:						$overlay-color;
-$primary-nav-shadow:					0 5px 5px -5px rgba(0, 0, 0, 0.2);
+$primary-nav-bg:						$block-background;
+$primary-nav-color:						$link-color;
+$primary-nav-shadow:					0 5px 5px -5px rgba(0, 0, 0, 0.2), 1px 1px 0 $block-top-border inset, -1px -1px 0 $block-bottom-border inset;
 
-$primary-nav-selected-bg:				$content-background;
-$primary-nav-selected-gradient-start:	rgba(255, 255, 255, .5);
-$primary-nav-selected-gradient-end:		rgba(255, 255, 255, 0);
-$primary-nav-selected-color:			$primary-color;
+$primary-nav-selected-bg:				$primary-darker-color;
+$primary-nav-selected-color:			$bold-text-color;
 
-$primary-nav-hover-bg:					$content-background;
-$primary-nav-hover-gradient-start:		rgba(255, 255, 255, .5);
-$primary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
-$primary-nav-hover-color:				$secondary-color;
+$primary-nav-hover-bg:					$secondary-color;
+$primary-nav-hover-color:				$bold-text-color;
 
-$primary-nav-alert-bg:					$secondary-color;
-$primary-nav-alert-color:				$overlay-color;
+$primary-nav-alert-bg:					hsl(0, saturation($secondary-color), lightness($secondary-color));
+$primary-nav-alert-color:				#fff;
 $primary-nav-alert-shadow:				1px 1px 3px rgba(0, 0, 0, .2);
 
 // Secondary navigation
-$secondary-nav-hover-bg:				$secondary-color;
-$secondary-nav-hover-link:				$overlay-color;
-$secondary-nav-hover-gradient-start:	rgba(255, 255, 255, .25);
-$secondary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
-$secondary-nav-hover-shadow:			0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+$secondary-nav-hover-link:				$link-hover-color;
 
 // Dropdown
 $dropdown-bg:							$block-background;
-$dropdown-border:						$primary-color;
+$dropdown-border:						$primary-darker-color;
 $dropdown-shadow:						1px 3px 5px rgba(0, 0, 0, 0.5);
 $dropdown-shadow-up:					1px 0 5px rgba(0, 0, 0, 0.5);
 $dropdown-inner-border:					if($light, darken($dropdown-bg, 10%), lighten($dropdown-bg, 10%));
@@ -119,9 +112,9 @@ $dropdown-heading-color:				$overlay-color;
 $dropdown-heading-link-color:			$overlay-color;
 $dropdown-heading-link-hover-color:		$overlay-color;
 
-$forum-description-color:				$overlay-color;
-$forum-description-bg:					desaturate(if($light, darken($primary-color, 30%), lighten($primary-color, 30%)), 25%);
-$forum-description-gradient-start:		rgba(255, 255, 255, .25);
+$forum-description-color:				#fff;
+$forum-description-bg:					darken(desaturate($primary-color, 20%), 5%);
+$forum-description-gradient-start:		rgba(255, 255, 255, .1);
 $forum-description-gradient-end:		rgba(255, 255, 255, 0);
 
 // Notifications
@@ -146,11 +139,11 @@ $content-bottom-border:					darken($content-background, 10%);
 $content-inner-border:					$content-bottom-border;
 
 // Heading section
-$heading-bg:							$primary-color;
+$heading-bg:							$primary-darker-color;
 $heading-border:						$heading-bg;
-$heading-color:							$overlay-color;
-$heading-link:							$overlay-color;
-$heading-link-hover:					mix($heading-link, $heading-bg, 80%);
+$heading-color:							$primary-lightest-color;
+$heading-link:							$heading-color;
+$heading-link-hover:					#fff;
 
 // Inputs
 $input-text:							$text-color;	// Input text color
@@ -194,13 +187,11 @@ $bbcode-code-color:						code-color(128deg);
 // Mixins
 @mixin section {
 	background: $block-background;
-	border: 1px solid $block-border;
+	border: 1px solid transparent;
+	border-color: $block-top-border $block-bottom-border $block-bottom-border $block-top-border;
 	border-radius: $border-radius;
 	padding: 4px 9px;
-	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%), -webkit-linear-gradient(top, rgba(204, 204, 204, .2) 0%, rgba(204, 204, 204, .25) 10px, rgba(204, 204, 204, 0) 50px);
-	background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to bottom, rgba(204, 204, 204, .2) 0%, rgba(204, 204, 204, .25) 10px, rgba(204, 204, 204, 0) 50px);
-	box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.15), 0 10px 10px -10px rgba(0, 0, 0, 0.2);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33CCCCCC, endColorstr=#00CCCCCC);
+	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 }
 
 @mixin section-forum {
@@ -224,7 +215,11 @@ $bbcode-code-color:						code-color(128deg);
 	border-radius: max(0, $border-radius - 1px);
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
-	background: $heading-bg;
+	background: $heading-bg url("./images/heading.png") 100% 0 repeat-y;
+	.rtl & {
+		background-image: url("./images/heading_rtl.png");
+		background-position: 0 0;
+	}
 	border: 0 solid $heading-border;
 	padding: 5px;
 	text-transform: none;
@@ -232,11 +227,6 @@ $bbcode-code-color:						code-color(128deg);
 	line-height: 18px;
 	font-weight: normal;
 	color: $heading-color;
-
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
-	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
 	@if $border-radius > 1px {
 		@media (max-width: 700px) {

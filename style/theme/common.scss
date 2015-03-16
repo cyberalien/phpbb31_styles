@@ -313,6 +313,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		@extend %clearfix;
 		margin: 0;
 		padding: 1px 0;
+		font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
 		> ul {
 			list-style-type: none;
 			margin: 0;
@@ -328,14 +329,13 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				color: inherit;
 				padding: 1px 8px;
 				text-align: center;
-				line-height: 25px;
-				font-size: 11px;
+				line-height: 28px;
+				font-size: 13px;
 			}
 			&:hover {
 				> a {
 					text-decoration: none;
 				}
-				border-radius: 3px;
 			}
 			&.small-icon > a {
 				padding-left: 18px;
@@ -374,7 +374,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		}
 
 		@extend %clearfix;
-		$tab-height: 30px;
+		$tab-height: 34px;
 		$tab-padding: 12px;
 		$tab-padding-glyph: 8px;
 
@@ -410,7 +410,8 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			line-height: $tab-height;
 			padding: 0 $tab-padding;
 			vertical-align: baseline;
-			font-size: 12px;
+			font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+			font-size: 14px;
 			outline-style: none;
 			&.dropdown-toggle {
 				position: relative;
@@ -610,6 +611,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			&:after {
 				@extend %glyph-fa;
 				content: '\f075';	// fa-comment
+				margin-top: -8px;
 			}
 			@media (max-width: 550px) {
 				@extend %glyph-only-media;
@@ -1071,6 +1073,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	position: relative;
 	min-width: 40px;
 	max-height: 300px;
+	font-size: 12px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;

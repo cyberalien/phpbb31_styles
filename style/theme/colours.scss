@@ -5,8 +5,10 @@ Colours and backgrounds for common.css
 
 html, body {
 	color: $text-color;
+	background: $page-background url('./images/pattern.png') repeat center center;
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, 0) 500px), -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%), $page-background url('./images/pattern.png') repeat center center;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, 0) 500px), linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%), $page-background url('./images/pattern.png') repeat center center;
 	@if $use-wrapper {
-		background-color: $page-background;
 		&.simple {
 			background-color: $content-background;
 		}
@@ -71,9 +73,8 @@ hr {
 }
 
 .navbar {
-	box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 2px rgba(0, 0, 0, 0.1);
-	background-image: none;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+	border-color: $block-top-border $block-bottom-border $block-bottom-border $block-top-border;
 	&.secondary {
 		color: $link-color;
 		> ul > li:hover,
@@ -81,11 +82,6 @@ hr {
 			&, &:after, &:before {
 				color: $secondary-nav-hover-link;
 			}
-			background-color: $secondary-nav-hover-bg;
-			background-image: -webkit-linear-gradient(top, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
-			background-image: linear-gradient(to bottom, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($secondary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($secondary-nav-hover-gradient-end)}');
-			box-shadow: $secondary-nav-hover-shadow;
 		}
 		.dropdown {
 			color: $text-color;
@@ -94,9 +90,6 @@ hr {
 
 	.nav-tabs {
 		background-color: $primary-nav-bg;
-		background-image: -webkit-linear-gradient(top, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
-		background-image: linear-gradient(to bottom, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-gradient-end)}');
 		box-shadow: $primary-nav-shadow;
 
 		.tab {
@@ -104,17 +97,14 @@ hr {
 			&.selected {
 				color: $primary-nav-selected-color;
 				background-color: $primary-nav-selected-bg;
-				background-image: -webkit-linear-gradient(top, $primary-nav-selected-gradient-start 0, $primary-nav-selected-gradient-end 100%);
-				background-image: linear-gradient(to bottom, $primary-nav-selected-gradient-start 0, $primary-nav-selected-gradient-end 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-selected-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-selected-gradient-end)}');
 			}
-			&:hover,
-			&.dropdown-visible {
+			&:hover {
 				color: $primary-nav-hover-color;
 				background-color: $primary-nav-hover-bg;
-				background-image: -webkit-linear-gradient(top, $primary-nav-hover-gradient-start 0, $primary-nav-hover-gradient-end 100%);
-				background-image: linear-gradient(to bottom, $primary-nav-hover-gradient-start 0, $primary-nav-hover-gradient-end 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-hover-gradient-end)}');
+			}
+			&.dropdown-visible {
+				color: $primary-nav-selected-color;
+				background-color: $primary-nav-selected-bg;
 			}
 			& > strong {
 				color: $primary-nav-alert-color;
@@ -203,11 +193,11 @@ ul.navlinks {
 		color: inherit !important;
 	}
 	span.arrow {
-		border-right-color: fade-out(mix($forum-description-bg, $block-background, 85%), .2);
+		border-right-color: mix($forum-description-bg, #fff, 97%);
 	}
 	.rtl & span.arrow {
 		border-right-color: transparent;
-		border-left-color: fade-out(mix($forum-description-bg, $block-background, 85%), .2);
+		border-left-color: mix($forum-description-bg, #fff, 97%);
 	}
 }
 
@@ -325,12 +315,12 @@ li.reported:hover {
 }
 
 div.rules {
-	background-color: mix($content-background, $rules-color, 85%);
+	background-color: mix($content-background, $rules-color, 90%);
 	color: $rules-color;
 }
 
 p.post-notice {
-	background-color: mix($block-background, $rules-color, 85%);
+	background-color: mix($block-background, $rules-color, 90%);
 	color: $rules-color;
 	background-image: none;
 }
