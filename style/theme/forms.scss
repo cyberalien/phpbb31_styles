@@ -410,6 +410,12 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	right: 5px;
 	margin-top: -13px;
 	border: 1px solid transparent;
+	.navbar.with-search & {
+		position: relative;
+		top: 0;
+		right: 0;
+		margin: 0;
+	}
 }
 
 .search-header .inputbox { border: 0; }

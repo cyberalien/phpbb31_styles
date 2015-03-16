@@ -121,7 +121,7 @@
 	</div>
 </div>
 
-<div class="navbar secondary">
+<div class="navbar secondary{% if definition.SEARCH_IN_NAVBAR == 1 && definition.SEARCH_BOX %} with-search{% endif %}">
 	<ul role="menubar">
 		{% set secondary_links %}
 		<!-- EVENT secondary_navlinks_before -->
@@ -158,6 +158,9 @@
 			<!-- ENDIF -->
 		{% endif %}
 
+		{% if definition.SEARCH_IN_NAVBAR == 1 && definition.SEARCH_BOX %}
+			<li class="search-box">{$SEARCH_BOX}</li>
+		{% endif %}
 	</ul>
 </div>
 
