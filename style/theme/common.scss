@@ -1065,7 +1065,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	overflow: hidden;
 	overflow-y: auto;
 	border: 0px solid transparent;
-	border-radius: 0 0 5px 5px;
+	border-radius: 0 0 min($border-radius, 5px) min($border-radius, 5px);
 	border-top-width: 3px;
 	padding: 5px;
 	position: relative;
@@ -1082,7 +1082,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 .dropdown-up .dropdown-contents {
 	border-bottom-width: 3px;
 	border-top-width: 0;
-	border-radius: 5px 5px 0 0;
+	border-radius: min($border-radius, 5px) min($border-radius, 5px) 0 0;
 }
 
 .dropdown li {
