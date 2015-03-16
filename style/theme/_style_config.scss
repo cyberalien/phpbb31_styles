@@ -108,9 +108,9 @@ $dropdown-heading-color:				$overlay-color;
 $dropdown-heading-link-color:			$overlay-color;
 $dropdown-heading-link-hover-color:		$overlay-color;
 
-$forum-description-color:				$overlay-color;
-$forum-description-bg:					desaturate(if($light, darken($primary-color, 30%), lighten($primary-color, 30%)), 25%);
-$forum-description-gradient-start:		rgba(255, 255, 255, .25);
+$forum-description-color:				#fff;
+$forum-description-bg:					darken(desaturate($primary-color, 25%), 10%);
+$forum-description-gradient-start:		rgba(255, 255, 255, .1);
 $forum-description-gradient-end:		rgba(255, 255, 255, 0);
 
 // Notifications

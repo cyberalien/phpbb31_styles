@@ -64,6 +64,14 @@ hr {
 	border-color: $search-box-border-header;
 	.navbar.with-search & {
 		box-shadow: none;
+		border-color: transparent;
+		.inputbox {
+			background: transparent;
+			border-color: transparent;
+			&:focus {
+				background-color: $block-background;
+			}
+		}
 	}
 }
 
@@ -216,11 +224,11 @@ ul.navlinks {
 		color: inherit !important;
 	}
 	span.arrow {
-		border-right-color: fade-out(mix($forum-description-bg, $block-background, 85%), .2);
+		border-right-color: fade-out(mix($forum-description-bg, #fff, 95%), .2);
 	}
 	.rtl & span.arrow {
 		border-right-color: transparent;
-		border-left-color: fade-out(mix($forum-description-bg, $block-background, 85%), .2);
+		border-left-color: fade-out(mix($forum-description-bg, #fff, 95%), .2);
 	}
 }
 
