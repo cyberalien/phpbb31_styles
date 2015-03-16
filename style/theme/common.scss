@@ -377,11 +377,12 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 
 	.nav-tabs {
-		border-radius: 5px;
+		$navtabs-border-radius: min(5px, $border-radius) !default;
+		border-radius: $navtabs-border-radius;
 		& .leftside, .rtl & .rightside {
 			& .tab:first-child,
 			& .tab.first-visible {
-				border-radius: 4px; // 1px smaller than overall border to avoid rough edges
+				border-radius: max($navtabs-border-radius - 1px, 0px); // 1px smaller than overall border to avoid rough edges
 				border-top-right-radius: 0;
 				border-bottom-right-radius: 0;
 			}
@@ -389,7 +390,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		& .rightside, .rtl & .leftside {
 			& .tab:last-child,
 			& .tab.last-visible {
-				border-radius: 4px; // 1px smaller than overall border to avoid rough edges
+				border-radius: max($navtabs-border-radius - 1px, 0px); // 1px smaller than overall border to avoid rough edges
 				border-top-left-radius: 0;
 				border-bottom-left-radius: 0;
 			}
