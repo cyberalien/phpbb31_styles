@@ -118,9 +118,9 @@ $forum-description-gradient-start:		rgba(255, 255, 255, .1);
 $forum-description-gradient-end:		rgba(255, 255, 255, 0);
 
 // Notifications
-$notification-unread-bg:				mix($content-background, $rules-color, 90%);
-$notification-unread-color:				$rules-color;
-$notification-unread-strong-color:		desaturate(if(lightness($notification-unread-color) < 50%, darken($notification-unread-color, 30%), lighten($notification-unread-color, 30%)), 100%);
+$notification-unread-bg:				desaturate(hsl(hue($secondary-color), saturation($content-background), lightness($content-background)), 10%);
+$notification-unread-color:				$secondary-color;
+$notification-unread-strong-color:		#fff;
 
 $dropdown-notification-bg:				$block-background;
 $dropdown-notification-hover-bg:		$block-background2;
