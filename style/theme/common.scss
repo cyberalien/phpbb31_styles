@@ -349,7 +349,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			}
 			&.search-box {
 				display: block;
-				margin: 0 3px;
+				margin: 0;
 				float: right;
 				.rtl & {
 					float: left;
@@ -360,11 +360,6 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 					box-shadow: none;
 					background: none;
 					filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-				}
-				opacity: .7;
-				transition: opacity .2s;
-				&:hover {
-					opacity: 1;
 				}
 			}
 		}

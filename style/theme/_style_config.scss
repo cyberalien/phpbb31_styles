@@ -146,31 +146,31 @@ $heading-link:							$heading-color;
 $heading-link-hover:					#fff;
 
 // Inputs
-$input-text:							$text-color;	// Input text color
-$input-bg:								$white-color;	// Input background
-$input-border:							#c6c6c6;	// Input border color
-$input-hover-text:						$input-text;
-$input-hover-bg:						$input-bg;
-$input-hover-border:					$secondary-color;
-$input-focus-text:						#0F4987;
-$input-focus-bg:						$input-bg;
-$input-focus-border:					$primary-color;
-$input-border-radius:					2px;
+$input-text:							#999;	// Input text color
+$input-bg:								#222427;	// Input background
+$input-border:							#30343a;	// Input border color
+$input-hover-text:						#aaa;
+$input-hover-bg:						#1c1e20;
+$input-hover-border:					#3c4149;
+$input-focus-text:						#fff;
+$input-focus-bg:						#1c1e20;
+$input-focus-border:					#3c4149;
+$input-border-radius:					0px;
 
-$search-box-border:						#c6c6c6;	// Border for search box block
-$search-box-border-header:				#ccc;		// Same as above, for search box in header
-$search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search box in header
+$search-box-border:						$block-top-border $block-bottom-border $block-bottom-border $block-top-border;	// Border for search box block
+$search-box-shadow:						0 0 10px rgba(0, 0, 0, .15), 1px 1px 0 $block-bottom-border;	// Box-shadow for search box in header
 
 // Buttons
-$button-bg:								#e8e8e8;
+$button-bg:								$primary-color;
 $button-border-radius:					3px;
-$button-border:							#c6c6c6;
-$button-main-border:					#a8a8a8;
-$button-icon:							#909090;
-$button-icon-hover:						#006ac6;
-$button-text:							$text-color;
+$button-border:							$primary-darker-color;
+$button-main-bg:						$secondary-color;
+$button-main-border:					$secondary-color;
+$button-icon:							#fff;
+$button-icon-hover:						#fff;
+$button-text:							#fff;
 
-$big-button-border-radius:				4px;	// For big buttons and blocks like quick search
+$big-button-border-radius:				2px;	// For big buttons and blocks like quick search
 
 // BBCode
 $bbcode-border-radius:					3px;

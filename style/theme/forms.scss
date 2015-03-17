@@ -381,6 +381,9 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	.rtl & {
 		border-radius: 0 $big-button-border-radius $big-button-border-radius 0;
 	}
+	.navbar.with-search & {
+		border-radius: 0;
+	}
 }
 
 .search-box button {
@@ -404,6 +407,9 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	.rtl & {
 		border-radius: $big-button-border-radius 0 0 $big-button-border-radius;
 	}
+	.navbar.with-search & {
+		border-radius: 0;
+	}
 }
 
 /* Search box (header)
@@ -417,8 +423,9 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	margin-top: -13px;
 	border: 1px solid transparent;
 	.navbar.with-search & {
+		border-radius: 0;
 		position: relative;
-		top: 0;
+		top: 1px;
 		right: 0;
 		margin: 0;
 	}
