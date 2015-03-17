@@ -548,7 +548,9 @@ dl.faq dt {
 /* Quote block */
 blockquote {
 	background-color: $bbcode-background;
+	background-color: rgba($primary-darker-color, .3);
 	border-color: $bbcode-outer-border;
+	border-left-color: lighten(desaturate($secondary-color, 20%), 10%);
 }
 
 blockquote blockquote,
@@ -556,6 +558,8 @@ blockquote .codebox,
 blockquote .attachbox {
 	/* Nested quotes */
 	background-color: $bbcode-background2;
+	background-color: rgba(0, 0, 0, .1);
+	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
 }
 
 blockquote blockquote blockquote,
@@ -563,6 +567,8 @@ blockquote blockquote .codebox,
 blockquote blockquote .attachbox {
 	/* Nested quotes */
 	background-color: mix($bbcode-background, $bbcode-background2);
+	background-color: rgba($primary-darker-color, .3);
+	border-left-color: lighten(desaturate($secondary-color, 20%), 10%);
 }
 
 blockquote:before {
@@ -572,11 +578,14 @@ blockquote:before {
 /* Code block */
 .codebox {
 	background-color: $bbcode-background;
+	background-color: rgba($primary-darker-color, .3);
 	border-color: $bbcode-outer-border;
+	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
 }
 
 .codebox p {
-	border-bottom-color:  $block-inner-border;
+	border-bottom-color: $bbcode-inner-border;
+	border-bottom-color: rgba(0, 0, 0, .2);
 }
 
 .codebox code {
@@ -594,11 +603,14 @@ blockquote:before {
 ----------------------------------------*/
 .attachbox {
 	background-color: $bbcode-background;
+	background-color: rgba($primary-darker-color, .3);
 	border-color:  $bbcode-outer-border;
+	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
 }
 
 .attachbox dd {
 	border-top-color: $bbcode-inner-border;
+	border-top-color: rgba(0, 0, 0, .2);
 }
 
 .attachbox p {
@@ -617,6 +629,7 @@ dl.file dd {
 
 dl.thumbnail img {
 	border-color: $bbcode-inner-border;
+	border-color: rgba(0, 0, 0, .2);
 	background-color: $block-background;
 }
 
@@ -780,10 +793,10 @@ Colours and backgrounds for buttons.css
 }
 
 .dropdown-select:after { 
-	border-color: $button-border; 
+	border-color: darken($button-border, 5%);
 }
 .dropdown-select:hover	{ 
-	border-color: $button-border; 
+	border-color: darken($button-border, 5%);
 }
 
 .dropdown-select:hover:after, .dropdown-visible .dropdown-select:after, .nojs .dropdown-container:hover .dropdown-select:after	{ 
@@ -834,10 +847,6 @@ Colours and backgrounds for buttons.css
 .phpbb_aol-icon:after {
 	color: #ffd800;
 	text-shadow: 0 0 1px #000, 0 0 2px #000;
-}
-
-.warn-icon:before {
-	color: #D31141;
 }
 
 /* Icon images
