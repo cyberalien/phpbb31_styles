@@ -66,14 +66,14 @@ $block-inner-border:					$block-bottom-border;	// Border inside blocks where the
 $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title
 
 // Tabs
-$tab-color:								desaturate($link-color, 20%);
-$tab-background:						$block-background;
+$tab-color:								#fff;
+$tab-background:						$primary-darker-color;
 
-$tab-hover-color:						$link-hover-color;
-$tab-hover-background:					$block-background3;
+$tab-hover-color:						#fff;
+$tab-hover-background:					$secondary-color;
 
-$tab-selected-color:					mix($text-color, $block-background3, 90%);
-$tab-selected-background:				$block-background3;
+$tab-selected-color:					#fff;
+$tab-selected-background:				$primary-darker-color;
 
 // Header
 $header-bg:								$content-background;
@@ -132,7 +132,7 @@ $panel-title-color:						desaturate(if($light, darken($primary-color, 10%), ligh
 $panel-title-border:					$block-inner-border;
 
 // Content outside of blocks
-$page-title-color:						$primary-color;
+$page-title-color:						$primary-lighter-color;
 $stats-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);
 $content-top-border:					lighten($content-background, 10%);
 $content-bottom-border:					darken($content-background, 10%);
@@ -277,10 +277,6 @@ $bbcode-code-color:						code-color(128deg);
 	background: $heading-bg;
 	border: 0 solid $heading-border;
 	color: $heading-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
-	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
 	@if $border-radius > 1px {
 		&:first-child {
@@ -294,7 +290,5 @@ $bbcode-code-color:						code-color(128deg);
 
 @mixin table-heading-transparent {
 	background: transparent;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-	box-shadow: none;
 	color: inherit;
 }

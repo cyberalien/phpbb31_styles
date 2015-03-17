@@ -178,12 +178,18 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 	background-color: $block-background3;
 	&.panel {
 		background: transparent none;
-		background-image: -webkit-linear-gradient(top, $block-background3 0%, rgba($block-background3, 0) 50px);
-		background-image: linear-gradient(to bottom, $block-background3 0%, rgba($block-background3, 0) 50px);
-		filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+		background-color: rgba($content-background, .3);
+		border-top-color: $tab-selected-background;
+		&:before, &:after {
+			background: -webkit-linear-gradient(to bottom, $tab-selected-background 0%, rgba($tab-selected-background, 0) 100%);
+			background: linear-gradient(to bottom, $tab-selected-background 0%, rgba($tab-selected-background, 0) 100%);
+		}
 	}
 	.section-posting &.panel {
 		background-color: $block-background;
+		&:before, &:after {
+			background: transparent;
+		}
 	}
 }
 
@@ -632,39 +638,36 @@ fieldset.polls dl.voted {
 }
 
 fieldset.polls dd div {
-	color: $overlay-color;
+	color: #fff;
 }
 
 %pollbar {
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
 	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 }
 
 .pollbar1 {
 	@extend %pollbar;
-	background-color: desaturate($secondary-color, 30%);
+	background-color: desaturate(darken($secondary-color, 10%), 30%);
 }
 
 .pollbar2 {
 	@extend %pollbar;
-	background-color: desaturate($secondary-color, 25%);
+	background-color: desaturate(darken($secondary-color, 10%), 25%);
 }
 
 .pollbar3 {
 	@extend %pollbar;
-	background-color: desaturate($secondary-color, 20%);
+	background-color: desaturate(darken($secondary-color, 10%), 20%);
 }
 
 .pollbar4 {
 	@extend %pollbar;
-	background-color: desaturate($secondary-color, 10%);
+	background-color: desaturate(darken($secondary-color, 10%), 10%);
 }
 
 .pollbar5 {
 	@extend %pollbar;
-	background-color: $secondary-color;
+	background-color: darken($secondary-color, 10%);
 }
 
 /* Poster profile block
@@ -1009,10 +1012,6 @@ ul.cplist {
 #tabs .activetab > a,
 #tabs .activetab > a:hover {
 	background: $tab-selected-background;
-	background: -webkit-linear-gradient(top, $tab-background 0%, $tab-selected-background 100%);
-	background: linear-gradient(to bottom, $tab-background 0%, $tab-selected-background 100%);
-	box-shadow: 0 10px 10px -10px $tab-selected-background;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($tab-background)}', endColorstr='#{ie-hex-str($tab-selected-background)}', GradientType=0 );
 	border-color: $tab-selected-background;
 	color: $tab-selected-color;
 }
@@ -1028,8 +1027,8 @@ ul.cplist {
 
 #minitabs .activetab > a,
 #minitabs .activetab > a:hover {
-	background-color: #F9F9F9;
-	color: #333333;
+	background-color: $secondary-color;
+	color: #fff;
 }
 
 /* Responsive tabs
@@ -1043,35 +1042,23 @@ ul.cplist {
 
 /* Link styles for the sub-section links */
 #navigation a {
-	color: $text-color;
-	background: $block-background;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5) 0, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FFFFFF, endColorstr=#00FFFFFF);
-	box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .1);
+	color: mix(#fff, $primary-darker-color, 70%);
+	background: $primary-darker-color;
 }
 
 #navigation a:hover {
-	background: $block-background2;
-	color: $link-hover-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .25) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .25) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#40FFFFFF);
+	color: #fff;
+	background: $secondary-color;
 }
 
 #navigation #active-subsection a {
+	color: #fff;
 	background: $primary-color;
-	color: $overlay-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
 }
 
 #navigation #active-subsection a:hover {
-	background-color: $secondary-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#18FFFFFF);
+	color: #fff;
+	background: $secondary-color;
 }
 
 #navigation > hr {
@@ -1091,6 +1078,9 @@ ul.cplist {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 	& > .inner > h3:first-child {
 		@include section-heading-cp;
+	}
+	&:before, &:after {
+		background: transparent;
 	}
 }
 
