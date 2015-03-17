@@ -1369,8 +1369,8 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 		background-color: $dropdown-notification-bg;
 		color: $dropdown-notification-color;
 		&, .panel-container & {
-			border-top-color: lighten($dropdown-notification-bg, 10%);
-			border-bottom-color: darken($dropdown-notification-bg, 10%);
+			border-top-color: lighten($dropdown-notification-bg, 5%);
+			border-bottom-color: darken($dropdown-notification-bg, 5%);
 		}
 		strong {
 			color: $dropdown-notification-strong-color;
@@ -1382,12 +1382,9 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 			color: desaturate(mix($dropdown-notification-bg, $dropdown-notification-color, 30%), 25%);
 		}
 		a.mark_read {
-			background-color: desaturate(if(lightness($dropdown-notification-bg) < 50%, darken($dropdown-notification-bg, 30%), lighten($dropdown-notification-bg, 30%)), 100%);
+			background-color: #fff !important;
 			&, &:after {
-				color: $dropdown-notification-strong-color;
-				&:hover {
-					color: $dropdown-notification-color;
-				}
+				color: $link-hover-color !important;
 			}
 		}
 	}
@@ -1397,8 +1394,8 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 		background-color: $notification-unread-bg;
 		color: $notification-unread-color;
 		&, .panel-container & {
-			border-top-color: lighten($notification-unread-bg, 10%);
-			border-bottom-color: darken($notification-unread-bg, 10%);
+			border-top-color: lighten($notification-unread-bg, 5%);
+			border-bottom-color: darken($notification-unread-bg, 5%);
 		}
 		strong {
 			color: $notification-unread-strong-color;
@@ -1410,12 +1407,9 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 			color: desaturate(mix($notification-unread-bg, $notification-unread-color, 30%), 25%);
 		}
 		a.mark_read {
-			background-color: desaturate(if(lightness($notification-unread-bg) < 50%, darken($notification-unread-bg, 30%), lighten($notification-unread-bg, 30%)), 100%);
+			background-color: #fff !important;
 			&, &:after {
-				color: $notification-unread-strong-color;
-				&:hover {
-					color: $notification-unread-color;
-				}
+				color: $link-hover-color !important;
 			}
 		}
 	}
