@@ -261,7 +261,9 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		box-sizing: border-box;
 		max-width: 100%;
 		@if $center-logo == true {
-			margin: 0 auto;
+			&, & img {
+				margin: 0 auto;
+			}
 		}
 		@else {
 			float: left;
