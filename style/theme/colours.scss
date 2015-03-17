@@ -1326,11 +1326,11 @@ input.disabled {
 	// background-image: -webkit-linear-gradient(top, $dropdown-heading-top 0, $dropdown-heading-bottom 100%);
 	// background-image: linear-gradient(to bottom, $dropdown-heading-top 0, $dropdown-heading-bottom 100%);
 	// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($dropdown-heading-top)}', endColorstr='#{ie-hex-str($dropdown-heading-top)}');
-	color: $dropdown-heading-color;
+	color: #fff;
 	a {
-		color: $dropdown-heading-link-color;
+		color: #fff;
 		&:hover {
-			color: $dropdown-heading-link-hover-color;
+			color: #fff;
 		}
 	}
 }
