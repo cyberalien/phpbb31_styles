@@ -87,7 +87,7 @@ hr {
 ---------------------------------------- */
 #wrap {
 	@if $use-wrapper {
-		background-color: $content-background;
+		background: $content-background url('./images/pattern.png') repeat center center;
 		border-color: $content-border-color;
 	}
 }
