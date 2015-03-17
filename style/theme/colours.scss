@@ -196,6 +196,37 @@ ul.navlinks {
 
 /* Forums list layout
 ----------------------*/
+.forumtitle {
+	.forum_unread &,
+	.forum_unread_locked & {
+		color: $link-hover-color;
+	}
+}
+
+.topictitle {
+	.global_unread &,
+	.global_unread_mine &,
+	.global_unread_locked &,
+	.global_unread_locked_mine &,
+	.announce_unread &,
+	.announce_unread_mine &,
+	.announce_unread_locked &,
+	.announce_unread_locked_mine &,
+	.sticky_unread &,
+	.sticky_unread_mine &,
+	.sticky_unread_locked &,
+	.sticky_unread_locked_mine &,
+	.topic_unread &,
+	.topic_unread_mine &,
+	.topic_unread_locked &,
+	.topic_unread_locked_mine &,
+	.topic_unread_hot &,
+	.topic_unread_hot_mine &
+	{
+		color: $link-hover-color;
+	}
+}
+
 .forum-statistics {
 	color: $muted-color;
 }
