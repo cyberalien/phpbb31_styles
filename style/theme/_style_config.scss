@@ -163,9 +163,9 @@ $search-box-shadow:						0 0 10px rgba(0, 0, 0, .15), 1px 1px 0 $block-bottom-bo
 // Buttons
 $button-bg:								$primary-color;
 $button-border-radius:					3px;
-$button-border:							$primary-darker-color;
-$button-main-bg:						$secondary-color;
-$button-main-border:					$secondary-color;
+$button-border:							$button-bg;
+$button-main-bg:						darken(desaturate($secondary-color, 10%), 10%);
+$button-main-border:					$button-main-bg;
 $button-icon:							#fff;
 $button-icon-hover:						#fff;
 $button-text:							#fff;
