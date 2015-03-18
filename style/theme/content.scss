@@ -736,6 +736,10 @@ blockquote {
 	overflow: hidden;
 	padding: 5px;
 	position: relative;
+	.rtl & {
+		border-left-width: 0;
+		border-right-width: 3px;
+	}
 }
 
 blockquote:before {

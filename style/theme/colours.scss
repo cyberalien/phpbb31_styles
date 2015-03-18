@@ -551,6 +551,10 @@ blockquote {
 	background-color: rgba($primary-darker-color, .3);
 	border-color: $bbcode-outer-border;
 	border-left-color: lighten(desaturate($secondary-color, 20%), 10%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten(desaturate($secondary-color, 20%), 10%);
+	}
 }
 
 blockquote blockquote,
@@ -560,6 +564,10 @@ blockquote .attachbox {
 	background-color: $bbcode-background2;
 	background-color: rgba(0, 0, 0, .1);
 	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten(desaturate($primary-color, 20%), 20%);
+	}
 }
 
 blockquote blockquote blockquote,
@@ -569,6 +577,10 @@ blockquote blockquote .attachbox {
 	background-color: mix($bbcode-background, $bbcode-background2);
 	background-color: rgba($primary-darker-color, .3);
 	border-left-color: lighten(desaturate($secondary-color, 20%), 10%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten(desaturate($secondary-color, 20%), 10%);
+	}
 }
 
 blockquote:before {
@@ -581,6 +593,10 @@ blockquote:before {
 	background-color: rgba($primary-darker-color, .3);
 	border-color: $bbcode-outer-border;
 	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten(desaturate($primary-color, 20%), 20%);
+	}
 }
 
 .codebox p {
@@ -606,6 +622,10 @@ blockquote:before {
 	background-color: rgba($primary-darker-color, .3);
 	border-color:  $bbcode-outer-border;
 	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten(desaturate($primary-color, 20%), 20%);
+	}
 }
 
 .attachbox dd {
