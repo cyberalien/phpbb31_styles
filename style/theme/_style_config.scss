@@ -67,7 +67,7 @@ $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, su
 
 // Tabs
 $tab-color:								#fff;
-$tab-background:						$primary-darker-color;
+$tab-background:						darken($primary-darker-color, 5%);
 
 $tab-hover-color:						#fff;
 $tab-hover-background:					$secondary-color;
