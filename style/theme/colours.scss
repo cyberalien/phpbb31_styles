@@ -167,12 +167,18 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 	background-color: $block-background3;
 	&.panel {
 		background: transparent none;
-		background-image: -webkit-linear-gradient(top, $block-background3 0%, rgba($block-background3, 0) 50px);
-		background-image: linear-gradient(to bottom, $block-background3 0%, rgba($block-background3, 0) 50px);
-		filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+		background-color: rgba($content-background, .3);
+		border-top-color: $tab-selected-background;
+		&:before, &:after {
+			background: -webkit-linear-gradient(to bottom, $tab-selected-background 0%, rgba($tab-selected-background, 0) 100%);
+			background: linear-gradient(to bottom, $tab-selected-background 0%, rgba($tab-selected-background, 0) 100%);
+		}
 	}
 	.section-posting &.panel {
 		background-color: $block-background;
+		&:before, &:after {
+			background: transparent;
+		}
 	}
 }
 
@@ -1061,6 +1067,9 @@ ul.cplist {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 	& > .inner > h3:first-child {
 		@include section-heading-cp;
+	}
+	&:before, &:after {
+		background: transparent;
 	}
 }
 
