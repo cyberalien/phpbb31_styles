@@ -7,14 +7,13 @@
 #cp-menu {
 	float:left;
 	width: 19%;
-	margin-top: 1em;
-	margin-bottom: 5px;
-	margin-left: -5px;
-	margin-right: 5px;
+	margin: 0 -2px;
+	padding-right: 7px;
+	box-sizing: border-box;
 	.rtl & {
 		float: right;
-		margin-left: 5px;
-		margin-right: -5px;
+		padding-left: 7px;
+		padding-right: 0;
 	}
 }
 
