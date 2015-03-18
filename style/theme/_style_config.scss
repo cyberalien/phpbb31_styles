@@ -166,9 +166,9 @@ $button-text:							$overlay-color;
 $big-button-border-radius:				4px;	// For big buttons and blocks like quick search
 
 // BBCode
-$bbcode-border-radius:					3px;
-$bbcode-background:						#f0f0f0;
-$bbcode-background2:					#e8e8e8;
+$bbcode-border-radius:					0px;
+$bbcode-background:						#fff;
+$bbcode-background2:					#f4f4f4;
 $bbcode-outer-border:					if($light, darken($bbcode-background, 7%), lighten($bbcode-background, 7%));
 $bbcode-inner-border:					if($light, darken($bbcode-background, 5%), lighten($bbcode-background, 5%));
 $bbcode-heading-text:					#666;

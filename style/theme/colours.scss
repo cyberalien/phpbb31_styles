@@ -551,6 +551,11 @@ dl.faq dt {
 blockquote {
 	background-color: $bbcode-background;
 	border-color: $bbcode-outer-border;
+	border-left-color: lighten($secondary-color, 15%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten($secondary-color, 15%);
+	}
 }
 
 blockquote blockquote,
@@ -558,13 +563,24 @@ blockquote .codebox,
 blockquote .attachbox {
 	/* Nested quotes */
 	background-color: $bbcode-background2;
+	background-color: rgba(196, 196, 196, 0.1);
+	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten(desaturate($primary-color, 20%), 20%);
+	}
 }
 
 blockquote blockquote blockquote,
 blockquote blockquote .codebox,
 blockquote blockquote .attachbox {
 	/* Nested quotes */
-	background-color: mix($bbcode-background, $bbcode-background2);
+	background-color: $bbcode-background;
+	border-left-color: lighten($secondary-color, 15%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten($secondary-color, 15%);
+	}
 }
 
 blockquote:before {
@@ -575,6 +591,11 @@ blockquote:before {
 .codebox {
 	background-color: $bbcode-background;
 	border-color: $bbcode-outer-border;
+	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten(desaturate($primary-color, 20%), 20%);
+	}
 }
 
 .codebox p {
@@ -597,6 +618,11 @@ blockquote:before {
 .attachbox {
 	background-color: $bbcode-background;
 	border-color:  $bbcode-outer-border;
+	border-left-color: lighten(desaturate($primary-color, 20%), 20%);
+	.rtl & {
+		border-left-color: $bbcode-outer-border;
+		border-right-color: lighten(desaturate($primary-color, 20%), 20%);
+	}
 }
 
 .attachbox dd {

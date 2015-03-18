@@ -728,13 +728,18 @@ ul.searchresults {
 ----------------------------------------*/
 /* Quote block */
 blockquote {
-	border: 1px solid transparent;
+	border: 0px solid transparent;
+	border-left-width: 3px;
 	border-radius: $bbcode-border-radius;
 	font-size: 0.95em;
 	margin: 8px 12px;
 	overflow: hidden;
 	padding: 5px;
 	position: relative;
+	.rtl & {
+		border-left-width: 0;
+		border-right-width: 3px;
+	}
 }
 
 blockquote:before {
@@ -774,11 +779,16 @@ blockquote.uncited {
 
 /* Code block */
 .codebox {
-	border: 1px solid transparent;
+	border: 0px solid transparent;
+	border-left-width: 3px;
 	border-radius: $bbcode-border-radius;
 	margin: 8px 12px;
 	padding: 3px;
 	font-size: 1em;
+	.rtl & {
+		border-left-width: 0;
+		border-right-width: 3px;
+	}
 }
 
 .codebox p {
@@ -815,10 +825,15 @@ blockquote .codebox {
 	max-width: 100%;
 	margin: 5px 5px 5px 0;
 	padding: 6px;
-	border: 1px solid transparent;
+	border: 0px solid transparent;
+	border-left-width: 3px;
 	border-radius: $bbcode-border-radius;
 	clear: left;
 	box-sizing: border-box;
+	.rtl & {
+		border-left-width: 0;
+		border-right-width: 3px;
+	}
 }
 
 .attachbox dt {
