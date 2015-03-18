@@ -9,7 +9,7 @@ $show-forum-title:						false;	// true or false
 $profile-width:							150px;
 $post-margin:							($profile-width + 10px);
 
-$use-wrapper:							true;	// true or false
+$use-wrapper:							false;	// true or false
 $max-width:								1152px;	// Maximum width. Set to "none" to make layout fluid
 
 $split-forums:							true;	// Changes layout of forums list. Values are true or false
@@ -40,7 +40,7 @@ $bold-text-color:						$black-color;	// Text color with higher contrast to backg
 $post-text-color:						$text-color;	// Text inside posts
 $link-color:							$primary-color;	// Links
 $link-hover-color:						$secondary-color;	// Links, hover state
-$muted-color:							mix($black-color, $content-background, 60%);	// Gray color
+$muted-color:							mix($black-color, $content-background, 40%);	// Gray color
 $rules-color:							$secondary-color;	// Forum rules
 
 //
@@ -80,31 +80,20 @@ $header-link-hover:						mix($header-link, $header-bg, 80%);
 
 // Primary navigation
 $primary-nav-bg:						$primary-color;
-$primary-nav-gradient-start:			rgba(255, 255, 255, .25);
-$primary-nav-gradient-end:				rgba(255, 255, 255, 0);
 $primary-nav-color:						$overlay-color;
-$primary-nav-shadow:					0 5px 5px -5px rgba(0, 0, 0, 0.2);
 
-$primary-nav-selected-bg:				$content-background;
-$primary-nav-selected-gradient-start:	rgba(255, 255, 255, .5);
-$primary-nav-selected-gradient-end:		rgba(255, 255, 255, 0);
+$primary-nav-selected-bg:				$block-background;
 $primary-nav-selected-color:			$primary-color;
 
-$primary-nav-hover-bg:					$content-background;
-$primary-nav-hover-gradient-start:		rgba(255, 255, 255, .5);
-$primary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
+$primary-nav-hover-bg:					$block-background;
 $primary-nav-hover-color:				$secondary-color;
 
-$primary-nav-alert-bg:					$secondary-color;
+$primary-nav-alert-bg:					hsl(0, saturation($secondary-color), lightness($secondary-color));
 $primary-nav-alert-color:				$overlay-color;
 $primary-nav-alert-shadow:				1px 1px 3px rgba(0, 0, 0, .2);
 
 // Secondary navigation
-$secondary-nav-hover-bg:				$secondary-color;
-$secondary-nav-hover-link:				$overlay-color;
-$secondary-nav-hover-gradient-start:	rgba(255, 255, 255, .25);
-$secondary-nav-hover-gradient-end:		rgba(255, 255, 255, 0);
-$secondary-nav-hover-shadow:			0 0 2px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+$secondary-nav-hover-link:				$link-hover-color;
 
 // Dropdown
 $dropdown-bg:							$block-background;
@@ -120,9 +109,7 @@ $dropdown-heading-link-color:			$overlay-color;
 $dropdown-heading-link-hover-color:		$overlay-color;
 
 $forum-description-color:				$overlay-color;
-$forum-description-bg:					desaturate(if($light, darken($primary-color, 30%), lighten($primary-color, 30%)), 25%);
-$forum-description-gradient-start:		rgba(255, 255, 255, .25);
-$forum-description-gradient-end:		rgba(255, 255, 255, 0);
+$forum-description-bg:					mix($black-color, $block-background, 75%);
 
 // Notifications
 $notification-unread-bg:				mix($content-background, $rules-color, 90%);
@@ -140,7 +127,7 @@ $panel-title-border:					$block-inner-border;
 
 // Content outside of blocks
 $page-title-color:						$primary-color;
-$stats-title-color:						desaturate(if($light, darken($primary-color, 10%), lighten($primary-color, 10%)), 25%);
+$stats-title-color:						$primary-color;
 $content-top-border:					lighten($content-background, 10%);
 $content-bottom-border:					darken($content-background, 10%);
 $content-inner-border:					$content-bottom-border;
@@ -150,7 +137,7 @@ $heading-bg:							$primary-color;
 $heading-border:						$heading-bg;
 $heading-color:							$overlay-color;
 $heading-link:							$overlay-color;
-$heading-link-hover:					mix($heading-link, $heading-bg, 80%);
+$heading-link-hover:					$overlay-color;
 
 // Inputs
 $input-text:							$text-color;	// Input text color
@@ -169,13 +156,12 @@ $search-box-border-header:				#ccc;		// Same as above, for search box in header
 $search-box-shadow:						1px 1px 3px rgba(0, 0, 0, .1);	// Box-shadow for search box in header
 
 // Buttons
-$button-bg:								#e8e8e8;
+$button-bg:								mix($block-background, $primary-color, 10%);
 $button-border-radius:					3px;
-$button-border:							#c6c6c6;
-$button-main-border:					#a8a8a8;
-$button-icon:							#909090;
-$button-icon-hover:						#006ac6;
-$button-text:							$text-color;
+$button-border:							$button-bg;
+$button-icon:							$overlay-color;
+$button-icon-hover:						$overlay-color;
+$button-text:							$overlay-color;
 
 $big-button-border-radius:				4px;	// For big buttons and blocks like quick search
 
@@ -262,7 +248,6 @@ $bbcode-code-color:						code-color(128deg);
 @mixin section-heading-cp {
 	background-color: transparent;
 	color: $stats-title-color;
-	box-shadow: none;
 	background-image: none;
 	a {
 		color: $link-color;
