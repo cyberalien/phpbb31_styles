@@ -666,7 +666,7 @@ fieldset.polls dd div {
 
 .online-ribbon span {
 	background-color: $content-background;
-	color: mix($block-background, $link-color, 40%);
+	color: $secondary-color;
 	& + span {
 		// box-shadow: 0 0 1px rgba(0, 0, 0, .2);
 	}
@@ -1203,12 +1203,10 @@ fieldset.quick-login input.inputbox {
 	color: $input-text;
 }
 
-.inputbox:-moz-placeholder {
-	color: mix($input-border, $input-bg, 70%);
-}
-
-.inputbox::-webkit-input-placeholder {
-	color: mix($input-border, $input-bg, 70%);
+.inputbox {
+	@include placeholder {
+		color: mix($input-text, $input-bg, 70%);
+	}
 }
 
 .inputbox:hover, select:hover {
