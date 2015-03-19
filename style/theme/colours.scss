@@ -1183,12 +1183,10 @@ fieldset.quick-login input.inputbox {
 	color: $input-text;
 }
 
-.inputbox:-moz-placeholder {
-	color: mix($input-border, $input-bg, 70%);
-}
-
-.inputbox::-webkit-input-placeholder {
-	color: mix($input-border, $input-bg, 70%);
+.inputbox {
+	@include placeholder {
+		color: mix($input-text, $input-bg, 70%);
+	}
 }
 
 .inputbox:hover, select:hover {
