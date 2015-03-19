@@ -665,21 +665,8 @@ fieldset.polls dd div {
 }
 
 .online-ribbon span {
-	background-color: $content-background;
-	color: $secondary-color;
-	& + span {
-		// box-shadow: 0 0 1px rgba(0, 0, 0, .2);
-	}
-	.reported & {
-		color: mix($block-background-reported, $link-hover-color, 50%);
-	}
-
-	@media (max-width: 700px) {
-		background-color: $secondary-color;
-		&, .reported & {
-			color: $overlay-color;
-		}
-	}
+	background-color: $heading-bg;
+	color: $heading-color;
 }
 
 dd.profile-warnings {
@@ -1205,7 +1192,7 @@ fieldset.quick-login input.inputbox {
 
 .inputbox {
 	@include placeholder {
-		color: mix($input-text, $input-bg, 70%);
+		color: mix($input-text, $input-bg, 90%);
 	}
 }
 
