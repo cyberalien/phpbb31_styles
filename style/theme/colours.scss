@@ -648,7 +648,7 @@ fieldset.polls dd div {
 
 .online-ribbon span {
 	background-color: $content-background;
-	color: mix($block-background, $link-color, 40%);
+	color: $secondary-color;
 	& + span {
 		// box-shadow: 0 0 1px rgba(0, 0, 0, .2);
 	}
