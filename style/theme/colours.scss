@@ -1222,12 +1222,16 @@ fieldset.quick-login input.inputbox {
 	color: $input-focus-text;
 }
 
-.inputbox:focus:-moz-placeholder {
-	color: transparent;
+.inputbox:hover {
+	@include placeholder {
+		color: $input-hover-text;
+	}
 }
 
-.inputbox:focus::-webkit-input-placeholder {
-	color: transparent;
+.inputbox:focus {
+	@include placeholder {
+		color: transparent;
+	}
 }
 
 
