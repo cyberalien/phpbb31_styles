@@ -557,9 +557,10 @@ p.rightside {
 }
 
 fieldset.display-options label {
-	display: block;
+	display: inline-block;
 	clear: both;
 	margin-bottom: 5px;
+	letter-spacing: -.3px;
 }
 
 dl.mini dd.pm-legend {

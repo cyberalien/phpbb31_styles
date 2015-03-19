@@ -74,6 +74,16 @@ hr {
 		color: $bold-text-color !important;
 		border-color: $block-background !important;
 	}
+	.inputbox:hover {
+		@include placeholder {
+			color: rgba($bold-text-color, .8);
+		}
+	}
+	.inputbox:focus {
+		@include placeholder {
+			color: transparent;
+		}
+	}
 	.button:hover, .button:focus {
 		&, &:before, &:after {
 			background-color: $secondary-color !important;
@@ -1210,12 +1220,10 @@ fieldset.quick-login input.inputbox {
 	color: $input-text;
 }
 
-.inputbox:-moz-placeholder {
-	color: mix($input-border, $input-bg, 70%);
-}
-
-.inputbox::-webkit-input-placeholder {
-	color: mix($input-border, $input-bg, 70%);
+.inputbox {
+	@include placeholder {
+		color: mix($input-text, $input-bg, 70%);
+	}
 }
 
 .inputbox:hover, select:hover {
