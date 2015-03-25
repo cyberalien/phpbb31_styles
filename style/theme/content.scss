@@ -470,42 +470,42 @@ dd.option {
 ----------------------------------------*/
 .postbody {
 	padding: 0;
-	float: right;
+	float: $post-side;
 	line-height: 1.48em;
 	.postprofile + & {
-		margin-left: -#{$post-margin};
+		margin-#{$profile-side}: -#{$post-margin};
 		.rtl & {
-			margin-left: 0;
-			margin-right: -#{$post-margin};;
+			margin-#{$profile-side}: 0;
+			margin-#{$post-side}: -#{$post-margin};
 		}
 		width: 100%;
 		position: relative;
 		.search & {
-			margin-left: (-100px - $post-margin);
+			margin-#{$profile-side}: (-100px - $post-margin);
 			.rtl & {
-				margin-left: 0;
-				margin-right: (-100px - $post-margin);
+				margin-#{$profile-side}: 0;
+				margin-#{$post-side}: (-100px - $post-margin);
 			}
 		}
 	}
 }
 
 .postprofile + .postbody > div {
-	margin-left: $post-margin;
+	margin-#{$profile-side}: $post-margin;
 	&:only-child:after {
 		content: ' ';
 		display: table;
 		clear: both;
 	}
 	.rtl & {
-		margin-left: 0;
-		margin-right: $post-margin;
+		margin-#{$profile-side}: 0;
+		margin-#{$post-side}: $post-margin;
 	}
 	.search & {
-		margin-left: ($post-margin + 100px);
+		margin-#{$profile-side}: ($post-margin + 100px);
 		.rtl & {
-			margin-left: 0;
-			margin-right: ($post-margin + 100px);
+			margin-#{$profile-side}: 0;
+			margin-#{$post-side}: ($post-margin + 100px);
 		}
 	}
 }
@@ -530,6 +530,9 @@ dd.option {
 	border: none;
 	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
 	line-height: 125%;
+	.rtl & {
+		float: right;
+	}
 }
 
 .postbody h3 img {
@@ -541,6 +544,10 @@ dd.option {
 	/* If there is a post-profile, we position the post-buttons differently */
 	float: none !important;
 	margin-right: 180px;
+	.rtl & {
+		margin-right: 0;
+		margin-left: 180px;
+	}
 }
 
 .postbody .content {
@@ -722,6 +729,16 @@ ul.searchresults {
 	list-style: none;
 	text-align: right;
 	clear: both;
+	@if $profile-side == right {
+		margin-right: ($post-margin + 100px);
+	}
+	.rtl & {
+		text-align: left;
+		@if $profile-side == right {
+			margin-right: 0;
+			margin-left: ($post-margin + 100px);
+		}
+	}
 }
 
 /* BB Code styles
@@ -984,13 +1001,18 @@ fieldset.polls dd div {
 	margin: 0;
 	padding: 5px 0;
 	min-height: 80px;
-	border: 1px solid transparent;
-	border-width: 0 1px 0 0;
+	border: 0px solid transparent;
+	border-#{$post-side}-width: 1px;
 	width: $profile-width;
-	float: left;
+	float: $profile-side;
 	position: relative;
 	box-sizing: border-box;
 	z-index: 2;
+	.rtl & {
+		float: $post-side;
+		border-width: 0;
+		border-#{$profile-side}-width: 1px;
+	}
 	.search & {
 		width: ($profile-width + 100px);
 	}
@@ -998,7 +1020,10 @@ fieldset.polls dd div {
 
 .postprofile dd, .postprofile dt {
 	line-height: 1.2em;
-	margin-right: 8px;
+	margin-#{$post-side}: 8px;
+	.rtl & {
+		margin-#{$profile-side}: 8px;
+	}
 }
 
 .postprofile dd {
@@ -1024,6 +1049,9 @@ fieldset.polls dd div {
 	display: block;
 	float: left;
 	max-width: 100%;
+	.rtl & {
+		float: right;
+	}
 }
 
 .postprofile .avatar img {
@@ -1063,8 +1091,13 @@ dd.profile-contact {
 	position: absolute;
 	overflow: hidden;
 	top: -3px;
-	left: -3px;
+	#{$profile-side}: -3px;
 	pointer-events: none;
+
+	.rtl & {
+		#{$profile-side}: auto;
+		#{$post-side}: auto;
+	}
 
 	span {
 		display: block;
@@ -1078,18 +1111,38 @@ dd.profile-contact {
 		position: absolute;
 		top: 17px;
 		white-space: nowrap;
-		// right: -25px;
-		// -webkit-transform: rotate(45deg);
-		// -ms-transform: rotate(45deg);
-		// transform: rotate(45deg);
-		left: -25px;
-		-webkit-transform: rotate(-45deg);
-		-ms-transform: rotate(-45deg);
-		transform: rotate(-45deg);
+		#{$profile-side}: -25px;
+
+		@if $profile-side == left {
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+		@else {
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
 
 		+ span {
 			opacity: .75;
 			z-index: 29;
+		}
+
+		.rtl & {
+			#{$profile-side}: auto;
+			#{$post-side}: -25px;
+
+			@if $profile-side == right {
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+			@else {
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
 		}
 	}
 }
