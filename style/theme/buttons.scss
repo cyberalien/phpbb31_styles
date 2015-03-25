@@ -37,6 +37,7 @@
 
 .icon-button:before {
 	background: transparent !important;
+	font-family: FontAwesome;
 	content: '\f013';	// fa-cog
 	display: inline-block;
 	float: right;
@@ -63,12 +64,9 @@
 }
 
 %icon-button {
+	font-family: FontAwesome;
 	&:hover {
 	}
-}
-
-%icon-button-fa {
-	font-family: FontAwesome;
 }
 
 %icon-button-gi {
@@ -317,14 +315,33 @@ ul.linklist.bulletin > li.small-icon:before {
 	float: right;
 	list-style: none;
 	margin-top: 2px;
+	.rtl & {
+		float: left;
+	}
 }
 
 .has-profile .post-buttons {
 	float: none;
 	position: absolute;
 	margin: 0;
-	right: 0;
 	top: 5px;
+
+	@if $profile-side == left {
+		right: 0;
+		.rtl & {
+			left: 0;
+		}
+	}
+	@else {
+		right: $post-margin;
+		.rtl & {
+			left: $post-margin;
+		}
+	}
+
+	.rtl & {
+		right: auto;
+	}
 }
 
 .post-buttons > li {
@@ -389,10 +406,15 @@ ul.linklist.bulletin > li.small-icon:before {
 	content: '\f128';	// fa-question
 	font-size: 13px;
 }
-.button.responsive-menu-link:before {
-	@extend .icon-button:before;
-	@extend %icon-button;
-	content: '\f0c9';	// fa-reorder
+.button.responsive-menu-link {
+	@extend .icon-button;
+	width: 12px;
+	&:before {
+		@extend %icon-button;
+		content: '\f0c9';	// fa-reorder
+		font-size: 11px;
+		margin-top: 3px;
+	}
 }
 
 .post-buttons > #expand > a {
@@ -412,13 +434,28 @@ ul.linklist.bulletin > li.small-icon:before {
 
 /* Responsive buttons in post body */
 .post-buttons .dropdown {
-	top: 18px;
+	top: 20px;
 }
 
 .post-buttons .dropdown a {
 	display: block;
 	font-size: 1.2em;
-	text-align: right;
+	text-align: left;
+	margin-left: 18px;
+	position: relative;
+	&:before {
+		position: absolute;
+		left: -16px;
+		top: 50%;
+		height: 14px;
+		line-height: 14px;
+		margin: -7px 0 0;
+		pointer-events: none;
+		color: inherit;
+	}
+	.rtl & {
+		text-align: right;
+	}
 }
 
 .hasjs .postbody .post-buttons {

@@ -7,6 +7,7 @@ $responsive-hide-logo:					false;	// Hide logo on mobile devices. true or false
 $show-forum-title:						false;	// true or false
 
 $profile-width:							150px;
+$profile-side:							right;	// left or right
 $post-margin:							($profile-width + 10px);
 
 $use-wrapper:							false;	// true or false
@@ -185,6 +186,9 @@ $bbcode-heading-text:					$primary-lighter-color;
 	@return hsl($hue, saturation($primary-lighter-color), lightness($primary-lighter-color));
 }
 $bbcode-code-color:						code-color(128deg);
+
+// Do not edit few lines below
+$post-side:								if($profile-side == left, right, left);
 
 // Mixins
 @mixin section {
