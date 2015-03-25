@@ -1096,7 +1096,7 @@ dd.profile-contact {
 
 	.rtl & {
 		#{$profile-side}: auto;
-		#{$post-side}: auto;
+		#{$post-side}: -3px;
 	}
 
 	span {
