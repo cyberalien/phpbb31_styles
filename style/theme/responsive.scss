@@ -518,15 +518,24 @@ fieldset.polls dd.resultbar, fieldset.polls dd.poll_option_percent {
 }
 
 .has-profile .post-buttons {
-	right: 20px;
-	top: 15px;
+	right: 0;
+	top: 0;
+	.rtl & {
+		right: auto;
+		left: 0;
+	}
 }
 
 .online-ribbon {
 	width: 35px;
 	height: 35px;
-	top: -1px;
-	left: -1px;
+	top: 0;
+	#{$profile-side}: 0;
+
+	.rtl & {
+		#{$profile-side}: auto;
+		#{$post-side}: 0;
+	}
 
 	span {
 		width: 50px;
@@ -537,7 +546,12 @@ fieldset.polls dd.resultbar, fieldset.polls dd.poll_option_percent {
 		position: absolute;
 		top: 8px;
 		white-space: nowrap;
-		left: -12px;
+		#{$profile-side}: -12px;
+
+		.rtl & {
+			#{$profile-side}: auto;
+			#{$post-side}: -12px;
+		}
 	}
 }
 

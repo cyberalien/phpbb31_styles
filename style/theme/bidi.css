@@ -558,31 +558,6 @@ li.breadcrumbs span:first-child > a {
 
 /* Poster profile block
 ----------------------------------------*/
-.rtl .postprofile {
-	border-width: 0 1px 0 0;
-	float: left;
-/*	text-align: right; */
-}
-
-.rtl .pm .postprofile {
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-left: none;
-}
-
-.rtl .postprofile dd, .rtl .postprofile dt {
-	margin-left: 0;
-	margin-right: 8px;
-}
-
-.rtl .postprofile .avatar {
-	float: right;
-}
-
-.rtl .online {
-	background-position: 0 0;
-}
-
 .rtl dl.pmlist dd {
 	margin-right: 61% !important;
 	margin-left: 0 !important;
