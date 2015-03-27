@@ -1207,7 +1207,7 @@ function parseDocument($container) {
 			function enableStatic()
 			{
 				dummy.css('height', Math.floor(navigation.height()) + 'px').show();
-				navigation.addClass('static');
+				navigation.addClass('static').removeClass('not-static');
 				isStatic = true;
 				checkNavigation(true);
 			}
@@ -1215,7 +1215,7 @@ function parseDocument($container) {
 			function disableStatic()
 			{
 				dummy.hide();
-				navigation.removeClass('static');
+				navigation.removeClass('static').addClass('not-static');
 				isStatic = false;
 				checkNavigation(true);
 			}
