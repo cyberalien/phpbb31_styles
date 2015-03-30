@@ -727,6 +727,18 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	// Tabbed navigation
 	@if $tabbed-navigation {
 		&.tabbed.not-static {
+
+			@if $use-wrapper {
+				// Add spacing between top of wrapper and tabs on mobile devices
+				@media (max-width: 700px) {
+					#wrap > div:first-child > &:first-child:before {
+						content: '';
+						display: block;
+						height: 10px;
+					}
+				}
+			}
+
 			.nav-tabs {
 				background: none;
 				box-shadow: none;
