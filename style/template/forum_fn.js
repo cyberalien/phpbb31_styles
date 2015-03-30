@@ -1754,6 +1754,7 @@ jQuery(function($) {
 	// Events
 	styleConfig._loaded = true;
 	styleConfig._resizeThrottled = false;
+	styleConfig._resizeQueued = false;
 
 	$(window).load(function() {
 		checkNavigation(true);
@@ -1767,7 +1768,15 @@ jQuery(function($) {
 	$(window).resize(function() {
 		if (!styleConfig._resizeThrottled) {
 			styleConfig._resizeThrottled = true;
-			setTimeout(processResizeEvent, 500);
+			processResizeEvent();
+			setTimeout(function() {
+				if (styleConfig._resizeQueued) {
+					styleConfig._resizeQueued = false;
+					processResizeEvent();
+				}
+			}, 500);
+		} else {
+			styleConfig._resizeQueued = true;
 		}
 	});
 });
