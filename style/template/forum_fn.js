@@ -421,21 +421,35 @@ function checkNavigation(force)
 			}
 		}
 		nav.responsive = false;
-		menuWidth = nav.menu.width();
+		menuWidth = nav.menu.outerWidth(true);
 		width = menuWidth;
 
 		// Count width of all items that cannot be hidden
 		nav.noToggle.each(function() {
-			width += $(this).width();
+			var $this = $(this);
+			if ($this.is(':visible')) {
+				width += $this.outerWidth(true);
+			}
 		});
 
 		// Test all other items
 		hiding = (width >= containerWidth);
 		nav.canToggle.each(function() {
-			var $this = $(this);
+			var $this = $(this),
+				itemWidth, margin;
+
+			if (!$this.is(':visible')) {
+				return;
+			}
 
 			if (!hiding) {
-				width += $(this).width();
+				itemWidth = $this.outerWidth(true);
+				if (!itemWidth) {
+					$this.hide();
+					return;
+				}
+
+				width += itemWidth;
 				if (width >= containerWidth) {
 					hiding = true;
 				}
@@ -1245,7 +1259,8 @@ function parseDocument($container) {
 			function enableStatic()
 			{
 				dummy.css('height', Math.floor(navigation.height()) + 'px').show();
-				navigation.addClass('static').removeClass('not-static');
+				navigation.addClass('static');
+				parent.removeClass('not-static');
 				isStatic = true;
 				checkNavigation(true);
 			}
@@ -1253,7 +1268,8 @@ function parseDocument($container) {
 			function disableStatic()
 			{
 				dummy.hide();
-				navigation.removeClass('static').addClass('not-static');
+				navigation.removeClass('static');
+				parent.addClass('not-static');
 				isStatic = false;
 				checkNavigation(true);
 			}

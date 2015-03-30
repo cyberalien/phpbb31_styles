@@ -63,6 +63,14 @@ hr {
 	.inputbox, .button {
 		background: $block-background !important;
 		border-color: $block-background !important;
+		@if $tabbed-navigation {
+			.navbar.not-static + .navbar.with-search & {
+				background: $block-background2 !important;
+				border-color: $block-background2 !important;
+				background-color: rgba(0, 0, 0, 0.15) !important;
+				border-color: rgba(0, 0, 0, 0) !important;
+			}
+		}
 	}
 	.navbar.with-search & .button {
 		&, &:before, &:after {
@@ -70,9 +78,11 @@ hr {
 		}
 	}
 	.inputbox:hover, .inputbox:focus {
-		background-color: $block-background3 !important;
 		color: $bold-text-color !important;
-		border-color: $block-background !important;
+		&, .navbar.not-static + .navbar.with-search & {
+			background-color: $block-background3 !important;
+			border-color: $block-background !important;
+		}
 	}
 	.inputbox:hover {
 		@include placeholder {
@@ -86,9 +96,11 @@ hr {
 	}
 	.button:hover, .button:focus {
 		&, &:before, &:after {
-			background-color: $secondary-color !important;
 			color: #fff !important;
-			border-color: $secondary-color !important;
+			&, .navbar.not-static + .navbar.with-search & {
+				background-color: $secondary-color !important;
+				border-color: $secondary-color !important;
+			}
 		}
 	}
 }
@@ -150,6 +162,62 @@ hr {
 			}
 			.dropdown {
 				color: $text-color;
+			}
+		}
+	}
+
+	// Tabbed navigation
+	@if $tabbed-navigation {
+		&.tabbed.not-static {
+			.nav-tabs {
+				li.tab {
+					// Tabs layout
+					color: #fff;
+					border-color: $primary-darker-color;
+					background-color: $primary-darker-color;
+
+					&.selected {
+						color: $link-color;
+						background-color: $block-background;
+						border-top-color: rgba(67, 81, 101, .2);
+						border-right-color: rgba(0, 0, 0, .1);
+						border-bottom-color: rgba(0, 0, 0, .1);
+						border-left-color: rgba(67, 81, 101, .2);
+
+						&:after {
+							background-color: $block-background;
+						}
+					}
+
+					&:hover,
+					&.dropdown-visible {
+						color: $link-hover-color;
+						background-color: $block-background;
+						border-top-color: rgba(67, 81, 101, .2);
+						border-right-color: rgba(0, 0, 0, .1);
+						border-bottom-color: rgba(0, 0, 0, .1);
+						border-left-color: rgba(67, 81, 101, .2);
+					}
+				}
+			}
+
+			// Second row
+			+ .navbar.secondary {
+				color: $link-color;
+				background-color: $block-background;
+				border-top-color: rgba(67, 81, 101, .2);
+				border-right-color: rgba(0, 0, 0, .1);
+				border-bottom-color: rgba(0, 0, 0, .1);
+				border-left-color: rgba(67, 81, 101, .2);
+
+				> ul > li:hover,
+				> ul > li.dropdown-visible {
+					&, &:after, &:before {
+						color: $link-hover-color;
+					}
+					background: none;
+					box-shadow: none;
+				}
 			}
 		}
 	}
