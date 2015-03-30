@@ -688,8 +688,13 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				@extend %glyph-gi;
 				content: '\E195';	// glyphicons-circle-question-mark
 			}
-			@media (max-width: 550px) {
-				display: none;
+		}
+
+		@media (max-width: 550px) {
+			.faq {
+				&, & .nav-link {
+					display: none !important;
+				}
 			}
 		}
 
