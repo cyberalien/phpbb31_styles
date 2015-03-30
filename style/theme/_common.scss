@@ -65,13 +65,16 @@ body {
 	font-family: $font-family;
 	/*font-size: 62.5%;			 This sets the default font size to be equivalent to 10px */
 	font-size: $font-size;
-	line-height: #{$line-height}em;
+	line-height: $line-height;
 	margin: 0;
 	padding: 0 0 12px;
 	word-wrap: break-word;
 	min-height: 100%;
 	box-sizing: border-box;
 }
+
+$h1-font-size:		$font-size + 10px !default;
+$h1-line-height:	inherit !default;
 
 h1, p.sitename {
 	/* Forum name */
@@ -81,7 +84,7 @@ h1, p.sitename {
 	margin-bottom: 0;
 	font-weight: bold;
 	font-size: $h1-font-size;
-	line-height: inherit;
+	line-height: $h1-line-height;
 }
 
 h2 {
