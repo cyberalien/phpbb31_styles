@@ -150,6 +150,117 @@ hr {
 			}
 		}
 	}
+
+	// Tabbed navigation
+	@if $tabbed-navigation {
+		&.tabbed.not-static {
+			.nav-tabs {
+				li.tab {
+					// Tabs layout
+					color: $link-color;
+					border-color: $block-inner-border;
+					background-color: $block-background;
+
+					@include tabbed-nav-layout-alt {
+						background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, .2) 50%, rgba(224, 224, 224, .7) 100%);
+						background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, .2) 50%, rgba(224, 224, 224, .7) 100%);
+						box-shadow: none;
+					}
+
+					@include tabbed-nav-layout-default {
+						background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, 0) 70%, rgba(224, 224, 224, .3) 100%);
+						background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, 0) 70%, rgba(224, 224, 224, .3) 100%);
+						box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.15);
+					}
+
+					&.selected {
+						@include tabbed-nav-layout-all {
+							background-color: $block-background;
+							color: $link-color;
+							border-color: $block-inner-border;
+						}
+
+						@include tabbed-nav-layout-alt {
+							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(224, 224, 224, .2));
+							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(224, 224, 224, .2));
+						}
+
+						@include tabbed-nav-layout-default {
+							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+						}
+
+						&:after {
+							@include tabbed-nav-layout-alt {
+								background-color: darken($block-background, 2.5%);
+							}
+
+							@include tabbed-nav-layout-default {
+								background-color: darken($block-background, 1%);
+							}
+						}
+					}
+
+					&:hover {
+						@include tabbed-nav-layout-all {
+							background-color: $block-background;
+							color: $link-hover-color;
+							border-color: $block-inner-border;
+						}
+
+						@include tabbed-nav-layout-alt {
+							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .7), rgba(224, 224, 224, .2));
+							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .7), rgba(224, 224, 224, .2));
+						}
+
+						@include tabbed-nav-layout-default {
+							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
+							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
+						}
+					}
+
+					&.dropdown-visible {
+						@include tabbed-nav-layout-all {
+							background-color: $heading-bg;
+							color: $heading-color;
+							border-color: $heading-bg;
+							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+							box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+						}
+					}
+				}
+			}
+
+			// Second row
+			+ .navbar.secondary {
+				background: $block-background;
+				border-color: $block-border;
+				color: $link-color;
+				background-color: $block-background;
+				box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+
+				@include tabbed-nav-layout-alt {
+					background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, .2), rgba(224, 224, 224, .2));
+					background-image: linear-gradient(to bottom, rgba(224, 224, 224, .2), rgba(224, 224, 224, .2));
+				}
+
+				@include tabbed-nav-layout-default {
+					background-image: none;
+				}
+
+				> ul > li:hover,
+				> ul > li.dropdown-visible {
+					&, &:after, &:before {
+						color: $link-hover-color;
+					}
+					background: none;
+					box-shadow: none;
+					filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+				}
+			}
+		}
+	}
 }
 
 .panel {
