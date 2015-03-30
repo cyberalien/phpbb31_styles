@@ -62,6 +62,16 @@ hr {
 .search-header {
 	box-shadow: $search-box-shadow;
 	border-color: $search-box-border-header;
+
+	@if $tabbed-navigation {
+		.navbar.not-static + .navbar.with-search & {
+			.inputbox, .button {
+				background: $content-background !important;
+				border-color: $content-background !important;
+			}
+		}
+	}
+
 	.navbar.with-search & {
 		box-shadow: none;
 		border-color: transparent;
@@ -158,76 +168,33 @@ hr {
 				li.tab {
 					// Tabs layout
 					color: $link-color;
-					border-color: $block-inner-border;
 					background-color: $block-background;
-
-					@include tabbed-nav-layout-alt {
-						background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, .2) 50%, rgba(224, 224, 224, .7) 100%);
-						background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, .2) 50%, rgba(224, 224, 224, .7) 100%);
-						box-shadow: none;
-					}
-
-					@include tabbed-nav-layout-default {
-						background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, 0) 70%, rgba(224, 224, 224, .3) 100%);
-						background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, 0) 70%, rgba(224, 224, 224, .3) 100%);
-						box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.15);
-					}
+					background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+					background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 
 					&.selected {
-						@include tabbed-nav-layout-all {
-							background-color: $block-background;
-							color: $link-color;
-							border-color: $block-inner-border;
-						}
-
-						@include tabbed-nav-layout-alt {
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(224, 224, 224, .2));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(224, 224, 224, .2));
-						}
-
-						@include tabbed-nav-layout-default {
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
-						}
-
-						&:after {
-							@include tabbed-nav-layout-alt {
-								background-color: darken($block-background, 2.5%);
-							}
-
-							@include tabbed-nav-layout-default {
-								background-color: darken($block-background, 1%);
-							}
-						}
+						background-color: $block-background;
+						color: $link-color;
+						background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .15) 0, rgba(255, 255, 255, .1) 100%);
+						background-image: linear-gradient(to bottom, rgba(255, 255, 255, .15) 0, rgba(255, 255, 255, .1) 100%);
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#20FFFFFF, endColorstr=#18FFFFFF);
 					}
 
 					&:hover {
-						@include tabbed-nav-layout-all {
-							background-color: $block-background;
-							color: $link-hover-color;
-							border-color: $block-inner-border;
-						}
-
-						@include tabbed-nav-layout-alt {
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .7), rgba(224, 224, 224, .2));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .7), rgba(224, 224, 224, .2));
-						}
-
-						@include tabbed-nav-layout-default {
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
-						}
+						color: $primary-nav-hover-color;
+						background: $primary-nav-hover-bg url('./images/category.png') 0 0 repeat-x;
+						background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+						background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 					}
 
 					&.dropdown-visible {
-						@include tabbed-nav-layout-all {
-							background-color: $heading-bg;
-							color: $heading-color;
-							border-color: $heading-bg;
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
-							box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-						}
+						color: $primary-nav-hover-color;
+						background: $primary-nav-hover-bg url('./images/category.png') 0 0 repeat-x;
+						background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+						background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%), url('./images/category.png');
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 					}
 				}
 			}
@@ -235,19 +202,10 @@ hr {
 			// Second row
 			+ .navbar.secondary {
 				background: $block-background;
-				border-color: $block-border;
 				color: $link-color;
 				background-color: $block-background;
-				box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.1);
-
-				@include tabbed-nav-layout-alt {
-					background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, .2), rgba(224, 224, 224, .2));
-					background-image: linear-gradient(to bottom, rgba(224, 224, 224, .2), rgba(224, 224, 224, .2));
-				}
-
-				@include tabbed-nav-layout-default {
-					background-image: none;
-				}
+				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
 
 				> ul > li:hover,
 				> ul > li.dropdown-visible {
