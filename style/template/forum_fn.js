@@ -1783,6 +1783,7 @@ jQuery(function($) {
 			styleConfig._resizeThrottled = true;
 			styleConfig._resizeQueued = false;
 			setTimeout(function() {
+				styleConfig._resizeThrottled = false;
 				if (styleConfig._resizeQueued) {
 					processResizeEvent();
 				}
