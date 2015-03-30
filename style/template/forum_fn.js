@@ -612,7 +612,9 @@ function parseDocument($container) {
 	$container.find('.navlinks').each(function() {
 		var $this = $(this),
 			$left = $this.children().not('.rightside'),
-			$right = $this.children('.rightside');
+			$right = $this.children('.rightside'),
+			queued = false,
+			throttled = false;
 
 		if ($left.length !== 1 || !$right.length) {
 			return;
@@ -622,6 +624,7 @@ function parseDocument($container) {
 			var width = 0,
 				diff = $left.outerWidth(true) - $left.width();
 
+			throttled = false;
 			$right.each(function() {
 				width += $(this).outerWidth(true);
 			});
@@ -629,7 +632,22 @@ function parseDocument($container) {
 		}
 
 		resize();
-		$(window).resize(resize);
+		$(window).resize(function() {
+			if (throttled) {
+				queued = true;
+			}
+			else {
+				resize();
+				throttled = true;
+				queued = false;
+				setTimeout(function() {
+					throttled = false;
+					if (queued) {
+						resize();
+					}
+				}, 250);
+			}
+		});
 	});
 
 	/**
@@ -643,7 +661,9 @@ function parseDocument($container) {
 			classesLength = classes.length,
 			maxHeight = 0,
 			lastWidth = false,
-			wrapped = false;
+			wrapped = false,
+			queued = false,
+			throttled = false;
 
 		// Set tooltips
 		$this.find('a').each(function() {
@@ -656,6 +676,7 @@ function parseDocument($container) {
 			var height = $this.height(),
 				width = $body.width();
 
+			throttled = false;
 			maxHeight = parseInt($this.css('line-height'));
 			$links.each(function() {
 				if ($(this).height() > 0) {
@@ -695,7 +716,22 @@ function parseDocument($container) {
 
 		// Run function and set event
 		check();
-		$(window).resize(check);
+		$(window).resize(function() {
+			if (throttled) {
+				queued = true;
+			}
+			else {
+				check();
+				throttled = true;
+				queued = false;
+				setTimeout(function() {
+					throttled = false;
+					if (queued) {
+						check();
+					}
+				}, 250);
+			}
+		});
 	});
 
 	/**
@@ -1196,7 +1232,9 @@ function parseDocument($container) {
 				minTopPosition = 0,
 				minWidth = styleConfig.staticNavigationMinWidth,
 				minHeight = styleConfig.staticNavigationMinHeight,
-				windowWidth, navHeight;
+				windowWidth, navHeight,
+				queued = false,
+				throttled = false;
 
 			navigation.before('<div class="static-nav-dummy inner" style="display:none;" />');
 			dummy = navigation.prev();
@@ -1263,7 +1301,27 @@ function parseDocument($container) {
 				}
 			}
 
-			$w.on('scroll resize', function() { check(false); });
+			$w.on('scroll resize', function() { 
+				if (!isStatic) {
+					check(false);
+				}
+				else {
+					if (!throttled) {
+						check(false);
+						throttled = true;
+						queued = false;
+						setTimeout(function() {
+							throttled = false;
+							if (queued) {
+								check(false);
+							}
+						}, 250);
+					}
+					else {
+						queued = true;
+					}
+				}
+			});
 			$w.on('load', function() { check(true); });
 			$w.on('hashchange', function() { check(true); });
 		});
@@ -1708,6 +1766,7 @@ jQuery(function($) {
 	// Events
 	styleConfig._loaded = true;
 	styleConfig._resizeThrottled = false;
+	styleConfig._resizeQueued = false;
 
 	$(window).load(function() {
 		checkNavigation(true);
@@ -1720,8 +1779,17 @@ jQuery(function($) {
 
 	$(window).resize(function() {
 		if (!styleConfig._resizeThrottled) {
+			processResizeEvent();
 			styleConfig._resizeThrottled = true;
-			setTimeout(processResizeEvent, 500);
+			styleConfig._resizeQueued = false;
+			setTimeout(function() {
+				styleConfig._resizeThrottled = false;
+				if (styleConfig._resizeQueued) {
+					processResizeEvent();
+				}
+			}, 500);
+		} else {
+			styleConfig._resizeQueued = true;
 		}
 	});
 });

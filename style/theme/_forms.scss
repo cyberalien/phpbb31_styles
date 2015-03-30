@@ -424,17 +424,13 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 --------------------------------------------- */
 .search-header {
 	border-radius: $big-button-border-radius;
-	display: block;
-	position: absolute;
-	top: 50%;
-	right: 5px;
-	margin-top: -13px;
 	border: 1px solid transparent;
-	.navbar.with-search & {
-		position: relative;
-		top: 0;
-		right: 0;
-		margin: 0;
+	.headerbar & {
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 5px;
+		margin-top: -13px;
 	}
 }
 
