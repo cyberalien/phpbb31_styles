@@ -728,27 +728,18 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 					// Tabs layout
 					margin: 0 5px;
 					padding: 0;
-					border: 1px solid transparent;
-					border-bottom-width: 0;
+					border-width: 0;
 					border-radius: 0;
 					text-shadow: none;
-					border-top-left-radius: $navtabs-border-radius;
-					border-top-right-radius: $navtabs-border-radius;
 
-					&.selected {
-						position: relative;
-						&:after {
-							content: '';
-							pointer-events: none;
-							border-top-left-radius: 2px;
-							border-top-right-radius: 2px;
-							position: absolute;
-							left: 0px;
-							right: 0px;
-							bottom: -2px;
-							z-index: 3;
-							height: 4px;
-						}
+					@include tabbed-nav-layout-alt {
+						border-top-left-radius: ($navtabs-border-radius + 2);
+						border-top-right-radius: ($navtabs-border-radius + 2);
+					}
+
+					@include tabbed-nav-layout-default {
+						border-top-left-radius: $navtabs-border-radius;
+						border-top-right-radius: $navtabs-border-radius;
 					}
 
 					// Link
@@ -791,7 +782,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 
 			// Second row
 			+ .navbar.secondary {
-				border: 1px solid transparent;
+				border-width: 0;
 				border-radius: $border-radius;
 				font-size: 13px;
 				z-index: 2;
