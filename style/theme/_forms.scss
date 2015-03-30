@@ -415,6 +415,18 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	.navbar.with-search & {
 		margin-top: 1px;
 	}
+	@if $tabbed-navigation {
+		.navbar.not-static + .navbar.with-search & {
+			&, & a.button, & .inputbox {
+				border-radius: 0;
+			}
+			margin-right: -3px;
+			.rtl & {
+				margin-right: 0;
+				margin-left: -3px;
+			}
+		}
+	}
 	.headerbar & {
 		position: absolute;
 		top: 50%;
