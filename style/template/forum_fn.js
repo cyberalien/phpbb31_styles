@@ -637,10 +637,11 @@ function parseDocument($container) {
 				queued = true;
 			}
 			else {
+				resize();
 				throttled = true;
 				queued = false;
-				resize();
 				setTimeout(function() {
+					throttled = false;
 					if (queued) {
 						resize();
 					}
@@ -720,10 +721,11 @@ function parseDocument($container) {
 				queued = true;
 			}
 			else {
+				check();
 				throttled = true;
 				queued = false;
-				check();
 				setTimeout(function() {
+					throttled = false;
 					if (queued) {
 						check();
 					}
@@ -1231,6 +1233,7 @@ function parseDocument($container) {
 				minWidth = styleConfig.staticNavigationMinWidth,
 				minHeight = styleConfig.staticNavigationMinHeight,
 				windowWidth, navHeight,
+				queued = false,
 				throttled = false;
 
 			navigation.before('<div class="static-nav-dummy inner" style="display:none;" />');
@@ -1302,12 +1305,21 @@ function parseDocument($container) {
 				if (!isStatic) {
 					check(false);
 				}
-				else if (!throttled) {
-					throttled = true;
-					setTimeout(function() {
-						throttled = false;
+				else {
+					if (!throttled) {
 						check(false);
-					}, 250);
+						throttled = true;
+						queued = false;
+						setTimeout(function() {
+							throttled = false;
+							if (queued) {
+								check(false);
+							}
+						}, 250);
+					}
+					else {
+						queued = true;
+					}
 				}
 			});
 			$w.on('load', function() { check(true); });
@@ -1767,11 +1779,11 @@ jQuery(function($) {
 
 	$(window).resize(function() {
 		if (!styleConfig._resizeThrottled) {
-			styleConfig._resizeThrottled = true;
 			processResizeEvent();
+			styleConfig._resizeThrottled = true;
+			styleConfig._resizeQueued = false;
 			setTimeout(function() {
 				if (styleConfig._resizeQueued) {
-					styleConfig._resizeQueued = false;
 					processResizeEvent();
 				}
 			}, 500);
