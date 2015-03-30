@@ -62,10 +62,10 @@ html {
 
 body {
 	/* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
-	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-family: $font-family;
 	/*font-size: 62.5%;			 This sets the default font size to be equivalent to 10px */
-	font-size: 10px;
-	line-height: normal;
+	font-size: $font-size;
+	line-height: #{$line-height}em;
 	margin: 0;
 	padding: 0 0 12px;
 	word-wrap: break-word;
@@ -75,20 +75,20 @@ body {
 
 h1, p.sitename {
 	/* Forum name */
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: $h1-font-family;
 	margin-right: 200px;
 	margin-top: 15px;
 	margin-bottom: 0;
 	font-weight: bold;
-	font-size: 2em;
+	font-size: $h1-font-size;
 	line-height: inherit;
 }
 
 h2 {
 	/* Forum header titles */
-	font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+	font-family: $h2-font-family;
 	font-weight: normal;
-	font-size: 18px;
+	font-size: $h2-font-size;
 	margin: 0.8em 0 0.2em 0;
 }
 
@@ -96,24 +96,32 @@ h2.solo {
 	margin-bottom: 1em;
 }
 
+$h3-font-size:			($h2-font-size - 2px) !default;
+$h3-font-family:		$h2-font-family !default;
+
 h3 {
 	/* Sub-headers (also used as post headers, but defined later) */
-	font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+	font-family: $h3-font-family;
 	font-weight: 500;
 	margin-bottom: 5px;
-	font-size: 16px;
+	font-size: $h3-font-size;
 	margin-top: 20px;
 }
 
+$h4-font-size:			($font-size * 1.3) !default;
+$h4-font-family:		$h1-font-family !default;
+
 h4 {
 	/* Forum and topic list titles */
-	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif;
-	font-size: 1.3em;
+	font-family: $h4-font-family;
+	font-size: $h4-font-size;
 }
 
+$paragraph-font-size:	($font-size * 1.1) !default;
+
 p {
-	line-height: 1.3em;
-	font-size: 1.1em;
+	line-height: $paragraph-line-height;
+	font-size: $paragraph-font-size;
 	margin-bottom: 1.5em;
 }
 
@@ -293,10 +301,13 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 }
 
+$nav-primary-font-size:		$font-size + 2px !default;
+$nav-secondary-font-size:	$font-size + 2px !default;
+
 .navbar {
 	$navtabs-border-radius: min(5px, $border-radius) !default;
 	$navtabs-border-radius-small: max(0px, $navtabs-border-radius - 2) !default;
-	$tab-height: 30px !default;
+	$tab-height: $nav-primary-font-size + 18px !default;
 	$tab-padding: 12px !default;
 	$tab-padding-glyph: 8px !default;
 
@@ -336,8 +347,8 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				color: inherit;
 				padding: 1px 8px;
 				text-align: center;
-				line-height: 26px;
-				font-size: 12px;
+				line-height: $nav-secondary-font-size + 14px;
+				font-size: $nav-secondary-font-size;
 			}
 			&:hover {
 				> a {
@@ -349,11 +360,11 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				padding-left: 18px;
 			}
 			.dropdown {
-				top: 28px;
+				top: $nav-secondary-font-size + 16px;
 			}
 			&.dropdown-up .dropdown {
 				top: auto;
-				bottom: 28px;
+				bottom: $nav-secondary-font-size + 16px;
 			}
 			&.search-box {
 				display: block;
@@ -429,7 +440,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			line-height: $tab-height;
 			padding: 0 $tab-padding;
 			vertical-align: baseline;
-			font-size: 12px;
+			font-size: $nav-primary-font-size;
 			outline-style: none;
 			&.dropdown-toggle {
 				position: relative;

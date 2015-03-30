@@ -18,6 +18,22 @@ $split-forums:							true;	// Changes layout of forums list. Values are true or 
 $tabbed-navigation:						true;	// true or false. Toggles tabbed navigation layout
 
 //
+// Fonts
+//
+
+$font-size:								10px;	// Base font size
+$font-family:							Verdana, Helvetica, Arial, sans-serif;	// Default font
+$line-height:							1.4;	// Line height
+
+$h1-font-size:							$font-size + 10px;
+$h1-font-family:						"Trebuchet MS", Arial, Helvetica, sans-serif;
+
+$h2-font-size:							$font-size + 8px;
+$h2-font-family:						"Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+
+$paragraph-line-height:					1.3;
+
+//
 // Color palette
 //
 
