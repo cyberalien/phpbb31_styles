@@ -426,16 +426,30 @@ function checkNavigation(force)
 
 		// Count width of all items that cannot be hidden
 		nav.noToggle.each(function() {
-			width += $(this).outerWidth(true);
+			var $this = $(this);
+			if ($this.is(':visible')) {
+				width += $this.outerWidth(true);
+			}
 		});
 
 		// Test all other items
 		hiding = (width >= containerWidth);
 		nav.canToggle.each(function() {
-			var $this = $(this);
+			var $this = $(this),
+				itemWidth, margin;
+
+			if (!$this.is(':visible')) {
+				return;
+			}
 
 			if (!hiding) {
-				width += $(this).outerWidth(true);
+				itemWidth = $this.outerWidth(true);
+				if (!itemWidth) {
+					$this.hide();
+					return;
+				}
+
+				width += itemWidth;
 				if (width >= containerWidth) {
 					hiding = true;
 				}
