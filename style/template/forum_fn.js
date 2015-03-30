@@ -421,12 +421,12 @@ function checkNavigation(force)
 			}
 		}
 		nav.responsive = false;
-		menuWidth = nav.menu.width();
+		menuWidth = nav.menu.outerWidth(true);
 		width = menuWidth;
 
 		// Count width of all items that cannot be hidden
 		nav.noToggle.each(function() {
-			width += $(this).width();
+			width += $(this).outerWidth(true);
 		});
 
 		// Test all other items
@@ -435,7 +435,7 @@ function checkNavigation(force)
 			var $this = $(this);
 
 			if (!hiding) {
-				width += $(this).width();
+				width += $(this).outerWidth(true);
 				if (width >= containerWidth) {
 					hiding = true;
 				}

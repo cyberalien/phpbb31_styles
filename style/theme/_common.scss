@@ -742,6 +742,10 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 						border-top-right-radius: $navtabs-border-radius;
 					}
 
+					@media (max-width: 700px) {
+						margin: 0 2px;
+					}
+
 					// Link
 					.nav-link.dropdown-toggle {
 						&:before {
@@ -789,6 +793,12 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 				position: relative;
 				margin: 0 0 10px;
 				padding: 0 5px;
+
+				@media (max-width: 700px) {
+					border-radius: 0;
+					border-left-width: 0;
+					border-right-width: 0;
+				}
 			}
 		}
 	}
