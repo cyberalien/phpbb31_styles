@@ -612,7 +612,9 @@ function parseDocument($container) {
 	$container.find('.navlinks').each(function() {
 		var $this = $(this),
 			$left = $this.children().not('.rightside'),
-			$right = $this.children('.rightside');
+			$right = $this.children('.rightside'),
+			queued = false,
+			throttled = false;
 
 		if ($left.length !== 1 || !$right.length) {
 			return;
@@ -622,6 +624,7 @@ function parseDocument($container) {
 			var width = 0,
 				diff = $left.outerWidth(true) - $left.width();
 
+			throttled = false;
 			$right.each(function() {
 				width += $(this).outerWidth(true);
 			});
@@ -629,7 +632,21 @@ function parseDocument($container) {
 		}
 
 		resize();
-		$(window).resize(resize);
+		$(window).resize(function() {
+			if (throttled) {
+				queued = true;
+			}
+			else {
+				throttled = true;
+				queued = false;
+				resize();
+				setTimeout(function() {
+					if (queued) {
+						resize();
+					}
+				}, 250);
+			}
+		});
 	});
 
 	/**
@@ -643,7 +660,9 @@ function parseDocument($container) {
 			classesLength = classes.length,
 			maxHeight = 0,
 			lastWidth = false,
-			wrapped = false;
+			wrapped = false,
+			queued = false,
+			throttled = false;
 
 		// Set tooltips
 		$this.find('a').each(function() {
@@ -656,6 +675,7 @@ function parseDocument($container) {
 			var height = $this.height(),
 				width = $body.width();
 
+			throttled = false;
 			maxHeight = parseInt($this.css('line-height'));
 			$links.each(function() {
 				if ($(this).height() > 0) {
@@ -695,7 +715,21 @@ function parseDocument($container) {
 
 		// Run function and set event
 		check();
-		$(window).resize(check);
+		$(window).resize(function() {
+			if (throttled) {
+				queued = true;
+			}
+			else {
+				throttled = true;
+				queued = false;
+				check();
+				setTimeout(function() {
+					if (queued) {
+						check();
+					}
+				}, 250);
+			}
+		});
 	});
 
 	/**
