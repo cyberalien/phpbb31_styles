@@ -1196,7 +1196,8 @@ function parseDocument($container) {
 				minTopPosition = 0,
 				minWidth = styleConfig.staticNavigationMinWidth,
 				minHeight = styleConfig.staticNavigationMinHeight,
-				windowWidth, navHeight;
+				windowWidth, navHeight,
+				throttled = false;
 
 			navigation.before('<div class="static-nav-dummy inner" style="display:none;" />');
 			dummy = navigation.prev();
@@ -1263,7 +1264,18 @@ function parseDocument($container) {
 				}
 			}
 
-			$w.on('scroll resize', function() { check(false); });
+			$w.on('scroll resize', function() { 
+				if (!isStatic) {
+					check(false);
+				}
+				else if (!throttled) {
+					throttled = true;
+					setTimeout(function() {
+						throttled = false;
+						check(false);
+					}, 250);
+				}
+			});
 			$w.on('load', function() { check(true); });
 			$w.on('hashchange', function() { check(true); });
 		});
