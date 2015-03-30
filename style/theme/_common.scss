@@ -294,6 +294,12 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .navbar {
+	$navtabs-border-radius: min(5px, $border-radius) !default;
+	$navtabs-border-radius-small: max(0px, $navtabs-border-radius - 2) !default;
+	$tab-height: 30px !default;
+	$tab-padding: 12px !default;
+	$tab-padding-glyph: 8px !default;
+
 	@include section;
 	padding: 0 9px;
 	clear: both;
@@ -376,7 +382,6 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 
 	.nav-tabs {
-		$navtabs-border-radius: min(5px, $border-radius) !default;
 		border-radius: $navtabs-border-radius;
 		& .leftside, .rtl & .rightside {
 			& .tab:first-child,
@@ -396,9 +401,6 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 		}
 
 		@extend %clearfix;
-		$tab-height: 30px;
-		$tab-padding: 12px;
-		$tab-padding-glyph: 8px;
 
 		& > ul {
 			list-style-type: none;
@@ -696,6 +698,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			&:after {
 				@extend %glyph-fa;
 				content: '\f08b';	// fa-sign-out
+				margin-left: 1px;
 			}
 		}
 
@@ -712,6 +715,94 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 			&:after {
 				@extend %glyph-fa;
 				content: '\f234';	// fa-user-plus
+			}
+		}
+	}
+
+	// Tabbed navigation
+	@if $tabbed-navigation {
+		&.tabbed.not-static {
+			.nav-tabs {
+				background: none;
+				box-shadow: none;
+				border-radius: 0;
+				border-width: 0;
+				padding: 0 10px;
+
+				li.tab {
+					// Tabs layout
+					margin: 0 5px;
+					padding: 0;
+					border: 1px solid transparent;
+					border-bottom-width: 0;
+					border-radius: 0;
+					text-shadow: none;
+					border-top-left-radius: $navtabs-border-radius;
+					border-top-right-radius: $navtabs-border-radius;
+
+					&.selected {
+						position: relative;
+						&:after {
+							content: '';
+							pointer-events: none;
+							border-top-left-radius: 2px;
+							border-top-right-radius: 2px;
+							position: absolute;
+							left: 0px;
+							right: 0px;
+							bottom: -2px;
+							z-index: 3;
+							height: 4px;
+						}
+					}
+
+					// Link
+					.nav-link.dropdown-toggle {
+						&:before {
+							display: none;
+							right: 2px;
+							.rtl & {
+								right: auto;
+								left: 2px;
+							}
+						}
+						&:hover:before {
+							display: block;
+						}
+					}
+
+					// Dropdown position
+					&.dropdown-right .dropdown {
+						left: -1px;
+					}
+
+					&.dropdown-left .dropdown {
+						right: -1px;
+					}
+
+					&.dropdown-down .dropdown {
+						top: ($tab-height - 1);
+					}
+
+					&.dropdown-up .dropdown {
+						bottom: ($tab-height - 1);
+					}
+				}
+
+				.rightside li.tab {
+					margin: 0 2px;
+				}
+			}
+
+			// Second row
+			+ .navbar.secondary {
+				border: 1px solid transparent;
+				border-radius: $border-radius;
+				font-size: 13px;
+				z-index: 2;
+				position: relative;
+				margin: 0 0 10px;
+				padding: 0 5px;
 			}
 		}
 	}
@@ -1789,7 +1880,7 @@ ul.linklist:after,
 
 .dropdown-extended {
 	display: none;
-	z-index: 1;
+	z-index: 3;
 }
 
 .dropdown-extended ul {

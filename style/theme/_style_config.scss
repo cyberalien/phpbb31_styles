@@ -15,6 +15,8 @@ $max-width:								1152px;	// Maximum width. Set to "none" to make layout fluid
 
 $split-forums:							false;	// Changes layout of forums list. Values are true or false
 
+$tabbed-navigation:						false;	// true or false. Toggles tabbed navigation layout
+
 //
 // Color palette
 //
@@ -322,5 +324,33 @@ $post-side:								if($profile-side == left, right, left);
 	}
 	&:-ms-input-placeholder {
 		@content
+	}
+}
+
+@mixin tabbed-nav-layout-all {
+	@if ($use-wrapper) {
+		&, #wrap & {
+			@content;
+		}
+	}
+	@else {
+		@content;
+	}
+}
+
+@mixin tabbed-nav-layout-alt {
+	@if ($use-wrapper) {
+		@content;
+	}
+}
+
+@mixin tabbed-nav-layout-default {
+	@if ($use-wrapper) {
+		#wrap & {
+			@content;
+		}
+	}
+	@else {
+		@content;
 	}
 }
