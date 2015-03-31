@@ -621,6 +621,9 @@ dd.option {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	padding-bottom: 0.5em;
+	&.faq-title {
+		margin-top: 5px;
+	}
 }
 
 .panel h3 {
@@ -653,6 +656,7 @@ dl.faq dt {
 	font-size: $post-title-font-size;
 	line-height: $post-title-line-height;
 	font-weight: normal;
+	margin-bottom: 5px;
 }
 
 .content dl.faq {
