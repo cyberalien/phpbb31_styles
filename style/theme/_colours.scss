@@ -574,6 +574,9 @@ ul.topiclist li.row dt a.subforum.unread {
 li.row {
 	border-top-color: $block-top-border;
 	border-bottom-color: $block-bottom-border;
+	.subforums-list strong {
+		color: $muted-color;
+	}
 }
 
 li.row strong {
