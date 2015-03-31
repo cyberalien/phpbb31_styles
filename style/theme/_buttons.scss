@@ -7,14 +7,14 @@
 .button {
 	cursor: pointer;
 	display: inline-block;
-	height: 18px;
-	line-height: 18px;
-	font-size: 13px;
+	height: $button-line-height;
+	line-height: $button-line-height;
+	font-size: $button-font-size;
 	white-space: nowrap;
-	border: 1px solid transparent;
+	border: $button-border-width solid transparent;
 	border-radius: $big-button-border-radius;
 	background: transparent none 0 0 repeat-x;
-	padding: 2px 8px;
+	padding: $button-top-padding $button-side-padding;
 	font-family: "Open Sans", "Droid Sans", Verdana, Arial, Helvetica;
 	position: relative;
 	text-decoration: none !important;
@@ -23,7 +23,7 @@
 
 	.buttons > & {
 		border-width: 0;
-		padding: 3px 9px;
+		padding: ($button-top-padding + $button-border-width) ($button-side-padding + $button-border-width);
 	}
 
 	& > strong {
