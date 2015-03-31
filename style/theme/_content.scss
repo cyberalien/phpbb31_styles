@@ -64,7 +64,7 @@ ul.topiclist dt, ul.topiclist dd {
 ul.topiclist dt {
 	width: 100%;
 	margin-right: -440px;
-	font-size: 1.1em;
+	font-size: $font-size;
 }
 
 ul.topiclist.missing-column dt {
@@ -187,20 +187,19 @@ li.row strong {
 }
 
 li.header dt, li.header dd {
-	line-height: 12px;
 	border-left-width: 0;
 	padding-top: 0;
 	padding-bottom: 0;
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	line-height: 18px;
+	font-size: $list-heading-font-size;
+	font-family: $list-heading-font-family;
+	line-height: $list-heading-line-height;
 }
 
 li.header dt {
 	.forabg & {
-		font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
-		font-weight: 500;
-		font-size: 14px;
+		font-family: $forum-heading-font-family;
+		font-weight: $forum-heading-font-weight;
+		font-size: $forum-heading-font-size;
 	}
 	width: 100%;
 	margin-right: -440px;
@@ -303,7 +302,7 @@ dd.posts, dd.topics, dd.views, dd.extra, dd.mark {
 
 dd.posts, dd.topics, dd.views, dd.extra, dd.mark, dd.lastpost.empty {
 	line-height: 34px;
-	font-size: 12px;
+	font-size: $forum-list-column-font-size;
 	.with-description & {
 		line-height: 42px;
 	}
@@ -358,13 +357,13 @@ dd.option {
 	width: 125px;
 	line-height: 200%;
 	text-align: center;
-	font-size: 1.1em;
+	font-size: $font-size;
 }
 
 /* Forums list layout
 ----------------------*/
 .forum-description {
-	font-size: 12px;
+	font-size: $forum-list-description-font-size;
 	padding-top: 2px;
 }
 

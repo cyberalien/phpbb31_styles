@@ -39,8 +39,26 @@ $nav-secondary-font-size:				$font-size;
 $heading-font-size:						$font-size + 4px;
 $panel-heading-font-size:				$font-size + 6px;
 
+$list-heading-font-size:				$font-size + 1px;
+$list-heading-line-height:				$font-size + 7px;
+$list-heading-font-family:				"Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
+
+$forum-heading-font-size:				$list-heading-font-size + 2px;
+$forum-heading-font-family:				$list-heading-font-family;
+$forum-heading-font-weight:				500;
+
 $button-font-size:						$font-size + 3px;
 $button-line-height:					$font-size + 8px;
+
+$dropdown-header-font-size:				$font-size + 2px;
+$dropdown-header-font-family:			Arial, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$dropdown-header-line-height:			30px;
+
+$forum-link-font-size:					$font-size + 6px;
+$forum-link-font-family:				"Trebuchet MS", Arial, Helvetica, sans-serif;
+
+$forum-list-column-font-size:			$font-size + 1px;
+$forum-list-description-font-size:		$font-size + 2px;
 
 //
 // Color palette
