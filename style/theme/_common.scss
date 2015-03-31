@@ -120,7 +120,7 @@ h4 {
 	font-size: $h4-font-size;
 }
 
-$paragraph-font-size:	ceil($font-size * 1.1) !default;
+$paragraph-font-size:	$font-size !default;
 
 p {
 	line-height: $paragraph-line-height;
