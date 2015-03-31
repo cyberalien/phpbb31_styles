@@ -118,6 +118,11 @@ hr {
 	color: $header-text;
 }
 
+/* Navigation */
+.breadcrumbs .crumb:before {
+	color: $muted-color;
+}
+
 .navbar {
 	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
 	border-color: $block-top-border $block-bottom-border $block-bottom-border $block-top-border;
@@ -362,7 +367,7 @@ table.table1 tbody tr:hover, table.table1 tbody tr.hover {
 }
 
 table.table1 td {
-	color: $tab-color;
+	color: $text-color;
 }
 
 table.table1 tbody td {
