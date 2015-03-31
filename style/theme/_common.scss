@@ -1022,11 +1022,12 @@ ul.linklist {
 	padding: 5px 10px;
 }
 
-$list-font-size:	$font-size + 1px !default;
+$list-font-size:	$font-size !default;
+$list-line-height:	2 !default;
 ul.linklist > li {
 	float: left;
 	font-size: $list-font-size;
-	line-height: 2;
+	line-height: $list-line-height;
 	list-style-type: none;
 	margin-right: 7px;
 	padding-top: 1px;
@@ -1262,7 +1263,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	border-radius: min($border-radius, 5px) min($border-radius, 5px) 0 0;
 }
 
-$dropdown-content-font-size:	$font-size !default;
+$dropdown-content-font-size:	$font-size + 1px !default;
 $dropdown-content-line-height:	$line-height !default;
 
 .dropdown li {
@@ -1325,10 +1326,10 @@ $dropdown-content-line-height:	$line-height !default;
 	font-weight: bold;
 	word-wrap: normal;
 	position: relative;
-	padding-left: 13px;
+	padding-left: $list-font-size + 2px;
 	.rtl & {
 		padding-left: 0;
-		padding-right: 13px;
+		padding-right: $list-font-size + 2px;
 	}
 }
 
@@ -1337,17 +1338,17 @@ $dropdown-content-line-height:	$line-height !default;
 	font-family: FontAwesome;
 	font-weight: normal;
 	position: absolute;
-	left: 2px;
-	width: 10px;
+	left: 1px;
+	width: $list-font-size;
 	top: 50%;
-	margin-top: -5px;
-	font-size: 7px;
-	height: 11px;
-	line-height: 11px;
+	margin-top: -#{$list-font-size / 2};
+	font-size: $list-font-size - 4px;
+	height: $list-font-size;
+	line-height: $list-font-size;
 	text-align: center;
 	.rtl & {
 		left: auto;
-		right: 2px;
+		right: 1px;
 		content: '\f053';	// fa-chevron-left
 	}
 }
@@ -1511,8 +1512,7 @@ table.info tbody th {
 }
 
 dl.details {
-	/*font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;*/
-	font-size: 1.1em;
+	font-size: $font-size;
 }
 
 dl.details dt {
@@ -1554,7 +1554,7 @@ fieldset.fields1 dd.recipients {
 }
 
 fieldset.fields1 ul.recipients  input.button2{
-	font-size: 0.8em;
+	font-size: $font-size - 2px;
 	margin-right: 0;
 	padding: 0;
 }
@@ -1570,7 +1570,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 /* Action-bars (container for post/reply buttons, pagination, etc.)
 ---------------------------------------- */
 .action-bar {
-	font-size: 11px;
+	font-size: $font-size;
 	margin: 4px 0;
 }
 
@@ -1580,9 +1580,14 @@ fieldset.fields1 dl.pmlist dd.recipients {
 
 /* Pagination
 ---------------------------------------- */
+$pagination-font-size:				$font-size !default;
+$pagination-line-height:			$font-size + 2px !default;
+$pagination-link-font-size:			$font-size !default;
+$pagination-link-line-height:		$font-size !default;
+
 .pagination {
 	float: right;
-	font-size: 11px;
+	font-size: $font-size;
 	margin-top: 3px;
 	text-align: right;
 	width: auto;
@@ -1601,7 +1606,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 .pagination > ul > li {
 	display: inline-block !important;
 	padding: 0;
-	font-size: 100%;
+	font-size: $font-size;
 	line-height: normal;
 	vertical-align: middle;
 }
@@ -1610,9 +1615,9 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	border: 1px solid transparent;
 	border-radius: 2px;
 	display: block;
-	font-size: 0.9em;
+	font-size: $pagination-link-font-size;
 	font-weight: normal;
-	line-height: 13px;
+	line-height: $pagination-link-line-height;
 	min-width: 10px;
 	padding: 3px;
 	text-align: center;
@@ -1631,12 +1636,13 @@ fieldset.fields1 dl.pmlist dd.recipients {
 .pagination li.page-jump a, .pagination li.next a, .pagination li.previous a {
 	position: relative;
 	font-size: 0;
-	height: 13px;
-	width: 11px;
+	height: $pagination-link-line-height;
+	width: $pagination-link-font-size;
+	padding: 3px;
 }
 
 .pagination li.page-jump a {
-	width: 14px;
+	width: $pagination-font-size + 4px;
 	background: transparent none !important;
 	border-color: transparent !important;
 	padding-left: 0;
@@ -1648,9 +1654,9 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	left: 3px;
 	right: 3px;
 	top: 4px;
-	height: 13px;
-	font-size: 9px;
-	line-height: 13px;
+	height: $pagination-link-line-height;
+	font-size: $pagination-link-font-size;
+	line-height: $pagination-link-line-height;
 	text-align: center;
 	font-weight: normal;
 	text-indent: 0;
@@ -1659,7 +1665,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 }
 
 .pagination li.page-jump a:after {
-	font-size: 13px;
+	font-size: $pagination-font-size;
 }
 
 .rtl .pagination li.previous a:after,
@@ -1681,7 +1687,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	display: block;
 	margin-top: 0;
 	padding: 1px 0;
-	font-size: 0.9em;
+	font-size: $pagination-link-font-size;
 }
 
 .row .pagination > ul {
@@ -1690,7 +1696,7 @@ fieldset.fields1 dl.pmlist dd.recipients {
 
 .row .pagination li a, .row .pagination li span {
 	border-radius: 1px;
-	padding: 1px;
+	padding: 2px 1px;
 }
 
 /* jQuery popups

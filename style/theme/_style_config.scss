@@ -21,7 +21,7 @@ $tabbed-navigation:						false;	// true or false. Toggles tabbed navigation layo
 // Fonts
 //
 
-$font-size:								10px;	// Base font size
+$font-size:								11px;	// Base font size
 $font-family:							Verdana, Helvetica, Arial, sans-serif;	// Default font
 $line-height:							1.4;	// Line height
 
@@ -33,8 +33,8 @@ $h2-font-family:						"Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sa
 
 $paragraph-line-height:					1.3;
 
-$nav-primary-font-size:					$font-size + 2px;
-$nav-secondary-font-size:				$font-size + 1px;
+$nav-primary-font-size:					$font-size + 1px;
+$nav-secondary-font-size:				$font-size;
 
 $heading-font-size:						$font-size + 4px;
 $panel-heading-font-size:				$font-size + 6px;
