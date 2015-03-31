@@ -1782,7 +1782,7 @@ $pagination-link-line-height:		$font-size !default;
 .phpbb_alert div.alert_text > select,
 .phpbb_alert div.alert_text > textarea,
 .phpbb_alert div.alert_text > input {
-	font-size: 1.1em;
+	font-size: $font-size;
 }
 
 #darkenwrapper {
@@ -1846,12 +1846,14 @@ $pagination-link-line-height:		$font-size !default;
 
 .error {
 	font-weight: bold;
-	font-size: 1em;
+	font-size: $font-size;
 }
+
+$rules-font-size:	$font-size !default;
 
 div.rules {
 	margin: 10px 0;
-	font-size: 1.1em;
+	font-size: $rules-font-size;
 	padding: 5px 10px;
 	border-radius: $border-radius;
 }
@@ -1860,12 +1862,15 @@ div.rules ul, div.rules ol {
 	margin-left: 20px;
 }
 
+$post-notice-font-size:		$font-size + 1px;
+
 p.post-notice {
 	position: relative;
 	padding: 5px;
 	padding-left: 26px;
 	min-height: 14px;
 	margin-bottom: 1em;
+	font-size: $post-notice-font-size;
 }
 
 p.post-notice:before {
@@ -1951,7 +1956,7 @@ ul.linklist:after,
 }
 
 .member-search strong {
-	font-size: 0.95em;
+	font-size: $font-size;
 }
 
 .dropdown-extended {
@@ -1972,7 +1977,7 @@ ul.linklist:after,
 	float: none;
 	border-top: 1px solid;
 	list-style-type: none;
-	font-size: 0.95em;
+	font-size: $font-size;
 	clear: both;
 	position: relative;
 }
@@ -2001,12 +2006,12 @@ ul.linklist:after,
 		margin-top: -3px;
 	}
 	padding: 0 10px;
-	font-family: Arial, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 11px;
+	font-family: $dropdown-header-font-family;
+	font-size: $dropdown-header-font-size;
 	font-weight: bold;
 	text-align: left;
-	text-transform: uppercase;
-	line-height: 30px;
+	// text-transform: uppercase;
+	line-height: $dropdown-header-line-height;
 }
 
 .dropdown-extended .header .header_settings {
@@ -2017,7 +2022,7 @@ ul.linklist:after,
 
 .dropdown-extended .footer {
 	text-align: center;
-	font-size: 1.1em;
+	font-size: $font-size;
 }
 
 .dropdown-extended ul li a, .dropdown-extended ul li.no-url {
@@ -2044,7 +2049,7 @@ ul.linklist:after,
 
 .notification_list ul li p {
 	margin-bottom: 4px;
-	font-size: 1em;
+	font-size: $font-size;
 }
 
 .notification_list p.notification-reference,
@@ -2056,7 +2061,7 @@ ul.linklist:after,
 }
 
 .notification_list p.notification-time {
-	font-size: 10px;
+	font-size: $font-size - 1px;
 	margin: 0;
 	text-align: right;
 }
@@ -2071,16 +2076,16 @@ ul.linklist:after,
 }
 
 .notification_list p.notifications_title {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 13px !important;
+	font-family: $topic-link-font-family;
+	font-size: $topic-link-font-size !important;
 }
 
 .notification_list p.notifications_title strong {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .notification_list p.notifications_time {
-	font-size: 10px !important;
+	font-size: $font-size !important;
 }
 
 .notification_text {
