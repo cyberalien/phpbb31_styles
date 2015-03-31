@@ -111,7 +111,7 @@ h3 {
 	margin-top: 20px;
 }
 
-$h4-font-size:			($font-size * 1.3) !default;
+$h4-font-size:			ceil($font-size * 1.3) !default;
 $h4-font-family:		$h1-font-family !default;
 
 h4 {
@@ -120,7 +120,7 @@ h4 {
 	font-size: $h4-font-size;
 }
 
-$paragraph-font-size:	($font-size * 1.1) !default;
+$paragraph-font-size:	ceil($font-size * 1.1) !default;
 
 p {
 	line-height: $paragraph-line-height;
@@ -307,6 +307,11 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 $nav-primary-font-size:		$font-size + 2px !default;
 $nav-secondary-font-size:	$font-size + 1px !default;
 
+$nav-primary-glyph-font-size:	$nav-primary-font-size + 2px !default;
+$nav-primary-glyph-margin:		0px - ($nav-primary-glyph-font-size  / 2) !default;
+
+$nav-alert-font-size:		9px !default;
+
 .navbar {
 	$navtabs-border-radius: min(5px, $border-radius) !default;
 	$navtabs-border-radius-small: max(0px, $navtabs-border-radius - 2) !default;
@@ -453,15 +458,16 @@ $nav-secondary-font-size:	$font-size + 1px !default;
 			&.dropdown-toggle {
 				position: relative;
 				&:before {
+					$nav-primary-font-size-toggle:	ceil($nav-primary-font-size * 2 / 3) !default;
 					content: '\f078';	// fa-chevron-down
 					font-family: FontAwesome;
 					position: absolute;
 					right: 0;
 					top: 50%;
-					font-size: 8px;
-					line-height: 12px;
-					width: 8px;
-					height: 12px;
+					font-size: $nav-primary-font-size-toggle;
+					line-height: $nav-primary-font-size;
+					width: $nav-primary-font-size-toggle;
+					height: $nav-primary-font-size;
 					margin-top: -6px;
 					.rtl & {
 						right: auto;
@@ -498,20 +504,20 @@ $nav-secondary-font-size:	$font-size + 1px !default;
 			& > strong {
 				display: none;
 				font-weight: bold;
-				font-size: 9px;
+				font-size: $nav-alert-font-size;
 				padding: 0 2px;
 				border-radius: 3px;
 				position: absolute;
 				right: 5px;
 				top: -10px;
-				line-height: 14px;
+				line-height: $nav-alert-font-size + 5px;
 				min-width: 10px;
 				_width: 10px;
 				text-align: center;
 				text-shadow: none;
 				white-space: nowrap;
 				word-wrap: normal;
-				height: 14px;
+				height: $nav-alert-font-size + 5px;
 				pointer-events: none;
 				.rtl & {
 					right: auto;
@@ -543,11 +549,11 @@ $nav-secondary-font-size:	$font-size + 1px !default;
 				position: absolute;
 				left: $tab-padding;
 				top: 50%;
-				margin-top: -7px;
-				width: 14px;
-				font-size: 12px;
-				line-height: 14px;
-				height: 14px;
+				margin-top: $nav-primary-glyph-margin;
+				width: $nav-primary-glyph-font-size;
+				font-size: $nav-primary-font-size;
+				line-height: $nav-primary-glyph-font-size;
+				height: $nav-primary-glyph-font-size;
 				text-align: left;
 				font-weight: normal;
 				font-style: normal;
@@ -565,12 +571,12 @@ $nav-secondary-font-size:	$font-size + 1px !default;
 		%glyph-only {
 			@extend %glyph;
 			text-indent: 999px;
-			width: 14px;
+			width: $nav-primary-glyph-font-size;
 			padding: 0 $tab-padding-glyph;
 			overflow: hidden;
 			&:after {
 				text-align: center;
-				font-size: 14px;
+				font-size: $nav-primary-glyph-font-size;
 				left: $tab-padding-glyph;
 			}
 			.rtl &:after {
@@ -588,12 +594,12 @@ $nav-secondary-font-size:	$font-size + 1px !default;
 		@media (max-width: 550px) {
 			%glyph-only-media {
 				text-indent: 999px;
-				width: 14px;
+				width: $nav-primary-glyph-font-size;
 				padding: 0 $tab-padding-glyph;
 				overflow: hidden;
 				&:after {
 					text-align: center;
-					font-size: 14px;
+					font-size: $nav-primary-glyph-font-size;
 					left: $tab-padding-glyph;
 				}
 				.rtl &:after {
@@ -667,7 +673,7 @@ $nav-secondary-font-size:	$font-size + 1px !default;
 			&:after {
 				@extend %glyph-gi;
 				content: '\E130';	// glyphicons-message-new
-				margin-top: -8px;
+				margin-top: ceil($nav-primary-glyph-margin * 1.3);
 			}
 		}
 
@@ -676,7 +682,7 @@ $nav-secondary-font-size:	$font-size + 1px !default;
 			&:after {
 				@extend %glyph-fa;
 				content: '\f0f3';	// fa-bell
-				font-size: 13px;
+				font-size: $nav-primary-glyph-font-size - 1px;
 			}
 		}
 
@@ -833,7 +839,7 @@ $nav-secondary-font-size:	$font-size + 1px !default;
 			+ .navbar.secondary {
 				border: 1px solid transparent;
 				border-radius: $border-radius;
-				font-size: 13px;
+				font-size: $nav-secondary-font-size;
 				z-index: 2;
 				position: relative;
 				margin: 0 0 10px;
