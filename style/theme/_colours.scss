@@ -107,6 +107,11 @@ hr {
 	color: $header-text;
 }
 
+/* Navigation */
+.breadcrumbs .crumb:before {
+	color: $muted-color;
+}
+
 .navbar {
 	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
 	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
@@ -329,7 +334,7 @@ table.table1 tbody tr:hover, table.table1 tbody tr.hover {
 }
 
 table.table1 td {
-	color: $tab-color;
+	color: $text-color;
 }
 
 table.table1 tbody td {
