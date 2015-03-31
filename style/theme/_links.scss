@@ -66,9 +66,9 @@ li.breadcrumbs span:first-child > a {
 /* Links for forum/topic lists */
 a.forumtitle {
 	display: inline-block;
-	font-family: "Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sans-serif;
-	font-size: 16px;
-	line-height: 1.2em;
+	font-family: $forum-link-font-family;
+	font-size: $forum-link-font-size;
+	line-height: $forum-link-line-height;
 	font-weight: 500;
 	padding-bottom: 2px;
 	text-decoration: none;
@@ -79,7 +79,8 @@ a.forumtitle {
 
 a.topictitle {
 	@extend a.forumtitle;
-	font-size: 15px;
+	font-family: $topic-link-font-family;
+	font-size: $topic-link-font-size;
 }
 
 a.lastsubject {
@@ -140,6 +141,12 @@ a.top {
 a.top2 {
 	text-decoration: none;
 	padding-left: 15px;
+	dl.faq & {
+		float: right;
+		.rtl & {
+			float: left;
+		}
+	}
 }
 
 a.top, a.top2 {
