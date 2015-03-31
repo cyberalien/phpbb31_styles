@@ -320,9 +320,6 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 }
 
-$nav-primary-font-size:		$font-size + 2px !default;
-$nav-secondary-font-size:	$font-size + 1px !default;
-
 $nav-primary-glyph-font-size:	$nav-primary-font-size + 2px !default;
 $nav-primary-glyph-margin:		0px - ($nav-primary-glyph-font-size  / 2) !default;
 
@@ -1023,10 +1020,11 @@ ul.linklist {
 	padding: 5px 10px;
 }
 
+$list-font-size:	$font-size + 1px !default;
 ul.linklist > li {
 	float: left;
-	font-size: 1.1em;
-	line-height: 2.2em;
+	font-size: $list-font-size;
+	line-height: 2;
 	list-style-type: none;
 	margin-right: 7px;
 	padding-top: 1px;
@@ -1066,13 +1064,15 @@ ul.linklist li.responsive-menu {
 	margin: 0 5px;
 }
 
+$responsive-menu-font-size:		$font-size + 2px !default;
+
 ul.linklist li.responsive-menu a.responsive-menu-link {
 	display: inline-block;
 	margin: 0 5px;
-	font-size: 16px;
+	font-size: $responsive-menu-font-size + 4px;
 	position: relative;
-	width: 16px;
-	line-height: 20px;
+	width: $responsive-menu-font-size + 4px;
+	line-height: $responsive-menu-font-size + 8px;
 	text-decoration: none;
 }
 
@@ -1085,11 +1085,11 @@ ul.linklist li.responsive-menu a.responsive-menu-link {
 		position: absolute;
 		left: 0;
 		top: 50%;
-		margin-top: -6px;
-		width: 14px;
-		font-size: 12px;
-		line-height: 12px;
-		height: 12px;
+		margin-top: -#{$responsive-menu-font-size / 2};
+		width: $responsive-menu-font-size + 2px;
+		font-size: $responsive-menu-font-size;
+		line-height: $responsive-menu-font-size;
+		height: $responsive-menu-font-size;
 		text-align: center;
 		font-weight: normal;
 		font-style: normal;
@@ -1116,11 +1116,11 @@ li.responsive-menu.dropdown-left .dropdown {
 }
 
 ul.linklist .dropdown {
-	top: 22px;
+	top: $list-font-size * 2;
 }
 
 ul.linklist .dropdown-up .dropdown {
-	bottom: 18px;
+	bottom: $list-font-size * 2;
 	top: auto;
 }
 
@@ -1196,7 +1196,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 .dropdown {
 	position: absolute;
 	left: 0;
-	top: 1.2em;
+	top: if(unitless($line-height), #{$line-height}em, $line-height);
 	z-index: 30;
 	padding: 0;
 	margin-right: -500px;
@@ -1212,7 +1212,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 
 .dropdown-up .dropdown {
 	top: auto;
-	bottom: 1.2em;
+	bottom: if(unitless($line-height), #{$line-height}em, $line-height);
 }
 
 .dropdown-left .dropdown, .nojs .rightside .dropdown {
@@ -1223,12 +1223,12 @@ ul.linklist.bulletin > li.no-bulletin:before {
 }
 
 .dropdown-button-control .dropdown {
-	top: 24px;
+	top: $button-height;
 }
 
 .dropdown-button-control.dropdown-up .dropdown {
 	top: auto;
-	bottom: 24px;
+	bottom: $button-height;
 }
 
 .dropdown .pointer {
