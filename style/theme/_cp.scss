@@ -34,12 +34,13 @@
 }
 
 .panel-container .panel p {
-	font-size: 1.1em;
+	font-size: $panel-font-size;
+	line-height: $panel-line-height;
 }
 
 .panel-container .panel ol {
 	margin-left: 2em;
-	font-size: 1.1em;
+	font-size: $panel-font-size;
 }
 
 .panel-container .panel li.row {
@@ -90,7 +91,7 @@ ul.cplist {
 }
 
 .panel-container .postbody p.author {
-	font-size: 1.1em;
+	font-size: $font-size;
 }
 
 #cp-main .buttons {
@@ -127,18 +128,20 @@ ul.cplist {
 #tabs .tab, #minitabs .tab {
 	display: block;
 	float: left;
-	font-size: 1em;
+	font-size: $tab-font-size;
 	font-weight: bold;
-	line-height: 14px;
+	line-height: $tab-line-height;
 }
 
 #tabs .tab > a, #minitabs .tab > a {
 	display: block;
-	padding: 5px 9px;
+	padding: 0 9px;
 	position: relative;
 	text-decoration: none;
 	white-space: nowrap;
 	cursor: pointer;
+	font-size: inherit;
+	line-height: inherit;
 }
 
 /* CP tabbed menu
@@ -155,7 +158,7 @@ ul.cplist {
 
 #tabs .activetab > a {
 	margin-top: 0;
-	padding-bottom: 7px;
+	padding-bottom: 2px;
 }
 
 /* Mini tabbed menu used in MCP
@@ -220,9 +223,10 @@ a.responsive-tab-link {
 }
 
 #tabs .dropdown, #minitabs .dropdown {
-	top: 20px;
+	top: $tab-line-height + 2px;
 	margin-right: -2px;
-	font-size: 1.1em;
+	font-size: $dropdown-content-font-size;
+	line-height: $dropdown-content-line-height;
 	font-weight: normal;
 }
 
@@ -231,7 +235,7 @@ a.responsive-tab-link {
 }
 
 #tabs .dropdown-up .dropdown, #minitabs .dropdown-up .dropdown {
-	bottom: 20px;
+	bottom: $tab-line-height + 2px;
 	top: auto;
 }
 
@@ -275,6 +279,8 @@ a.responsive-tab-link {
 	margin: 2px 0;
 	border-radius: max(0px, $border-radius - 2px);
 	text-decoration: none;
+	font-size: $font-size;
+	line-height: $line-height;
 }
 
 #navigation a:hover {

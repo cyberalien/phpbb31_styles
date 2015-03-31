@@ -4,6 +4,9 @@
 /* Rollover buttons
    Based on: http://wellstyled.com/css-nopreload-rollovers.html
 ----------------------------------------*/
+$button-inner-height:	$button-line-height + $button-top-padding * 2;
+$button-outer-height:	$button-inner-height + $button-border-width * 2;
+
 .button {
 	cursor: pointer;
 	display: inline-block;
@@ -41,12 +44,12 @@
 	content: '\f013';	// fa-cog
 	display: inline-block;
 	float: right;
-	height: 12px;
+	height: $button-glyph-font-size + 2px;
 	margin: 3px 0 0 2px;
-	width: 12px;
+	width: $button-glyph-font-size + 2px;
 	font-family: FontAwesome;
-	font-size: 10px;
-	line-height: 12px;
+	font-size: $button-glyph-font-size;
+	line-height: $button-glyph-font-size + 2px;
 	text-align: center;
 	font-weight: normal;
 	text-indent: 0;
@@ -87,15 +90,15 @@
 	@extend .icon-button:before;
 	@extend %icon-button;
 	@extend %icon-button-visible;
-	border-left: 1px solid;
+	border-left: 1px solid transparent;
 	content: '\f0d7';	// fa-caret-down
 	position: absolute;
 	float: none;
 	margin: 0;
 	top: 0;
 	right: 0;
-	line-height: 22px;
-	height: 22px;
+	line-height: $button-inner-height;
+	height: $button-inner-height;
 	width: 16px;
 	vertical-align: baseline;
 }
@@ -162,10 +165,10 @@
 	@extend %icon-button-visible;
 	content: '\f0ad';	// fa-wrench
 	font-size: 14px;
-	height: 16px;
-	margin-top: 1px;
+	height: $button-line-height;
+	margin-top: 0;
 	width: 16px;
-	line-height: 16px;
+	line-height: $button-line-height;
 }
 
 .search-icon:before {
@@ -383,6 +386,7 @@ ul.linklist.bulletin > li.small-icon:before {
 	content: '\E151';	// glyphicons-edit
 	margin-right: -2px;
 	font-size: 11px;
+	margin-top: 2px;
 }
 .warn-icon:before {
 	@extend %icon-button;
@@ -437,9 +441,12 @@ ul.linklist.bulletin > li.small-icon:before {
 	top: 20px;
 }
 
+$post-dropdown-glyphs-font-size:	floor($dropdown-content-font-size / 2) * 2;
+
 .post-buttons .dropdown a {
 	display: block;
-	font-size: 1.2em;
+	font-size: $dropdown-content-font-size;
+	line-height: $dropdown-content-line-height;
 	text-align: left;
 	margin-left: 18px;
 	position: relative;
@@ -447,9 +454,9 @@ ul.linklist.bulletin > li.small-icon:before {
 		position: absolute;
 		left: -16px;
 		top: 50%;
-		height: 14px;
-		line-height: 14px;
-		margin: -7px 0 0;
+		height: $post-dropdown-glyphs-font-size;
+		line-height: $post-dropdown-glyphs-font-size + 2px;
+		margin: -#{$post-dropdown-glyphs-font-size / 2} 0 0;
 		pointer-events: none;
 	}
 	&:hover:before {
