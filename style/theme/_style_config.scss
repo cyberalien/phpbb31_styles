@@ -74,6 +74,17 @@ $post-title-font-size:					$font-size + 5px;
 $post-title-line-height:				1.25;
 $post-title-font-family:				$h2-font-family;
 
+$post-signature-font-size:				$font-size + 1px;
+$post-quote-font-size:					$post-content-font-size - 1px;
+$post-code-font-size:					$post-content-font-size - 1px;
+
+$post-block-title-font-size:			$post-quote-font-size;	// Quote title, code title
+$post-block-title-line-height:			1.6;
+$post-block-title-font-family:			$post-content-font-family;
+
+$post-profile-font-size:				$font-size;
+$post-profile-line-height:				$line-height;
+
 //
 // Color palette
 //
