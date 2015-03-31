@@ -153,18 +153,21 @@ a.top, a.top2 {
 	position: relative;
 }
 
+$top-link-font-size:		ceil(($font-size + 1px) / 2) * 2 !default;
+$top-link-line-height:		$top-link-font-size + 2px !default;
+
 a.top:after, a.top2:after {
 	content: '\f139';	// fa- @fa-var-chevron-circle-up
 	font-family: FontAwesome;
 	position: absolute;
 	top: 50%;
 	left: 0;
-	height: 14px;
-	width: 14px;
-	margin-top: -7px;
+	height: $top-link-line-height;
+	width: $top-link-line-height;
+	margin-top: (0px - $top-link-line-height / 2);
 	text-align: center;
-	font-size: 12px;
-	line-height: 14px;
+	font-size: $top-link-font-size;
+	line-height: $top-link-line-height;
 	vertical-align: baseline;
 	font-weight: normal;
 	font-style: normal;
