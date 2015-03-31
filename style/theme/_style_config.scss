@@ -33,6 +33,14 @@ $h2-font-family:						"Droid Sans","Open Sans","Trebuchet MS",Helvetica,Arial,sa
 
 $paragraph-line-height:					1.3;
 
+$nav-primary-font-size:					$font-size + 3px;
+$nav-secondary-font-size:				$font-size + 2px;
+
+$heading-font-size:						$font-size + 4px;
+
+$button-font-size:						$font-size + 3px;
+$button-line-height:					$font-size + 8px;
+
 //
 // Color palette
 //
@@ -189,6 +197,11 @@ $button-icon:							#fff;
 $button-icon-hover:						#fff;
 $button-text:							#fff;
 
+$button-top-padding:					2px;
+$button-side-padding:					8px;
+$button-border-width:					1px;
+$button-height:							$button-line-height + ($button-top-padding + $button-border-width) * 2;
+
 $big-button-border-radius:				2px;	// For big buttons and blocks like quick search
 
 // BBCode
@@ -247,8 +260,8 @@ $post-side:								if($profile-side == left, right, left);
 	border: 0 solid $heading-border;
 	padding: 5px;
 	text-transform: none;
-	font-size: 14px;
-	line-height: 18px;
+	font-size: $heading-font-size;
+	line-height: $line-height;
 	font-weight: normal;
 	color: $heading-color;
 
