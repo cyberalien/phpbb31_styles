@@ -5,27 +5,27 @@
 ----------------------------------------*/
 fieldset {
 	border-width: 0;
-	font-family: Verdana, Helvetica, Arial, sans-serif;
-	font-size: 1.1em;
+	font-family: $font-family;
+	font-size: $font-size;
 }
 
 input {
 	font-weight: normal;
 	vertical-align: middle;
 	padding: 0 3px;
-	font-size: 1em;
-	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: $font-size;
+	font-family: $font-family;
 }
 
 select {
-	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-family: $font-family;
 	font-weight: normal;
 	cursor: pointer;
 	vertical-align: middle;
 	border: 1px solid transparent;
 	border-radius: $input-border-radius;
 	padding: 1px;
-	font-size: 1em;
+	font-size: $font-size;
 }
 
 select:focus {
@@ -38,15 +38,15 @@ option {
 
 select optgroup option {
 	padding-right: 1em;
-	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-family: $font-family;
 }
 
 textarea {
-	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	font-family: $post-content-font-family;
 	width: 60%;
 	padding: 2px;
-	font-size: 1em;
-	line-height: 1.4em;
+	font-size: $post-content-font-size;
+	line-height: $post-content-line-height;
 	border-radius: $input-border-radius;
 	-webkit-appearance: none;
 }
@@ -239,12 +239,13 @@ fieldset.submit-buttons input {
 }
 
 #message-box textarea {
-	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+	font-family: $post-content-font-family;
 	width: 450px;
 	height: 270px;
 	min-width: 100%;
 	max-width: 100%;
-	font-size: 1.2em;
+	font-size: $post-content-font-size;
+	line-height: $post-content-line-height;
 	resize: vertical;
 }
 
@@ -305,16 +306,20 @@ input[type="search"]::-webkit-search-cancel-button {
 /* Form button styles
 ---------------------------------------- */
 input.button1, input.button2 {
-	font-size: 1em;
+	font-size: $input-button-font-size;
 }
 
 a.button1, input.button1, input.button3, a.button2, input.button2 {
 	width: auto !important;
 	padding-top: 1px;
 	padding-bottom: 1px;
-	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	font-family: $input-button-font-family;
 	background: transparent none repeat-x top left;
 	border-radius: $button-border-radius;
+	font-size: $input-button-font-size;
+	#format-buttons & {
+		font-size: $bbcode-button-font-size;
+	}
 }
 
 a.button1, input.button1 {
@@ -373,7 +378,7 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	border-right-width: 0;
 	border-radius: $big-button-border-radius 0 0 $big-button-border-radius;
 	float: left;
-	height: 24px;
+	height: $button-outer-height;
 	padding: 3px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -393,7 +398,7 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 .search-box button.search-icon {
 	border-radius: 0;
 	font-size: 0;
-	height: 24px;
+	height: $button-outer-height;
 	margin: 0;
 	padding: 3px 5px;
 }
