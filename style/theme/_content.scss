@@ -469,9 +469,9 @@ dd.option {
 ----------------------------------------*/
 .postbody {
 	padding: 0;
-	float: $post-side;
 	line-height: 1.48em;
 	.postprofile + & {
+		float: $post-side;
 		margin-#{$profile-side}: -#{$post-margin};
 		.rtl & {
 			margin-#{$profile-side}: 0;
