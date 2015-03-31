@@ -333,7 +333,7 @@ dl.icon dt li {
 
 dd.lastpost, dd.redirect, dd.moderation, dd.time, dd.info {
 	width: 250px;
-	font-size: 1.1em;
+	font-size: $forum-list-last-column-font-size;
 }
 
 dd.redirect {
@@ -368,7 +368,7 @@ dd.option {
 }
 
 .forum-statistics {
-	font-size: 11px;
+	font-size: $font-size;
 	padding-top: 2px;
 	.value {
 	}
@@ -424,7 +424,7 @@ dd.option {
 .forum-description.toggle {
 	display: none;
 	position: absolute;
-	font-size: 11px;
+	font-size: $font-size;
 	border-radius: 4px;
 	padding: 4px 9px;
 	max-width: 500px;
@@ -469,7 +469,8 @@ dd.option {
 ----------------------------------------*/
 .postbody {
 	padding: 0;
-	line-height: 1.48em;
+	font-size: $font-size;
+	line-height: $line-height;
 	.postprofile + & {
 		float: $post-side;
 		margin-#{$profile-side}: -#{$post-margin};
@@ -510,25 +511,25 @@ dd.option {
 }
 
 .postbody .ignore {
-	font-size: 1.1em;
+	font-size: $post-content-font-size;
+	line-height: $post-content-line-height;
 }
 
 .postbody h3.first {
 	/* The first post on the page uses this */
-	font-size: 1.7em;
 }
 
 .postbody h3 {
 	/* Postbody requires a different h3 format - so change it here */
 	float: left;
-	font-size: 1.5em;
+	font-size: $post-title-font-size;
 	padding: 2px 0 0 0;
 	margin-top: 0 !important;
 	margin-bottom: 0.3em !important;
 	text-transform: none;
 	border: none;
-	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
-	line-height: 125%;
+	font-family: $post-title-font-family;
+	line-height: $post-title-line-height;
 	.rtl & {
 		float: right;
 	}
@@ -550,7 +551,8 @@ dd.option {
 }
 
 .postbody .content {
-	font-size: 1.3em;
+	font-size: $post-content-font-size;
+	line-height: $post-content-line-height;
 	overflow-x: auto;
 }
 
@@ -606,16 +608,16 @@ dd.option {
 	clear: both;
 	min-height: 3em;
 	overflow: hidden;
-	line-height: 1.4em;
-	font-family: "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
-	font-size: 1em;
+	line-height: $post-content-line-height;
+	font-family: $post-content-font-family;
+	font-size: $post-content-font-size;
 	padding-bottom: 1px;
 }
 
 .content h2, .panel h2 {
-	font-weight: normal;
+	font-weight: $panel-heading-line-height;
 	border-bottom: 1px solid transparent;
-	font-size: 1.6em;
+	font-size: $panel-heading-font-size;
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	padding-bottom: 0.5em;
@@ -626,32 +628,35 @@ dd.option {
 }
 
 .panel p {
-	font-size: 1.2em;
+	font-size: $paragraph-font-size;
 	margin-bottom: 1em;
-	line-height: 1.4em;
+	line-height: $paragraph-line-height;
 }
 
 .content p {
-	font-family: "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
-	font-size: 1.2em;
+	font-family: $post-content-font-family;
+	font-size: $post-content-font-size;
 	margin-bottom: 1em;
-	line-height: 1.4em;
+	line-height: $post-content-line-height;
 }
 
 dl.faq {
-	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
-	font-size: 1.1em;
+	font-family: $post-content-font-family;
+	font-size: $post-content-font-size;
 	margin-top: 1em;
 	margin-bottom: 2em;
-	line-height: 1.4em;
+	line-height: $post-content-line-height;
 }
 
 dl.faq dt {
-	font-weight: bold;
+	font-family: $post-title-font-family;
+	font-size: $post-title-font-size;
+	line-height: $post-title-line-height;
+	font-weight: normal;
 }
 
 .content dl.faq {
-	font-size: 1.2em;
+	@extend dl.faq;
 	margin-bottom: 0.5em;
 }
 
