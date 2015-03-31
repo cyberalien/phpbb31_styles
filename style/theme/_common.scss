@@ -979,14 +979,16 @@ $nav-alert-font-size:		9px !default;
 	}
 }
 
+$panel-heading-line-height:	$line-height !default;
+
 .panel > .inner > h3:first-child,
 .panel > h3:first-child {
 	@include section-heading;
 	padding-left: 10px;
 	padding-right: 10px;
 	.panel-container & {
-		font-size: 16px;
-		line-height: 22px;
+		font-size: $panel-heading-font-size;
+		line-height: $panel-heading-line-height;
 	}
 }
 
@@ -1260,11 +1262,14 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	border-radius: min($border-radius, 5px) min($border-radius, 5px) 0 0;
 }
 
+$dropdown-content-font-size:	$font-size !default;
+$dropdown-content-line-height:	$line-height !default;
+
 .dropdown li {
 	border-top: 1px dotted transparent;
 	float: none !important;
-	line-height: normal !important;
-	font-size: 1em !important;
+	line-height: $dropdown-content-line-height !important;
+	font-size: $dropdown-content-font-size !important;
 	list-style: none;
 	margin: 0;
 	padding-top: 4px;
@@ -1383,12 +1388,16 @@ table.table1 {
 	padding: 2px;
 }
 
+$table-heading-font-size:	$font-size + 2px !default;
+$table-heading-line-height:	$line-height !default;
+$table-content-font-size:	$font-size + 1px !default;
+
 table.table1 thead th {
 	@include table-heading;
 	text-transform: none;
-	line-height: 18px;
+	line-height: $table-heading-line-height;
 	font-weight: normal;
-	font-size: 12px;
+	font-size: $table-heading-font-size;
 	padding: 4px;
 }
 
@@ -1401,7 +1410,8 @@ table.table1 tbody tr {
 }
 
 table.table1 td {
-	font-size: 1.1em;
+	font-size: $table-content-font-size;
+	line-height: $line-height;
 }
 
 table.table1 tbody td {
