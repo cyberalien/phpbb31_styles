@@ -767,8 +767,7 @@ $nav-alert-font-size:		9px !default;
 					// Tabs layout
 					margin: 0 5px;
 					padding: 0;
-					border: 1px solid transparent;
-					border-bottom-width: 0;
+					border: 0 solid transparent;
 					border-radius: 0;
 					text-shadow: none;
 					border-top-left-radius: $navtabs-border-radius;
@@ -788,9 +787,9 @@ $nav-alert-font-size:		9px !default;
 							position: absolute;
 							left: 0px;
 							right: 0px;
-							bottom: -2px;
+							bottom: -1px;
 							z-index: 3;
-							height: 4px;
+							height: 2px;
 						}
 					}
 
@@ -810,20 +809,12 @@ $nav-alert-font-size:		9px !default;
 					}
 
 					// Dropdown position
-					&.dropdown-right .dropdown {
-						left: -1px;
-					}
-
-					&.dropdown-left .dropdown {
-						right: -1px;
-					}
-
 					&.dropdown-down .dropdown {
-						top: ($tab-height - 1);
+						top: $tab-height;
 					}
 
 					&.dropdown-up .dropdown {
-						bottom: ($tab-height - 1);
+						bottom: $tab-height;
 					}
 				}
 
@@ -834,13 +825,13 @@ $nav-alert-font-size:		9px !default;
 
 			// Second row
 			+ .navbar.secondary {
-				border: 1px solid transparent;
+				border: 0px solid transparent;
 				border-radius: $border-radius;
 				font-size: $nav-secondary-font-size;
 				z-index: 2;
 				position: relative;
 				margin: 0 0 10px;
-				padding: 0 5px;
+				padding: 2px 5px;
 
 				@media (max-width: 700px) {
 					border-radius: 0;
