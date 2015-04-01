@@ -761,8 +761,11 @@ $nav-alert-font-size:		9px !default;
 			}
 
 			.nav-tabs {
-				background: none;
-				box-shadow: none;
+				@include tabbed-nav-layout-all {
+					background: none;
+					box-shadow: none;
+					filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+				}
 				border-radius: 0;
 				border-width: 0;
 				padding: 0 10px;
