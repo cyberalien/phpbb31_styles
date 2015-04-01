@@ -123,6 +123,7 @@ $post-text-color:						$text-color;	// Text inside posts
 $link-color:							$primary-darker-color;	// Links
 $link-hover-color:						$primary-dark-color;	// Links, hover state
 $muted-color:							#8b8374;	// Gray color
+$faint-color:							mix($muted-color, $content-background, 60%);	// Gray color
 $rules-color:							hsl(0, saturation($primary-color), lightness($primary-color));	// Forum rules
 
 //
