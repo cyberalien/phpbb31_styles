@@ -124,6 +124,7 @@ $post-text-color:						$text-color;	// Text inside posts
 $link-color:							#6593d6;	// Links
 $link-hover-color:						$secondary-color;	// Links, hover state
 $muted-color:							mix($black-color, $content-background, 60%);	// Gray color
+$faint-color:							mix($black-color, $content-background, 30%);	// Gray color
 $rules-color:							lighten(saturate($secondary-color, 20%), 10%);	// Forum rules
 
 //
