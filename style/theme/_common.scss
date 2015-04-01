@@ -397,6 +397,10 @@ $nav-alert-font-size:		9px !default;
 		}
 	}
 
+	li.small-icon > a {
+		padding-left: 18px;
+	}
+
 	.nav-tabs {
 		border-radius: $navtabs-border-radius;
 		& .leftside, .rtl & .rightside {
