@@ -767,9 +767,12 @@ $nav-alert-font-size:		9px !default;
 				border-width: 0;
 				padding: 0 10px;
 
+				#quick-links {
+					margin: 0 3px;
+				}
 				li.tab {
 					// Tabs layout
-					margin: 0 5px;
+					margin: 0 3px;
 					padding: 0;
 					border: 1px solid transparent;
 					border-bottom-width: 0;
