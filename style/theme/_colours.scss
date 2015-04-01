@@ -591,6 +591,15 @@ li.row:hover {
 li.row:hover dd {
 }
 
+// Unread forum/topic
+.icon-link + .list-inner > a.forumtitle {
+	color: $secondary-color;
+}
+
+a.subforum.unread {
+	color: $secondary-color;
+}
+
 /* Post body styles
 ----------------------------------------*/
 .postbody {
