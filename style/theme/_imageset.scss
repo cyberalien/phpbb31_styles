@@ -452,3 +452,9 @@ ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:befor
 		content: '\E246';	// glyphicons-chat
 	}
 }
+.icon-time {
+	@extend %icon-image-gi;
+	&:after {
+		content: '\E055';	// glyphicons-clock
+	}
+}
