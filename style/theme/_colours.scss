@@ -483,6 +483,13 @@ Colours and backgrounds for links.css
 a { color: $link-color; }
 a:hover	{ color: $link-hover-color; }
 
+a.time { 
+	color: $faint-color; 
+	&:hover {
+		color: $link-hover-color;
+	}
+}
+
 /* Links on gradient backgrounds */
 .forumbg .header a, .forabg .header a, th a {
 	color: $heading-link;
@@ -569,6 +576,13 @@ li.row:hover {
 }
 
 li.row:hover dd {
+}
+
+// Unread forum/topic
+.icon-link + .list-inner > a.forumtitle,
+.pm_read .topictitle,
+a.subforum.unread {
+	color: $secondary-color;
 }
 
 /* Post body styles
@@ -932,7 +946,7 @@ Colours and backgrounds for buttons.css
 
 %icon-search-misc {
 	&:after {
-		color: #aaa;
+		color: $faint-color;
 	}
 }
 
@@ -945,6 +959,12 @@ Colours and backgrounds for buttons.css
 .icon-notification, .icon-pm {
 	&.non-zero:after {
 		color: $secondary-color;
+	}
+}
+
+.icon-time {
+	&:after {
+		color: $faint-color;
 	}
 }
 
