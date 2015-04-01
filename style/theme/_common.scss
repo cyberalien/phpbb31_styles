@@ -1036,6 +1036,12 @@ ul.linklist > li {
 	margin-right: 7px;
 	padding-top: 1px;
 	width: auto;
+	&, &.rightside {
+		&.icon-only {
+			text-align: center;
+			min-width: 20px;
+		}
+	}
 }
 
 ul.linklist > li.rightside, p.rightside, a.rightside {
@@ -1321,6 +1327,17 @@ $dropdown-content-line-height:	$line-height !default;
 
 .dropdown li.separator:first-child, .dropdown li.separator:last-child {
 	display: none !important;
+}
+
+.dropdown-trigger > i.glyphicons, .dropdown-trigger > i.fa {
+	display: inline;
+	line-height: inherit;
+	top: 0;
+	vertical-align: baseline;
+	&:before {
+		font-size: 1.1em;
+		line-height: 1;
+	}
 }
 
 /* Responsive breadcrumbs

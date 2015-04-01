@@ -185,9 +185,16 @@
 		<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
 			<li class="rightside responsive-search" style="display: none;"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}" role="menuitem">{L_SEARCH}</a></li>
 		<!-- ENDIF -->
-		<!-- IF S_REGISTERED_USER -->
-			<li class="rightside small-icon icon-time responsive-hide"><a class="time" href="{U_PROFILE}">{CURRENT_TIME}</a></li>
-		<!-- ENDIF -->
+		<li class="rightside dropdown-container icon-only">
+			<a href="#" class="dropdown-trigger time"><i class="glyphicons glyphicons-clock"></i></a>
+			<div class="dropdown hidden">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents">
+					<li>{CURRENT_TIME}</li>
+					<li>{S_TIMEZONE}</li>
+				</ul>
+			</div>
+		</li>
 	</ul>
 </div>
 <!-- ENDDEFINE -->
