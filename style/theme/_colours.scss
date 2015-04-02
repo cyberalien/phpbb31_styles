@@ -445,6 +445,11 @@ dl.details dd {
 
 .reported {
 	background-color: $block-background-reported;
+	&.post {
+		border-color: darken($block-background-reported, 3%);
+		border-left-color: lighten($block-background-reported, 3%);
+		border-top-color: lighten($block-background-reported, 3%);
+	}
 	.postprofile {
 		border-color: darken($block-background-reported, 3%);
 	}
