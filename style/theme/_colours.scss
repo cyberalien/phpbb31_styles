@@ -416,6 +416,9 @@ dl.details dd {
 
 .reported {
 	background-color: $block-background-reported;
+	.postprofile {
+		border-color: darken($block-background-reported, 3%);
+	}
 }
 
 li.reported:hover {
