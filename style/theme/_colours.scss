@@ -1555,10 +1555,10 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 			color: inherit;
 		}
 		p.notification-time, p.notifications_time {
-			color: desaturate(mix($notification-unread-bg, $notification-unread-color, 30%), 25%);
+			color: mix($notification-unread-bg, $notification-unread-color, 30%);
 		}
 		a.mark_read {
-			background-color: desaturate(if(lightness($notification-unread-bg) < 50%, darken($notification-unread-bg, 30%), lighten($notification-unread-bg, 30%)), 100%);
+			background-color: if(lightness($notification-unread-bg) < 50%, darken($notification-unread-bg, 30%), lighten($notification-unread-bg, 30%));
 			&, &:after {
 				color: $notification-unread-strong-color;
 				&:hover {
@@ -1585,7 +1585,7 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 			color: desaturate(mix($dropdown-notification-hover-bg, $dropdown-notification-color, 30%), 25%);
 		}
 		a.mark_read {
-			background-color: desaturate(if(lightness($dropdown-notification-hover-bg) < 50%, darken($dropdown-notification-hover-bg, 30%), lighten($dropdown-notification-hover-bg, 30%)), 100%);
+			background-color: if(lightness($dropdown-notification-hover-bg) < 50%, darken($dropdown-notification-hover-bg, 30%), lighten($dropdown-notification-hover-bg, 30%));
 			&, &:after {
 				color: $dropdown-notification-strong-color;
 				&:hover {
