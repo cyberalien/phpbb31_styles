@@ -68,6 +68,7 @@ body {
 	line-height: $line-height;
 	margin: 0;
 	padding: 0 0 12px;
+	border-top: 3px solid transparent;
 	word-wrap: break-word;
 	min-height: 100%;
 	box-sizing: border-box;
@@ -201,7 +202,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 #wrap {
 	@if $use-wrapper {
 		border: 1px solid transparent;
-		border-radius: 8px;
+		border-radius: 4px;
 		@include wrapper-padding;
 	}
 }
@@ -319,6 +320,11 @@ $nav-alert-font-size:		9px !default;
 	@include section;
 	padding: 0 9px;
 	clear: both;
+
+	border-width: 1px;
+	border-radius: $border-radius;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 
 	&.tabbed, &.secondary {
 		@include section-empty;
@@ -455,6 +461,7 @@ $nav-alert-font-size:		9px !default;
 			padding: 0 $tab-padding;
 			vertical-align: baseline;
 			font-size: $nav-primary-font-size;
+			font-family: $nav-primary-font-family;
 			outline-style: none;
 			&.dropdown-toggle {
 				position: relative;
@@ -847,7 +854,7 @@ $nav-alert-font-size:		9px !default;
 				z-index: 2;
 				position: relative;
 				margin: 0 0 10px;
-				padding: 0 5px;
+				padding: 2px 5px;
 
 				@media (max-width: 700px) {
 					border-radius: 0;
@@ -1872,6 +1879,9 @@ div.rules {
 	font-size: $rules-font-size;
 	padding: 5px 10px;
 	border-radius: $border-radius;
+	a {
+		text-decoration: underline;
+	}
 }
 
 div.rules ul, div.rules ol {

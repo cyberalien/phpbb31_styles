@@ -16,6 +16,10 @@ html, body {
 	}
 }
 
+body {
+	border-top-color: $primary-color;
+}
+
 h1, p.sitename {
 	color: $header-text;
 }
@@ -79,21 +83,13 @@ hr {
 }
 
 .navbar {
-	box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 2px rgba(0, 0, 0, 0.1);
-	background-image: none;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	&.secondary {
 		color: $link-color;
 		> ul > li:hover,
 		> ul > li.dropdown-visible {
 			&, &:after, &:before {
-				color: $secondary-nav-hover-link;
+				color: $link-hover-color;
 			}
-			background-color: $secondary-nav-hover-bg;
-			background-image: -webkit-linear-gradient(top, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
-			background-image: linear-gradient(to bottom, $secondary-nav-hover-gradient-start 0, $secondary-nav-hover-gradient-end 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($secondary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($secondary-nav-hover-gradient-end)}');
-			box-shadow: $secondary-nav-hover-shadow;
 		}
 		.dropdown {
 			color: $text-color;
@@ -105,24 +101,17 @@ hr {
 		background-image: -webkit-linear-gradient(top, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
 		background-image: linear-gradient(to bottom, $primary-nav-gradient-start 0, $primary-nav-gradient-end 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-gradient-end)}');
-		box-shadow: $primary-nav-shadow;
 
 		.tab {
 			color: $primary-nav-color;
 			&.selected {
 				color: $primary-nav-selected-color;
 				background-color: $primary-nav-selected-bg;
-				background-image: -webkit-linear-gradient(top, $primary-nav-selected-gradient-start 0, $primary-nav-selected-gradient-end 100%);
-				background-image: linear-gradient(to bottom, $primary-nav-selected-gradient-start 0, $primary-nav-selected-gradient-end 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-selected-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-selected-gradient-end)}');
 			}
 			&:hover,
 			&.dropdown-visible {
 				color: $primary-nav-hover-color;
 				background-color: $primary-nav-hover-bg;
-				background-image: -webkit-linear-gradient(top, $primary-nav-hover-gradient-start 0, $primary-nav-hover-gradient-end 100%);
-				background-image: linear-gradient(to bottom, $primary-nav-hover-gradient-start 0, $primary-nav-hover-gradient-end 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($primary-nav-hover-gradient-start)}', endColorstr='#{ie-hex-str($primary-nav-hover-gradient-end)}');
 			}
 			& > strong {
 				color: $primary-nav-alert-color;
@@ -148,73 +137,23 @@ hr {
 					border-color: $block-inner-border;
 					background-color: $block-background;
 
-					@include tabbed-nav-layout-alt {
-						background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, .2) 50%, rgba(224, 224, 224, .7) 100%);
-						background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, .2) 50%, rgba(224, 224, 224, .7) 100%);
-						box-shadow: none;
-					}
-
-					@include tabbed-nav-layout-default {
-						background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, 0) 70%, rgba(224, 224, 224, .3) 100%);
-						background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0) 0%, rgba(224, 224, 224, 0) 70%, rgba(224, 224, 224, .3) 100%);
-						box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.15);
-					}
-
 					&.selected {
-						@include tabbed-nav-layout-all {
-							background-color: $block-background;
-							color: $link-color;
-							border-color: $block-inner-border;
-						}
-
-						@include tabbed-nav-layout-alt {
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(224, 224, 224, .2));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(224, 224, 224, .2));
-						}
-
-						@include tabbed-nav-layout-default {
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
-						}
-
 						&:after {
-							@include tabbed-nav-layout-alt {
-								background-color: darken($block-background, 2.5%);
-							}
-
-							@include tabbed-nav-layout-default {
-								background-color: darken($block-background, 1%);
-							}
+							background-color: $block-background;
 						}
 					}
 
 					&:hover {
-						@include tabbed-nav-layout-all {
-							background-color: $block-background;
-							color: $link-hover-color;
-							border-color: $block-inner-border;
-						}
-
-						@include tabbed-nav-layout-alt {
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .7), rgba(224, 224, 224, .2));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .7), rgba(224, 224, 224, .2));
-						}
-
-						@include tabbed-nav-layout-default {
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
-						}
+						color: $link-hover-color;
 					}
 
 					&.dropdown-visible {
-						@include tabbed-nav-layout-all {
-							background-color: $heading-bg;
-							color: $heading-color;
-							border-color: $heading-bg;
-							background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
-							background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
-							box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-						}
+						background-color: $heading-bg;
+						color: $heading-color;
+						border-color: $heading-bg;
+						background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
+						background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 					}
 				}
 			}
@@ -225,25 +164,12 @@ hr {
 				border-color: $block-border;
 				color: $link-color;
 				background-color: $block-background;
-				box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 3px 1px rgba(128, 128, 128, 0.1) inset, 1px 1px 3px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.1);
-
-				@include tabbed-nav-layout-alt {
-					background-image: -webkit-linear-gradient(top, rgba(224, 224, 224, .2), rgba(224, 224, 224, .2));
-					background-image: linear-gradient(to bottom, rgba(224, 224, 224, .2), rgba(224, 224, 224, .2));
-				}
-
-				@include tabbed-nav-layout-default {
-					background-image: none;
-				}
 
 				> ul > li:hover,
 				> ul > li.dropdown-visible {
 					&, &:after, &:before {
 						color: $link-hover-color;
 					}
-					background: none;
-					box-shadow: none;
-					filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 				}
 			}
 		}
@@ -328,11 +254,11 @@ ul.navlinks {
 		color: inherit !important;
 	}
 	span.arrow {
-		border-right-color: fade-out(mix($forum-description-bg, $block-background, 85%), .2);
+		border-right-color: fade-out(mix($forum-description-bg, $block-background, 95%), .2);
 	}
 	.rtl & span.arrow {
 		border-right-color: transparent;
-		border-left-color: fade-out(mix($forum-description-bg, $block-background, 85%), .2);
+		border-left-color: fade-out(mix($forum-description-bg, $block-background, 95%), .2);
 	}
 }
 
@@ -440,8 +366,14 @@ dl.details dd {
 
 .reported {
 	background-color: $block-background-reported;
+	&.post {
+		border-color: darken($block-background-reported, 3%);
+	}
 	.postprofile {
 		border-color: darken($block-background-reported, 3%);
+	}
+	.post-notice.reported {
+		background-color: darken($block-background-reported, 3%);
 	}
 }
 
@@ -452,15 +384,21 @@ li.reported:hover {
 	/* you can add a background for stickies and announcements*/
 }
 
-div.rules {
-	background-color: mix($content-background, $rules-color, 85%);
+div.rules, p.post-notice {
+	background-color: mix($content-background, $rules-color, 90%);
 	color: $rules-color;
+	a, .inner > strong:first-child {
+		color: darken($rules-color, 20%);
+	}
 }
 
 p.post-notice {
-	background-color: mix($block-background, $rules-color, 85%);
-	color: $rules-color;
 	background-image: none;
+	.button1, .button2 {
+		border-color: darken($block-background-reported, 7%);
+		background-color: $block-background;
+		color: $rules-color;
+	}
 }
 
 // Blank FontAwesome replacement
@@ -471,19 +409,19 @@ p.post-notice {
 p.post-notice.deleted:before {
 	@extend %post-notice;
 	content: '\f057';	// fa-times-circle
-	color: $secondary-color;
+	color: $rules-color;
 }
 
 p.post-notice.unapproved:before {
 	@extend %post-notice;
 	content: '\f059';	// fa-question-circle
-	color: $secondary-color;
+	color: $rules-color;
 }
 
 p.post-notice.reported:before, p.post-notice.error:before {
 	@extend %post-notice;
 	content: '\f071';	// fa-warning
-	color: $secondary-color;
+	color: $rules-color;
 }
 
 // Topic status
