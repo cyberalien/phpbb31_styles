@@ -7,8 +7,11 @@ html, body {
 	color: $text-color;
 	@if $use-wrapper {
 		background-color: $page-background;
+		background-image: -webkit-linear-gradient(top, rgba($block-background2, 1) 0%, rgba($block-background2, .3) 200px, rgba($block-background2, 0) 100%);
+		background-image: linear-gradient(to bottom, rgba($block-background2, 1) 0%, rgba($block-background2, .3) 200px, rgba($block-background2, 0) 100%);
 		&.simple {
 			background-color: $content-background;
+			background-image: none;
 		}
 	}
 	@else {
