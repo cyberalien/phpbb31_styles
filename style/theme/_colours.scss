@@ -184,20 +184,22 @@ hr {
 	// Static navigation
 	.inner.static {
 		.nav-tabs {
-			background-color: $primary-darker-color;
-			background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
-			background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
-			.tab {
-				color: $overlay-color;
-				&.selected, 
-				&:hover,
-				&.dropdown-visible {
-					color: $link-color;
-					background-color: $block-background;
-					background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
-					background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
-					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
+			@include tabbed-nav-layout-all {
+				background-color: $primary-darker-color;
+				background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
+				.tab {
+					color: $overlay-color;
+					&.selected, 
+					&:hover,
+					&.dropdown-visible {
+						color: $link-color;
+						background-color: $block-background;
+						background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
+						background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
+					}
 				}
 			}
 		}
