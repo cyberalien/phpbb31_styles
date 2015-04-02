@@ -1295,9 +1295,18 @@ a.button1, input.button1, input.button3, a.button2, input.button2 {
 	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
 	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
+	#format-buttons & {
+		background-color: $primary-color;
+		border-color: $primary-color;
+		color: $overlay-color;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
+	}
 }
 
 a.button1, input.button1 {
+	color: $primary-color;
 	border-color: $button-main-border;
 	background-color: mix($button-bg, $white-color, 40%);
 }
@@ -1318,21 +1327,31 @@ a.button1, a.button2 {
 
 /* Hover states */
 a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
-	border-color: mix($block-background, $secondary-color, 20%);
-	color: $secondary-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#18FFFFFF);
+	&,	#format-buttons & {
+		border-color: $secondary-color;
+		color: $overlay-color;
+		background-color: $secondary-color;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
+	}
 }
 
 /* Focus states */
 input.button1:focus, input.button2:focus, input.button3:focus {
-	border-color: mix($block-background, $primary-color, 20%);
-	color: $primary-color;
+	background-color: $block-background;
+	border-color: mix($block-background, $secondary-color, 20%);
+	color: $secondary-color;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	#format-buttons & {
+		border-color: $secondary-color;
+		background-color: $secondary-color;
+	}
 }
 
 input.disabled {
-	color: $muted-color;
+	opacity: .5;
 }
 
 /* jQuery popups
