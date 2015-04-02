@@ -1616,7 +1616,7 @@ function parseDocument($container) {
 	* Collapse forums
 	*/
 	if (styleConfig.collapseForums) {
-		$container.find('.forabg.elegant li.header').each(function() {
+		$container.find('.forabg li.header').each(function() {
 			var $this = $(this),
 				forum = $this.parent().next('ul.forums'),
 				id = 0,

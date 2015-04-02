@@ -36,6 +36,14 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 
 .dropdown-select {
 	padding-right: 24px;
+	.dropdown-down.dropdown-visible & {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.dropdown-up.dropdown-visible & {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
 }
 
 .icon-button:before {
