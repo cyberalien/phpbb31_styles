@@ -448,8 +448,9 @@ ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:befor
 	}
 }
 .icon-time {
-	@extend %icon-image-gi;
+	@extend %icon-image-fa;
 	&:after {
-		content: '\E055';	// glyphicons-clock
+		// content: '\E055';	// glyphicons-clock
+		content: '\f017';	// fa-clock-o
 	}
 }

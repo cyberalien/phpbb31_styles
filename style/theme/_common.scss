@@ -1328,8 +1328,10 @@ $dropdown-content-line-height:	$line-height !default;
 	top: 0;
 	vertical-align: baseline;
 	&:before {
-		font-size: 1.1em;
+		font-size: 1.4em;
 		line-height: 1;
+		position: relative;
+		top: 1px;
 	}
 }
 
