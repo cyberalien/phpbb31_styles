@@ -367,9 +367,10 @@ dl.details dd {
 .reported {
 	background-color: $block-background-reported;
 	&.post {
+		background-color: mix($block-background-reported, $block-background, 50%);
 		border-color: darken($block-background-reported, 3%);
 	}
-	.postprofile {
+	.postprofile, .signature {
 		border-color: darken($block-background-reported, 3%);
 	}
 	.post-notice.reported {
