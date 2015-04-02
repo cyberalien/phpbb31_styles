@@ -478,6 +478,9 @@ dl.details dd {
 
 .reported {
 	background-color: $block-background-reported;
+	.post-notice.reported {
+		background-color: darken($block-background-reported, 3%);
+	}
 	.postprofile {
 		border-color: darken($block-background-reported, 3%);
 	}
@@ -500,6 +503,11 @@ div.rules, p.post-notice {
 
 p.post-notice {
 	background-image: none;
+	.button1, .button2 {
+		border-color: darken($block-background-reported, 7%);
+		background-color: $block-background;
+		color: $rules-color;
+	}
 }
 
 // Blank FontAwesome replacement
