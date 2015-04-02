@@ -147,12 +147,16 @@ $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, su
 // Tabs
 $tab-color:								desaturate($link-color, 20%);
 $tab-background:						$block-background;
+$tab-border:							$block-border;
 
 $tab-hover-color:						$link-hover-color;
 $tab-hover-background:					$block-background3;
+$tab-hover-top-border:					mix($block-border, $secondary-color, 80%);
+$tab-hover-border:						$tab-hover-top-border $tab-hover-top-border $tab-border;
 
-$tab-selected-color:					mix($text-color, $block-background3, 90%);
-$tab-selected-background:				$block-background3;
+$tab-selected-color:					$secondary-color;
+$tab-selected-background:				$block-border;
+$tab-selected-border:				$block-border;
 
 // Header
 $header-bg:								$content-background;
@@ -225,10 +229,10 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 // Inputs
 $input-text:							$text-color;	// Input text color
 $input-bg:								$white-color;	// Input background
-$input-border:							$block-inner-border;	// Input border color
+$input-border:							$block-border;	// Input border color
 $input-hover-text:						$input-text;
 $input-hover-bg:						$input-bg;
-$input-hover-border:					$secondary-color;
+$input-hover-border:					#ccc;
 $input-focus-text:						#0F4987;
 $input-focus-bg:						$input-bg;
 $input-focus-border:					$primary-color;
@@ -236,7 +240,6 @@ $input-border-radius:					2px;
 
 $search-box-border:						#e0e0e0;	// Border for search box block
 $search-box-border-header:				#e0e0e0;		// Same as above, for search box in header
-$search-box-shadow:						none;	// Box-shadow for search box in header
 
 // Buttons
 $button-bg:								#e8e8e8;
@@ -292,8 +295,6 @@ $post-side:								if($profile-side == left, right, left);
 	background: transparent;
 	border-width: 0;
 	border-radius: 0;
-	box-shadow: none;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	padding: 0;
 }
 
@@ -348,7 +349,6 @@ $post-side:								if($profile-side == left, right, left);
 @mixin section-heading-cp {
 	background-color: transparent;
 	color: $stats-title-color;
-	box-shadow: none;
 	background-image: none;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 	a {
@@ -380,7 +380,6 @@ $post-side:								if($profile-side == left, right, left);
 @mixin table-heading-transparent {
 	background: transparent;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-	box-shadow: none;
 	color: inherit;
 }
 

@@ -967,24 +967,7 @@ $nav-alert-font-size:		9px !default;
 
 	// UCP/MCP panel
 	&.bg3 {
-		border-radius: 0;
-		border-width: 0;
-		box-shadow: none;
-		border-top: 3px solid transparent;
-		position: relative;
-		&:before, &:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			width: 3px;
-			height: 50px;
-		}
-		&:before {
-			left: 0;
-		}
-		&:after {
-			right: 0;
-		}
+		border-radius: $border-radius;
 	}
 
 	// Posting form

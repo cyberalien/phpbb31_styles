@@ -58,11 +58,7 @@ hr {
 }
 
 .search-header {
-	box-shadow: $search-box-shadow;
 	border-color: $search-box-border-header;
-	.navbar.with-search & {
-		box-shadow: none;
-	}
 }
 
 /* Round cornered boxes and backgrounds
@@ -209,19 +205,7 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 .bg3 { 
 	background-color: $block-background3;
 	&.panel {
-		background: transparent none;
-		background-color: rgba($content-background, .3);
-		border-top-color: $tab-selected-background;
-		&:before, &:after {
-			background: -webkit-linear-gradient(to bottom, $tab-selected-background 0%, rgba($tab-selected-background, 0) 100%);
-			background: linear-gradient(to bottom, $tab-selected-background 0%, rgba($tab-selected-background, 0) 100%);
-		}
-	}
-	.section-posting &.panel {
-		background-color: $block-background;
-		&:before, &:after {
-			background: transparent;
-		}
+		background-color: $tab-selected-background;
 	}
 }
 
@@ -778,7 +762,6 @@ Colours and backgrounds for buttons.css
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#00FFFFFF);
 		color: $primary-color;
-		box-shadow: none;
 	}
 
 
@@ -786,12 +769,8 @@ Colours and backgrounds for buttons.css
 	}
 	.buttons > &.locked-icon {
 		color: $button-icon;
-		box-shadow: 0 0 0 1px $button-border inset;
 		&:after, &:before {
 			color: $button-icon !important;
-		}
-		&:hover {
-			box-shadow: none;
 		}
 	}
 
@@ -801,10 +780,9 @@ Colours and backgrounds for buttons.css
 	.buttons > &, &.report-icon, &.delete-icon {
 		border-color: $primary-color;
 		background-color: $primary-color;
-		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
-		box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(255, 255, 255, 0.1) inset;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 0) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 		color: $overlay-color;
 
 		&:after, &:before {
@@ -817,7 +795,6 @@ Colours and backgrounds for buttons.css
 	&.report-icon, &.delete-icon {
 		border-color: $secondary-color;
 		background-color: $secondary-color;
-		box-shadow: none;
 
 		&:after, &:before {
 			color: mix($overlay-color, $secondary-color, 85%) !important;
@@ -1070,23 +1047,24 @@ ul.cplist {
 ----------------------------------------*/
 #tabs .tab > a {
 	background: $tab-background;
+	border-color: $tab-border;
 	color: $tab-color;
 }
 
 #tabs .tab > a:hover {
 	background: $tab-hover-background;
+	border-color: $tab-hover-border;
 	color: $tab-hover-color;
 }
 
 #tabs .activetab > a,
 #tabs .activetab > a:hover {
 	background: $tab-selected-background;
-	background: -webkit-linear-gradient(top, $tab-background 0%, $tab-selected-background 100%);
-	background: linear-gradient(to bottom, $tab-background 0%, $tab-selected-background 100%);
-	box-shadow: 0 10px 10px -10px $tab-selected-background;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($tab-background)}', endColorstr='#{ie-hex-str($tab-selected-background)}', GradientType=0 );
-	border-color: $tab-selected-background;
+	border-color: $tab-selected-border;
 	color: $tab-selected-color;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .25) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40FFFFFF, endColorstr=#00FFFFFF);
 }
 
 #tabs .activetab > a:hover {
@@ -1157,10 +1135,7 @@ ul.cplist {
 }
 
 .panel-container .panel {
-	background: mix($content-background, $block-background3, 60%);
-	box-shadow: none;
-	border-width: 0;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	background: mix($block-border, $block-background3, 40%);
 	& > .inner > h3:first-child {
 		@include section-heading-cp;
 	}
