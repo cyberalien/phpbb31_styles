@@ -417,7 +417,7 @@ dl.details dd {
 .reported {
 	background-color: $block-background-reported;
 	.postprofile {
-		border-color: darken($block-background-reported, 3%);
+		border-color: darken($block-background-reported, 5%);
 	}
 }
 
@@ -447,19 +447,19 @@ p.post-notice {
 p.post-notice.deleted:before {
 	@extend %post-notice;
 	content: '\f057';	// fa-times-circle
-	color: $secondary-color;
+	color: darken($rules-color, 10%);
 }
 
 p.post-notice.unapproved:before {
 	@extend %post-notice;
 	content: '\f059';	// fa-question-circle
-	color: $secondary-color;
+	color: darken($rules-color, 10%);
 }
 
 p.post-notice.reported:before, p.post-notice.error:before {
 	@extend %post-notice;
 	content: '\f071';	// fa-warning
-	color: $secondary-color;
+	color: darken($rules-color, 10%);
 }
 
 // Topic status
