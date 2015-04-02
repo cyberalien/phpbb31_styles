@@ -225,7 +225,7 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 // Inputs
 $input-text:							$text-color;	// Input text color
 $input-bg:								$white-color;	// Input background
-$input-border:							#c6c6c6;	// Input border color
+$input-border:							$block-inner-border;	// Input border color
 $input-hover-text:						$input-text;
 $input-hover-bg:						$input-bg;
 $input-hover-border:					$secondary-color;
@@ -234,15 +234,15 @@ $input-focus-bg:						$input-bg;
 $input-focus-border:					$primary-color;
 $input-border-radius:					2px;
 
-$search-box-border:						$block-inner-border;	// Border for search box block
-$search-box-border-header:				$block-inner-border;		// Same as above, for search box in header
+$search-box-border:						#e0e0e0;	// Border for search box block
+$search-box-border-header:				#e0e0e0;		// Same as above, for search box in header
 $search-box-shadow:						none;	// Box-shadow for search box in header
 
 // Buttons
 $button-bg:								#e8e8e8;
-$button-border-radius:					2px;
-$button-border:							$block-inner-border;
-$button-main-border:					$block-inner-border;
+$button-border-radius:					1px;
+$button-border:							#e0e0e0;
+$button-main-border:					#d0d0d0;
 $button-icon:							#909090;
 $button-icon-hover:						#006ac6;
 $button-text:							$text-color;
@@ -252,15 +252,15 @@ $button-side-padding:					8px;
 $button-border-width:					1px;
 $button-height:							$button-line-height + ($button-top-padding + $button-border-width) * 2;
 
-$big-button-border-radius:				4px;	// For big buttons and blocks like quick search
+$big-button-border-radius:				2px;	// For big buttons and blocks like quick search
 
 // BBCode
-$bbcode-border-radius:					3px;
-$bbcode-background:						#f0f0f0;
-$bbcode-background2:					#e8e8e8;
-$bbcode-outer-border:					if($light, darken($bbcode-background, 7%), lighten($bbcode-background, 7%));
-$bbcode-inner-border:					if($light, darken($bbcode-background, 5%), lighten($bbcode-background, 5%));
-$bbcode-heading-text:					#666;
+$bbcode-border-radius:					2px;
+$bbcode-background:						$block-background2;
+$bbcode-background2:					$block-background;
+$bbcode-outer-border:					$block-inner-border;
+$bbcode-inner-border:					mix($block-inner-border, $block-background, 30%);
+$bbcode-heading-text:					$muted-color;
 
 // Code colors
 @function code-color($hue) {

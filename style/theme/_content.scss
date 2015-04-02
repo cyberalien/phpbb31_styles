@@ -764,18 +764,34 @@ blockquote {
 	overflow: hidden;
 	padding: 5px;
 	position: relative;
+	min-height: 50px;
 }
 
 blockquote:before {
 	content: '\201C';
 	position: absolute;
 	font-family: 'Trebuchet MS';
-	top: 5px;
-	left: 4px;
+	top: 4px;
+	right: 5px;
 	height: 16px;
 	font-size: 30px;
 	line-height: 30px;
+	opacity: .5;
 	pointer-events: none;
+	.rtl & {
+		right: auto;
+		left: 5px;
+	}
+}
+
+blockquote.uncited:before {
+	opacity: 1;
+	top: 5px;
+	left: 4px;
+	.rtl & {
+		left: auto;
+		right: 5px;
+	}
 }
 
 blockquote blockquote {
@@ -787,11 +803,18 @@ blockquote cite {
 	/* Username/source of quoter */
 	font-style: normal;
 	font-weight: 500;
-	margin-left: 20px;
+	margin: -6px -6px 3px;
+	padding: 4px 6px;
 	display: block;
 	font-family: $post-block-title-font-family;
 	font-size: $post-block-title-font-size;
 	line-height: $post-block-title-line-height;
+	border-radius: 0;
+	border-top-left-radius: $bbcode-border-radius;
+	border-top-right-radius: $bbcode-border-radius;
+	a {
+		text-decoration: underline;
+	}
 }
 
 blockquote cite cite {
@@ -799,6 +822,7 @@ blockquote cite cite {
 
 blockquote.uncited {
 	padding-top: 25px;
+	min-height: 0;
 }
 
 /* Code block */
@@ -814,13 +838,19 @@ $post-code-line-height:		1.3 !default;
 
 .codebox p {
 	// text-transform: uppercase;
-	border-bottom: 1px solid transparent;
-	margin-bottom: 3px;
+	margin: -3px -3px 3px;
+	padding: 3px 5px;
 	font-family: $post-block-title-font-family;
 	font-size: $post-block-title-font-size !important;
 	line-height: $post-block-title-line-height;
+	border-radius: 0;
+	border-top-left-radius: $bbcode-border-radius;
+	border-top-right-radius: $bbcode-border-radius;
 	font-weight: 500;
 	display: block;
+	a {
+		text-decoration: underline;
+	}
 }
 
 blockquote .codebox {
@@ -1107,13 +1137,13 @@ dd.profile-contact {
 	height: 70px;
 	position: absolute;
 	overflow: hidden;
-	top: -3px;
-	#{$profile-side}: -3px;
+	top: -1px;
+	#{$profile-side}: -1px;
 	pointer-events: none;
 
 	.rtl & {
 		#{$profile-side}: auto;
-		#{$post-side}: -3px;
+		#{$post-side}: -1px;
 	}
 
 	span {

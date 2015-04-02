@@ -1,3 +1,4 @@
+
 /*
 --------------------------------------------------------------
 Colours and backgrounds for common.css
@@ -321,7 +322,7 @@ dl.details dd {
 .pagination li a {
 	color: $link-color;
 	background-color: $block-background;
-	border-color: $block-inner-border;
+	border-color: $block-border;
 }
 
 .pagination li.ellipsis span {
@@ -333,16 +334,16 @@ dl.details dd {
 	color: $overlay-color;
 	background-color: $primary-color;
 	border-color: $primary-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
 }
 
 .pagination li a:hover, .pagination .dropdown-visible a.dropdown-trigger, .nojs .pagination .dropdown-container:hover a.dropdown-trigger {
 	border-color: $link-hover-color;
 	background-color: $link-hover-color;
 	color: $overlay-color;
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
 }
 
 .pagination li.page-jump a:after {
@@ -599,10 +600,14 @@ blockquote blockquote blockquote,
 blockquote blockquote .codebox,
 blockquote blockquote .attachbox {
 	/* Nested quotes */
-	background-color: mix($bbcode-background, $bbcode-background2);
+	background-color: $bbcode-background;
 }
 
 blockquote:before {
+	color: $heading-color;
+}
+
+blockquote.uncited:before {
 	color: $muted-color;
 }
 
@@ -612,8 +617,22 @@ blockquote:before {
 	border-color: $bbcode-outer-border;
 }
 
-.codebox p {
+.codebox p, blockquote cite {
 	border-bottom-color:  $bbcode-inner-border;
+	background: $heading-bg;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
+	&, a {
+		color: $heading-color;
+	}
+	blockquote & {
+		background-color: lighten(grayscale($heading-bg), 10%);
+	}
+}
+
+.codebox p {
+	background-color: darken(code-color(128deg), 5%);
 }
 
 .codebox code {
@@ -679,10 +698,9 @@ fieldset.polls dd div {
 }
 
 %pollbar {
-	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2) 0, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30FFFFFF, endColorstr=#00FFFFFF);
-	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#18FFFFFF, endColorstr=#00FFFFFF);
 }
 
 .pollbar1 {
@@ -722,20 +740,10 @@ fieldset.polls dd div {
 }
 
 .online-ribbon span {
-	background-color: $content-background;
-	color: $secondary-color;
+	background-color: $primary-color;
+	color: $overlay-color;
 	& + span {
 		// box-shadow: 0 0 1px rgba(0, 0, 0, .2);
-	}
-	.reported & {
-		color: mix($block-background-reported, $link-hover-color, 50%);
-	}
-
-	@media (max-width: 700px) {
-		background-color: $secondary-color;
-		&, .reported & {
-			color: $overlay-color;
-		}
 	}
 }
 
@@ -765,7 +773,7 @@ Colours and backgrounds for buttons.css
 .button {
 	&, .buttons > &.locked-icon {
 		border-color: $button-border;
-		background-color: #eee;
+		background-color: $block-background;
 		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#00FFFFFF);
@@ -847,6 +855,13 @@ Colours and backgrounds for buttons.css
 	&:after, &:before {
 		color: $overlay-color !important;
 	}
+}
+
+.dropdown-visible .dropdown-select, .dropdown-visible .dropdown-select:hover {
+	border-color: $primary-color !important;
+	background-color: $primary-color;
+	background-image: -webkit-linear-gradient(top, darken($primary-color, 5%) 0%, $primary-color 100%);
+	background-image: linear-gradient(to bottom, darken($primary-color, 5%) 0%, $primary-color 100%);
 }
 
 .contact-icons a		{ border-color: $block-inner-border; }
