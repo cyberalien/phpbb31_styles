@@ -440,7 +440,7 @@ dl.details dd {
 
 .reported {
 	background-color: $block-background-reported;
-	.postprofile {
+	.postprofile, .signature {
 		border-color: darken($block-background-reported, 3%);
 	}
 }
