@@ -173,7 +173,7 @@ hr {
 	}
 }
 
-.panel {
+.panel, .panel-container > form > .submit-buttons {
 	background-color: $block-background;
 	color: $text-color;
 }
@@ -207,6 +207,10 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 	&.panel {
 		background-color: $tab-selected-background;
 	}
+}
+
+.panel-container > form > .submit-buttons {
+	background-color: mix($tab-selected-background, $block-background3, 40%);
 }
 
 /* Horizontal lists

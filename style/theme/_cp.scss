@@ -33,6 +33,11 @@
 	margin-bottom: 10px;
 }
 
+.panel-container > form > .submit-buttons {
+	@include section;
+	border-radius: $border-radius;
+}
+
 .panel-container .panel p {
 	font-size: $panel-font-size;
 	line-height: $panel-line-height;
