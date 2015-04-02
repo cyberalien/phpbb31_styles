@@ -1461,7 +1461,7 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 			color: desaturate(mix($dropdown-notification-bg, $dropdown-notification-color, 30%), 25%);
 		}
 		a.mark_read {
-			background-color: desaturate(if(lightness($dropdown-notification-bg) < 50%, darken($dropdown-notification-bg, 30%), lighten($dropdown-notification-bg, 30%)), 100%);
+			background-color: grayscale(lighten($dropdown-notification-bg, 30%));
 			&, &:after {
 				color: $dropdown-notification-strong-color;
 				&:hover {
@@ -1489,7 +1489,7 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 			color: desaturate(mix($notification-unread-bg, $notification-unread-color, 30%), 25%);
 		}
 		a.mark_read {
-			background-color: desaturate(if(lightness($notification-unread-bg) < 50%, darken($notification-unread-bg, 30%), lighten($notification-unread-bg, 30%)), 100%);
+			background-color: mix($notification-unread-bg, $notification-unread-color, 80%);
 			&, &:after {
 				color: $notification-unread-strong-color;
 				&:hover {
@@ -1501,7 +1501,7 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 
 	&.dropdown-notification:hover {
 		background-color: $dropdown-notification-hover-bg;
-		color: $dropdown-notification-color;
+		color: $dropdown-notification-hover-color;
 		&, .panel-container & {
 			border-top-color: lighten($dropdown-notification-hover-bg, 10%);
 			border-bottom-color: darken($dropdown-notification-hover-bg, 10%);
@@ -1513,14 +1513,17 @@ ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist 
 			color: inherit;
 		}
 		p.notification-time, p.notifications_time {
-			color: desaturate(mix($dropdown-notification-hover-bg, $dropdown-notification-color, 30%), 25%);
+			color: desaturate(mix($dropdown-notification-hover-bg, $dropdown-notification-hover-color, 30%), 25%);
 		}
 		a.mark_read {
-			background-color: desaturate(if(lightness($dropdown-notification-hover-bg) < 50%, darken($dropdown-notification-hover-bg, 30%), lighten($dropdown-notification-hover-bg, 30%)), 100%);
+			background-color: $notification-unread-bg;
+			&:hover {
+				background-color: mix($notification-unread-bg, $notification-unread-color, 80%);
+			}
 			&, &:after {
-				color: $dropdown-notification-strong-color;
+				color: $notification-unread-color;
 				&:hover {
-					color: $dropdown-notification-color;
+					color: $notification-unread-strong-color;
 				}
 			}
 		}
