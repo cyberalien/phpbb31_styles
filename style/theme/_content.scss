@@ -1107,13 +1107,13 @@ dd.profile-contact {
 	height: 70px;
 	position: absolute;
 	overflow: hidden;
-	top: -3px;
-	#{$profile-side}: -3px;
+	top: 0;
+	#{$profile-side}: 0;
 	pointer-events: none;
 
 	.rtl & {
 		#{$profile-side}: auto;
-		#{$post-side}: -3px;
+		#{$post-side}: 0;
 	}
 
 	span {

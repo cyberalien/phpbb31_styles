@@ -830,20 +830,10 @@ fieldset.polls dd div {
 }
 
 .online-ribbon span {
-	background-color: $content-background;
-	color: $secondary-color;
+	background-color: $primary-darker-color;
+	color: $overlay-color;
 	& + span {
 		// box-shadow: 0 0 1px rgba(0, 0, 0, .2);
-	}
-	.reported & {
-		color: mix($block-background-reported, $link-hover-color, 50%);
-	}
-
-	@media (max-width: 700px) {
-		background-color: $secondary-color;
-		&, .reported & {
-			color: $overlay-color;
-		}
 	}
 }
 
