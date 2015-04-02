@@ -3,6 +3,9 @@
 
 /* General form styles
 ----------------------------------------*/
+$input-font-size:		$font-size + 1px !default;
+$input-font-family:		$font-family !default;
+
 fieldset {
 	border-width: 0;
 	font-family: $font-family;
@@ -13,19 +16,19 @@ input {
 	font-weight: normal;
 	vertical-align: middle;
 	padding: 0 3px;
-	font-size: $font-size;
-	font-family: $font-family;
+	font-size: $input-font-size;
+	font-family: $input-font-family;
 }
 
 select {
-	font-family: $font-family;
+	font-family: $input-font-family;
 	font-weight: normal;
 	cursor: pointer;
 	vertical-align: middle;
 	border: 1px solid transparent;
 	border-radius: $input-border-radius;
 	padding: 1px;
-	font-size: $font-size;
+	font-size: $input-font-size;
 }
 
 select:focus {
@@ -38,7 +41,7 @@ option {
 
 select optgroup option {
 	padding-right: 1em;
-	font-family: $font-family;
+	font-family: $input-font-family;
 }
 
 textarea {
