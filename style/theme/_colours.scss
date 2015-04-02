@@ -450,7 +450,7 @@ dl.details dd {
 		border-left-color: lighten($block-background-reported, 3%);
 		border-top-color: lighten($block-background-reported, 3%);
 	}
-	.postprofile {
+	.postprofile, .signature {
 		border-color: darken($block-background-reported, 3%);
 	}
 }
