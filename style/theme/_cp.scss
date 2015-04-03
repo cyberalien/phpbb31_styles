@@ -159,10 +159,12 @@ ul.cplist {
 	border: 1px solid transparent;
 	border-top-width: 3px;
 	border-radius: 4px 4px 0 0;
-	margin: 1px 1px 0 0;
+	margin: 1px;
 }
 
 #tabs .activetab > a {
+	margin-bottom: 0;
+	padding-bottom: 1px;
 }
 
 /* Mini tabbed menu used in MCP

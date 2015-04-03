@@ -206,6 +206,9 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 	background-color: $block-background3;
 	&.panel {
 		background-color: $tab-selected-background;
+		border-color: $tab-selected-background;
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .3));
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .3));
 	}
 }
 

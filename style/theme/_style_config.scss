@@ -136,10 +136,10 @@ $light:									if(lightness($black-color) < 50%, true, false);
 $block-background2:						#fff;	// Blocks with .bg2 background color
 $block-background3:						#fcfcfc;	// Blocks with .bg3 background color - mostly UCP/MCP and posting form
 
-$block-border:							#eaeaea;	// Border color for blocks
+$block-border:							#e4e4e4;	// Border color for blocks
 $border-radius:							2px;		// Main border radius
 $block-top-border:						lighten($block-background, 10%);	// Top border of forums in forums list
-$block-bottom-border:					darken($block-background, 5%);		// Bottom border of forums in forums list
+$block-bottom-border:					darken($block-background, 6%);		// Bottom border of forums in forums list
 $block-inner-border:					$block-bottom-border;	// Border inside blocks where there is only 1 border instead of top/bottom borders
 
 $block-title-color:						desaturate($link-color, 5%);	// Title inside blocks, such as post title
@@ -155,8 +155,8 @@ $tab-hover-top-border:					mix($block-border, $secondary-color, 80%);
 $tab-hover-border:						$tab-hover-top-border $tab-hover-top-border $tab-border;
 
 $tab-selected-color:					$secondary-color;
-$tab-selected-background:				$block-border;
-$tab-selected-border:				$block-border;
+$tab-selected-background:				#eaeaea;
+$tab-selected-border:					#eaeaea;
 
 // Header
 $header-bg:								$content-background;
@@ -230,7 +230,7 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 // Inputs
 $input-text:							$text-color;	// Input text color
 $input-bg:								$white-color;	// Input background
-$input-border:							$block-border;	// Input border color
+$input-border:							#e0e0e0;	// Input border color
 $input-hover-text:						$primary-color;
 $input-hover-bg:						$input-bg;
 $input-hover-border:					mix($primary-color, $block-border, 40%);
