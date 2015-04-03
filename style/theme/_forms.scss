@@ -422,10 +422,10 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	@if $tabbed-navigation {
 		.navbar.not-static + .navbar.with-search & {
 			margin-top: 1px;
-			margin-right: -7px;
+			margin-right: -5px;
 			.rtl & {
 				margin-right: 0;
-				margin-left: -7px;
+				margin-left: -5px;
 			}
 		}
 	}

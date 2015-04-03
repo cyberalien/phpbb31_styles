@@ -231,12 +231,12 @@ $heading-link-hover:					mix($heading-link, $heading-bg, 80%);
 $input-text:							$text-color;	// Input text color
 $input-bg:								$white-color;	// Input background
 $input-border:							$block-border;	// Input border color
-$input-hover-text:						$input-text;
+$input-hover-text:						$primary-color;
 $input-hover-bg:						$input-bg;
-$input-hover-border:					#ccc;
-$input-focus-text:						#0F4987;
+$input-hover-border:					mix($primary-color, $block-border, 40%);
+$input-focus-text:						$text-color;
 $input-focus-bg:						$input-bg;
-$input-focus-border:					$primary-color;
+$input-focus-border:					mix($primary-color, $block-border, 60%);
 $input-border-radius:					2px;
 
 $search-box-border:						#e0e0e0;	// Border for search box block
