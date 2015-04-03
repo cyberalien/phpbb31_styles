@@ -1,5 +1,5 @@
-/* CSS Reset http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126
----------------------------------------- */
+// CSS Reset http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126
+// ----------------------------------------
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,7 +20,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -53,17 +53,15 @@ table {
 	}
 }
 
-/* General Markup Styles
----------------------------------------- */
+// General Markup Styles
+// ----------------------------------------
 html {
 	font-size: 100%;
 	height: 100%;
 }
 
 body {
-	/* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
 	font-family: $font-family;
-	/*font-size: 62.5%;			 This sets the default font size to be equivalent to 10px */
 	font-size: $font-size;
 	line-height: $line-height;
 	margin: 0;
@@ -77,7 +75,7 @@ $h1-font-size:		$font-size + 10px !default;
 $h1-line-height:	inherit !default;
 
 h1, p.sitename {
-	/* Forum name */
+	// Forum name
 	font-family: $h1-font-family;
 	margin-right: 200px;
 	margin-top: 15px;
@@ -88,7 +86,7 @@ h1, p.sitename {
 }
 
 h2 {
-	/* Forum header titles */
+	// Forum header titles
 	font-family: $h2-font-family;
 	font-weight: normal;
 	font-size: $h2-font-size;
@@ -103,7 +101,7 @@ $h3-font-size:			($h2-font-size - 2px) !default;
 $h3-font-family:		$h2-font-family !default;
 
 h3 {
-	/* Sub-headers (also used as post headers, but defined later) */
+	// Sub-headers (also used as post headers, but defined later)
 	font-family: $h3-font-family;
 	font-weight: 500;
 	margin-bottom: 5px;
@@ -115,7 +113,7 @@ $h4-font-size:			ceil($font-size * 1.3) !default;
 $h4-font-family:		$h1-font-family !default;
 
 h4 {
-	/* Forum and topic list titles */
+	// Forum and topic list titles
 	font-family: $h4-font-family;
 	font-size: $h4-font-size;
 }
@@ -133,7 +131,6 @@ img {
 }
 
 hr {
-	/* Also see tweaks.css */
 	border: 0 solid transparent;
 	border-top-width: 1px;
 	height: 1px;
@@ -192,8 +189,8 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 
-/* Main blocks
----------------------------------------- */
+// Main blocks
+// ----------------------------------------
 @mixin wrapper-padding {
 	padding: 10px;
 }
@@ -277,7 +274,7 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 }
 
-/* Site description and logo */
+// Site description and logo
 #site-description {
 	@extend %clearfix;
 	h1, p.sitename {
@@ -296,8 +293,8 @@ ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 	}
 }
 
-/* Round cornered boxes and backgrounds
----------------------------------------- */
+// Round cornered boxes and backgrounds
+// ----------------------------------------
 .headerbar {
 	& > .inner {
 		position: relative;
@@ -1000,8 +997,8 @@ $panel-heading-line-height:	$line-height !default;
 	margin: 5px 5px 2px 5px;
 }
 
-/* Horizontal lists
-----------------------------------------*/
+// Horizontal lists
+// ----------------------------------------
 .navbar ul.linklist {
 	padding: 2px 0;
 }
@@ -1126,8 +1123,8 @@ ul.linklist .dropdown-up .dropdown {
 	top: auto;
 }
 
-/* Bulletin icons for list items
-----------------------------------------*/
+// Bulletin icons for list items
+// ----------------------------------------
 ul.linklist.bulletin > li:before {
 	display: inline-block;
 	content: "\2022";
@@ -1149,7 +1146,7 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	display: none !important;
 }
 
-/* Profile in overall_header.html */
+// Profile in overall_header.html
 .header-profile {
 	display: inline-block;
 	vertical-align: top;
@@ -1177,8 +1174,8 @@ ul.linklist.bulletin > li.no-bulletin:before {
 	opacity: 0.7;
 }
 
-/* Dropdown menu
-----------------------------------------*/
+// Dropdown menu
+// ----------------------------------------
 .dropdown-container {
 	position: relative;
 }
@@ -1324,13 +1321,15 @@ $dropdown-content-line-height:	$line-height !default;
 	top: 0;
 	vertical-align: baseline;
 	&:before {
-		font-size: 1.1em;
+		font-size: 1.4em;
 		line-height: 1;
+		position: relative;
+		top: 1px;
 	}
 }
 
-/* Responsive breadcrumbs
-----------------------------------------*/
+// Responsive breadcrumbs
+// ----------------------------------------
 .breadcrumbs .crumb {
 	float: left;
 	font-weight: bold;
@@ -1389,8 +1388,8 @@ $dropdown-content-line-height:	$line-height !default;
 .breadcrumbs .crumb.wrapped-small a { max-width: 60px; }
 .breadcrumbs .crumb.wrapped-tiny a { max-width: 40px; }
 
-/* Table styles
-----------------------------------------*/
+// Table styles
+// ----------------------------------------
 table.table1 {
 	width: 100%;
 }
@@ -1436,7 +1435,7 @@ table.table1 tbody th {
 	text-align: left;
 }
 
-/* Specific column styles */
+// Specific column styles
 table.table1 .name		{ text-align: left; }
 table.table1 .posts		{ text-align: center; width: 7%; }
 table.table1 .joined	{ text-align: left; width: 15%; }
@@ -1486,10 +1485,9 @@ table.info tbody th {
 	border-spacing: 1px;
 }
 
-/* Misc layout styles
----------------------------------------- */
-/* column[1-2] styles are containers for two column layouts
-   Also see tweaks.css */
+// Misc layout styles
+// ----------------------------------------
+// column[1-2] styles are containers for two column layouts
 .column1 {
 	float: left;
 	clear: left;
@@ -1502,7 +1500,7 @@ table.info tbody th {
 	width: 49%;
 }
 
-/* General classes for placing floating blocks */
+// General classes for placing floating blocks
 .left-box {
 	float: left;
 	width: auto;
@@ -1577,8 +1575,8 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	margin-left: 0 !important;
 }
 
-/* Action-bars (container for post/reply buttons, pagination, etc.)
----------------------------------------- */
+// Action-bars (container for post/reply buttons, pagination, etc.)
+// ----------------------------------------
 .action-bar {
 	font-size: $font-size;
 	margin: 4px 0;
@@ -1588,8 +1586,8 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	margin-top: 10px;
 }
 
-/* Pagination
----------------------------------------- */
+// Pagination
+// ----------------------------------------
 $pagination-font-size:				$font-size !default;
 $pagination-line-height:			$font-size + 2px !default;
 $pagination-link-font-size:			$font-size !default;
@@ -1692,7 +1690,7 @@ $pagination-link-line-height:		$font-size !default;
 	right: 3px;
 }
 
-/* Pagination in viewforum for multipage topics */
+// Pagination in viewforum for multipage topics
 .row .pagination {
 	display: block;
 	margin-top: 0;
@@ -1709,8 +1707,8 @@ $pagination-link-line-height:		$font-size !default;
 	padding: 2px 1px;
 }
 
-/* jQuery popups
----------------------------------------- */
+// jQuery popups
+// ----------------------------------------
 .phpbb_alert {
 	border: 1px solid transparent;
 	display: none;
@@ -1818,8 +1816,8 @@ $pagination-link-line-height:		$font-size !default;
 	z-index: 51;
 }
 
-/* Miscellaneous styles
----------------------------------------- */
+// Miscellaneous styles
+// ----------------------------------------
 #forum-permissions {
 	float: right;
 	width: auto;
@@ -1920,7 +1918,7 @@ form > p.post-notice strong {
 	background: transparent;
 }
 
-/* Inner box-model clearing */
+// Inner box-model clearing
 .inner:after,
 ul.linklist:after,
 .action-bar:after,
@@ -2089,8 +2087,8 @@ ul.linklist:after,
 	margin-left: 58px;
 }
 
-/* Navbar specific list items
-----------------------------------------*/
+// Navbar specific list items
+// ----------------------------------------
 
 #quick-links {
 	margin: 0 7px 0 0;
