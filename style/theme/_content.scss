@@ -1,5 +1,5 @@
-/* Content Styles
----------------------------------------- */
+// Content Styles
+// ----------------------------------------
 
 ul.topiclist {
 	display: block;
@@ -113,7 +113,7 @@ ul.topiclist .reported dd {
 }
 
 ul.topiclist dfn {
-	/* Labels for post/view counts */
+	// Labels for post/view counts
 	position: absolute;
 	left: -999px;
 	width: 990px;
@@ -235,26 +235,26 @@ li.header dl.icon dt, li.header dl.icon dd {
 }
 
 li.header dl.icon dt .list-inner {
-	/* Tweak for headers alignment when folder icon used */
+	// Tweak for headers alignment when folder icon used
 	.forabg & {
 		padding-left: 0;
 		padding-right: 50px;
 	}
 }
 
-/* Forum list column styles */
+// Forum list column styles
 dl.icon {
-	background-position: 10px 50%;		/* Position of folder icon */
+	background-position: 10px 50%;		// Position of folder icon
 	background-repeat: no-repeat;
 }
 
 dl.icon dt {
 	background-repeat: no-repeat;
-	background-position: 5px 95%;		/* Position of topic icon */
+	background-position: 5px 95%;		// Position of topic icon
 }
 
 dl.icon dt .list-inner {
-	padding-left: 55px;					/* Space for folder icon */
+	padding-left: 55px;					// Space for folder icon
 	position: relative;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -288,7 +288,7 @@ dl.icon.with-description dt, dl.icon.with-description dd {
 	min-height: 50px;
 }
 
-dl a.icon-link {						/* topic row icon links */
+dl a.icon-link {						// topic row icon links
 	display: block;
 	width: 36px;
 	height: 36px;
@@ -324,7 +324,7 @@ dd.posts, dd.topics, dd.views {
 	}
 }
 
-/* List in forum description */
+// List in forum description
 dl.icon dt ol,
 dl.icon dt ul {
 	list-style-position: inside;
@@ -365,8 +365,8 @@ dd.option {
 	font-size: $font-size;
 }
 
-/* Forums list layout
-----------------------*/
+// Forums list layout
+// ----------------------
 .forum-description {
 	font-size: $forum-list-description-font-size;
 	padding-top: 2px;
@@ -470,8 +470,8 @@ dd.option {
 	}
 }
 
-/* Post body styles
-----------------------------------------*/
+// Post body styles
+// ----------------------------------------
 .postbody {
 	padding: 0;
 	font-size: $font-size;
@@ -521,11 +521,11 @@ dd.option {
 }
 
 .postbody h3.first {
-	/* The first post on the page uses this */
+	// The first post on the page uses this
 }
 
 .postbody h3 {
-	/* Postbody requires a different h3 format - so change it here */
+	// Postbody requires a different h3 format - so change it here
 	float: left;
 	font-size: $post-title-font-size;
 	padding: 2px 0 0 0;
@@ -541,12 +541,11 @@ dd.option {
 }
 
 .postbody h3 img {
-	/* Also see tweaks.css */
 	vertical-align: bottom;
 }
 
 .has-profile .postbody h3 {
-	/* If there is a post-profile, we position the post-buttons differently */
+	// If there is a post-profile, we position the post-buttons differently
 	float: none !important;
 	margin-right: 180px;
 	.rtl & {
@@ -568,8 +567,8 @@ dd.option {
 	box-sizing: border-box;
 }
 
-/* Topic review panel
-----------------------------------------*/
+// Topic review panel
+// ----------------------------------------
 #review {
 	margin-top: 2em;
 }
@@ -599,16 +598,15 @@ dd.option {
 	display: none;
 }
 
-/* MCP Post details
-----------------------------------------*/
+// MCP Post details
+// ----------------------------------------
 #post_details {
-	/* This will only work in IE7+, plus the others */
 	overflow: auto;
 	max-height: 300px;
 }
 
-/* Content container styles
-----------------------------------------*/
+// Content container styles
+// ----------------------------------------
 .content {
 	clear: both;
 	min-height: 3em;
@@ -685,7 +683,7 @@ dl.faq dt {
 	padding: 0 2px 1px 2px;
 }
 
-/* Post author */
+// Post author
 p.author {
 	margin-bottom: 0.3em;
 	padding: 0 0 5px 0;
@@ -695,7 +693,7 @@ p.author {
 	clear: both;
 }
 
-/* Post signature */
+// Post signature
 .signature {
 	margin-top: 1.5em;
 	padding-top: 0.2em;
@@ -729,7 +727,7 @@ dd .signature {
 	margin-left: 3em;
 }
 
-/* Post noticies */
+// Post noticies
 .notice {
 	font-family: $post-content-font-family;
 	width: auto;
@@ -741,7 +739,7 @@ dd .signature {
 	line-height: $post-content-line-height;
 }
 
-/* Jump to post link for now */
+// Jump to post link for now
 ul.searchresults {
 	list-style: none;
 	text-align: right;
@@ -758,9 +756,9 @@ ul.searchresults {
 	}
 }
 
-/* BB Code styles
-----------------------------------------*/
-/* Quote block */
+// BB Code styles
+// ----------------------------------------
+// Quote block
 blockquote {
 	border: 1px solid transparent;
 	border-radius: $bbcode-border-radius;
@@ -784,12 +782,12 @@ blockquote:before {
 }
 
 blockquote blockquote {
-	/* Nested quotes */
+	// Nested quotes
 	margin: 5px;
 }
 
 blockquote cite {
-	/* Username/source of quoter */
+	// Username/source of quoter
 	font-style: normal;
 	font-weight: 500;
 	margin-left: 20px;
@@ -806,7 +804,7 @@ blockquote.uncited {
 	padding-top: 25px;
 }
 
-/* Code block */
+// Code block
 $post-code-line-height:		1.3 !default;
 
 .codebox {
@@ -833,7 +831,6 @@ blockquote .codebox {
 }
 
 .codebox code {
-	/* Also see tweaks.css */
 	overflow: auto;
 	display: block;
 	height: auto;
@@ -846,8 +843,8 @@ blockquote .codebox {
 	margin: 2px 0;
 }
 
-/* Attachments
-----------------------------------------*/
+// Attachments
+// ----------------------------------------
 .attachbox {
 	float: left;
 	width: auto;
@@ -892,11 +889,11 @@ blockquote .codebox {
 
 .attach-image img {
 	// border: 1px solid transparent;
-/*	cursor: move; */
+//	cursor: move;
 	cursor: default;
 }
 
-/* Inline image thumbnails */
+// Inline image thumbnails
 div.inline-attachment dl.thumbnail, div.inline-attachment dl.file {
 	display: block;
 	margin-bottom: 4px;
@@ -945,8 +942,8 @@ dl.thumbnail dt a:hover img {
 	border: 1px solid transparent;
 }
 
-/* Post poll styles
-----------------------------------------*/
+// Post poll styles
+// ----------------------------------------
 fieldset.polls {
 	font-family: $post-content-font-family;
 	font-size: $post-content-font-size;
@@ -1015,10 +1012,9 @@ fieldset.polls dd div {
 	text-align: center;
 }
 
-/* Poster profile block
-----------------------------------------*/
+// Poster profile block
+// ----------------------------------------
 .postprofile {
-	/* Also see tweaks.css */
 	margin: 0;
 	padding: 5px 0;
 	min-height: 80px;
@@ -1061,7 +1057,7 @@ fieldset.polls dd div {
 	margin-bottom: 10px;
 }
 
-/* Post-profile avatars */
+// Post-profile avatars
 .postprofile .has-avatar .avatar-container {
 	margin-bottom: 3px;
 	overflow: hidden;
@@ -1182,12 +1178,12 @@ dd.profile-contact {
 	background-size: cover;
 }
 
-/* Profile used on view-profile */
+// Profile used on view-profile
 .profile-avatar img {
 	max-width: 100%;
 }
 
-/* pm list in compose message if mass pm is enabled */
+// pm list in compose message if mass pm is enabled
 dl.pmlist dt {
 	width: 60% !important;
 }
@@ -1239,8 +1235,8 @@ table.fixed-width-table {
 	table-layout: fixed;
 }
 
-/* Show scrollbars for items with overflow on iOS devices
-----------------------------------------*/
+// Show scrollbars for items with overflow on iOS devices
+// ----------------------------------------
 .postbody .content::-webkit-scrollbar, #topicreview::-webkit-scrollbar, #post_details::-webkit-scrollbar, .codebox code::-webkit-scrollbar, .attachbox dd::-webkit-scrollbar, .attach-image::-webkit-scrollbar, .dropdown-extended ul::-webkit-scrollbar {
 	width: 8px;
 	height: 8px;

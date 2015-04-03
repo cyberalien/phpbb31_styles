@@ -75,7 +75,7 @@
 	}
 }
 
-/* Former imageset */
+// Former imageset
 span.imageset {
 	display: inline-block !important;
 	background: transparent none 0 0 no-repeat;
@@ -86,7 +86,7 @@ span.imageset {
 	overflow: hidden;
 }
 
-/* Global imageset items */
+// Global imageset items
 // .imageset.icon_post_target {
 // 	@extend %imageset-fa;
 // 	margin-top: -3px;
@@ -191,8 +191,8 @@ span.imageset {
 }
 
 
-/* Icon images
----------------------------------------- */
+// Icon images
+// ----------------------------------------
 %icon-image {
 	position: relative;
 	background-image: none;
@@ -453,8 +453,9 @@ ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:befor
 	}
 }
 .icon-time {
-	@extend %icon-image-gi;
+	@extend %icon-image-fa;
 	&:after {
-		content: '\E055';	// glyphicons-clock
+		// content: '\E055';	// glyphicons-clock
+		content: '\f017';	// fa-clock-o
 	}
 }
