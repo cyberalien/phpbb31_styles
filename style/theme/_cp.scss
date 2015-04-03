@@ -1,9 +1,9 @@
-/* Control Panel Styles
----------------------------------------- */
+// Control Panel Styles
+// ----------------------------------------
 
 
-/* Main CP box
-----------------------------------------*/
+// Main CP box
+// ----------------------------------------
 #cp-menu {
 	float:left;
 	width: 19%;
@@ -107,7 +107,7 @@ ul.cplist {
 	margin: 0;
 }
 
-/* MCP Specific tweaks */
+// MCP Specific tweaks
 .mcp-main .postbody {
 	width: 100%;
 }
@@ -117,8 +117,8 @@ ul.cplist {
 	margin-bottom: 0px;
 }
 
-/* CP tabs shared
-----------------------------------------*/
+// CP tabs shared
+// ----------------------------------------
 #tabs, #minitabs {
 	line-height: normal;
 }
@@ -149,8 +149,8 @@ ul.cplist {
 	line-height: inherit;
 }
 
-/* CP tabbed menu
-----------------------------------------*/
+// CP tabbed menu
+// ----------------------------------------
 #tabs {
 	margin: 20px 0 0 7px;
 }
@@ -167,8 +167,8 @@ ul.cplist {
 	padding-bottom: 1px;
 }
 
-/* Mini tabbed menu used in MCP
-----------------------------------------*/
+// Mini tabbed menu used in MCP
+// ----------------------------------------
 #minitabs {
 	float: right;
 	margin: 15px 7px 0 0;
@@ -188,8 +188,8 @@ ul.cplist {
 	text-decoration: none;
 }
 
-/* Responsive tabs
-----------------------------------------*/
+// Responsive tabs
+// ----------------------------------------
 .responsive-tab {
 	position: relative;
 }
@@ -253,9 +253,9 @@ a.responsive-tab-link {
 	text-align: left;
 }
 
-/* UCP navigation menu
-----------------------------------------*/
-/* Container for sub-navigation list */
+// UCP navigation menu
+// ----------------------------------------
+// Container for sub-navigation list
 #navigation {
 	width: 100%;
 	hr {
@@ -270,7 +270,7 @@ a.responsive-tab-link {
 	list-style: none;
 }
 
-/* Default list state */
+// Default list state
 #navigation li {
 	display: inline;
 	font-weight: 500;
@@ -278,7 +278,7 @@ a.responsive-tab-link {
 	padding: 0;
 }
 
-/* Link styles for the sub-section links */
+// Link styles for the sub-section links
 #navigation a {
 	display: block;
 	padding: 5px;
@@ -293,15 +293,15 @@ a.responsive-tab-link {
 	text-decoration: none;
 }
 
-/* Preferences pane layout
-----------------------------------------*/
+// Preferences pane layout
+// ----------------------------------------
 #cp-main h2 {
 	border-bottom: none;
 	padding: 0;
 	margin-left: 10px;
 }
 
-/* Friends list */
+// Friends list
 .cp-mini {
 	margin: 10px 15px 10px 5px;
 	max-height: 200px;
@@ -326,13 +326,13 @@ dl.mini dd {
 	font-style: italic;
 }
 
-/* PM Styles
-----------------------------------------*/
+// PM Styles
+// ----------------------------------------
 #pm-menu {
 	line-height: 2.5em;
 }
 
-/* Defined rules list for PM options */
+// Defined rules list for PM options
 ol.def-rules {
 	padding-left: 0;
 }
@@ -342,7 +342,7 @@ ol.def-rules li {
 	padding: 1px;
 }
 
-/* PM marking colours */
+// PM marking colours
 .pmlist li.bg1 {
 	padding: 0 3px;
 }
@@ -373,7 +373,7 @@ ol.def-rules li {
 	padding-left: 3px;
 }
 
-/* Avatar gallery */
+// Avatar gallery
 #gallery label {
 	position: relative;
 	float: left;
@@ -384,8 +384,8 @@ ol.def-rules li {
 	text-align: center;
 }
 
-/* Responsive *CP navigation
-----------------------------------------*/
+// Responsive *CP navigation
+// ----------------------------------------
 @media (max-width: 900px)
 {
 	.nojs #tabs a span, .nojs #minitabs a span {
