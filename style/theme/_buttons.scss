@@ -1,9 +1,6 @@
-/* Button Styles
----------------------------------------- */
+// Button Styles
+// ----------------------------------------
 
-/* Rollover buttons
-   Based on: http://wellstyled.com/css-nopreload-rollovers.html
-----------------------------------------*/
 $button-inner-height:	$button-line-height + $button-top-padding * 2;
 $button-outer-height:	$button-inner-height + $button-border-width * 2;
 
@@ -123,7 +120,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	margin: 0;
 }
 
-/* Big button images */
+// Big button images
 .reply-icon:before, .pmreply-icon:before {
 	@extend %icon-button;
 	content: '\f112';	// fa-mail-reply
@@ -197,8 +194,8 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 	content: '\f0e3';	// fa-gavel
 }
 
-/* Icon images
----------------------------------------- */
+// Icon images
+// ----------------------------------------
 .small-icon {
 	background-position: 0 50%;
 	background-repeat: no-repeat;
@@ -218,8 +215,8 @@ ul.linklist.bulletin > li.small-icon:before {
 	display: block;
 }
 
-/* Poster contact icons
-----------------------------------------*/
+// Poster contact icons
+// ----------------------------------------
 .contact-icons.dropdown-contents {
 	min-width: 0;
 	padding: 0;
@@ -274,7 +271,7 @@ ul.linklist.bulletin > li.small-icon:before {
 	clear: left;
 }
 
-/* Profile icons */
+// Profile icons
 .pm-icon:after {
 	@extend %contact-icon-gi;
 	content: '\E245';	// glyphicons-conversation
@@ -320,8 +317,8 @@ ul.linklist.bulletin > li.small-icon:before {
 	content: '\f19e';	// fa-yahoo
 }
 
-/* Post control buttons
---------------------------------------------- */
+// Post control buttons
+// ---------------------------------------------
 .post-buttons {
 	float: right;
 	list-style: none;
@@ -444,7 +441,7 @@ ul.linklist.bulletin > li.small-icon:before {
 	}
 }
 
-/* Responsive buttons in post body */
+// Responsive buttons in post body
 .post-buttons .dropdown {
 	top: 20px;
 }
@@ -479,7 +476,7 @@ $post-dropdown-glyphs-font-size:	floor($dropdown-content-font-size / 2) * 2;
 	max-width: 40%;
 }
 
-/* Browser-specific tweaks */
+// Browser-specific tweaks
 button::-moz-focus-inner {
 	padding: 0;
 	border: 0
