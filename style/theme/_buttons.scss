@@ -72,6 +72,7 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 }
 
 %icon-button {
+	background-image: none !important;
 	font-family: FontAwesome;
 	&:hover {
 	}
@@ -192,6 +193,18 @@ $button-outer-height:	$button-inner-height + $button-border-width * 2;
 
 .modtools-icon:before {
 	content: '\f0e3';	// fa-gavel
+}
+
+// Thanks for posts mod
+.thanks-icon:before, .removethanks-icon:before {
+	@extend %icon-button;
+	@extend %icon-button-gi;
+	content: '\E344';	// glyphicons-thumbs-up
+	font-size: 13px;
+}
+
+.removethanks-icon:before {
+	content: '\E345';	// glyphicons-thumbs-down
 }
 
 // Icon images
