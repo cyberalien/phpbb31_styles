@@ -1459,11 +1459,11 @@ input.disabled {
 }
 
 ul.linklist li.responsive-menu a.responsive-menu-link:before {
-	color: #105289;
+	color: $link-color;
 }
 
 ul.linklist li.responsive-menu a.responsive-menu-link:hover:before, ul.linklist li.responsive-menu.visible a.responsive-menu-link:before {
-	color: #D31141;
+	color: $link-hover-color;
 }
 
 .dropdown .dropdown-contents {

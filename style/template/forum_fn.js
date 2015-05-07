@@ -942,7 +942,7 @@ function parseDocument($container) {
 			return;
 		}
 
-		// $this.wrapInner('<div class="postbody-inner" />');
+		$this.wrapInner('<div class="postbody-inner" />');
 	});
 
 	/**
