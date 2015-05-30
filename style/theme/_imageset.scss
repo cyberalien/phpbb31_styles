@@ -458,8 +458,17 @@ ul.linklist.bulletin > li.small-icon.icon-team:before { @extend .icon-team:befor
 
 // Thanks for posts mod
 .icon-thanks {
+	background-image: none !important;
 	@extend %icon-image-gi;
 	&:after {
 		content: '\E344';	// glyphicons-thumbs-up
+	}
+}
+
+.icon-thanks_toplist {
+	background-image: none !important;
+	@extend %icon-image-fa;
+	&:after {
+		content: '\f005';	// fa-star
 	}
 }

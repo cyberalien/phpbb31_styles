@@ -1243,3 +1243,15 @@ table.fixed-width-table {
 .postbody .content::-webkit-scrollbar-thumb, #topicreview::-webkit-scrollbar-thumb, #post_details::-webkit-scrollbar-thumb, .codebox code::-webkit-scrollbar-thumb, .attachbox dd::-webkit-scrollbar-thumb, .attach-image::-webkit-scrollbar-thumb, .dropdown-extended ul::-webkit-scrollbar-thumb {
 	border-radius: 3px;
 }
+
+//
+// Extensions
+//
+
+// Thanks for posts
+a.post {
+	display: inline !important;
+	background: none !important;
+	box-shadow: none !important;
+	border: none !important;
+}
