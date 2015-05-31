@@ -378,12 +378,13 @@ dd.option {
 .forum-lastpost {
 	display: none;
 	@media (max-width: 550px) {
-		display: table-row !important;
+		display: block !important;
 		padding-top: 2px;
-		table-layout: fixed;
+		line-height: 1.2;
+		overflow: hidden;
 	}
 	strong, span {
-		display: table-cell;
+		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
 	}
@@ -391,29 +392,30 @@ dd.option {
 		font-weight: normal;
 	}
 	strong {
+		display: block;
+		float: left;
+		max-width: 200px;
 		padding-right: 5px;
 		.rtl & {
+			float: right;
 			padding-right: 0;
 			padding-left: 5px;
 		}
+		@media (max-width: 400px) {
+			max-width: 130px;
+		}
 	}
 	span {
-		max-width: 200px;
-		text-overflow: ellipsis;
-		&:before {
+		display: inline-block;
+		max-width: 100%;
+		&:after {
 			content: '|';
 			display: inline-block;
 			text-align: center;
 			width: 12px;
 		}
-		&:first-of-type:before {
+		&:last-of-type:after {
 			display: none;
-		}
-		@media (max-width: 500px) {
-			max-width: 125px;
-		}
-		@media (max-width: 400px) {
-			max-width: 100px;
 		}
 	}
 }
@@ -1242,4 +1244,16 @@ table.fixed-width-table {
 
 .postbody .content::-webkit-scrollbar-thumb, #topicreview::-webkit-scrollbar-thumb, #post_details::-webkit-scrollbar-thumb, .codebox code::-webkit-scrollbar-thumb, .attachbox dd::-webkit-scrollbar-thumb, .attach-image::-webkit-scrollbar-thumb, .dropdown-extended ul::-webkit-scrollbar-thumb {
 	border-radius: 3px;
+}
+
+//
+// Extensions
+//
+
+// Thanks for posts
+a.post {
+	display: inline !important;
+	background: none !important;
+	box-shadow: none !important;
+	border: none !important;
 }
