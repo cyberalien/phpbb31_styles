@@ -455,6 +455,7 @@ fieldset.polls dd.resultbar, fieldset.polls dd.poll_option_percent {
 }
 
 .postprofile + .postbody {
+	position: static;
 	&, > div {
 		margin-left: 0;
 		margin-right: 0;
@@ -477,6 +478,7 @@ fieldset.polls dd.resultbar, fieldset.polls dd.poll_option_percent {
 	margin-bottom: 5px;
 	min-height: 40px;
 	overflow: hidden;
+	z-index: auto !important;
 }
 
 .postprofile dd {
@@ -521,11 +523,11 @@ fieldset.polls dd.resultbar, fieldset.polls dd.poll_option_percent {
 }
 
 .has-profile .post-buttons {
-	right: 0;
-	top: 0;
+	right: 10px;
+	top: 10px;
 	.rtl & {
 		right: auto;
-		left: 0;
+		left: 10px;
 	}
 }
 
