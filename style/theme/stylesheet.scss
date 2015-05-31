@@ -7,6 +7,8 @@
 //	If you have any questions please visit support forum at:
 //		http://www.artodia.com/forums/
 //
+//	Add your custom code to _custom.scss then recompile stylesheet
+//
 /*!
 	DO NOT EDIT stylesheet.css!
 
@@ -25,3 +27,4 @@
 	@import "responsive";
 }
 @import "colours";
+@import "custom";
