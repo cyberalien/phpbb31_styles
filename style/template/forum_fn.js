@@ -1,3 +1,5 @@
+/* global phpbb */
+
 /**
 * phpBB3 forum functions
 */
@@ -44,7 +46,7 @@ function pageJump(item) {
 		baseUrl = item.attr('data-base-url'),
 		startName = item.attr('data-start-name');
 
-	if (page !== null && !isNaN(page) && page == Math.floor(page) && page > 0) {
+	if (page !== null && !isNaN(page) && page === Math.floor(page) && page > 0) {
 		if (baseUrl.indexOf('?') === -1) {
 			document.location.href = baseUrl + '?' + startName + '=' + ((page - 1) * perPage);
 		} else {
@@ -131,7 +133,7 @@ function activateSubPanel(p, panels) {
 
 	var i, showPanel;
 
-	if (typeof(p) === 'string') {
+	if (typeof p === 'string') {
 		showPanel = p;
 	}
 	$('input[name="show_panel"]').val(showPanel);
@@ -284,8 +286,7 @@ jQuery(function($) {
 /**
 * Functions for user search popup
 */
-function insertUser(formId, value)
-{
+function insertUser(formId, value) {
 	'use strict';
 
 	var $form = jQuery(formId),
@@ -293,7 +294,7 @@ function insertUser(formId, value)
 		fieldName = $form.attr('data-field-name'),
 		item = opener.document.forms[formName][fieldName];
 
-	if (item.value.length && item.type == 'textarea') {
+	if (item.value.length && item.type === 'textarea') {
 		value = item.value + '\n' + value;
 	}
 
@@ -516,7 +517,7 @@ function parseDocument($container) {
 	'use strict';
 
 	var test = document.createElement('div'),
-		oldBrowser = (typeof test.style.borderRadius == 'undefined'),
+		oldBrowser = (typeof test.style.borderRadius === 'undefined'),
 		$body = $('body');
 
 	/**
@@ -617,7 +618,10 @@ function parseDocument($container) {
 	*/
 	if (oldBrowser) {
 		// Fix .linklist.bulletin lists
-		$container.find('ul.linklist.bulletin > li:first-child, ul.linklist.bulletin > li.rightside:last-child').addClass('no-bulletin');
+		$container
+			.find('ul.linklist.bulletin > li')
+			.filter(':first-child, .rightside:last-child')
+			.addClass('no-bulletin');
 	}
 
 	/**
@@ -698,13 +702,13 @@ function parseDocument($container) {
 				width;
 
 			// Test max-width set in code for .navlinks above
-			width = parseInt($this.css('max-width'));
+			width = parseInt($this.css('max-width'), 10);
 			if (!width) {
- 				width = $body.width();
+				width = $body.width();
 			}
 
 			throttled = false;
-			maxHeight = parseInt($this.css('line-height'));
+			maxHeight = parseInt($this.css('line-height'), 10);
 			$links.each(function() {
 				if ($(this).height() > 0) {
 					maxHeight = Math.max(maxHeight, $(this).outerHeight(true));
@@ -731,8 +735,8 @@ function parseDocument($container) {
 				return;
 			}
 
-			for (var i = 0; i < classesLength; i ++) {
-				for (var j = length - 1; j >= 0; j --) {
+			for (var i = 0; i < classesLength; i++) {
+				for (var j = length - 1; j >= 0; j--) {
 					$links.eq(j).addClass('wrapped ' + classes[i]);
 					if ($this.height() <= maxHeight) {
 						return;
@@ -764,7 +768,9 @@ function parseDocument($container) {
 	/**
 	* Responsive link lists
 	*/
-	$container.find('.linklist:not(.navlinks, [data-skip-responsive]), .postbody .post-buttons:not([data-skip-responsive])').each(function() {
+	var selector = '.linklist:not(.navlinks, [data-skip-responsive]),' +
+		'.postbody .post-buttons:not([data-skip-responsive])';
+	$container.find(selector).each(function() {
 		var $this = $(this),
 			filterSkip = '.breadcrumbs, [data-skip-responsive]',
 			filterLast = '.edit-icon, .quote-icon, [data-last-responsive]',
@@ -772,7 +778,7 @@ function parseDocument($container) {
 			$linksNotSkip = $linksAll.not(filterSkip), // All items that can potentially be hidden
 			$linksFirst = $linksNotSkip.not(filterLast), // The items that will be hidden first
 			$linksLast = $linksNotSkip.filter(filterLast), // The items that will be hidden last
-			persistent = $this.attr('id') == 'nav-main', // Does this list already have a menu (such as quick-links)?
+			persistent = $this.attr('id') === 'nav-main', // Does this list already have a menu (such as quick-links)?
 			html = '<li class="responsive-menu hidden"><a href="javascript:void(0);" class="responsive-menu-link">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner" /></div><ul class="dropdown-contents" /></div></li>',
 			slack = 3; // Vertical slack space (in pixels). Determines how sensitive the script is in determining whether a line-break has occured.
 
@@ -991,7 +997,7 @@ function parseDocument($container) {
 				$children = column.children(),
 				html = column.html();
 
-			if ($children.length == 1 && $children.text() == column.text()) {
+			if ($children.length === 1 && $children.text() === column.text()) {
 				html = $children.html();
 			}
 
@@ -1033,8 +1039,7 @@ function parseDocument($container) {
 			if (!$block.length) {
 				$this.find('dt > .list-inner').append('<div class="responsive-show" style="display:none;" />');
 				$block = $this.find('dt .responsive-show:last-child');
-			}
-			else {
+			} else {
 				first = ($.trim($block.text()).length === 0);
 			}
 
@@ -1044,7 +1049,7 @@ function parseDocument($container) {
 					children = column.children(),
 					html = column.html();
 
-				if (children.length == 1 && children.text() == column.text()) {
+				if (children.length === 1 && children.text() === column.text()) {
 					html = children.html();
 				}
 
@@ -1073,7 +1078,7 @@ function parseDocument($container) {
 		// Find each header
 		$th.each(function(column) {
 			var cell = $(this),
-				colspan = parseInt(cell.attr('colspan')),
+				colspan = parseInt(cell.attr('colspan'), 10),
 				dfn = cell.attr('data-dfn'),
 				text = dfn ? dfn : cell.text();
 
@@ -1104,14 +1109,14 @@ function parseDocument($container) {
 				cells = row.children('td'),
 				column = 0;
 
-			if (cells.length == 1) {
+			if (cells.length === 1) {
 				row.addClass('big-column');
 				return;
 			}
 
 			cells.each(function() {
 				var cell = $(this),
-					colspan = parseInt(cell.attr('colspan')),
+					colspan = parseInt(cell.attr('colspan'), 10),
 					text = $.trim(cell.text());
 
 				if (headersLength <= column) {
@@ -1187,19 +1192,26 @@ function parseDocument($container) {
 				total = $availableTabs.length,
 				i, $tab;
 
-			for (i = total - 1; i >= 0; i --) {
+			for (i = total - 1; i >= 0; i--) {
 				$tab = $availableTabs.eq(i);
 				$menu.prepend($tab.clone(true).removeClass('tab'));
 				$tab.hide();
 				if ($this.height() <= maxHeight) {
-					$menu.find('a').click(function() { check(true); });
+					$menu.find('a').click(function() {
+						check(true);
+					});
 					return;
 				}
 			}
-			$menu.find('a').click(function() { check(true); });
+			$menu.find('a').click(function() {
+				check(true);
+			});
 		}
 
-		phpbb.registerDropdown($item.find('a.responsive-tab-link'), $item.find('.dropdown'), {visibleClass: 'activetab'});
+		var $tabLink = $item.find('a.responsive-tab-link');
+		phpbb.registerDropdown($tabLink, $item.find('.dropdown'), {
+			visibleClass: 'activetab'
+		});
 
 		check(true);
 		$(window).resize(check);
