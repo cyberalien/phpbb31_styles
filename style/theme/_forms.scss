@@ -250,6 +250,13 @@ fieldset.submit-buttons input {
 	font-size: $post-content-font-size;
 	line-height: $post-content-line-height;
 	resize: vertical;
+	outline: 3px dashed transparent;
+	outline-offset: -4px;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
 }
 
 // Emoticons panel
