@@ -69,6 +69,7 @@ body {
 	word-wrap: break-word;
 	min-height: 100%;
 	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
 }
 
 $h1-font-size:		$font-size + 9px !default;
