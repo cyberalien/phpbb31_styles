@@ -1311,6 +1311,14 @@ fieldset.quick-login input.inputbox {
 	color: $input-text;
 }
 
+#message-box textarea.drag-n-drop {
+	outline-color: rgba($faint-color, 0.5);
+}
+
+#message-box textarea.drag-n-drop-highlight {
+	outline-color: rgba($muted-color, 0.5);
+}
+
 // Input field styles
 // ----------------------------------------
 .inputbox, select {
