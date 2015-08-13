@@ -564,7 +564,9 @@ function parseDocument($container) {
 	*/
 	$container.find('.nav-tabs[data-current-page]').each(function() {
 		var tabs = $(this),
-			current = tabs.attr('data-current-page');
+			current = tabs.attr('data-current-page'),
+			found = false,
+			content, classes, i, key;
 
 		$('.tab[data-select-match]', this).each(function() {
 			var matches = $(this).attr('data-select-match').split(','),
@@ -579,10 +581,42 @@ function parseDocument($container) {
 						tabs.find('.tab.selected').removeClass('selected');
 						item.addClass('selected');
 					}
+					found = true;
 					return false;
 				}
 			}
 		});
+
+		// Check for known extensions
+		if (found) {
+			return;
+		}
+
+		content = $container.find('.content.pages-content');
+		if (content.length) {
+			// Get page content class, try to find matching link
+			classes = content.prop('class').split(' ');
+			for (i = 0; i < classes.length && !found; i++) {
+				key = classes[i].trim();
+				if (key !== 'content' && key !== 'pages-content') {
+					$container.find('.tab.pages.' + key).each(function() {
+						tabs.find('.tab.selected').removeClass('selected');
+						$(this).addClass('selected');
+						found = true;
+					});
+				}
+			}
+			if (found) {
+				return;
+			}
+
+			// Get first page link
+			$container.find('.tab.pages:first').each(function() {
+				tabs.find('.tab.selected').removeClass('selected');
+				$(this).addClass('selected');
+				found = true;
+			});
+		}
 	});
 
 	/**
