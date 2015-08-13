@@ -527,7 +527,7 @@ li.row:hover dd {
 
 // Unread forum/topic
 .icon-link + .list-inner > a.forumtitle,
-.pm_read .topictitle,
+.pm_unread .topictitle,
 a.subforum.unread {
 	color: $secondary-color;
 }
