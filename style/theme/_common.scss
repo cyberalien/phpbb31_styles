@@ -747,6 +747,18 @@ $nav-alert-font-size:		9px !default;
 				content: '\f234';	// fa-user-plus
 			}
 		}
+
+		// Commonly used links for extensions
+		.boardrules .nav-link {
+			@extend %glyph;
+			&:after {
+				@extend %glyph-fa;
+				content: '\f071';	// fa-exclamation-triangle
+			}
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
+			}
+		}
 	}
 
 	// Tabbed navigation
