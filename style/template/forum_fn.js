@@ -417,6 +417,7 @@ function checkNavigation(force)
 		if (nav.responsive) {
 			nav.canToggle.show();
 			nav.responsiveClones.hide();
+			nav.menu.removeClass('showing-responsive-menu');
 			if (!nav.alwaysShowMenu) {
 				nav.menu.show();
 			}
@@ -465,6 +466,9 @@ function checkNavigation(force)
 		nav.responsive = hiding;
 		if (!hiding && !nav.alwaysShowMenu) {
 			nav.menu.hide();
+		}
+		else if (hiding) {
+			nav.menu.addClass('showing-responsive-menu');
 		}
 	}
 
