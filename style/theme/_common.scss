@@ -459,6 +459,12 @@ $nav-alert-font-size:		9px !default;
 			}
 			#quick-links {
 				margin: 0;
+				&.empty {
+					display: none;
+				}
+				&.showing-responsive-menu {
+					display: block;
+				}
 			}
 		}
 
