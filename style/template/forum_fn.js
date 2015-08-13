@@ -598,8 +598,7 @@ function parseDocument($container) {
 			classes = content.prop('class').split(' ');
 			for (i = 0; i < classes.length && !found; i++) {
 				key = classes[i].trim();
-				if (key.slice(0, 5) == 'icon-') {
-					key = key.slice(5);
+				if (key !== 'content' && key !== 'pages-content') {
 					$container.find('.tab.pages.' + key).each(function() {
 						tabs.find('.tab.selected').removeClass('selected');
 						$(this).addClass('selected');
