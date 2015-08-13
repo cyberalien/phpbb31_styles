@@ -754,6 +754,39 @@ $nav-alert-font-size:		9px !default;
 				content: '\f234';	// fa-user-plus
 			}
 		}
+
+		// Commonly used links for extensions
+		.boardrules .nav-link {
+			&:after {
+				@extend %glyph-fa;
+				content: '\f071';	// fa-exclamation-triangle
+			}
+		}
+		.leftside .boardrules .nav-link {
+			@extend %glyph;
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
+			}
+		}
+		.rightside .boardrules .nav-link {
+			@extend %glyph-only;
+		}
+
+		.pages .nav-link {
+			&:after {
+				@extend %glyph-fa;
+				content: '\f0f6';	// fa-file-text-o
+			}
+		}
+		.leftside .pages .nav-link {
+			@extend %glyph;
+			@media (max-width: 550px) {
+				@extend %glyph-only-media;
+			}
+		}
+		.rightside .pages .nav-link {
+			@extend %glyph-only;
+		}
 	}
 
 	// Tabbed navigation
