@@ -1,43 +1,53 @@
+{% set quick_links_first_block %}
+	<!-- EVENT navbar_header_quick_links_before -->
+
+	<!-- IF S_DISPLAY_SEARCH -->
+		<li class="separator"></li>
+		<!-- IF S_REGISTERED_USER -->
+			<li class="small-icon icon-search-self"><a href="{U_SEARCH_SELF}" role="menuitem">{L_SEARCH_SELF}</a></li>
+		<!-- ENDIF -->
+		<!-- IF S_USER_LOGGED_IN -->
+			<li class="small-icon icon-search-new"><a href="{U_SEARCH_NEW}" role="menuitem">{L_SEARCH_NEW}</a></li>
+		<!-- ENDIF -->
+		<!-- IF S_LOAD_UNREADS -->
+			<li class="small-icon icon-search-unread"><a href="{U_SEARCH_UNREAD}" role="menuitem">{L_SEARCH_UNREAD}</a></li>
+		<!-- ENDIF -->
+		<li class="small-icon icon-search-unanswered"><a href="{U_SEARCH_UNANSWERED}" role="menuitem">{L_SEARCH_UNANSWERED}</a></li>
+		<li class="small-icon icon-search-active"><a href="{U_SEARCH_ACTIVE_TOPICS}" role="menuitem">{L_SEARCH_ACTIVE_TOPICS}</a></li>
+		<li class="separator"></li>
+		<li class="small-icon icon-search"><a href="{U_SEARCH}" role="menuitem">{L_SEARCH}</a></li>
+	<!-- ENDIF -->
+{% endset %}
+
+{% set quick_links_last_block %}
+	<!-- EVENT navbar_header_quick_links_after -->
+{% endset %}
+
+{% set quick_links_all %}{{ quick_links_first_block|trim }}{{ quick_links_last_block|trim }}{% endset %}
+
 <div class="navbar tabbed not-static" role="navigation">
 	<div class="inner page-width">
 		<div class="nav-tabs" data-current-page="<!-- IF $NAV_SECTION -->{$NAV_SECTION}<!-- ELSE -->{SCRIPT_NAME}<!-- ENDIF -->">
 			<ul class="leftside">
+				<li id="quick-links" class="tab responsive-menu dropdown-container{% if quick_links_all == '' %} empty{% endif %}">
+					<a href="#" class="nav-link dropdown-trigger">{L_QUICK_LINKS}</a>
+					<div class="dropdown hidden">
+						<div class="pointer"><div class="pointer-inner"></div></div>
+						<ul class="dropdown-contents" role="menu">
+							{{ quick_links_first_block }}
+							{% if quick_links_last_block|trim %}
+								<li class="separator"></li>
+								{{ quick_links_last_block }}
+							{% endif %}
+						</ul>
+					</div>
+				</li>
 				<!-- EVENT navtabs_left_before -->
 				<!-- IF U_SITE_HOME -->
 					<li class="tab home" data-responsive-class="small-icon icon-home">
 						<a class="nav-link" href="{U_SITE_HOME}" data-navbar-reference="home">{L_SITE_HOME}</a>
 					</li>
 				<!-- ENDIF -->
-				<li id="quick-links" class="tab responsive-menu dropdown-container">
-					<a href="#" class="nav-link dropdown-trigger">{L_QUICK_LINKS}</a>
-					<div class="dropdown hidden">
-						<div class="pointer"><div class="pointer-inner"></div></div>
-						<ul class="dropdown-contents" role="menu">
-							<!-- EVENT navbar_header_quick_links_before -->
-
-							<!-- IF S_DISPLAY_SEARCH -->
-								<li class="separator"></li>
-								<!-- IF S_REGISTERED_USER -->
-									<li class="small-icon icon-search-self"><a href="{U_SEARCH_SELF}" role="menuitem">{L_SEARCH_SELF}</a></li>
-								<!-- ENDIF -->
-								<!-- IF S_USER_LOGGED_IN -->
-									<li class="small-icon icon-search-new"><a href="{U_SEARCH_NEW}" role="menuitem">{L_SEARCH_NEW}</a></li>
-								<!-- ENDIF -->
-								<!-- IF S_LOAD_UNREADS --> 
-									<li class="small-icon icon-search-unread"><a href="{U_SEARCH_UNREAD}" role="menuitem">{L_SEARCH_UNREAD}</a></li>
-								<!-- ENDIF -->
-								<li class="small-icon icon-search-unanswered"><a href="{U_SEARCH_UNANSWERED}" role="menuitem">{L_SEARCH_UNANSWERED}</a></li>
-								<li class="small-icon icon-search-active"><a href="{U_SEARCH_ACTIVE_TOPICS}" role="menuitem">{L_SEARCH_ACTIVE_TOPICS}</a></li>
-								<li class="separator"></li>
-								<li class="small-icon icon-search"><a href="{U_SEARCH}" role="menuitem">{L_SEARCH}</a></li>
-							<!-- ENDIF -->
-
-							<li class="separator"></li>
-
-							<!-- EVENT navbar_header_quick_links_after -->
-						</ul>
-					</div>
-				</li>
 				<li class="tab forums selected" data-responsive-class="small-icon icon-forums">
 					<a class="nav-link" href="{U_INDEX}">{L_FORUMS}</a>
 				</li>
