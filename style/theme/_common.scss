@@ -2079,12 +2079,18 @@ ul.linklist:after,
 	text-align: left;
 	// text-transform: uppercase;
 	line-height: $dropdown-header-line-height;
-}
 
-.dropdown-extended .header .header_settings {
-	float: right;
-	font-weight: normal;
-	text-transform: none;
+	.header_settings {
+		float: right;
+		font-weight: normal;
+		text-transform: none;
+	}
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 }
 
 .dropdown-extended .footer {
