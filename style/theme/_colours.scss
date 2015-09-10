@@ -1322,15 +1322,6 @@ input.button3 {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
-// Alternative button
-a.button2, input.button2, input.button3 {
-}
-
-// <a> button in the style of the form buttons
-a.button1, a.button2 {
-	color: $button-text;
-}
-
 // Hover states
 a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
 	&,	#format-buttons & {
