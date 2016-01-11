@@ -1254,6 +1254,10 @@ table.fixed-width-table {
 	border-radius: 3px;
 }
 
+#memberlist tr.inactive, #team tr.inactive {
+	font-style: italic;
+}
+
 //
 // Extensions
 //
