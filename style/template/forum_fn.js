@@ -532,6 +532,11 @@ function parseDocument($container) {
 		$body = $('body');
 
 	/**
+	 * Change stuff for extensions
+	 */
+	$('#top_five.forabg').removeClass('forabg').addClass('forumbg');
+
+	/**
 	* Adjust navigation tabs
 	*/
 	$container.find('.nav-tabs').each(function() {
