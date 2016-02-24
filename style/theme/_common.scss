@@ -911,8 +911,10 @@ $nav-alert-font-size:		9px !default;
 		max-width: none;
 		opacity: .9;
 		transition: opacity .2s;
-		#wrap & > .static-inner {
-			@include wrapper-padding;
+		@if $use-wrapper {
+			#wrap & > .static-inner {
+				@include wrapper-padding;
+			}
 		}
 		& > .static-inner {
 			@include page-width;
