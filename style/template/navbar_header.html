@@ -78,6 +78,7 @@
 					</li>
 				<!-- ENDIF -->
 				<!-- IF S_REGISTERED_USER -->
+					<!-- EVENT navbar_header_user_profile_prepend -->
 					<li id="username_logged_in" class="tab account dropdown-container" data-skip-responsive="true" data-select-match="ucp">
 						<a href="{U_PROFILE}" class="nav-link dropdown-trigger">{CURRENT_USERNAME_SIMPLE}</a>
 						<div class="dropdown hidden">
@@ -116,6 +117,7 @@
 							<!-- INCLUDE notification_dropdown.html -->
 						</li>
 					<!-- ENDIF -->
+					<!-- EVENT navbar_header_user_profile_append -->
 				<!-- ENDIF -->
 				<!-- IF S_REGISTERED_USER -->
 					<li class="tab logout"  data-skip-responsive="true"><a class="nav-link" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
