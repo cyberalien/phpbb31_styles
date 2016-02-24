@@ -15,6 +15,7 @@
 	Edit .scss files instead. See http://www.artodia.com/phpbb-31-tutorials/compile-theme/
 	If you have any questions, please ask on support forum at http://www.artodia.com/forums/
 */
+@import "_style_config_custom";
 @import "_style_config";
 @import "common";
 @import "links";
