@@ -211,6 +211,7 @@ li.header dt {
 	.list-inner {
 		margin-right: 440px;
 		text-indent: 5px;
+		padding-left: 0;
 	}
 	.forabg &, 
 	.forabg & .list-inner {
@@ -231,7 +232,7 @@ li.header dd {
 	}
 }
 
-li.header dl.icon dt, li.header dl.icon dd {
+li.header dl dt, li.header dl dd {
 	min-height: 0;
 }
 
