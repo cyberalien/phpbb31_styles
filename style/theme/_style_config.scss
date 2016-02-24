@@ -195,7 +195,7 @@ $forum-description-bg:					mix($black-color, $block-background, 75%);
 // Notifications
 $notification-unread-bg:				mix($content-background, $rules-color, 90%);
 $notification-unread-color:				$rules-color;
-$notification-unread-strong-color:		desaturate(if(lightness($notification-unread-color) < 50%, darken($notification-unread-color, 30%), lighten($notification-unread-color, 30%)), 100%);
+$notification-unread-strong-color:		$black-color;
 
 $dropdown-notification-bg:				$block-background;
 $dropdown-notification-hover-bg:		$block-background2;
