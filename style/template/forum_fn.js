@@ -532,6 +532,11 @@ function parseDocument($container) {
 		$body = $('body');
 
 	/**
+	 * Change stuff for extensions
+	 */
+	$('#top_five.forabg').removeClass('forabg').addClass('forumbg');
+
+	/**
 	* Adjust navigation tabs
 	*/
 	$container.find('.nav-tabs').each(function() {
@@ -540,8 +545,10 @@ function parseDocument($container) {
 		// Fix tabs structure
 		tabs.not('.tab').each(function() {
 			var tab = $(this),
-				className = tab.attr('class').split(' '),
+				className = tab.attr('class'),
 				i;
+
+			className = className ? className.split(' ') : '';
 			tab.attr('class', 'tab');
 			for (i=0; i<className.length; i++) {
 				if (className[i].substr(0, 5) == 'icon-') {
